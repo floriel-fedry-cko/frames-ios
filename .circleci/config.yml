@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    macos:
+      xcode: "9.3.0"
+    steps:
+      - checkout
+      - run: 
+        name: test iOS 11
+        command: xcodebuild test -workspace CheckoutSdkIos.xcworkspace -scheme CheckoutSdkIos -destination 'OS=11.3,name=iPhone X'

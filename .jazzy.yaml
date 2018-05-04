@@ -1,0 +1,6 @@
+author: Checkout
+author_url: https://www.checkout.com/
+github_url: https://github.com/checkout/checkout-sdk-ios
+output: docs
+theme: fullwidth
+documentation: Documentation/*.md

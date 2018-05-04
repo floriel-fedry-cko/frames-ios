@@ -1,0 +1,61 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios/Source/ExpirationDatePicker.swift",
+      "line": 24,
+      "symbol": "ExpirationDatePicker.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios/Source/ExpirationDatePicker.swift",
+      "line": 29,
+      "symbol": "ExpirationDatePicker.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios/Source/ExpirationDatePicker.swift",
+      "line": 54,
+      "symbol": "ExpirationDatePicker.pickerView(_:didSelectRow:inComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios/Source/ExpirationDatePicker.swift",
+      "line": 74,
+      "symbol": "ExpirationDatePicker.numberOfComponents(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios/Source/ExpirationDatePicker.swift",
+      "line": 78,
+      "symbol": "ExpirationDatePicker.pickerView(_:numberOfRowsInComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios/Source/ExpirationDatePicker.swift",
+      "line": 89,
+      "symbol": "ExpirationDatePicker.pickerView(_:titleForRow:forComponent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios/Source/ExpirationDatePicker.swift",
+      "line": 102,
+      "symbol": "ExpirationDatePicker.setDate(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios/Source/ExpirationDatePickerDelegate.swift",
+      "line": 5,
+      "symbol": "ExpirationDatePickerDelegate.onDateChanged(month:year:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/floriel.fedry/Documents/GitHub/checkout-sdk-ios"
+}

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6BA649910E013C9C78B8CBE0 /* Pods_CheckoutSdkIosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA05F63D56AE5E004F2CA03B /* Pods_CheckoutSdkIosTests.framework */; };
-		9C51CCA6C2415C7EC0283F79 /* Pods_CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C3F24CFA53768532363CF8 /* Pods_CheckoutSdkIos.framework */; };
 		E602EE79209D857900CC62A2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE78209D857900CC62A2 /* Alamofire.swift */; };
 		E602EE7B209D85E200CC62A2 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE7A209D85E200CC62A2 /* AFError.swift */; };
 		E602EE7D209D861300CC62A2 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE7C209D861300CC62A2 /* DispatchQueue+Alamofire.swift */; };
@@ -65,10 +64,7 @@
 		E683728E209C6CB000C11D67 /* CheckoutSdkIos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683728D209C6CB000C11D67 /* CheckoutSdkIos.swift */; };
 		E68802412091C6C000220CE2 /* CardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68802402091C6C000220CE2 /* CardRequest.swift */; };
 		E688024920922FEF00220CE2 /* cardToken.json in Resources */ = {isa = PBXBuildFile; fileRef = E68802472092294B00220CE2 /* cardToken.json */; };
-		E6918E65209CC13E00D02138 /* Pods_CheckoutSdkIosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6918E64209CC13E00D02138 /* Pods_CheckoutSdkIosTests.framework */; };
-		E6918E67209CC14500D02138 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6918E66209CC14500D02138 /* Alamofire.framework */; };
 		E6DED6E9208DF82500D5D70B /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */; };
-		F95496056BF15D447FCC7DB9 /* Pods_CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E625EE46208F8B230019B750 /* Pods_CheckoutSdkIos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,10 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6918E67209CC14500D02138 /* Alamofire.framework in Frameworks */,
-				E6918E65209CC13E00D02138 /* Pods_CheckoutSdkIosTests.framework in Frameworks */,
-				9C51CCA6C2415C7EC0283F79 /* Pods_CheckoutSdkIos.framework in Frameworks */,
-				F95496056BF15D447FCC7DB9 /* Pods_CheckoutSdkIos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

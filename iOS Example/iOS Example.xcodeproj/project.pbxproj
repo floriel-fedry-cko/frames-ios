@@ -18,8 +18,6 @@
 		E6B2EADC2099E626002516DF /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2EADB2099E626002516DF /* CountrySelectionViewController.swift */; };
 		E6FD835D2093309F0094AC15 /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; };
 		E6FD835E2093309F0094AC15 /* CheckoutSdkIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E6FD8362209330C60094AC15 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68802332090DF3900220CE2 /* Alamofire.framework */; };
-		E6FD8363209330C60094AC15 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E68802332090DF3900220CE2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,61 +42,12 @@
 			remoteGlobalIDString = E66406D32089FA39000431E5;
 			remoteInfo = CheckoutSdkIos;
 		};
-		E68802322090DF3900220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688022A2090DF3900220CE2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = FB9825954237E5919F526751A63BA41A;
-			remoteInfo = Alamofire;
-		};
-		E68802342090DF3900220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688022A2090DF3900220CE2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F5AA1774E1C8ABB720FB904D3F8EFE6F;
-			remoteInfo = Mockingjay;
-		};
-		E68802362090DF3900220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688022A2090DF3900220CE2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 890825C5D525FB52F8E2265E6AB1F80F;
-			remoteInfo = "Pods-CheckoutSdkIos";
-		};
-		E68802382090DF3900220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688022A2090DF3900220CE2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6AF3B583FC2923461E4F599DB23E191A;
-			remoteInfo = "Pods-CheckoutSdkIosTests";
-		};
-		E688023A2090DF3900220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688022A2090DF3900220CE2 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = AA55F0B7EE2C55159CF685B721510FCB;
-			remoteInfo = URITemplate;
-		};
-		E688023C2090DF4C00220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688022A2090DF3900220CE2 /* Pods.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
-			remoteInfo = Alamofire;
-		};
 		E6FD835F2093309F0094AC15 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = E66406D32089FA39000431E5;
 			remoteInfo = CheckoutSdkIos;
-		};
-		E6FD8364209330C60094AC15 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688022A2090DF3900220CE2 /* Pods.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
-			remoteInfo = Alamofire;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -110,7 +59,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E6FD835E2093309F0094AC15 /* CheckoutSdkIos.framework in Embed Frameworks */,
-				E6FD8363209330C60094AC15 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,9 +75,7 @@
 		E66406F52089FAAB000431E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E66406F72089FAAB000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E683728B209C680800C11D67 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		E688021B2090D00D00220CE2 /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheckoutSdkIos.xcodeproj; path = ../CheckoutSdkIos.xcodeproj; sourceTree = "<group>"; };
-		E688022A2090DF3900220CE2 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = ../Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		E6B2EAD82099C8D8002516DF /* iOS Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Example.entitlements"; sourceTree = "<group>"; };
 		E6B2EAD92099E452002516DF /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		E6B2EADB2099E626002516DF /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +87,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FD835D2093309F0094AC15 /* CheckoutSdkIos.framework in Frameworks */,
-				E6FD8362209330C60094AC15 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,9 +139,7 @@
 		E68802062090CAEA00220CE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E688022A2090DF3900220CE2 /* Pods.xcodeproj */,
 				E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */,
-				E688021B2090D00D00220CE2 /* CheckoutSdkIos.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -206,18 +149,6 @@
 			children = (
 				E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */,
 				E68802272090DEBE00220CE2 /* CheckoutSdkIosTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E688022B2090DF3900220CE2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E68802332090DF3900220CE2 /* Alamofire.framework */,
-				E68802352090DF3900220CE2 /* Mockingjay.framework */,
-				E68802372090DF3900220CE2 /* Pods_CheckoutSdkIos.framework */,
-				E68802392090DF3900220CE2 /* Pods_CheckoutSdkIosTests.framework */,
-				E688023B2090DF3900220CE2 /* URITemplate.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,10 +168,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				E688023D2090DF4C00220CE2 /* PBXTargetDependency */,
 				E68802292090DEE100220CE2 /* PBXTargetDependency */,
 				E6FD83602093309F0094AC15 /* PBXTargetDependency */,
-				E6FD8365209330C60094AC15 /* PBXTargetDependency */,
 			);
 			name = "iOS Example";
 			productName = "iOS Example";
@@ -286,10 +215,6 @@
 					ProductGroup = E68802202090DEBD00220CE2 /* Products */;
 					ProjectRef = E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */;
 				},
-				{
-					ProductGroup = E688022B2090DF3900220CE2 /* Products */;
-					ProjectRef = E688022A2090DF3900220CE2 /* Pods.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -311,41 +236,6 @@
 			fileType = wrapper.cfbundle;
 			path = CheckoutSdkIosTests.xctest;
 			remoteRef = E68802262090DEBE00220CE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E68802332090DF3900220CE2 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = E68802322090DF3900220CE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E68802352090DF3900220CE2 /* Mockingjay.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Mockingjay.framework;
-			remoteRef = E68802342090DF3900220CE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E68802372090DF3900220CE2 /* Pods_CheckoutSdkIos.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Pods_CheckoutSdkIos.framework;
-			remoteRef = E68802362090DF3900220CE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E68802392090DF3900220CE2 /* Pods_CheckoutSdkIosTests.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Pods_CheckoutSdkIosTests.framework;
-			remoteRef = E68802382090DF3900220CE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E688023B2090DF3900220CE2 /* URITemplate.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = URITemplate.framework;
-			remoteRef = E688023A2090DF3900220CE2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -385,20 +275,10 @@
 			name = CheckoutSdkIos;
 			targetProxy = E68802282090DEE100220CE2 /* PBXContainerItemProxy */;
 		};
-		E688023D2090DF4C00220CE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = E688023C2090DF4C00220CE2 /* PBXContainerItemProxy */;
-		};
 		E6FD83602093309F0094AC15 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CheckoutSdkIos;
 			targetProxy = E6FD835F2093309F0094AC15 /* PBXContainerItemProxy */;
-		};
-		E6FD8365209330C60094AC15 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = E6FD8364209330C60094AC15 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

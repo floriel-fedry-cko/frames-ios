@@ -6,21 +6,9 @@
 #  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
 #
 
-Created an account on a Monday
-First PR on a Tuesday
-Added a new repo on a Wednesday
-Created Open Source organisation on a Thursday
-Closed issues on a Friday
-Merged PRs on a Saturday
-Created a new release on a Sunday
-
-This is the @Github story
-of Floriel Fedry
-
-
 Pod::Spec.new do |s|
   s.name         = "CheckoutSdkIos"
-  s.version      = "1.1.0"
+  s.version      = "1.1.2"
   s.summary      = "Checkout API Client and Payment Form Utilities in Swift"
   s.description  = <<-DESC
   Checkout API Client and Payment Form Utilities in Swift.

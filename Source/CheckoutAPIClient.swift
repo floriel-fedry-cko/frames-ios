@@ -1,5 +1,4 @@
 import Foundation
-import Alamofire
 
 /// Checkout API Client
 /// used to call the api endpoint of Checkout API available with your public key
@@ -42,7 +41,7 @@ public class CheckoutAPIClient {
     public func getCardProviders(successHandler: @escaping ([CardProvider]) -> Void,
                                  errorHandler: @escaping (Error) -> Void) {
         let url = "\(environment.rawValue)\(Endpoint.cardProviders.rawValue)"
-        Alamofire.request(url, headers: headers).validate().responseJSON { response in
+        request(url, headers: headers).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 do {
@@ -69,7 +68,7 @@ public class CheckoutAPIClient {
                                 successHandler: @escaping (CardTokenResponse) -> Void,
                                 errorHandler: @escaping (ErrorResponse) -> Void) {
         let url = "\(environment.rawValue)\(Endpoint.createCardToken.rawValue)"
-        Alamofire.request(url, method: .post, parameters: card.toDictionary(),
+        request(url, method: .post, parameters: card.toDictionary(),
                           encoding: JSONEncoding.default, headers: headers)
             .validate().responseJSON { response in
             let decoder = JSONDecoder()
@@ -102,7 +101,7 @@ public class CheckoutAPIClient {
                                     successHandler: @escaping (ApplePayToken) -> Void,
                                     errorHandler: @escaping (ErrorResponse) -> Void) {
         let url = "\(environment.rawValue)\(Endpoint.createApplePayToken.rawValue)"
-        Alamofire.request(url, method: .post, parameters: applePayData.toDictionary(),
+        request(url, method: .post, parameters: applePayData.toDictionary(),
                           encoding: JSONEncoding.default, headers: headers)
             .validate().responseJSON { response in
                 let decoder = JSONDecoder()

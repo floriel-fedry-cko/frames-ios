@@ -44,18 +44,33 @@ $ pod install
 ### Usage
 
 Add your public key:
+
 ```swift
 let publicKey = "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"
 ```
 
-Get the values:
+Create api client and card utils instance:
+
 ```swift
-let cardNumber = cardsUtils.standardize(cardNumber: cardNumberField.text!)
-let (expiryMonth, expiryYear) = cardsUtils.standardize(expirationDate: expirationDateField.text!)
-let cvv = cvvField.text!
+var checkoutAPIClient: CheckoutAPIClient {
+    return CheckoutAPIClient(publicKey: publicKey, environment: .sandbox)
+}
+let cardUtils = CardUtils()
+```
+
+Get the values:
+
+```swift
+guard
+    let cardNumber = cardNumberInputView.textField!.text,
+    let expirationDate = expirationDateInputView.textField!.text,
+    let cvv = cvvInputView.textField!.text
+    else { return }
+let (expiryMonth, expiryYear) = cardUtils.standardize(expirationDate: expirationDate)
 ```
 
 Create the request object:
+
 ```swift
 let card = CardRequest(number: cardNumber,
                        expiryMonth: expiryMonth,
@@ -65,6 +80,7 @@ let card = CardRequest(number: cardNumber,
 ```
 
 Create the card token:
+
 ```swift
 checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
             let alert = UIAlertController(title: "Payment successful",

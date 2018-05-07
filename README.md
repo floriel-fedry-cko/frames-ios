@@ -72,7 +72,7 @@ let (expiryMonth, expiryYear) = cardUtils.standardize(expirationDate: expiration
 Create the request object:
 
 ```swift
-let card = CardRequest(number: cardNumber,
+let card = CardRequest(number: cardUtils.standardize(cardNumber: cardNumber),
                        expiryMonth: expiryMonth,
                        expiryYear: expiryYear,
                        cvv: cvv,

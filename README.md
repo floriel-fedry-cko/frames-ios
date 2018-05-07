@@ -1,4 +1,4 @@
-# CheckoutSdkIos
+# CheckoutSdkIos - Preview (WIP)
 
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/CheckoutSdkIos.svg)](https://img.shields.io/cocoapods/v/CheckoutSdkIos)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -31,7 +31,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'CheckoutSdkIos', '~> 1.0'
+    pod 'CheckoutSdkIos', :git => 'https://github.com/floriel-fedry-cko/just-a-test.git'
 end
 ```
 
@@ -41,45 +41,40 @@ Then, run the following command:
 $ pod install
 ```
 
-### Carthage
+### Usage
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate CheckoutSdkIos into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```ogdl
-github "checkout/checkout-sdk-ios" ~> 1.0
-```
-
-Run `carthage update` to build the framework and drag the built `CheckoutSdkIos.framework` into your Xcode project.
-
-### Swift Package Manager
-
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler. It is in early development, but CheckoutSdkIos does support its use on supported platforms.
-
-Once you have your Swift package set up, adding CheckoutSdkIos as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
-
-#### Swift 3
-
+Add your public key:
 ```swift
-dependencies: [
-    .Package(url: "https://github.com/checkout/checkout-sdk-ios.git", majorVersion: 1)
-]
+let publicKey = "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"
 ```
 
-#### Swift 4
-
+Get the values:
 ```swift
-dependencies: [
-    .package(url: "https://github.com/checkout/checkout-sdk-ios.git", from: "1.0.0")
-]
+let cardNumber = cardsUtils.standardize(cardNumber: cardNumberField.text!)
+let (expiryMonth, expiryYear) = cardsUtils.standardize(expirationDate: expirationDateField.text!)
+let cvv = cvvField.text!
+```
+
+Create the request object:
+```swift
+let card = CardRequest(number: cardNumber,
+                       expiryMonth: expiryMonth,
+                       expiryYear: expiryYear,
+                       cvv: cvv,
+                       name: nil)
+```
+
+Create the card token:
+```swift
+checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
+            let alert = UIAlertController(title: "Payment successful",
+                                          message: "Your card token: \(cardToken.id)", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+        }, errorHandler: { error in
+            let alert = UIAlertController(title: "Payment unsuccessful",
+                                          message: "Error: \(error)", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+        })
 ```
 
 ## License

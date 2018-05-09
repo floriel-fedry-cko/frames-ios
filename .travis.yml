@@ -1,0 +1,9 @@
+language: swift
+branches:
+  only:
+    - master
+osx_image: xcode9.3
+script:
+  - xcodebuild test -workspace CheckoutSdkIos.xcworkspace -scheme CheckoutSdkIos -destination 'OS=11.3,name=iPhone X
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

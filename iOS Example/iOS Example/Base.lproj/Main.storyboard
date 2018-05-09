@@ -104,6 +104,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pay" id="xjs-Md-1CI"/>
                     <connections>
+                        <outlet property="billingAddressInputView" destination="2Bv-82-dwp" id="BhN-r3-qYM"/>
                         <outlet property="cardNumberInputView" destination="DXH-JO-xco" id="SHz-1v-DCJ"/>
                         <outlet property="cvvInputView" destination="LYx-4O-bSU" id="q9f-EA-0uK"/>
                         <outlet property="expirationDateInputView" destination="uCM-0H-dtA" id="PD6-94-0E7"/>
@@ -185,17 +186,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="PrH-YV-4SR" firstAttribute="leading" secondItem="omV-7o-j4d" secondAttribute="leading" id="7SG-c9-Qq1"/>
-                                    <constraint firstAttribute="trailing" secondItem="PrH-YV-4SR" secondAttribute="trailing" id="PKK-e8-T6l"/>
-                                </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="omV-7o-j4d" firstAttribute="trailing" secondItem="iU5-8l-jwT" secondAttribute="trailing" constant="-16" id="9Te-Cu-1GS"/>
                             <constraint firstItem="omV-7o-j4d" firstAttribute="top" secondItem="iU5-8l-jwT" secondAttribute="top" constant="48" id="ON9-8V-aXF"/>
                             <constraint firstItem="omV-7o-j4d" firstAttribute="leading" secondItem="iU5-8l-jwT" secondAttribute="leading" constant="16" id="hjh-Th-UAi"/>
-                            <constraint firstItem="iU5-8l-jwT" firstAttribute="trailing" secondItem="omV-7o-j4d" secondAttribute="trailing" constant="16" id="uDE-CW-7Os"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iU5-8l-jwT"/>
                     </view>

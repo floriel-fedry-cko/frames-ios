@@ -2,7 +2,7 @@ import UIKit
 import PassKit
 import CheckoutSdkIos
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, AddressViewControllerDelegate {
 
     let publicKey = "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"
     var checkoutAPIClient: CheckoutAPIClient { return CheckoutAPIClient(publicKey: publicKey, environment: .sandbox) }
@@ -15,14 +15,21 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cardNumberInputView: CardNumberInputView!
     @IBOutlet weak var expirationDateInputView: ExpirationDateInputView!
     @IBOutlet weak var cvvInputView: StandardInputView!
+    @IBOutlet weak var billingAddressInputView: DetailsInputView!
 
     @IBOutlet weak var payButtonView: UIStackView!
 
-    
+    let addressViewController = AddressViewController()
+
     @IBAction func onTapBillingAddress(_ sender: Any) {
-        
+        navigationController?.pushViewController(addressViewController, animated: true)
     }
-    
+
+    func onTapDoneButton(address: Address) {
+        let value = "\(address.addressLine1 ?? "") \(address.country ?? "")"
+        billingAddressInputView.value?.text = value
+    }
+
     @IBAction func onTapPayButton(_ sender: Any) {
         guard
             let cardNumber = cardNumberInputView.textField!.text,
@@ -51,6 +58,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let textFields = [cardNumberInputView.textField!, expirationDateInputView.textField!, cvvInputView.textField!]
         addKeyboardToolbarNavigation(textFields: textFields)
+        addressViewController.delegate = self
 
         checkoutAPIClient.getCardProviders(successHandler: { data in
             for provider in data {

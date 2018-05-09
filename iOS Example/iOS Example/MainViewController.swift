@@ -18,6 +18,11 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var payButtonView: UIStackView!
 
+    
+    @IBAction func onTapBillingAddress(_ sender: Any) {
+        
+    }
+    
     @IBAction func onTapPayButton(_ sender: Any) {
         guard
             let cardNumber = cardNumberInputView.textField!.text,

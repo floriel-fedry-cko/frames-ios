@@ -114,7 +114,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uve-tc-f78" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ctY-zc-hrc" userLabel="Billing Address Tap Gesture">
                     <connections>
-                        <segue destination="eUI-Sa-FwT" kind="show" id="5kd-6m-ucx"/>
+                        <action selector="onTapBillingAddress:" destination="1hs-ab-I17" id="Atj-eI-wib"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -129,7 +129,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="omV-7o-j4d">
-                                <rect key="frame" x="16" y="112" width="343" height="432"/>
+                                <rect key="frame" x="16" y="68" width="343" height="432"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-Fa-5yz" userLabel="Name" customClass="StandardInputView" customModule="CheckoutSdkIos">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>

@@ -1,6 +1,6 @@
 import UIKit
 
-class CountrySelectionViewController: UIViewController,
+class CountrySelectionViewControllerO: UIViewController,
                                       UITableViewDelegate,
                                       UITableViewDataSource,
                                       UISearchBarDelegate {
@@ -12,6 +12,7 @@ class CountrySelectionViewController: UIViewController,
     }
 
     var filteredCountries: [String] = []
+    var selectedCountry: String?
 
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -32,16 +33,20 @@ class CountrySelectionViewController: UIViewController,
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: "country-to-address", sender: self)
-    }
-
     func updateSearchResults(text: String?) {
         guard let searchText = text else { return }
         self.filteredCountries = countries.filter { country in
             return country.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredCountries = countries
+        } else {
+            updateSearchResults(text: searchText)
+        }
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -58,7 +63,7 @@ class CountrySelectionViewController: UIViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Country/Region"
         // table view
         self.filteredCountries = self.countries
         tableView.delegate = self
@@ -76,7 +81,7 @@ class CountrySelectionViewController: UIViewController,
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let indexPath = self.tableView.indexPathForSelectedRow!
+        self.selectedCountry = filteredCountries[indexPath.row]
     }
 }

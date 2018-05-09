@@ -11,7 +11,7 @@ import UIKit
             label?.text = text
         }
     }
-    @IBInspectable var placeholder: String = "placeholder" {
+    @IBInspectable var placeholder: String = "" {
         didSet {
             textField?.placeholder = placeholder
         }
@@ -37,6 +37,12 @@ import UIKit
         self.textField = UITextField()
         self.tapGesture = UITapGestureRecognizer()
         self.tapGesture?.addTarget(self, action: #selector(StandardInputView.onTapView))
+
+        #if TARGET_INTERFACE_BUILDER
+        if self.placeholder.isEmpty {
+            self.placeholder = "placeholder"
+        }
+        #endif
 
         // add gesture recognizer
         self.addGestureRecognizer(self.tapGesture!)

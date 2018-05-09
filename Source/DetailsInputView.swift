@@ -1,25 +1,18 @@
-//
-//  DetailsInputView.swift
-//  iOS Example
-//
-//  Created by Floriel Fedry on 03/05/2018.
-//  Copyright © 2018 Checkout. All rights reserved.
-//
-
 import UIKit
 
 @IBDesignable public class DetailsInputView: UIView, UIGestureRecognizerDelegate {
 
     var stackView: UIStackView?
-    var label: UILabel?
-    var value: UILabel?
-    var button: UIButton?
+    public var label: UILabel?
+    public var value: UILabel?
+    public var button: UIButton?
 
     @IBInspectable var text: String = "Label" {
         didSet {
             label?.text = text
         }
     }
+
     @IBInspectable var required: Bool = true
 
     public override init(frame: CGRect) {

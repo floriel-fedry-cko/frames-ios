@@ -7,15 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E64FD2D6209B340C00684FE6 /* DetailsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64FD2D5209B340C00684FE6 /* DetailsInputView.swift */; };
 		E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66406EB2089FAA9000431E5 /* AppDelegate.swift */; };
-		E66406EE2089FAA9000431E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66406ED2089FAA9000431E5 /* ViewController.swift */; };
 		E66406F12089FAA9000431E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406EF2089FAA9000431E5 /* Main.storyboard */; };
 		E66406F32089FAAB000431E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66406F22089FAAB000431E5 /* Assets.xcassets */; };
 		E66406F62089FAAB000431E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406F42089FAAB000431E5 /* LaunchScreen.storyboard */; };
 		E683728C209C680800C11D67 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683728B209C680800C11D67 /* MainViewController.swift */; };
 		E6B2EADA2099E452002516DF /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2EAD92099E452002516DF /* AddressViewController.swift */; };
-		E6B2EADC2099E626002516DF /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2EADB2099E626002516DF /* CountrySelectionViewController.swift */; };
+		E6B2EADC2099E626002516DF /* CountrySelectionViewControllerO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B2EADB2099E626002516DF /* CountrySelectionViewControllerO.swift */; };
 		E6FD835D2093309F0094AC15 /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; };
 		E6FD835E2093309F0094AC15 /* CheckoutSdkIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -66,10 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E64FD2D5209B340C00684FE6 /* DetailsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInputView.swift; sourceTree = "<group>"; };
 		E66406E82089FAA9000431E5 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406EB2089FAA9000431E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E66406ED2089FAA9000431E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E66406F02089FAA9000431E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E66406F22089FAAB000431E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E66406F52089FAAB000431E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +74,7 @@
 		E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheckoutSdkIos.xcodeproj; path = ../CheckoutSdkIos.xcodeproj; sourceTree = "<group>"; };
 		E6B2EAD82099C8D8002516DF /* iOS Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Example.entitlements"; sourceTree = "<group>"; };
 		E6B2EAD92099E452002516DF /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
-		E6B2EADB2099E626002516DF /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
+		E6B2EADB2099E626002516DF /* CountrySelectionViewControllerO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewControllerO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +119,7 @@
 			children = (
 				E6B2EAD82099C8D8002516DF /* iOS Example.entitlements */,
 				E66406EB2089FAA9000431E5 /* AppDelegate.swift */,
-				E66406ED2089FAA9000431E5 /* ViewController.swift */,
-				E64FD2D5209B340C00684FE6 /* DetailsInputView.swift */,
-				E6B2EADB2099E626002516DF /* CountrySelectionViewController.swift */,
+				E6B2EADB2099E626002516DF /* CountrySelectionViewControllerO.swift */,
 				E6B2EAD92099E452002516DF /* AddressViewController.swift */,
 				E683728B209C680800C11D67 /* MainViewController.swift */,
 				E66406EF2089FAA9000431E5 /* Main.storyboard */,
@@ -258,10 +252,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E64FD2D6209B340C00684FE6 /* DetailsInputView.swift in Sources */,
-				E6B2EADC2099E626002516DF /* CountrySelectionViewController.swift in Sources */,
+				E6B2EADC2099E626002516DF /* CountrySelectionViewControllerO.swift in Sources */,
 				E6B2EADA2099E452002516DF /* AddressViewController.swift in Sources */,
-				E66406EE2089FAA9000431E5 /* ViewController.swift in Sources */,
 				E683728C209C680800C11D67 /* MainViewController.swift in Sources */,
 				E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */,
 			);

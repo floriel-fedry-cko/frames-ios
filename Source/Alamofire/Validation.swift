@@ -34,7 +34,7 @@ extension Request {
     ///
     /// - success: The validation was successful.
     /// - failure: The validation failed encountering the provided error.
-    public enum ValidationResult {
+    enum ValidationResult {
         case success
         case failure(Error)
     }
@@ -157,7 +157,7 @@ extension Request {
 extension DataRequest {
     /// A closure used to validate a request that takes a URL request, a URL response and data, and returns whether the
     /// request was valid.
-    public typealias Validation = (URLRequest?, HTTPURLResponse, Data?) -> ValidationResult
+    typealias Validation = (URLRequest?, HTTPURLResponse, Data?) -> ValidationResult
     
     /// Validates the request, using the specified closure.
     ///
@@ -167,7 +167,7 @@ extension DataRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func validate(_ validation: @escaping Validation) -> Self {
+    func validate(_ validation: @escaping Validation) -> Self {
         let validationExecution: () -> Void = { [unowned self] in
             if
                 let response = self.response,
@@ -191,7 +191,7 @@ extension DataRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func validate<S: Sequence>(statusCode acceptableStatusCodes: S) -> Self where S.Iterator.Element == Int {
+    func validate<S: Sequence>(statusCode acceptableStatusCodes: S) -> Self where S.Iterator.Element == Int {
         return validate { [unowned self] _, response, _ in
             return self.validate(statusCode: acceptableStatusCodes, response: response)
         }
@@ -205,7 +205,7 @@ extension DataRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func validate<S: Sequence>(contentType acceptableContentTypes: S) -> Self where S.Iterator.Element == String {
+    func validate<S: Sequence>(contentType acceptableContentTypes: S) -> Self where S.Iterator.Element == String {
         return validate { [unowned self] _, response, data in
             return self.validate(contentType: acceptableContentTypes, response: response, data: data)
         }
@@ -218,7 +218,7 @@ extension DataRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func validate() -> Self {
+    func validate() -> Self {
         return validate(statusCode: self.acceptableStatusCodes).validate(contentType: self.acceptableContentTypes)
     }
 }
@@ -228,7 +228,7 @@ extension DataRequest {
 extension DownloadRequest {
     /// A closure used to validate a request that takes a URL request, a URL response, a temporary URL and a
     /// destination URL, and returns whether the request was valid.
-    public typealias Validation = (
+    typealias Validation = (
         _ request: URLRequest?,
         _ response: HTTPURLResponse,
         _ temporaryURL: URL?,
@@ -243,7 +243,7 @@ extension DownloadRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func validate(_ validation: @escaping Validation) -> Self {
+    func validate(_ validation: @escaping Validation) -> Self {
         let validationExecution: () -> Void = { [unowned self] in
             let request = self.request
             let temporaryURL = self.downloadDelegate.temporaryURL
@@ -271,7 +271,7 @@ extension DownloadRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func validate<S: Sequence>(statusCode acceptableStatusCodes: S) -> Self where S.Iterator.Element == Int {
+    func validate<S: Sequence>(statusCode acceptableStatusCodes: S) -> Self where S.Iterator.Element == Int {
         return validate { [unowned self] _, response, _, _ in
             return self.validate(statusCode: acceptableStatusCodes, response: response)
         }
@@ -285,7 +285,7 @@ extension DownloadRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func validate<S: Sequence>(contentType acceptableContentTypes: S) -> Self where S.Iterator.Element == String {
+    func validate<S: Sequence>(contentType acceptableContentTypes: S) -> Self where S.Iterator.Element == String {
         return validate { [unowned self] _, response, _, _ in
             let fileURL = self.downloadDelegate.fileURL
             
@@ -309,7 +309,7 @@ extension DownloadRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    public func validate() -> Self {
+    func validate() -> Self {
         return validate(statusCode: self.acceptableStatusCodes).validate(contentType: self.acceptableContentTypes)
     }
 }

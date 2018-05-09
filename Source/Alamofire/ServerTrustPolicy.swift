@@ -25,7 +25,7 @@
 import Foundation
 
 /// Responsible for managing the mapping of `ServerTrustPolicy` objects to a given host.
-open class ServerTrustPolicyManager {
+class ServerTrustPolicyManager {
     /// The dictionary of policies mapped to a particular host.
     open let policies: [String: ServerTrustPolicy]
     
@@ -112,7 +112,7 @@ extension URLSession {
 /// - disableEvaluation:        Disables all evaluation which in turn will always consider any server trust as valid.
 ///
 /// - customEvaluation:         Uses the associated closure to evaluate the validity of the server trust.
-public enum ServerTrustPolicy {
+enum ServerTrustPolicy {
     case performDefaultEvaluation(validateHost: Bool)
     case performRevokedEvaluation(validateHost: Bool, revocationFlags: CFOptionFlags)
     case pinCertificates(certificates: [SecCertificate], validateCertificateChain: Bool, validateHost: Bool)

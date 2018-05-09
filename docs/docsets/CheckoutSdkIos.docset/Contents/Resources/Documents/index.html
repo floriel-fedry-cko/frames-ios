@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           CheckoutSdkIos Docs
         </a>
-         (83% documented)
+         (74% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -70,6 +70,12 @@
                 <a class="nav-group-task-link" href="Classes/CheckoutAPIClient.html">CheckoutAPIClient</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/CountrySelectionViewController.html">CountrySelectionViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/DetailsInputView.html">DetailsInputView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ExpirationDateInputView.html">ExpirationDateInputView</a>
               </li>
               <li class="nav-group-task">
@@ -102,6 +108,9 @@
           <li class="nav-group-name">
             <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/CountrySelectionViewControllerDelegate.html">CountrySelectionViewControllerDelegate</a>
+              </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ExpirationDatePickerDelegate.html">ExpirationDatePickerDelegate</a>
               </li>
@@ -158,7 +167,7 @@
         <section class="section">
           <div class="section-content">
             
-            <h1 id='checkoutsdkios' class='heading'>CheckoutSdkIos</h1>
+            <h1 id='checkoutsdkios-preview-wip' class='heading'>CheckoutSdkIos - Preview (WIP)</h1>
 
 <p><a href="https://img.shields.io/cocoapods/v/CheckoutSdkIos"><img src="https://img.shields.io/cocoapods/v/CheckoutSdkIos.svg" alt="CocoaPods Compatible"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
@@ -188,41 +197,53 @@
 <span class="n">use_frameworks!</span>
 
 <span class="n">target</span> <span class="s1">'&lt;Your Target Name&gt;'</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="s1">'CheckoutSdkIos'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0'</span>
+    <span class="n">pod</span> <span class="s1">'CheckoutSdkIos'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/floriel-fedry-cko/just-a-test.git'</span>
 <span class="k">end</span>
 </code></pre>
 
 <p>Then, run the following command:</p>
 <pre class="highlight shell"><code><span class="nv">$ </span>pod <span class="nb">install</span>
 </code></pre>
-<h3 id='carthage' class='heading'>Carthage</h3>
+<h3 id='usage' class='heading'>Usage</h3>
 
-<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.</p>
-
-<p>You can install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following command:</p>
-<pre class="highlight shell"><code><span class="nv">$ </span>brew update
-<span class="nv">$ </span>brew <span class="nb">install </span>carthage
+<p>Add your public key:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">publicKey</span> <span class="o">=</span> <span class="s">"pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"</span>
 </code></pre>
 
-<p>To integrate CheckoutSdkIos into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
-<pre class="highlight plaintext"><code>github "checkout/checkout-sdk-ios" ~&gt; 1.0
+<p>Create api client and card utils instance:</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">checkoutAPIClient</span><span class="p">:</span> <span class="kt">CheckoutAPIClient</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">CheckoutAPIClient</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="n">publicKey</span><span class="p">,</span> <span class="nv">environment</span><span class="p">:</span> <span class="o">.</span><span class="n">sandbox</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="nv">cardUtils</span> <span class="o">=</span> <span class="kt">CardUtils</span><span class="p">()</span>
 </code></pre>
 
-<p>Run <code>carthage update</code> to build the framework and drag the built <code>CheckoutSdkIos.framework</code> into your Xcode project.</p>
-<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
-
-<p>The <a href="https://swift.org/package-manager/">Swift Package Manager</a> is a tool for automating the distribution of Swift code and is integrated into the <code>swift</code> compiler. It is in early development, but CheckoutSdkIos does support its use on supported platforms.</p>
-
-<p>Once you have your Swift package set up, adding CheckoutSdkIos as a dependency is as easy as adding it to the <code>dependencies</code> value of your <code>Package.swift</code>.</p>
-<h4 id='swift-3' class='heading'>Swift 3</h4>
-<pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/checkout/checkout-sdk-ios.git"</span><span class="p">,</span> <span class="nv">majorVersion</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
-<span class="p">]</span>
+<p>Get the values:</p>
+<pre class="highlight swift"><code><span class="k">guard</span>
+    <span class="k">let</span> <span class="nv">cardNumber</span> <span class="o">=</span> <span class="n">cardNumberInputView</span><span class="o">.</span><span class="n">textField</span><span class="o">!.</span><span class="n">text</span><span class="p">,</span>
+    <span class="k">let</span> <span class="nv">expirationDate</span> <span class="o">=</span> <span class="n">expirationDateInputView</span><span class="o">.</span><span class="n">textField</span><span class="o">!.</span><span class="n">text</span><span class="p">,</span>
+    <span class="k">let</span> <span class="nv">cvv</span> <span class="o">=</span> <span class="n">cvvInputView</span><span class="o">.</span><span class="n">textField</span><span class="o">!.</span><span class="n">text</span>
+    <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">expiryMonth</span><span class="p">,</span> <span class="nv">expiryYear</span><span class="p">)</span> <span class="o">=</span> <span class="n">cardUtils</span><span class="o">.</span><span class="nf">standardize</span><span class="p">(</span><span class="nv">expirationDate</span><span class="p">:</span> <span class="n">expirationDate</span><span class="p">)</span>
 </code></pre>
-<h4 id='swift-4' class='heading'>Swift 4</h4>
-<pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/checkout/checkout-sdk-ios.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
-<span class="p">]</span>
+
+<p>Create the request object:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">card</span> <span class="o">=</span> <span class="kt">CardRequest</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="n">cardUtils</span><span class="o">.</span><span class="nf">standardize</span><span class="p">(</span><span class="nv">cardNumber</span><span class="p">:</span> <span class="n">cardNumber</span><span class="p">),</span>
+                       <span class="nv">expiryMonth</span><span class="p">:</span> <span class="n">expiryMonth</span><span class="p">,</span>
+                       <span class="nv">expiryYear</span><span class="p">:</span> <span class="n">expiryYear</span><span class="p">,</span>
+                       <span class="nv">cvv</span><span class="p">:</span> <span class="n">cvv</span><span class="p">,</span>
+                       <span class="nv">name</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre>
+
+<p>Create the card token:</p>
+<pre class="highlight swift"><code><span class="n">checkoutAPIClient</span><span class="o">.</span><span class="nf">createCardToken</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="n">card</span><span class="p">,</span> <span class="nv">successHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">cardToken</span> <span class="k">in</span>
+            <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Payment successful"</span><span class="p">,</span>
+                                          <span class="nv">message</span><span class="p">:</span> <span class="s">"Your card token: </span><span class="se">\(</span><span class="n">cardToken</span><span class="o">.</span><span class="n">id</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="p">},</span> <span class="nv">errorHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+            <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Payment unsuccessful"</span><span class="p">,</span>
+                                          <span class="nv">message</span><span class="p">:</span> <span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
+            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="p">})</span>
 </code></pre>
 <h2 id='license' class='heading'>License</h2>
 
@@ -235,7 +256,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-05-04)</p>
+      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-05-08)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

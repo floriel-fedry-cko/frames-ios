@@ -25,7 +25,7 @@
 import Foundation
 
 /// A type that can inspect and optionally adapt a `URLRequest` in some manner if necessary.
-public protocol RequestAdapter {
+protocol RequestAdapter {
     /// Inspects and adapts the specified `URLRequest` in some manner if necessary and returns the result.
     ///
     /// - parameter urlRequest: The URL request to adapt.
@@ -39,11 +39,11 @@ public protocol RequestAdapter {
 // MARK: -
 
 /// A closure executed when the `RequestRetrier` determines whether a `Request` should be retried or not.
-public typealias RequestRetryCompletion = (_ shouldRetry: Bool, _ timeDelay: TimeInterval) -> Void
+typealias RequestRetryCompletion = (_ shouldRetry: Bool, _ timeDelay: TimeInterval) -> Void
 
 /// A type that determines whether a request should be retried after being executed by the specified session manager
 /// and encountering an error.
-public protocol RequestRetrier {
+protocol RequestRetrier {
     /// Determines whether the `Request` should be retried by calling the `completion` closure.
     ///
     /// This operation is fully asynchronous. Any amount of time can be taken to determine whether the request needs
@@ -64,18 +64,18 @@ protocol TaskConvertible {
 }
 
 /// A dictionary of headers to apply to a `URLRequest`.
-public typealias HTTPHeaders = [String: String]
+typealias HTTPHeaders = [String: String]
 
 // MARK: -
 
 /// Responsible for sending a request and receiving the response and associated data from the server, as well as
 /// managing its underlying `URLSessionTask`.
-open class Request {
+class Request {
     
     // MARK: Helper Types
     
     /// A closure executed when monitoring upload or download progress of a request.
-    public typealias ProgressHandler = (Progress) -> Void
+    typealias ProgressHandler = (Progress) -> Void
     
     enum RequestTask {
         case data(TaskConvertible?, URLSessionTask?)
@@ -87,7 +87,7 @@ open class Request {
     // MARK: Properties
     
     /// The delegate for the underlying task.
-    open internal(set) var delegate: TaskDelegate {
+    internal(set) var delegate: TaskDelegate {
         get {
             taskDelegateLock.lock() ; defer { taskDelegateLock.unlock() }
             return taskDelegate
@@ -99,19 +99,19 @@ open class Request {
     }
     
     /// The underlying task.
-    open var task: URLSessionTask? { return delegate.task }
+    var task: URLSessionTask? { return delegate.task }
     
     /// The session belonging to the underlying task.
-    open let session: URLSession
+    let session: URLSession
     
     /// The request sent or to be sent to the server.
-    open var request: URLRequest? { return task?.originalRequest }
+    var request: URLRequest? { return task?.originalRequest }
     
     /// The response received from the server, if any.
-    open var response: HTTPURLResponse? { return task?.response as? HTTPURLResponse }
+    var response: HTTPURLResponse? { return task?.response as? HTTPURLResponse }
     
     /// The number of times the request has been retried.
-    open internal(set) var retryCount: UInt = 0
+    internal(set) var retryCount: UInt = 0
     
     let originalTask: TaskConvertible?
     
@@ -157,7 +157,7 @@ open class Request {
     ///
     /// - returns: The request.
     @discardableResult
-    open func authenticate(
+    func authenticate(
         user: String,
         password: String,
         persistence: URLCredential.Persistence = .forSession)
@@ -173,7 +173,7 @@ open class Request {
     ///
     /// - returns: The request.
     @discardableResult
-    open func authenticate(usingCredential credential: URLCredential) -> Self {
+    func authenticate(usingCredential credential: URLCredential) -> Self {
         delegate.credential = credential
         return self
     }
@@ -184,7 +184,7 @@ open class Request {
     /// - parameter password: The password.
     ///
     /// - returns: A tuple with Authorization header and credential value if encoding succeeds, `nil` otherwise.
-    open static func authorizationHeader(user: String, password: String) -> (key: String, value: String)? {
+    static func authorizationHeader(user: String, password: String) -> (key: String, value: String)? {
         guard let data = "\(user):\(password)".data(using: .utf8) else { return nil }
         
         let credential = data.base64EncodedString(options: [])
@@ -195,7 +195,7 @@ open class Request {
     // MARK: State
     
     /// Resumes the request.
-    open func resume() {
+    func resume() {
         guard let task = task else { delegate.queue.isSuspended = false ; return }
         
         if startTime == nil { startTime = CFAbsoluteTimeGetCurrent() }
@@ -210,7 +210,7 @@ open class Request {
     }
     
     /// Suspends the request.
-    open func suspend() {
+    func suspend() {
         guard let task = task else { return }
         
         task.suspend()
@@ -223,7 +223,7 @@ open class Request {
     }
     
     /// Cancels the request.
-    open func cancel() {
+    func cancel() {
         guard let task = task else { return }
         
         task.cancel()
@@ -241,7 +241,7 @@ open class Request {
 extension Request: CustomStringConvertible {
     /// The textual representation used when written to an output stream, which includes the HTTP method and URL, as
     /// well as the response status code if a response has been received.
-    open var description: String {
+    var description: String {
         var components: [String] = []
         
         if let HTTPMethod = request?.httpMethod {
@@ -264,7 +264,7 @@ extension Request: CustomStringConvertible {
 
 extension Request: CustomDebugStringConvertible {
     /// The textual representation used when written to an output stream, in the form of a cURL command.
-    open var debugDescription: String {
+    var debugDescription: String {
         return cURLRepresentation()
     }
     
@@ -353,7 +353,7 @@ extension Request: CustomDebugStringConvertible {
 // MARK: -
 
 /// Specific type of `Request` that manages an underlying `URLSessionDataTask`.
-open class DataRequest: Request {
+class DataRequest: Request {
     
     // MARK: Helper Types
     
@@ -373,7 +373,7 @@ open class DataRequest: Request {
     // MARK: Properties
     
     /// The request sent or to be sent to the server.
-    open override var request: URLRequest? {
+    override var request: URLRequest? {
         if let request = super.request { return request }
         if let requestable = originalTask as? Requestable { return requestable.urlRequest }
         
@@ -381,7 +381,7 @@ open class DataRequest: Request {
     }
     
     /// The progress of fetching the response data from the server for the request.
-    open var progress: Progress { return dataDelegate.progress }
+    var progress: Progress { return dataDelegate.progress }
     
     var dataDelegate: DataTaskDelegate { return delegate as! DataTaskDelegate }
     
@@ -397,7 +397,7 @@ open class DataRequest: Request {
     ///
     /// - returns: The request.
     @discardableResult
-    open func stream(closure: ((Data) -> Void)? = nil) -> Self {
+    func stream(closure: ((Data) -> Void)? = nil) -> Self {
         dataDelegate.dataStream = closure
         return self
     }
@@ -411,7 +411,7 @@ open class DataRequest: Request {
     ///
     /// - returns: The request.
     @discardableResult
-    open func downloadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
+    func downloadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
         dataDelegate.progressHandler = (closure, queue)
         return self
     }
@@ -420,28 +420,28 @@ open class DataRequest: Request {
 // MARK: -
 
 /// Specific type of `Request` that manages an underlying `URLSessionDownloadTask`.
-open class DownloadRequest: Request {
+class DownloadRequest: Request {
     
     // MARK: Helper Types
     
     /// A collection of options to be executed prior to moving a downloaded file from the temporary URL to the
     /// destination URL.
-    public struct DownloadOptions: OptionSet {
+    struct DownloadOptions: OptionSet {
         /// Returns the raw bitmask value of the option and satisfies the `RawRepresentable` protocol.
-        public let rawValue: UInt
+        let rawValue: UInt
         
         /// A `DownloadOptions` flag that creates intermediate directories for the destination URL if specified.
-        public static let createIntermediateDirectories = DownloadOptions(rawValue: 1 << 0)
+        static let createIntermediateDirectories = DownloadOptions(rawValue: 1 << 0)
         
         /// A `DownloadOptions` flag that removes a previous file from the destination URL if specified.
-        public static let removePreviousFile = DownloadOptions(rawValue: 1 << 1)
+        static let removePreviousFile = DownloadOptions(rawValue: 1 << 1)
         
         /// Creates a `DownloadFileDestinationOptions` instance with the specified raw value.
         ///
         /// - parameter rawValue: The raw bitmask value for the option.
         ///
         /// - returns: A new log level instance.
-        public init(rawValue: UInt) {
+        init(rawValue: UInt) {
             self.rawValue = rawValue
         }
     }
@@ -450,7 +450,7 @@ open class DownloadRequest: Request {
     /// temporary file written to during the download process. The closure takes two arguments: the temporary file URL
     /// and the URL response, and returns a two arguments: the file URL where the temporary file should be moved and
     /// the options defining how the file should be moved.
-    public typealias DownloadFileDestination = (
+    typealias DownloadFileDestination = (
         _ temporaryURL: URL,
         _ response: HTTPURLResponse)
         -> (destinationURL: URL, options: DownloadOptions)
@@ -481,7 +481,7 @@ open class DownloadRequest: Request {
     // MARK: Properties
     
     /// The request sent or to be sent to the server.
-    open override var request: URLRequest? {
+    override var request: URLRequest? {
         if let request = super.request { return request }
         
         if let downloadable = originalTask as? Downloadable, case let .request(urlRequest) = downloadable {
@@ -492,17 +492,17 @@ open class DownloadRequest: Request {
     }
     
     /// The resume data of the underlying download task if available after a failure.
-    open var resumeData: Data? { return downloadDelegate.resumeData }
+    var resumeData: Data? { return downloadDelegate.resumeData }
     
     /// The progress of downloading the response data from the server for the request.
-    open var progress: Progress { return downloadDelegate.progress }
+    var progress: Progress { return downloadDelegate.progress }
     
     var downloadDelegate: DownloadTaskDelegate { return delegate as! DownloadTaskDelegate }
     
     // MARK: State
     
     /// Cancels the request.
-    open override func cancel() {
+    override func cancel() {
         downloadDelegate.downloadTask.cancel { self.downloadDelegate.resumeData = $0 }
         
         NotificationCenter.default.post(
@@ -521,7 +521,7 @@ open class DownloadRequest: Request {
     ///
     /// - returns: The request.
     @discardableResult
-    open func downloadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
+    func downloadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
         downloadDelegate.progressHandler = (closure, queue)
         return self
     }
@@ -535,7 +535,7 @@ open class DownloadRequest: Request {
     /// - parameter domain:    The search path domain mask. `.UserDomainMask` by default.
     ///
     /// - returns: A download file destination closure.
-    open class func suggestedDownloadDestination(
+    class func suggestedDownloadDestination(
         for directory: FileManager.SearchPathDirectory = .documentDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask)
         -> DownloadFileDestination
@@ -555,7 +555,7 @@ open class DownloadRequest: Request {
 // MARK: -
 
 /// Specific type of `Request` that manages an underlying `URLSessionUploadTask`.
-open class UploadRequest: DataRequest {
+class UploadRequest: DataRequest {
     
     // MARK: Helper Types
     
@@ -590,7 +590,7 @@ open class UploadRequest: DataRequest {
     // MARK: Properties
     
     /// The request sent or to be sent to the server.
-    open override var request: URLRequest? {
+    override var request: URLRequest? {
         if let request = super.request { return request }
         
         guard let uploadable = originalTask as? Uploadable else { return nil }
@@ -602,7 +602,7 @@ open class UploadRequest: DataRequest {
     }
     
     /// The progress of uploading the payload to the server for the upload request.
-    open var uploadProgress: Progress { return uploadDelegate.uploadProgress }
+    var uploadProgress: Progress { return uploadDelegate.uploadProgress }
     
     var uploadDelegate: UploadTaskDelegate { return delegate as! UploadTaskDelegate }
     
@@ -619,7 +619,7 @@ open class UploadRequest: DataRequest {
     ///
     /// - returns: The request.
     @discardableResult
-    open func uploadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
+    func uploadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
         uploadDelegate.uploadProgressHandler = (closure, queue)
         return self
     }
@@ -631,7 +631,7 @@ open class UploadRequest: DataRequest {
 
 /// Specific type of `Request` that manages an underlying `URLSessionStreamTask`.
 @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-open class StreamRequest: Request {
+class StreamRequest: Request {
     enum Streamable: TaskConvertible {
         case stream(hostName: String, port: Int)
         case netService(NetService)

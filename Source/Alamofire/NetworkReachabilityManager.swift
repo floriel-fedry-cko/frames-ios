@@ -33,13 +33,13 @@ import SystemConfiguration
 /// Reachability can be used to determine background information about why a network operation failed, or to retry
 /// network requests when a connection is established. It should not be used to prevent a user from initiating a network
 /// request, as it's possible that an initial request may be required to establish reachability.
-open class NetworkReachabilityManager {
+class NetworkReachabilityManager {
     /// Defines the various states of network reachability.
     ///
     /// - unknown:      It is unknown whether the network is reachable.
     /// - notReachable: The network is not reachable.
     /// - reachable:    The network is reachable.
-    public enum NetworkReachabilityStatus {
+    enum NetworkReachabilityStatus {
         case unknown
         case notReachable
         case reachable(ConnectionType)
@@ -49,7 +49,7 @@ open class NetworkReachabilityManager {
     ///
     /// - ethernetOrWiFi: The connection type is either over Ethernet or WiFi.
     /// - wwan:           The connection type is a WWAN connection.
-    public enum ConnectionType {
+    enum ConnectionType {
         case ethernetOrWiFi
         case wwan
     }
@@ -213,7 +213,7 @@ extension NetworkReachabilityManager.NetworkReachabilityStatus: Equatable {}
 /// - parameter rhs: The right-hand side value to compare.
 ///
 /// - returns: `true` if the two values are equal, `false` otherwise.
-public func ==(
+func ==(
     lhs: NetworkReachabilityManager.NetworkReachabilityStatus,
     rhs: NetworkReachabilityManager.NetworkReachabilityStatus)
     -> Bool

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E63352DF20A44B65002C61C0 /* AddressEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352DE20A44B65002C61C0 /* AddressEntity.swift */; };
+		E63352E520A46A64002C61C0 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E420A46A64002C61C0 /* StartViewController.swift */; };
 		E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66406EB2089FAA9000431E5 /* AppDelegate.swift */; };
 		E66406F12089FAA9000431E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406EF2089FAA9000431E5 /* Main.storyboard */; };
 		E66406F32089FAAB000431E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66406F22089FAAB000431E5 /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E63352DE20A44B65002C61C0 /* AddressEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressEntity.swift; sourceTree = "<group>"; };
+		E63352E420A46A64002C61C0 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		E66406E82089FAA9000431E5 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406EB2089FAA9000431E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66406F02089FAA9000431E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,6 +97,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E63352DD20A44B23002C61C0 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				E63352DE20A44B65002C61C0 /* AddressEntity.swift */,
+			);
+			name = DataModels;
+			sourceTree = "<group>";
+		};
 		E66406DF2089FAA9000431E5 = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				E6B2EAD82099C8D8002516DF /* iOS Example.entitlements */,
+				E63352DD20A44B23002C61C0 /* DataModels */,
 				E66406EB2089FAA9000431E5 /* AppDelegate.swift */,
+				E63352E420A46A64002C61C0 /* StartViewController.swift */,
 				E683728B209C680800C11D67 /* MainViewController.swift */,
 				E66406EF2089FAA9000431E5 /* Main.storyboard */,
 				E66406F22089FAAB000431E5 /* Assets.xcassets */,
@@ -246,8 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E63352E520A46A64002C61C0 /* StartViewController.swift in Sources */,
 				E683728C209C680800C11D67 /* MainViewController.swift in Sources */,
 				E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */,
+				E63352DF20A44B65002C61C0 /* AddressEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

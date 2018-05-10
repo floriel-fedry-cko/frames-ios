@@ -12,105 +12,31 @@
         <!--Pay-->
         <scene sceneID="BjH-Ui-ExD">
             <objects>
-                <viewController id="1hs-ab-I17" customClass="MainViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tO5-Ih-CTh" customClass="MainView">
+                <viewController id="1hs-ab-I17" customClass="StartViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tO5-Ih-CTh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accepted Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yhm-D7-gVz">
-                                <rect key="frame" x="16" y="80" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tdh-Lu-IBr" userLabel="Scheme Icons View">
-                                <rect key="frame" x="16" y="108" width="343" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvP-dH-Z1j">
+                                <rect key="frame" x="16" y="309.5" width="343" height="112"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="Wvo-Uo-ipQ"/>
+                                    <constraint firstAttribute="height" constant="112" id="8A9-OB-xFT"/>
                                 </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MYA-WR-KGz">
-                                <rect key="frame" x="8" y="138" width="359" height="216"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXH-JO-xco" customClass="CardNumberInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="CardNumber*"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="4242"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCM-0H-dtA" customClass="ExpirationDateInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="56" width="359" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="ExpirationDate*"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="06/2020"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYx-4O-bSU" customClass="StandardInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="112" width="359" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="CVV*"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="100"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Bv-82-dwp" userLabel="Billing Address" customClass="DetailsInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="168" width="359" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <gestureRecognizers/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="CardNumber"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Billing Address"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="ctY-zc-hrc" appends="YES" id="1TS-v5-P54"/>
-                                        </connections>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TOZ-bc-DSf" userLabel="Pay Buttons View">
-                                <rect key="frame" x="16" y="601" width="343" height="34"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3w-WD-eVC">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
-                                        <state key="normal" title="Pay with Card">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onTapPayButton:" destination="1hs-ab-I17" eventType="touchUpInside" id="mwu-DC-oNW"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                                <state key="normal" title="Add Card"/>
+                                <connections>
+                                    <action selector="onTapAddCard:" destination="1hs-ab-I17" eventType="touchUpInside" id="J7c-fX-Jyo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="n3S-db-EW6" firstAttribute="trailing" secondItem="MYA-WR-KGz" secondAttribute="trailing" constant="8" id="5lX-1d-7Xz"/>
-                            <constraint firstItem="MYA-WR-KGz" firstAttribute="top" secondItem="tdh-Lu-IBr" secondAttribute="bottom" constant="8" id="6mr-ry-DjK"/>
-                            <constraint firstItem="n3S-db-EW6" firstAttribute="trailing" secondItem="yhm-D7-gVz" secondAttribute="trailing" constant="16" id="C1T-vd-jig"/>
-                            <constraint firstItem="tdh-Lu-IBr" firstAttribute="leading" secondItem="n3S-db-EW6" secondAttribute="leading" constant="16" id="DY3-pL-VMG"/>
-                            <constraint firstItem="yhm-D7-gVz" firstAttribute="top" secondItem="n3S-db-EW6" secondAttribute="top" constant="16" id="NBY-TT-oBa"/>
-                            <constraint firstItem="n3S-db-EW6" firstAttribute="trailing" secondItem="tdh-Lu-IBr" secondAttribute="trailing" constant="16" id="OaN-gJ-9Tg"/>
-                            <constraint firstItem="n3S-db-EW6" firstAttribute="trailing" secondItem="TOZ-bc-DSf" secondAttribute="trailing" constant="16" id="PNR-d0-N2c"/>
-                            <constraint firstItem="TOZ-bc-DSf" firstAttribute="leading" secondItem="n3S-db-EW6" secondAttribute="leading" constant="16" id="PdF-29-46u"/>
-                            <constraint firstItem="yhm-D7-gVz" firstAttribute="leading" secondItem="n3S-db-EW6" secondAttribute="leading" constant="16" id="aE5-eC-mRb"/>
-                            <constraint firstItem="MYA-WR-KGz" firstAttribute="leading" secondItem="n3S-db-EW6" secondAttribute="leading" constant="8" id="bSv-dW-HNf"/>
-                            <constraint firstItem="n3S-db-EW6" firstAttribute="bottom" secondItem="TOZ-bc-DSf" secondAttribute="bottom" constant="32" id="eC5-l8-azb"/>
-                            <constraint firstItem="tdh-Lu-IBr" firstAttribute="top" secondItem="yhm-D7-gVz" secondAttribute="bottom" constant="7.5" id="y2F-2i-P5d"/>
+                            <constraint firstItem="FvP-dH-Z1j" firstAttribute="centerY" secondItem="n3S-db-EW6" secondAttribute="centerY" id="0I9-bu-P5W"/>
+                            <constraint firstItem="FvP-dH-Z1j" firstAttribute="leading" secondItem="n3S-db-EW6" secondAttribute="leading" constant="16" id="Bd1-ln-eDo"/>
+                            <constraint firstItem="n3S-db-EW6" firstAttribute="trailing" secondItem="FvP-dH-Z1j" secondAttribute="trailing" constant="16" id="DIZ-eO-gAu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n3S-db-EW6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pay" id="xjs-Md-1CI"/>
-                    <connections>
-                        <outlet property="billingAddressInputView" destination="2Bv-82-dwp" id="BhN-r3-qYM"/>
-                        <outlet property="cardNumberInputView" destination="DXH-JO-xco" id="SHz-1v-DCJ"/>
-                        <outlet property="cvvInputView" destination="LYx-4O-bSU" id="q9f-EA-0uK"/>
-                        <outlet property="expirationDateInputView" destination="uCM-0H-dtA" id="PD6-94-0E7"/>
-                        <outlet property="payButtonView" destination="TOZ-bc-DSf" id="duZ-EL-X6P"/>
-                        <outlet property="schemeIconsView" destination="tdh-Lu-IBr" id="lFw-bh-xm3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uve-tc-f78" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ctY-zc-hrc" userLabel="Billing Address Tap Gesture">
@@ -121,99 +47,75 @@
             </objects>
             <point key="canvasLocation" x="3882.4000000000001" y="911.69415292353835"/>
         </scene>
-        <!--Address View Controller-->
-        <scene sceneID="kVt-N8-0ad">
+        <!--View Controller-->
+        <scene sceneID="qku-gG-9iV">
             <objects>
-                <viewController id="eUI-Sa-FwT" customClass="AddressViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ASq-mT-gJl">
+                <viewController id="3Vs-pw-Slr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uYO-m1-7A1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="omV-7o-j4d">
-                                <rect key="frame" x="16" y="68" width="343" height="432"/>
+                            <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2tA-jJ-wd5" userLabel="Scheme Icons View">
+                                <rect key="frame" x="16" y="80" width="343" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="B3k-sE-Ooj"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accepted Cards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz9-Ah-9aX">
+                                <rect key="frame" x="16" y="36" width="343" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lCV-cY-zwc">
+                                <rect key="frame" x="16" y="118" width="343" height="272"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-Fa-5yz" userLabel="Name" customClass="StandardInputView" customModule="CheckoutSdkIos">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06V-kP-y3t" customClass="CardNumberInputView" customModule="CheckoutSdkIos">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Name"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Card number*"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="4242"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3s-j0-GeS" userLabel="Country Region" customClass="DetailsInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="64" width="343" height="48"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1G-uI-Qlt" customClass="StandardInputView" customModule="CheckoutSdkIos">
+                                        <rect key="frame" x="0.0" y="56" width="343" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <gestureRecognizers/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Country/Region*"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="15K-hc-7yT" appends="YES" id="BNK-Gm-oGX"/>
-                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Was-7f-wRX" userLabel="Organization" customClass="StandardInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="128" width="343" height="48"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78S-ZT-InF" customClass="ExpirationDateInputView" customModule="CheckoutSdkIos">
+                                        <rect key="frame" x="0.0" y="112" width="343" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Organization"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0b-wI-8du" userLabel="Street address" customClass="StandardInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="192" width="343" height="48"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwG-aR-w0v" customClass="StandardInputView" customModule="CheckoutSdkIos">
+                                        <rect key="frame" x="0.0" y="168" width="343" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Street address*"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwD-oa-R7d" userLabel="Postal town" customClass="StandardInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="256" width="343" height="48"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdp-De-sLd" customClass="DetailsInputView" customModule="CheckoutSdkIos">
+                                        <rect key="frame" x="0.0" y="224" width="343" height="48"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Postal town*"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PrH-YV-4SR" userLabel="Postal code" customClass="StandardInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="320" width="343" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Postcode*"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctY-KV-7h1" userLabel="Phone" customClass="StandardInputView" customModule="CheckoutSdkIos">
-                                        <rect key="frame" x="0.0" y="384" width="343" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="Phone*"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="omV-7o-j4d" firstAttribute="trailing" secondItem="iU5-8l-jwT" secondAttribute="trailing" constant="-16" id="9Te-Cu-1GS"/>
-                            <constraint firstItem="omV-7o-j4d" firstAttribute="top" secondItem="iU5-8l-jwT" secondAttribute="top" constant="48" id="ON9-8V-aXF"/>
-                            <constraint firstItem="omV-7o-j4d" firstAttribute="leading" secondItem="iU5-8l-jwT" secondAttribute="leading" constant="16" id="hjh-Th-UAi"/>
+                            <constraint firstItem="Pbf-fW-Tar" firstAttribute="bottom" secondItem="lCV-cY-zwc" secondAttribute="bottom" constant="277" id="9Cl-MS-iAt"/>
+                            <constraint firstItem="Pbf-fW-Tar" firstAttribute="trailing" secondItem="2tA-jJ-wd5" secondAttribute="trailing" constant="16" id="Xg7-gf-6Ab"/>
+                            <constraint firstItem="Rz9-Ah-9aX" firstAttribute="top" secondItem="Pbf-fW-Tar" secondAttribute="top" constant="16" id="Ygq-07-BOt"/>
+                            <constraint firstItem="Pbf-fW-Tar" firstAttribute="trailing" secondItem="Rz9-Ah-9aX" secondAttribute="trailing" constant="16" id="YzS-SJ-64a"/>
+                            <constraint firstItem="Rz9-Ah-9aX" firstAttribute="leading" secondItem="Pbf-fW-Tar" secondAttribute="leading" constant="16" id="fV1-xe-i1w"/>
+                            <constraint firstItem="lCV-cY-zwc" firstAttribute="leading" secondItem="Pbf-fW-Tar" secondAttribute="leading" constant="16" id="l29-q6-ZCP"/>
+                            <constraint firstItem="Pbf-fW-Tar" firstAttribute="trailing" secondItem="lCV-cY-zwc" secondAttribute="trailing" constant="16" id="m6s-w6-Rkd"/>
+                            <constraint firstItem="lCV-cY-zwc" firstAttribute="top" secondItem="2tA-jJ-wd5" secondAttribute="bottom" constant="16" id="odE-rw-Nlu"/>
+                            <constraint firstItem="2tA-jJ-wd5" firstAttribute="top" secondItem="Rz9-Ah-9aX" secondAttribute="bottom" constant="16" id="q0x-h6-MjS"/>
+                            <constraint firstItem="2tA-jJ-wd5" firstAttribute="leading" secondItem="Pbf-fW-Tar" secondAttribute="leading" constant="16" id="rxp-5N-rvc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iU5-8l-jwT"/>
+                        <viewLayoutGuide key="safeArea" id="Pbf-fW-Tar"/>
                     </view>
-                    <connections>
-                        <outlet property="countryRegionInputView" destination="f3s-j0-GeS" id="nyb-ll-J9Z"/>
-                        <outlet property="nameInputView" destination="1fm-Fa-5yz" id="bec-hC-Rt5"/>
-                        <outlet property="organizationInputView" destination="Was-7f-wRX" id="4qd-lz-AWD"/>
-                        <outlet property="phoneInputView" destination="ctY-KV-7h1" id="J4A-fF-gmb"/>
-                        <outlet property="postalCodeInputView" destination="PrH-YV-4SR" id="e56-lN-sND"/>
-                        <outlet property="postalTownInputView" destination="QwD-oa-R7d" id="lIm-JI-YuT"/>
-                        <outlet property="streetAddressInputView" destination="t0b-wI-8du" id="hc7-PE-20T"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lKw-AT-KHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="15K-hc-7yT" userLabel="Country Region Tap Gesture">
-                    <connections>
-                        <action selector="onTapCountryRegionInputView:" destination="eUI-Sa-FwT" id="Vee-Yo-3cd"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D8r-Lb-4Sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4796" y="911.69415292353835"/>
+            <point key="canvasLocation" x="3880.8000000000002" y="1629.5352323838083"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vn2-u5-bQZ">

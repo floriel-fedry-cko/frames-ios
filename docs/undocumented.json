@@ -1,6 +1,118 @@
 {
   "warnings": [
     {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressViewController.swift",
+      "line": 3,
+      "symbol": "AddressViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressViewController.swift",
+      "line": 22,
+      "symbol": "AddressViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressViewController.swift",
+      "line": 81,
+      "symbol": "AddressViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressViewController.swift",
+      "line": 86,
+      "symbol": "AddressViewController.onCountrySelected(country:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressViewControllerDelegate.swift",
+      "line": 3,
+      "symbol": "AddressViewControllerDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressViewControllerDelegate.swift",
+      "line": 4,
+      "symbol": "AddressViewControllerDelegate.onTapDoneButton(address:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 3,
+      "symbol": "CardListCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 7,
+      "symbol": "CardListCell.stackView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 8,
+      "symbol": "CardListCell.schemeImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 9,
+      "symbol": "CardListCell.selectedImageView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 10,
+      "symbol": "CardListCell.cardInfoLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 11,
+      "symbol": "CardListCell.nameLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 13,
+      "symbol": "CardListCell.init(style:reuseIdentifier:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 18,
+      "symbol": "CardListCell.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 23,
+      "symbol": "CardListCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
+      "line": 28,
+      "symbol": "CardListCell.setSchemeIcon(scheme:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardNumberInputView.swift",
       "line": 3,
       "symbol": "CardNumberInputView",
@@ -25,6 +137,41 @@
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardNumberInputView.swift",
       "line": 26,
       "symbol": "CardNumberInputView.textField(_:shouldChangeCharactersIn:replacementString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
+      "line": 3,
+      "symbol": "CardViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
+      "line": 27,
+      "symbol": "CardViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
+      "line": 103,
+      "symbol": "CardViewController.didReceiveMemoryWarning()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
+      "line": 108,
+      "symbol": "CardViewController.onTapDoneButton(address:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewControllerDelegate.swift",
+      "line": 5,
+      "symbol": "CardViewControllerDelegate.onTapDone(card:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

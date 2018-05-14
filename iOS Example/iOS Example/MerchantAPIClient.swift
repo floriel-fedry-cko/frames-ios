@@ -1,27 +1,30 @@
 import Foundation
 import CheckoutSdkIos
+import Alamofire
 
 class MerchantAPIClient {
 
-    let baseUrl = "http://localhost:1212/"
+    let baseUrl = "https://breezy-mule-92.localtunnel.me/"
 
-    func get(customer: String, successHandler: @escaping ([Customer]) -> Void) {
+    func get(customer: String, successHandler: @escaping (Customer) -> Void) {
         let endpoint = "customer/\(customer)"
-//        request(url: "\(baseUrl)\(endpoint)").validate().responseJSON { response in
-//            switch response.result {
-//            case .success(let value):
-//                do {
-//                    let jsonData = try JSONSerialization.data(withJSONObject: value)
-//                    let data = String(data: jsonData, encoding: .utf8)?.data(using: .utf8)
-//                    let decoder = JSONDecoder()
-//                    let customerResponse = try decoder.decode(Customer.self, from: data!)
-//                    successHandler(customerResponse.data)
-//                } catch let error {
-//                    print(error)
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
+        request("\(baseUrl)\(endpoint)").validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: value)
+                    let data = String(data: jsonData, encoding: .utf8)?.data(using: .utf8)
+                    let decoder = JSONDecoder()
+                    print(jsonData)
+                    print(value)
+                    let customerResponse = try decoder.decode(Customer.self, from: data!)
+                    successHandler(customerResponse)
+                } catch let error {
+                    print(error)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

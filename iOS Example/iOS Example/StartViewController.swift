@@ -14,23 +14,11 @@ CardViewControllerDelegate {
     let cardUtils = CardUtils()
     var availableSchemes: [CardScheme] = []
 
-    var cards: [CardRequest] = [
-        CardRequest(number: "4242424242424242",
-                    expiryMonth: "11",
-                    expiryYear: "18",
-                    cvv: "100",
-                    name: "Mat Okon"),
-        CardRequest(number: "4242424242424242",
-                    expiryMonth: "11",
-                    expiryYear: "18",
-                    cvv: "100",
-                    name: "Mat Okon"),
-        CardRequest(number: "4242424242424242",
-                    expiryMonth: "11",
-                    expiryYear: "18",
-                    cvv: "100",
-                    name: "Mat Okon")
-    ]
+    let merchantAPIClient = MerchantAPIClient()
+    let customerId = "cust_B81EA007-0A12-4E68-9312-39CE171029D5"
+
+    var customerCardList: CustomerCardList?
+    var createdCards: [CardRequest] = []
 
     let cardViewController = CardViewController()
 
@@ -40,10 +28,15 @@ CardViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        cardsTableView.register(CardCell.self, forCellReuseIdentifier: "cardCell")
+        cardsTableView.register(CardListCell.self, forCellReuseIdentifier: "cardCell")
         cardViewController.delegate = self
         cardsTableView.delegate = self
         cardsTableView.dataSource = self
+
+        merchantAPIClient.get(customer: customerId) { customer in
+            self.customerCardList = customer.cards
+            self.cardsTableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,10 +46,13 @@ CardViewControllerDelegate {
 
     func onTapDone(card: CardRequest) {
         print(card)
+        createdCards.append(card)
+        cardsTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
+        let customerCardCount = customerCardList?.count ?? 0
+        return createdCards.count + customerCardCount
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,15 +60,38 @@ CardViewControllerDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardListCell
             else { fatalError("The dequeued cell is not an instance of CardCell.")}
-        let card = cards[indexPath.row]
-        guard let cardType = cardUtils.getTypeOf(cardNumber: card.number) else {
-            fatalError("The card number does not correspond to a known scheme.")
+        let customerCardCount = customerCardList?.count ?? 0
+        if indexPath.row < customerCardCount {
+            // customer card
+            guard let card = customerCardList?.data[indexPath.row] else { return cell }
+            cell.cardInfoLabel.text = "\(card.paymentMethod.capitalized) ····\(card.last4)"
+            cell.nameLabel.text = card.name
+            if let cardScheme = CardScheme(rawValue: card.paymentMethod.lowercased()) {
+                cell.setSchemeIcon(scheme: cardScheme)
+            }
+        } else {
+            return renderCreatedCard(row: indexPath.row, cell: cell)
         }
-        cell.cardInformationLabel?.text = "\(cardType.name.capitalized) \(424242)"
-        cell.cardholderNameLabel?.text = card.name
+        return cell
+    }
 
+    private func renderCreatedCard(row: Int, cell: CardListCell) -> UITableViewCell {
+        // created card
+        let customerCardCount = customerCardList?.count ?? 0
+        guard row - customerCardCount < createdCards.count else { return cell }
+        let card = createdCards[row - customerCardCount]
+        let cardType = cardUtils.getTypeOf(cardNumber: card.number)
+        if let cardTypeUnwrap = cardType {
+            let last4Index = card.number.index(card.number.endIndex, offsetBy: -4)
+            let last4 = card.number[last4Index...]
+            cell.cardInfoLabel.text = "\(cardTypeUnwrap.name.capitalized) ····\(last4)"
+            if let cardScheme = CardScheme(rawValue: cardTypeUnwrap.name) {
+                cell.setSchemeIcon(scheme: cardScheme)
+            }
+        }
+        cell.nameLabel.text = card.name
         return cell
     }
 }

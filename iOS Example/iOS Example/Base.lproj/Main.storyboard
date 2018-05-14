@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -57,10 +58,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tyW-uA-EXp">
-                                <rect key="frame" x="16" y="128" width="343" height="220"/>
+                                <rect key="frame" x="16" y="128" width="343" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="v3w-HY-S8A"/>
+                                    <constraint firstAttribute="height" constant="240" id="ZKb-DF-laK"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="90" id="E2z-xP-Pn9" customClass="CardCell" customModule="iOS_Example" customModuleProvider="target">
@@ -70,33 +71,50 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3k-SI-l9D">
-                                                    <rect key="frame" x="303" y="22" width="25" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa-icon" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-1N-j6L">
+                                                    <rect key="frame" x="254" y="33" width="36" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="G7x-Ks-OlB"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="cnv-PG-mn3"/>
+                                                        <constraint firstAttribute="height" constant="22" id="v82-IZ-ndB"/>
+                                                        <constraint firstAttribute="width" constant="36" id="wCA-L0-04R"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3k-SI-l9D">
+                                                    <rect key="frame" x="298" y="22" width="22" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="GeX-6e-wVJ"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="X4n-Yn-kCG"/>
+                                                        <constraint firstAttribute="height" constant="44" id="qjO-NA-cqO"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="wwO-m6-MPJ"/>
+                                                    </constraints>
                                                     <state key="normal" title="Button" image="keyboard-next"/>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="visa-icon" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-1N-j6L">
-                                                    <rect key="frame" x="240" y="33" width="36" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Mat Okon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rG1-t1-MpW">
-                                                    <rect key="frame" x="15" y="45" width="217" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Visa ····4242" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-1G-fMG">
-                                                    <rect key="frame" x="15" y="11" width="217" height="38"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="81W-rf-cO6">
+                                                    <rect key="frame" x="23" y="16" width="97" height="56"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mat Okon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rG1-t1-MpW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="97" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visa ····4242" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-1G-fMG">
+                                                            <rect key="frame" x="0.0" y="35.5" width="97" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="rG1-t1-MpW" secondAttribute="bottom" constant="10.5" id="2KK-jf-Fat"/>
-                                                <constraint firstItem="rG1-t1-MpW" firstAttribute="leading" secondItem="LRx-58-srq" secondAttribute="leading" constant="15" id="JTK-EO-Zk1"/>
-                                                <constraint firstItem="pkW-1G-fMG" firstAttribute="leading" secondItem="LRx-58-srq" secondAttribute="leading" constant="15" id="WJw-do-g7Z"/>
-                                                <constraint firstItem="pkW-1G-fMG" firstAttribute="top" secondItem="LRx-58-srq" secondAttribute="top" constant="11" id="va2-2r-3Ic"/>
+                                                <constraint firstItem="U3k-SI-l9D" firstAttribute="centerY" secondItem="LRx-58-srq" secondAttribute="centerY" id="LjN-L5-n7D"/>
+                                                <constraint firstItem="81W-rf-cO6" firstAttribute="centerY" secondItem="LRx-58-srq" secondAttribute="centerY" id="PrW-PT-D85"/>
+                                                <constraint firstItem="f6b-1N-j6L" firstAttribute="centerY" secondItem="LRx-58-srq" secondAttribute="centerY" id="QyF-eU-oQI"/>
+                                                <constraint firstItem="81W-rf-cO6" firstAttribute="leading" secondItem="LRx-58-srq" secondAttribute="leadingMargin" constant="8" id="TPf-NV-KOU"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="U3k-SI-l9D" secondAttribute="trailing" constant="8" id="ZAc-2w-Bwe"/>
+                                                <constraint firstItem="U3k-SI-l9D" firstAttribute="leading" secondItem="f6b-1N-j6L" secondAttribute="trailing" constant="8" id="lP4-Ht-MQg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

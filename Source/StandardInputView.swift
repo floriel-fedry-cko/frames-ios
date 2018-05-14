@@ -59,7 +59,15 @@ import UIKit
         self.addSubview(label!)
         self.addSubview(textField!)
 
-        // add constraints
+        addConstraints()
+
+    }
+
+    @objc func onTapView() {
+        textField?.becomeFirstResponder()
+    }
+
+    private func addConstraints() {
         label!.translatesAutoresizingMaskIntoConstraints = false
         textField!.translatesAutoresizingMaskIntoConstraints = false
         self.heightAnchor.constraint(equalToConstant: 48).isActive = true
@@ -68,9 +76,5 @@ import UIKit
         label!.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 8).isActive = true
         textField!.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         textField!.leadingAnchor.constraint(equalTo: label!.trailingAnchor, constant: 8).isActive = true
-    }
-
-    @objc func onTapView() {
-        textField?.becomeFirstResponder()
     }
 }

@@ -51,6 +51,7 @@
 		E63352D820A2EE09002C61C0 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352D720A2EE09002C61C0 /* AddressViewController.swift */; };
 		E63352DB20A34992002C61C0 /* AddressViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */; };
 		E63352E120A45C07002C61C0 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E020A45C07002C61C0 /* CardViewController.swift */; };
+		E63352E720A4B252002C61C0 /* CardViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */; };
 		E66406D92089FA39000431E5 /* CheckoutSdkIos.h in Headers */ = {isa = PBXBuildFile; fileRef = E66406D72089FA39000431E5 /* CheckoutSdkIos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6640710208DD550000431E5 /* CheckoutAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664070F208DD550000431E5 /* CheckoutAPIClient.swift */; };
 		E664071B208DE11D000431E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664071A208DE11D000431E5 /* Endpoint.swift */; };
@@ -68,6 +69,7 @@
 		E683728E209C6CB000C11D67 /* CheckoutSdkIos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683728D209C6CB000C11D67 /* CheckoutSdkIos.swift */; };
 		E68802412091C6C000220CE2 /* CardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68802402091C6C000220CE2 /* CardRequest.swift */; };
 		E688024920922FEF00220CE2 /* cardToken.json in Resources */ = {isa = PBXBuildFile; fileRef = E68802472092294B00220CE2 /* cardToken.json */; };
+		E6AC018120A9938D00310E43 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC018020A9938D00310E43 /* Customer.swift */; };
 		E6DC28F820A19F3C009FA38B /* DetailsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */; };
 		E6DC28FB20A1D9EE009FA38B /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */; };
 		E6DC28FE20A1E0E7009FA38B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FD20A1E0E7009FA38B /* UIViewExtensions.swift */; };
@@ -135,6 +137,7 @@
 		E63352D720A2EE09002C61C0 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E63352E020A45C07002C61C0 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406D72089FA39000431E5 /* CheckoutSdkIos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutSdkIos.h; sourceTree = "<group>"; };
 		E66406D82089FA39000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 		E683728D209C6CB000C11D67 /* CheckoutSdkIos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutSdkIos.swift; sourceTree = "<group>"; };
 		E68802402091C6C000220CE2 /* CardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRequest.swift; sourceTree = "<group>"; };
 		E68802472092294B00220CE2 /* cardToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cardToken.json; sourceTree = "<group>"; };
+		E6AC018020A9938D00310E43 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		E6D44876208F628500B5FA14 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInputView.swift; sourceTree = "<group>"; };
 		E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */,
 				E631CB802098B5D900023472 /* ExpirationDatePickerDelegate.swift */,
 				E63352E020A45C07002C61C0 /* CardViewController.swift */,
+				E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				E625EE52208F905E0019B750 /* Environment.swift */,
 				E625EE4C208F8F370019B750 /* Card.swift */,
 				E631CB6A209766E300023472 /* CustomerCard.swift */,
+				E6AC018020A9938D00310E43 /* Customer.swift */,
 				E631CB6C20976A0400023472 /* CustomerCardList.swift */,
 				E625EE50208F8FD80019B750 /* Phone.swift */,
 				E664071C208DE174000431E5 /* CardType.swift */,
@@ -638,10 +644,12 @@
 				E602EE85209D867700CC62A2 /* ParameterEncoding.swift in Sources */,
 				E631CB73209788BE00023472 /* ApplePayHeaderData.swift in Sources */,
 				E602EE99209D872B00CC62A2 /* Validation.swift in Sources */,
+				E63352E720A4B252002C61C0 /* CardViewControllerDelegate.swift in Sources */,
 				E664071B208DE11D000431E5 /* Endpoint.swift in Sources */,
 				E602EE83209D866300CC62A2 /* Notifications.swift in Sources */,
 				E602EE95209D870700CC62A2 /* TaskDelegate.swift in Sources */,
 				E67AB994208E1CC600593FBE /* CardProvider.swift in Sources */,
+				E6AC018120A9938D00310E43 /* Customer.swift in Sources */,
 				E602EE8B209D86B000CC62A2 /* ResponseSerialization.swift in Sources */,
 				E625EE4D208F8F370019B750 /* Card.swift in Sources */,
 				E63352D820A2EE09002C61C0 /* AddressViewController.swift in Sources */,

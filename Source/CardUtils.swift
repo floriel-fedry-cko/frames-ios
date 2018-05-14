@@ -168,9 +168,12 @@ public class CardUtils {
         if expirationYear.count == 2 { expirationYear4Digits = "20\(expirationYear)"}
         guard let month = Int(expirationMonth), let year = Int(expirationYear4Digits) else { return false }
         if month > 12 || month < 0 { return false }
-        let providedDate = Calendar(identifier: .gregorian).date(from: DateComponents(year: year, month: month))
-        if let providedDateUnwrap = providedDate {
-            return providedDateUnwrap > Date()
+        let calendar = Calendar(identifier: .gregorian)
+        let providedDate = calendar.date(from: DateComponents(year: year, month: month))
+        let componentsCurrentDate = calendar.dateComponents([.month, .year], from: Date())
+        let currentDate = calendar.date(from: componentsCurrentDate)
+        if let providedDateUnwrap = providedDate, let currentDateUnwrap = currentDate {
+            return providedDateUnwrap >= currentDateUnwrap
         }
         return false
     }

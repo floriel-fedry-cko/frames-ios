@@ -2,6 +2,8 @@ import Foundation
 
 public class CardViewController: UIViewController, AddressViewControllerDelegate {
 
+    let cardUtils = CardUtils()
+
     let stackView = UIStackView()
     let schemeIconsView = UIStackView()
     let acceptedCardLabel = UILabel()
@@ -20,7 +22,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     var availableSchemes: [CardScheme] = [.visa]
 
     /// Delegate
-    public weak var delegate: AddressViewControllerDelegate?
+    public weak var delegate: CardViewControllerDelegate?
 
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +76,27 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     }
 
     @objc func onTapDoneCardButton() {
+        // Get the values
+        guard
+            let cardNumber = cardNumberInputView.textField!.text,
+            let expirationDate = expirationDateInputView.textField!.text,
+            let cvv = cvvInputView.textField!.text
+            else { return }
+        let cardNumberStandardized = cardUtils.standardize(cardNumber: cardNumber)
+        // Validate the values
+        guard
+            let cardType = cardUtils.getTypeOf(cardNumber: cardNumberStandardized)
+            else { return }
+        let (expiryMonth, expiryYear) = cardUtils.standardize(expirationDate: expirationDate)
+        guard
+            cardUtils.isValid(cardNumber: cardNumberStandardized, cardType: cardType),
+            cardUtils.isValid(expirationMonth: expiryMonth, expirationYear: expiryYear),
+            cardUtils.isValid(cvv: cvv, cardType: cardType)
+            else { return }
+
+        let card = CardRequest(number: cardNumberStandardized, expiryMonth: expiryMonth, expiryYear: expiryYear,
+                               cvv: cvv, name: cardHolderNameInputView.label!.text)
+        self.delegate?.onTapDone(card: card)
         navigationController?.popViewController(animated: true)
     }
 
@@ -83,14 +106,15 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     }
 
     public func onTapDoneButton(address: Address) {
-        print("hello world")
+        let value = "\(address.addressLine1 ?? ""), \(address.addressLine2 ?? ""), \(address.city ?? "")"
+        billingDetailsInputView.value?.text = value
     }
 
     private func setupUIViews() {
         acceptedCardLabel.text = "Accepted Cards"
         cardNumberInputView.label?.text = "Card Number"
         cardNumberInputView.textField?.placeholder = "4242"
-        cardHolderNameInputView.label?.text = "Card Holder's name"
+        cardHolderNameInputView.label?.text = "Cardholder's name"
         cardHolderNameInputView.textField?.text = ""
         expirationDateInputView.label?.text = "Expiration date"
         expirationDateInputView.textField?.placeholder = "06/2020"

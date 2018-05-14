@@ -50,21 +50,16 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         stackView.axis = .vertical
         stackView.spacing = 16
 
-        // add views
-        stackView.addArrangedSubview(nameInputView)
-        stackView.addArrangedSubview(countryRegionInputView)
-        stackView.addArrangedSubview(organizationInputView)
-        stackView.addArrangedSubview(streetAddressInputView)
-        stackView.addArrangedSubview(postalTownInputView)
-        stackView.addArrangedSubview(postcodeInputView)
-        stackView.addArrangedSubview(phoneInputView)
-        self.view.addSubview(stackView)
-
-        // add constraints
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
-        stackView.topAnchor.constraint(equalTo: self.view.safeTopAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor, constant: 16).isActive = true
+        addViews()
+        addConstraints()
+        addKeyboardToolbarNavigation(textFields: [
+            nameInputView.textField!,
+            organizationInputView.textField!,
+            streetAddressInputView.textField!,
+            postalTownInputView.textField!,
+            postcodeInputView.textField!,
+            phoneInputView.textField!
+            ])
     }
 
     @objc func onTapCountryRegionView() {
@@ -90,6 +85,24 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
 
     public func onCountrySelected(country: String) {
         countryRegionInputView.value!.text = country
+    }
+
+    private func addViews() {
+        stackView.addArrangedSubview(nameInputView)
+        stackView.addArrangedSubview(countryRegionInputView)
+        stackView.addArrangedSubview(organizationInputView)
+        stackView.addArrangedSubview(streetAddressInputView)
+        stackView.addArrangedSubview(postalTownInputView)
+        stackView.addArrangedSubview(postcodeInputView)
+        stackView.addArrangedSubview(phoneInputView)
+        self.view.addSubview(stackView)
+    }
+
+    private func addConstraints() {
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.view.safeTopAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor, constant: 16).isActive = true
     }
 
 }

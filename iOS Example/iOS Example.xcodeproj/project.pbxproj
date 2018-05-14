@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E63352DF20A44B65002C61C0 /* AddressEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352DE20A44B65002C61C0 /* AddressEntity.swift */; };
 		E63352E520A46A64002C61C0 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E420A46A64002C61C0 /* StartViewController.swift */; };
 		E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66406EB2089FAA9000431E5 /* AppDelegate.swift */; };
 		E66406F12089FAA9000431E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406EF2089FAA9000431E5 /* Main.storyboard */; };
 		E66406F32089FAAB000431E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66406F22089FAAB000431E5 /* Assets.xcassets */; };
 		E66406F62089FAAB000431E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406F42089FAAB000431E5 /* LaunchScreen.storyboard */; };
 		E683728C209C680800C11D67 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683728B209C680800C11D67 /* MainViewController.swift */; };
+		E6AC017F20A98FB800310E43 /* MerchantAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */; };
+		E6E3E84F20A5D4CA004BED26 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3E84E20A5D4CA004BED26 /* CardCell.swift */; };
 		E6FD835D2093309F0094AC15 /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; };
 		E6FD835E2093309F0094AC15 /* CheckoutSdkIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -64,7 +65,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E63352DE20A44B65002C61C0 /* AddressEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressEntity.swift; sourceTree = "<group>"; };
 		E63352E420A46A64002C61C0 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		E66406E82089FAA9000431E5 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406EB2089FAA9000431E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +74,9 @@
 		E66406F72089FAAB000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E683728B209C680800C11D67 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheckoutSdkIos.xcodeproj; path = ../CheckoutSdkIos.xcodeproj; sourceTree = "<group>"; };
+		E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantAPIClient.swift; sourceTree = "<group>"; };
 		E6B2EAD82099C8D8002516DF /* iOS Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Example.entitlements"; sourceTree = "<group>"; };
+		E6E3E84E20A5D4CA004BED26 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,14 +97,6 @@
 				E66406F72089FAAB000431E5 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E63352DD20A44B23002C61C0 /* DataModels */ = {
-			isa = PBXGroup;
-			children = (
-				E63352DE20A44B65002C61C0 /* AddressEntity.swift */,
-			);
-			name = DataModels;
 			sourceTree = "<group>";
 		};
 		E66406DF2089FAA9000431E5 = {
@@ -126,9 +120,10 @@
 			isa = PBXGroup;
 			children = (
 				E6B2EAD82099C8D8002516DF /* iOS Example.entitlements */,
-				E63352DD20A44B23002C61C0 /* DataModels */,
 				E66406EB2089FAA9000431E5 /* AppDelegate.swift */,
 				E63352E420A46A64002C61C0 /* StartViewController.swift */,
+				E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */,
+				E6E3E84E20A5D4CA004BED26 /* CardCell.swift */,
 				E683728B209C680800C11D67 /* MainViewController.swift */,
 				E66406EF2089FAA9000431E5 /* Main.storyboard */,
 				E66406F22089FAAB000431E5 /* Assets.xcassets */,
@@ -166,6 +161,7 @@
 				E66406E52089FAA9000431E5 /* Frameworks */,
 				E66406E62089FAA9000431E5 /* Resources */,
 				E6FD83612093309F0094AC15 /* Embed Frameworks */,
+				E6AC018B20A999D800310E43 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -255,15 +251,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E6AC018B20A999D800310E43 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E66406E42089FAA9000431E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E3E84F20A5D4CA004BED26 /* CardCell.swift in Sources */,
 				E63352E520A46A64002C61C0 /* StartViewController.swift in Sources */,
 				E683728C209C680800C11D67 /* MainViewController.swift in Sources */,
 				E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */,
-				E63352DF20A44B65002C61C0 /* AddressEntity.swift in Sources */,
+				E6AC017F20A98FB800310E43 /* MerchantAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +443,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.checkout.sd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -449,6 +465,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.checkout.sd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

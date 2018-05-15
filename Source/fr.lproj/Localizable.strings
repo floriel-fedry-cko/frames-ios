@@ -1,15 +1,14 @@
-
-"cardNumber" = "Numero de carte";
-"cardholderName" = "Nom";
+"cardNumber" = "Numéro de carte";
+"cardholderName" = "Nom du titulaire de la carte";
 "expirationDate" = "Date d'expiration";
 "cvv" = "CVV";
-"billingDetails" = "Billing Details";
+"billingDetails" = "Détails de facturation";
 "name" = "Nom";
-"countryRegion" = "Pays/Region";
+"countryRegion" = "Pays / Région";
 "organization" = "Organisation";
-"streetAddress" = "Street Address";
-"postalTown" = "Postal Town";
-"postcode" = "Postcode";
-"phone" = "Telephone";
+"streetAddress" = "Adresse"
+"postalTown" = "Ville postale";
+"postcode" = "Code postal";
+"phone" = "Téléphone";
 
-"acceptedCards" = "Accepted Cards";
+"acceptedCards" = "Cartes acceptées";

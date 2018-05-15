@@ -6,7 +6,7 @@
 "name" = "Nom";
 "countryRegion" = "Pays / Région";
 "organization" = "Organisation";
-"streetAddress" = "Adresse"
+"streetAddress" = "Adresse";
 "postalTown" = "Ville postale";
 "postcode" = "Code postal";
 "phone" = "Téléphone";

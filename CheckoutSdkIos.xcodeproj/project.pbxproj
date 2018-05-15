@@ -82,6 +82,7 @@
 		E6AF0A3D20AAE46600D29929 /* schemes in Resources */ = {isa = PBXBuildFile; fileRef = E6AF0A3C20AAE46600D29929 /* schemes */; };
 		E6AF0A3F20AAF3E200D29929 /* CardViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */; };
 		E6AF0A4320AB29D400D29929 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6AF0A4520AB29D400D29929 /* Localizable.strings */; };
+		E6AF0A4F20AB448700D29929 /* DetailsInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A4E20AB448700D29929 /* DetailsInputViewTests.swift */; };
 		E6DC28F820A19F3C009FA38B /* DetailsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */; };
 		E6DC28FB20A1D9EE009FA38B /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */; };
 		E6DC28FE20A1E0E7009FA38B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FD20A1E0E7009FA38B /* UIViewExtensions.swift */; };
@@ -200,6 +201,7 @@
 		E6AF0A4B20AB3C9300D29929 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6AF0A4C20AB3C9800D29929 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6AF0A4D20AB3C9D00D29929 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E6AF0A4E20AB448700D29929 /* DetailsInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInputViewTests.swift; sourceTree = "<group>"; };
 		E6D44876208F628500B5FA14 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInputView.swift; sourceTree = "<group>"; };
 		E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
 				E6AF0A0F20AAD00600D29929 /* ExpirationDateInputViewTests.swift */,
 				E6AF0A0920AACEFA00D29929 /* AddressViewControllerTests.swift */,
+				E6AF0A4E20AB448700D29929 /* DetailsInputViewTests.swift */,
 				E6AF0A1120AADA9A00D29929 /* StandardInputViewTests.swift */,
 			);
 			name = UI;
@@ -752,6 +755,7 @@
 				E67AB96E208DF9D800593FBE /* CardUtilsTests.swift in Sources */,
 				E6AF0A0A20AACEFA00D29929 /* AddressViewControllerTests.swift in Sources */,
 				E6AF0A0E20AACF3A00D29929 /* CardNumberInputViewTests.swift in Sources */,
+				E6AF0A4F20AB448700D29929 /* DetailsInputViewTests.swift in Sources */,
 				E6AF0A0C20AACF2100D29929 /* CountrySelectionViewControllerTests.swift in Sources */,
 				E6AF0A3F20AAF3E200D29929 /* CardViewControllerTests.swift in Sources */,
 				E6AF0A0620AACE8A00D29929 /* ExpirationDatePickerTests.swift in Sources */,

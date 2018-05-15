@@ -71,6 +71,15 @@
 		E68802412091C6C000220CE2 /* CardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68802402091C6C000220CE2 /* CardRequest.swift */; };
 		E688024920922FEF00220CE2 /* cardToken.json in Resources */ = {isa = PBXBuildFile; fileRef = E68802472092294B00220CE2 /* cardToken.json */; };
 		E6AC018120A9938D00310E43 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC018020A9938D00310E43 /* Customer.swift */; };
+		E6AF0A0620AACE8A00D29929 /* ExpirationDatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A0520AACE8A00D29929 /* ExpirationDatePickerTests.swift */; };
+		E6AF0A0820AACEC300D29929 /* CardListCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */; };
+		E6AF0A0A20AACEFA00D29929 /* AddressViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A0920AACEFA00D29929 /* AddressViewControllerTests.swift */; };
+		E6AF0A0C20AACF2100D29929 /* CountrySelectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A0B20AACF2100D29929 /* CountrySelectionViewControllerTests.swift */; };
+		E6AF0A0E20AACF3A00D29929 /* CardNumberInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */; };
+		E6AF0A1020AAD00600D29929 /* ExpirationDateInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A0F20AAD00600D29929 /* ExpirationDateInputViewTests.swift */; };
+		E6AF0A1220AADA9A00D29929 /* StandardInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A1120AADA9A00D29929 /* StandardInputViewTests.swift */; };
+		E6AF0A2F20AADFF700D29929 /* arrows in Resources */ = {isa = PBXBuildFile; fileRef = E6AF0A1C20AADFF600D29929 /* arrows */; };
+		E6AF0A3D20AAE46600D29929 /* schemes in Resources */ = {isa = PBXBuildFile; fileRef = E6AF0A3C20AAE46600D29929 /* schemes */; };
 		E6DC28F820A19F3C009FA38B /* DetailsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */; };
 		E6DC28FB20A1D9EE009FA38B /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */; };
 		E6DC28FE20A1E0E7009FA38B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FD20A1E0E7009FA38B /* UIViewExtensions.swift */; };
@@ -87,6 +96,18 @@
 			remoteInfo = CheckoutSdkIos;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E6AF0A1520AADFBB00D29929 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8907C43A46B302AD0C2ACA13 /* Pods_CheckoutSdkIosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckoutSdkIosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +182,15 @@
 		E68802402091C6C000220CE2 /* CardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRequest.swift; sourceTree = "<group>"; };
 		E68802472092294B00220CE2 /* cardToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cardToken.json; sourceTree = "<group>"; };
 		E6AC018020A9938D00310E43 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		E6AF0A0520AACE8A00D29929 /* ExpirationDatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationDatePickerTests.swift; sourceTree = "<group>"; };
+		E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCellTests.swift; sourceTree = "<group>"; };
+		E6AF0A0920AACEFA00D29929 /* AddressViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewControllerTests.swift; sourceTree = "<group>"; };
+		E6AF0A0B20AACF2100D29929 /* CountrySelectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewControllerTests.swift; sourceTree = "<group>"; };
+		E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberInputViewTests.swift; sourceTree = "<group>"; };
+		E6AF0A0F20AAD00600D29929 /* ExpirationDateInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirationDateInputViewTests.swift; sourceTree = "<group>"; };
+		E6AF0A1120AADA9A00D29929 /* StandardInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardInputViewTests.swift; sourceTree = "<group>"; };
+		E6AF0A1C20AADFF600D29929 /* arrows */ = {isa = PBXFileReference; lastKnownFileType = folder; path = arrows; sourceTree = "<group>"; };
+		E6AF0A3C20AAE46600D29929 /* schemes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = schemes; sourceTree = "<group>"; };
 		E6D44876208F628500B5FA14 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInputView.swift; sourceTree = "<group>"; };
 		E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +299,7 @@
 		E66407052089FCA3000431E5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E6AF0A1320AADE6F00D29929 /* Resources */,
 				E6DC28FC20A1E0D0009FA38B /* Extensions */,
 				E602EE77209D855B00CC62A2 /* Alamofire */,
 				E6640720208DE2AA000431E5 /* CardUtils.swift */,
@@ -285,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				E6640711208DDCF5000431E5 /* LinuxMain.swift */,
+				E6AF0A0420AACE4E00D29929 /* UI */,
 				E67AB9A3208F412500593FBE /* Fixtures */,
 				E6640715208DDFE6000431E5 /* Core */,
 				E67AB9A7208F4C8500593FBE /* Supporting Files */,
@@ -377,6 +409,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E6AF0A0420AACE4E00D29929 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E6AF0A0520AACE8A00D29929 /* ExpirationDatePickerTests.swift */,
+				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
+				E6AF0A0B20AACF2100D29929 /* CountrySelectionViewControllerTests.swift */,
+				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
+				E6AF0A0F20AAD00600D29929 /* ExpirationDateInputViewTests.swift */,
+				E6AF0A0920AACEFA00D29929 /* AddressViewControllerTests.swift */,
+				E6AF0A1120AADA9A00D29929 /* StandardInputViewTests.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		E6AF0A1320AADE6F00D29929 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E6AF0A3C20AAE46600D29929 /* schemes */,
+				E6AF0A1C20AADFF600D29929 /* arrows */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E6DC28FC20A1E0D0009FA38B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +495,7 @@
 				E6DED6E2208DF82500D5D70B /* Resources */,
 				8776F96C5898FCB126CC19D2 /* [CP] Embed Pods Frameworks */,
 				E688024420921D1100220CE2 /* ShellScript */,
+				E6AF0A1520AADFBB00D29929 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -497,6 +553,8 @@
 				E625EE5920907FFE0019B750 /* README.md in Resources */,
 				E625EE5C2090801C0019B750 /* CHANGELOG.md in Resources */,
 				E625EE63209080A40019B750 /* ISSUE_TEMPLATE.md in Resources */,
+				E6AF0A3D20AAE46600D29929 /* schemes in Resources */,
+				E6AF0A2F20AADFF700D29929 /* arrows in Resources */,
 				E625EE672090926F0019B750 /* LICENSE in Resources */,
 				E625EE5D2090801C0019B750 /* CONTRIBUTING.md in Resources */,
 				E625EE682090926F0019B750 /* CheckoutSdkIos.podspec in Resources */,
@@ -667,7 +725,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E67AB96E208DF9D800593FBE /* CardUtilsTests.swift in Sources */,
+				E6AF0A0A20AACEFA00D29929 /* AddressViewControllerTests.swift in Sources */,
+				E6AF0A0E20AACF3A00D29929 /* CardNumberInputViewTests.swift in Sources */,
+				E6AF0A0C20AACF2100D29929 /* CountrySelectionViewControllerTests.swift in Sources */,
+				E6AF0A0620AACE8A00D29929 /* ExpirationDatePickerTests.swift in Sources */,
+				E6AF0A1020AAD00600D29929 /* ExpirationDateInputViewTests.swift in Sources */,
 				E67AB998208E2BBA00593FBE /* CheckoutAPIClientTests.swift in Sources */,
+				E6AF0A0820AACEC300D29929 /* CardListCellTests.swift in Sources */,
+				E6AF0A1220AADA9A00D29929 /* StandardInputViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,7 +38,7 @@ public class CardListCell: UITableViewCell {
         self.addSubview(selectedImageView)
         stackView.axis = .vertical
         stackView.spacing = 16
-        selectedImageView.image = #imageLiteral(resourceName: "keyboard-next")
+        selectedImageView.image = UIImage(named: "arrows/keyboard-next", in: Bundle(for: CardListCell.self), compatibleWith: nil)
         addConstraints()
     }
 

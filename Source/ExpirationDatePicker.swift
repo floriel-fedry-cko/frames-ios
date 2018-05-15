@@ -4,19 +4,17 @@ import UIKit
 @IBDesignable public class ExpirationDatePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     // Managing the date and calendar
     var calendar: Calendar = Calendar(identifier: .gregorian)
-    var date: Date = Date()
-    var locale: Locale = Locale(identifier: "")
     let timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!
 
     // Configuring temporal attributes
     var maximumDate: Date = Date(timeIntervalSinceNow: 31556926 * 20)
-    var minimumDate: Date = Date()
+    let minimumDate: Date = Date()
 
     /// Delegate
     public weak var pickerDelegate: ExpirationDatePickerDelegate?
 
     // private properties
-    private var months = ["", ""]
+    private let months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
     private var years = ["", ""]
 
     // MARK: - Initialization
@@ -38,7 +36,6 @@ import UIKit
         self.dataSource = self
 
         #if !TARGET_INTERFACE_BUILDER
-        months =  ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
         var yearsUsed: [String] = []
         for year in calendar.component(.year, from: minimumDate)...calendar.component(.year, from: maximumDate) {
             yearsUsed.append(String(year))

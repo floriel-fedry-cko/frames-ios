@@ -40,7 +40,8 @@ import UIKit
         self.button = UIButton(type: UIButtonType.contactAdd)
         value!.text = "value"
         #else
-        button!.setImage(#imageLiteral(resourceName: "keyboard-next"), for: .normal)
+        let image = UIImage(named: "arrows/keyboard-next", in: Bundle(for: DetailsInputView.self), compatibleWith: nil)
+        button!.setImage(image, for: .normal)
         #endif
         // add to view
         stackView!.axis = .horizontal

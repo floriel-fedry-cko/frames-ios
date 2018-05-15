@@ -100,9 +100,4 @@ import UIKit
         searchBar.delegate = self
     }
 
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

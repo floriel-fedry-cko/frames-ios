@@ -1,5 +1,5 @@
 //
-//  CountrySelectionViewControllerTests.swift
+//  CardViewControllerTests.swift
 //  CheckoutSdkIosTests
 //
 //  Created by Floriel Fedry on 15/05/2018.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import CheckoutSdkIos
 
-class CountrySelectionViewControllerTests: XCTestCase {
+class CardViewControllerTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
@@ -22,8 +22,7 @@ class CountrySelectionViewControllerTests: XCTestCase {
     }
 
     func testInitialization() {
-        let countrySelectionViewController = CountrySelectionViewController()
-        countrySelectionViewController.viewDidLoad()
+        let cardViewController = CardViewController()
+        cardViewController.viewDidLoad()
     }
-
 }

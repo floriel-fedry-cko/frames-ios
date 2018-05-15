@@ -24,15 +24,14 @@ class CardListCellTests: XCTestCase {
     func testEmptyInitialization() {
         let cardListCell = CardListCell()
     }
-    
+
     func testCoderInitialization() {
         let coder = NSKeyedUnarchiver(forReadingWith: Data())
         let cardListCell = CardListCell(coder: coder)
     }
-    
+
     func testInitialization() {
         let cardListCell = CardListCell(style: .default, reuseIdentifier: nil)
-        
     }
 
 }

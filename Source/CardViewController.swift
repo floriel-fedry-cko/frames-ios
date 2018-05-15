@@ -57,12 +57,6 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         }
         self.addFillerView()
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(CardViewController.keyboardWillShow),
-                                               name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(CardViewController.keyboardWillHide),
-                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         addKeyboardToolbarNavigation(textFields: [
             cardNumberInputView.textField!,
             cardHolderNameInputView.textField!,
@@ -171,23 +165,4 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         schemeIconsView.addArrangedSubview(fillerView)
     }
 
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print(cardHolderNameInputView.frame.minY)
-            print(keyboardSize.maxY)
-            if cvvInputView.textField!.isFirstResponder && cardHolderNameInputView.frame.minY > keyboardSize.maxY {
-                print(cardHolderNameInputView.frame.minY)
-                print(keyboardSize.maxY)
-            }
-//            } else if expirationDateInputView.textField!.isFirstResponder {
-//                self.view.frame.origin.y = -50
-//            } else if cvvInputView.textField!.isFirstResponder {
-//                self.view.frame.origin.y = -150
-//            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y = 0
-    }
 }

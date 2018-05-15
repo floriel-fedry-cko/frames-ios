@@ -80,6 +80,7 @@
 		E6AF0A1220AADA9A00D29929 /* StandardInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A1120AADA9A00D29929 /* StandardInputViewTests.swift */; };
 		E6AF0A2F20AADFF700D29929 /* arrows in Resources */ = {isa = PBXBuildFile; fileRef = E6AF0A1C20AADFF600D29929 /* arrows */; };
 		E6AF0A3D20AAE46600D29929 /* schemes in Resources */ = {isa = PBXBuildFile; fileRef = E6AF0A3C20AAE46600D29929 /* schemes */; };
+		E6AF0A3F20AAF3E200D29929 /* CardViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */; };
 		E6DC28F820A19F3C009FA38B /* DetailsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */; };
 		E6DC28FB20A1D9EE009FA38B /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */; };
 		E6DC28FE20A1E0E7009FA38B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FD20A1E0E7009FA38B /* UIViewExtensions.swift */; };
@@ -191,6 +192,7 @@
 		E6AF0A1120AADA9A00D29929 /* StandardInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardInputViewTests.swift; sourceTree = "<group>"; };
 		E6AF0A1C20AADFF600D29929 /* arrows */ = {isa = PBXFileReference; lastKnownFileType = folder; path = arrows; sourceTree = "<group>"; };
 		E6AF0A3C20AAE46600D29929 /* schemes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = schemes; sourceTree = "<group>"; };
+		E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewControllerTests.swift; sourceTree = "<group>"; };
 		E6D44876208F628500B5FA14 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInputView.swift; sourceTree = "<group>"; };
 		E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				E6AF0A0520AACE8A00D29929 /* ExpirationDatePickerTests.swift */,
+				E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */,
 				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
 				E6AF0A0B20AACF2100D29929 /* CountrySelectionViewControllerTests.swift */,
 				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
@@ -728,6 +731,7 @@
 				E6AF0A0A20AACEFA00D29929 /* AddressViewControllerTests.swift in Sources */,
 				E6AF0A0E20AACF3A00D29929 /* CardNumberInputViewTests.swift in Sources */,
 				E6AF0A0C20AACF2100D29929 /* CountrySelectionViewControllerTests.swift in Sources */,
+				E6AF0A3F20AAF3E200D29929 /* CardViewControllerTests.swift in Sources */,
 				E6AF0A0620AACE8A00D29929 /* ExpirationDatePickerTests.swift in Sources */,
 				E6AF0A1020AAD00600D29929 /* ExpirationDateInputViewTests.swift in Sources */,
 				E67AB998208E2BBA00593FBE /* CheckoutAPIClientTests.swift in Sources */,

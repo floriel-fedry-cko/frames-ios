@@ -27,7 +27,9 @@ import UIKit
     override public func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        navigationItem.title = "Country/Region"
+        navigationItem.title = NSLocalizedString("countryRegion",
+                                                 bundle: Bundle(for: CountrySelectionViewController.self),
+                                                 comment: "")
         // table view
         self.filteredCountries = self.countries
         tableView.delegate = self

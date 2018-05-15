@@ -65,7 +65,6 @@ import UIKit
         self.addSubview(textField!)
 
         addConstraints()
-
     }
 
     @objc func onTapView() {
@@ -81,5 +80,10 @@ import UIKit
         label!.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 8).isActive = true
         textField!.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         textField!.leadingAnchor.constraint(equalTo: label!.trailingAnchor, constant: 8).isActive = true
+    }
+
+    func set(label: String, backgroundColor: UIColor) {
+        self.label?.text = NSLocalizedString(label, bundle: Bundle(for: StandardInputView.self), comment: "")
+        self.backgroundColor = backgroundColor
     }
 }

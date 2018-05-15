@@ -70,4 +70,9 @@ import UIKit
         button!.widthAnchor.constraint(equalToConstant: 16).isActive = true
     }
 
+    func set(label: String, backgroundColor: UIColor) {
+        self.label?.text = NSLocalizedString(label, bundle: Bundle(for: DetailsInputView.self), comment: "")
+        self.backgroundColor = backgroundColor
+    }
+
 }

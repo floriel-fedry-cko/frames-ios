@@ -19,7 +19,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done,
                                      target: self, action: nil)
 
-    var availableSchemes: [CardScheme] = [.visa]
+    var availableSchemes: [CardScheme] = [.visa, .mastercard, .americanExpress, .dinersClub]
 
     /// Delegate
     public weak var delegate: CardViewControllerDelegate?
@@ -90,7 +90,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
             else { return }
 
         let card = CardRequest(number: cardNumberStandardized, expiryMonth: expiryMonth, expiryYear: expiryYear,
-                               cvv: cvv, name: cardHolderNameInputView.label!.text)
+                               cvv: cvv, name: cardHolderNameInputView.textField!.text)
         self.delegate?.onTapDone(card: card)
         navigationController?.popViewController(animated: true)
     }
@@ -105,23 +105,17 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     private func setupUIViews() {
         acceptedCardLabel.text = "Accepted Cards"
-        cardNumberInputView.label?.text = "Card Number"
+        cardNumberInputView.set(label: "cardNumber", backgroundColor: .white)
+        cardHolderNameInputView.set(label: "cardholderName", backgroundColor: .white)
+        expirationDateInputView.set(label: "expirationDate", backgroundColor: .white)
+        cvvInputView.set(label: "cvv", backgroundColor: .white)
+        billingDetailsInputView.set(label: "billingDetails", backgroundColor: .white)
         cardNumberInputView.textField?.placeholder = "4242"
-        cardHolderNameInputView.label?.text = "Cardholder's name"
-        cardHolderNameInputView.textField?.text = ""
-        expirationDateInputView.label?.text = "Expiration date"
         expirationDateInputView.textField?.placeholder = "06/2020"
-        cvvInputView.label?.text = "CVV"
         cvvInputView.textField?.placeholder = "100"
-        billingDetailsInputView.label?.text = "Billing Details"
-
-        cardNumberInputView.backgroundColor = .white
-        cardHolderNameInputView.backgroundColor = .white
-        expirationDateInputView.backgroundColor = .white
-        cvvInputView.backgroundColor = .white
-        billingDetailsInputView.backgroundColor = .white
 
         self.view.backgroundColor = UIColor.groupTableViewBackground
+        schemeIconsView.spacing = 8
         stackView.axis = .vertical
         stackView.spacing = 16
     }

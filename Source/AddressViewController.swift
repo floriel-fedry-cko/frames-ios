@@ -24,21 +24,14 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        nameInputView.label?.text = "Name"
-        countryRegionInputView.label?.text = "Country/Region"
-        organizationInputView.label?.text = "Organization"
-        streetAddressInputView.label?.text = "Street address"
-        postalTownInputView.label?.text = "Postal Town"
-        postcodeInputView.label?.text = "Postcode"
-        phoneInputView.label?.text = "Phone"
-        // set color of background inputs
-        nameInputView.backgroundColor = .white
-        countryRegionInputView.backgroundColor = .white
-        organizationInputView.backgroundColor = .white
-        streetAddressInputView.backgroundColor = .white
-        postalTownInputView.backgroundColor = .white
-        postcodeInputView.backgroundColor = .white
-        phoneInputView.backgroundColor = .white
+        nameInputView.set(label: "name", backgroundColor: .white)
+        countryRegionInputView.set(label: "countryRegion", backgroundColor: .white)
+        organizationInputView.set(label: "organization", backgroundColor: .white)
+        streetAddressInputView.set(label: "streetAddress", backgroundColor: .white)
+        postalTownInputView.set(label: "postalTown", backgroundColor: .white)
+        postcodeInputView.set(label: "postcode", backgroundColor: .white)
+        phoneInputView.set(label: "phone", backgroundColor: .white)
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                             target: self,
                                                             action: #selector(onTapDoneButton))

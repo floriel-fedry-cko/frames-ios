@@ -87,7 +87,7 @@ CardViewControllerDelegate {
             let last4Index = card.number.index(card.number.endIndex, offsetBy: -4)
             let last4 = card.number[last4Index...]
             cell.cardInfoLabel.text = "\(cardTypeUnwrap.name.capitalized) ····\(last4)"
-            if let cardScheme = CardScheme(rawValue: cardTypeUnwrap.name) {
+            if let cardScheme = CardScheme(rawValue: cardTypeUnwrap.name.lowercased()) {
                 cell.setSchemeIcon(scheme: cardScheme)
             }
         }

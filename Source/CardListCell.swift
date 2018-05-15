@@ -10,21 +10,29 @@ public class CardListCell: UITableViewCell {
     public let cardInfoLabel = UILabel()
     public let nameLabel = UILabel()
 
+    // MARK: - Initialization
+
+    /// Initializes a table cell with a style and a reuse identifier and returns it to the caller.
     override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
 
+    /// Sets the selected state of the cell, optionally animating the transition between states.
     override public func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // configure the view for the selected state
     }
 
+    /// Set the scheme icon of the card cell.
+    ///
+    /// - parameter scheme: Scheme (e.g. CardScheme.visa)
     public func setSchemeIcon(scheme: CardScheme) {
         let image = UIImage(named: "\(scheme.rawValue)-icon")
         schemeImageView.image = image

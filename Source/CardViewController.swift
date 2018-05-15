@@ -24,6 +24,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     /// Delegate
     public weak var delegate: CardViewControllerDelegate?
 
+    /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -94,11 +95,9 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         navigationController?.popViewController(animated: true)
     }
 
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    // MARK: - AddressViewControllerDelegate
 
+    /// Executed when an user tap on the done button.
     public func onTapDoneButton(address: Address) {
         let value = "\(address.addressLine1 ?? ""), \(address.addressLine2 ?? ""), \(address.city ?? "")"
         billingDetailsInputView.value?.text = value

@@ -1,6 +1,6 @@
 import UIKit
 
-/// Expiration Date Picker is a control used for the inputting of expiration date
+/// Expiration Date Picker is a control used for the inputting of expiration date.
 @IBDesignable public class ExpirationDatePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     // Managing the date and calendar
     var calendar: Calendar = Calendar(identifier: .gregorian)
@@ -10,7 +10,7 @@ import UIKit
     var maximumDate: Date = Date(timeIntervalSinceNow: 31556926 * 20)
     let minimumDate: Date = Date()
 
-    /// Delegate
+    /// Expiration picker delegate
     public weak var pickerDelegate: ExpirationDatePickerDelegate?
 
     // private properties
@@ -19,11 +19,13 @@ import UIKit
 
     // MARK: - Initialization
 
+    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -48,6 +50,7 @@ import UIKit
 
     // MARK: - UIPickerViewDelegate
 
+    /// Called by the picker view when the user selects a row in a component.
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMyyyy"
@@ -68,10 +71,12 @@ import UIKit
 
     // MARK: - UIPickerViewDataSource
 
+    /// Called by the picker view when it needs the number of components.
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
 
+    /// Called by the picker view when it needs the number of rows for a specified component.
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
@@ -83,6 +88,7 @@ import UIKit
         }
     }
 
+    /// Called by the picker view when it needs the title to use for a given row in a given component.
     public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
@@ -96,6 +102,10 @@ import UIKit
 
     // MARK: - Methods
 
+    /// Set the date of the expiration picker
+    ///
+    /// - parameter date: Date
+    /// - parameter animated: set it to true if the picker should be animated
     public func setDate(_ date: Date, animated: Bool) {
         let month = calendar.component(.month, from: date)
         let year = calendar.component(.year, from: date)

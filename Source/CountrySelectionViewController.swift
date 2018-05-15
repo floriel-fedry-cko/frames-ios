@@ -1,5 +1,6 @@
 import UIKit
 
+/// A view controller that allows the user to select a country.
 @IBDesignable public class CountrySelectionViewController: UIViewController,
                                                         UITableViewDelegate,
                                                         UITableViewDataSource,
@@ -19,8 +20,21 @@ import UIKit
     let tableViewCell = UITableViewCell(style: .default, reuseIdentifier: "countryCell")
     let searchBar = UISearchBar()
 
-    /// Delegate
+    /// Country selection view controller delegate
     public weak var delegate: CountrySelectionViewControllerDelegate?
+
+    /// Called after the controller's view is loaded into memory.
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+        navigationItem.title = "Country/Region"
+        // table view
+        self.filteredCountries = self.countries
+        tableView.delegate = self
+        tableView.dataSource = self
+        // search bar
+        searchBar.delegate = self
+    }
 
     private func setup() {
         // add views
@@ -41,20 +55,26 @@ import UIKit
         tableView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor).isActive = true
     }
 
+    // MARK: - UITableViewDataSource
+
+    /// Asks the data source to return the number of sections in the table view.
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    /// Tells the data source to return the number of rows in a given section of a table view.
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredCountries.count
     }
 
+    /// Asks the data source for a cell to insert in a particular location of the table view.
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath)
         cell.textLabel?.text = filteredCountries[indexPath.row]
         return cell
     }
 
+    /// Tells the delegate that the specified row is now selected.
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.onCountrySelected(country: filteredCountries[indexPath.row])
         navigationController?.popViewController(animated: true)
@@ -68,6 +88,9 @@ import UIKit
         tableView.reloadData()
     }
 
+    // MARK: - UISearchBarDelegate
+
+    /// Tells the delegate that the user changed the search text.
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             filteredCountries = countries
@@ -76,28 +99,18 @@ import UIKit
         }
     }
 
+    /// Tells the delegate that the search button was tapped.
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         updateSearchResults(text: searchBar.text)
         self.searchBar.endEditing(true)
     }
 
+    /// Tells the delegate that the cancel button was tapped.
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         self.searchBar.endEditing(true)
         filteredCountries = countries
         tableView.reloadData()
-    }
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
-        navigationItem.title = "Country/Region"
-        // table view
-        self.filteredCountries = self.countries
-        tableView.delegate = self
-        tableView.dataSource = self
-        // search bar
-        searchBar.delegate = self
     }
 
 }

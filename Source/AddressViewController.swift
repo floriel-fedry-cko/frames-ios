@@ -1,5 +1,6 @@
 import Foundation
 
+/// A view controller that allows the user to enter address information.
 public class AddressViewController: UIViewController, CountrySelectionViewControllerDelegate {
 
     let stackView = UIStackView()
@@ -19,6 +20,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     /// Delegate
     public weak var delegate: AddressViewControllerDelegate?
 
+    /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

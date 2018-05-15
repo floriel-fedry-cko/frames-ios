@@ -1,5 +1,6 @@
 import UIKit
 
+/// Standard Input View containing a label and an input field.
 @IBDesignable public class StandardInputView: UIView, UIGestureRecognizerDelegate {
 
     public var label: UILabel?
@@ -20,11 +21,15 @@ import UIKit
     var keyboardType: UIKeyboardType = .default
     var contentType: UITextContentType = .name
 
+    // MARK: - Initialization
+
+    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()

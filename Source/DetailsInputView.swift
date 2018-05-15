@@ -1,5 +1,7 @@
 import UIKit
 
+/// A details input view. Use this when you want to link to another view controller.
+/// Add a gesture recognizer and an handler on tap, or a segue.
 @IBDesignable public class DetailsInputView: UIView, UIGestureRecognizerDelegate {
 
     var stackView: UIStackView?
@@ -15,6 +17,9 @@ import UIKit
 
     @IBInspectable var required: Bool = true
 
+    // MARK: - Initialization
+
+    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()

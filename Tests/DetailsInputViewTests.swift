@@ -10,12 +10,14 @@ import XCTest
 @testable import CheckoutSdkIos
 
 class DetailsInputViewTests: XCTestCase {
-    
+
+    var detailsInputView = DetailsInputView()
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        detailsInputView = DetailsInputView()
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
@@ -34,4 +36,14 @@ class DetailsInputViewTests: XCTestCase {
         let detailsInputView = DetailsInputView(frame: CGRect(x: 0, y: 0, width: 400, height: 48))
     }
 
+    func testSetText() {
+        detailsInputView.text = "Text"
+        XCTAssertEqual(detailsInputView.label!.text, "Text")
+    }
+    
+    func testSetLabelAndBackgroundColor() {
+        detailsInputView.set(label: "streetAddress", backgroundColor: .white)
+        XCTAssertEqual(detailsInputView.label!.text, "Street Address")
+        XCTAssertEqual(detailsInputView.backgroundColor, UIColor.white)
+    }
 }

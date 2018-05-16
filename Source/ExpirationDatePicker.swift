@@ -3,7 +3,7 @@ import UIKit
 /// Expiration Date Picker is a control used for the inputting of expiration date.
 @IBDesignable public class ExpirationDatePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     // Managing the date and calendar
-    var calendar: Calendar = Calendar(identifier: .gregorian)
+    let calendar: Calendar = Calendar(identifier: .gregorian)
     let timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!
 
     // Configuring temporal attributes

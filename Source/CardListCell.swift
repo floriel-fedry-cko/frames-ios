@@ -34,7 +34,8 @@ public class CardListCell: UITableViewCell {
     ///
     /// - parameter scheme: Scheme (e.g. CardScheme.visa)
     public func setSchemeIcon(scheme: CardScheme) {
-        let image = UIImage(named: "\(scheme.rawValue)-icon")
+        let image = UIImage(named: "schemes/icon-\(scheme.rawValue)", in: Bundle(for: CardListCell.self),
+                compatibleWith: nil)
         schemeImageView.image = image
     }
 

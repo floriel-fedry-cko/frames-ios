@@ -142,7 +142,9 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     private func addSchemeIcon(scheme: CardScheme) {
         let imageView = UIImageView()
         imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        imageView.image = UIImage(named: "\(scheme)-icon")
+        let image = UIImage(named: "schemes/icon-\(scheme.rawValue)", in: Bundle(for: CardViewController.self),
+                compatibleWith: nil)
+        imageView.image = image
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
         schemeIconsView.addArrangedSubview(imageView)

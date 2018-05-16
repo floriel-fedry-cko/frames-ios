@@ -9,6 +9,7 @@ CardViewControllerDelegate {
 
     @IBOutlet weak var cardsTableView: UITableView!
     @IBOutlet weak var payButtonsView: UIStackView!
+    var cardsTableViewHeightConstraint: NSLayoutConstraint?
 
     let publicKey = "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"
     var checkoutAPIClient: CheckoutAPIClient { return CheckoutAPIClient(publicKey: publicKey, environment: .sandbox) }
@@ -64,13 +65,21 @@ CardViewControllerDelegate {
         cardViewController.delegate = self
         cardsTableView.delegate = self
         cardsTableView.dataSource = self
+        cardsTableViewHeightConstraint = cardsTableView.heightAnchor
+            .constraint(equalToConstant: self.cardsTableView.contentSize.height)
+        cardsTableViewHeightConstraint?.isActive = true
 
         merchantAPIClient.get(customer: customerId) { customer in
             self.customerCardList = customer.cards
             self.cardsTableView.reloadData()
-            self.cardsTableView.layoutIfNeeded()
-            self.cardsTableView.heightAnchor.constraint(equalToConstant: self.cardsTableView.contentSize.height)
-                .isActive = true
+            self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 2
+            // select the default card
+            let indexDefaultCardOpt = customer.cards.data.index { card in
+                card.id == customer.defaultCard
+            }
+            guard let indexDefaultCard = indexDefaultCardOpt else { return }
+            let indexPath = IndexPath(row: indexDefaultCard, section: 0)
+            self.cardsTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         }
 
         // Apple Pay Button
@@ -87,10 +96,9 @@ CardViewControllerDelegate {
     }
 
     func onTapDone(card: CardRequest) {
-        print(card)
         createdCards.append(card)
         cardsTableView.reloadData()
-        cardsTableView.layoutIfNeeded()
+        self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 2
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

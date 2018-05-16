@@ -15,8 +15,6 @@ class MerchantAPIClient {
                     let jsonData = try JSONSerialization.data(withJSONObject: value)
                     let data = String(data: jsonData, encoding: .utf8)?.data(using: .utf8)
                     let decoder = JSONDecoder()
-                    print(jsonData)
-                    print(value)
                     let customerResponse = try decoder.decode(Customer.self, from: data!)
                     successHandler(customerResponse)
                 } catch let error {

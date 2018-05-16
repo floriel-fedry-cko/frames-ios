@@ -10,7 +10,7 @@ import XCTest
 @testable import CheckoutSdkIos
 
 class ExpirationDatePickerTests: XCTestCase {
-    
+
     var expirationDatePicker = ExpirationDatePicker()
 
     override func setUp() {

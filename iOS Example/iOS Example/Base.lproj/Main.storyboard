@@ -18,14 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvP-dH-Z1j">
-                                <rect key="frame" x="16" y="462" width="343" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Card"/>
-                                <connections>
-                                    <action selector="onTapAddCard:" destination="1hs-ab-I17" eventType="touchUpInside" id="J7c-fX-Jyo"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24X-aj-X3I">
                                 <rect key="frame" x="16" y="80" width="343" height="48"/>
                                 <subviews>
@@ -58,10 +50,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tyW-uA-EXp">
-                                <rect key="frame" x="16" y="128" width="343" height="240"/>
+                                <rect key="frame" x="16" y="128" width="343" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="ZKb-DF-laK"/>
+                                    <constraint firstAttribute="height" constant="200" id="ZKb-DF-laK"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="90" id="E2z-xP-Pn9" customClass="CardCell" customModule="iOS_Example" customModuleProvider="target">
@@ -126,6 +118,26 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l7G-2S-JOr" userLabel="PayButtons">
+                                <rect key="frame" x="16" y="621" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFn-W4-6sK">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <state key="normal" title="Pay with Card"/>
+                                        <connections>
+                                            <action selector="onTapPayWithCard:" destination="1hs-ab-I17" eventType="touchUpInside" id="vcV-8i-HU8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvP-dH-Z1j">
+                                <rect key="frame" x="16" y="336" width="343" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Card"/>
+                                <connections>
+                                    <action selector="onTapAddCard:" destination="1hs-ab-I17" eventType="touchUpInside" id="J7c-fX-Jyo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93323183060000003" green="0.93339174989999996" blue="0.93322181699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -133,14 +145,18 @@
                             <constraint firstItem="n3S-db-EW6" firstAttribute="trailing" secondItem="tyW-uA-EXp" secondAttribute="trailing" constant="16" id="Cst-vs-zLz"/>
                             <constraint firstItem="n3S-db-EW6" firstAttribute="trailing" secondItem="24X-aj-X3I" secondAttribute="trailing" constant="16" id="GXt-ok-Oma"/>
                             <constraint firstItem="24X-aj-X3I" firstAttribute="top" secondItem="n3S-db-EW6" secondAttribute="top" constant="16" id="SA6-gI-J9B"/>
+                            <constraint firstItem="n3S-db-EW6" firstAttribute="trailing" secondItem="l7G-2S-JOr" secondAttribute="trailing" constant="16" id="XCg-B6-LPD"/>
                             <constraint firstItem="24X-aj-X3I" firstAttribute="leading" secondItem="n3S-db-EW6" secondAttribute="leading" constant="16" id="eg5-gF-HkB"/>
+                            <constraint firstItem="l7G-2S-JOr" firstAttribute="leading" secondItem="n3S-db-EW6" secondAttribute="leading" constant="16" id="fr1-H4-Sew"/>
                             <constraint firstItem="tyW-uA-EXp" firstAttribute="top" secondItem="24X-aj-X3I" secondAttribute="bottom" id="l3N-Gp-en2"/>
+                            <constraint firstItem="n3S-db-EW6" firstAttribute="bottom" secondItem="l7G-2S-JOr" secondAttribute="bottom" constant="16" id="o4J-BW-xRV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n3S-db-EW6"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pay" id="xjs-Md-1CI"/>
                     <connections>
                         <outlet property="cardsTableView" destination="tyW-uA-EXp" id="dyC-hO-cF2"/>
+                        <outlet property="payButtonsView" destination="l7G-2S-JOr" id="IIg-Jg-h6c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uve-tc-f78" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -53,15 +53,16 @@
                                 <rect key="frame" x="16" y="128" width="343" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="90" id="E2z-xP-Pn9" customClass="CardCell" customModule="iOS_Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cardCell" rowHeight="90" id="E2z-xP-Pn9" customClass="CardCell">
                                         <rect key="frame" x="0.0" y="28" width="343" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E2z-xP-Pn9" id="LRx-58-srq">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa-icon" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-1N-j6L">
-                                                    <rect key="frame" x="254" y="33" width="36" height="22"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-1N-j6L">
+                                                    <rect key="frame" x="254" y="33" width="25" height="22"/>
+                                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="G7x-Ks-OlB"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="cnv-PG-mn3"/>
@@ -191,7 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.png" width="50" height="50"/>
         <image name="keyboard-next" width="50" height="100"/>
-        <image name="visa-icon" width="36" height="22"/>
     </resources>
 </document>

@@ -1,15 +1,15 @@
 
-"cardNumber" = "Card Number";
-"cardholderName" = "Cardholder's name";
-"expirationDate" = "Expiration Date";
-"cvv" = "CVV";
-"billingDetails" = "Billing Details";
+"cardNumber" = "Card Number*";
+"cardholderName" = "Cardholder's name*";
+"expirationDate" = "Expiration Date*";
+"cvv" = "CVV*";
+"billingDetails" = "Billing Details*";
 "name" = "Name";
-"countryRegion" = "Country/Region";
+"countryRegion" = "Country/Region*";
 "organization" = "Organization";
-"streetAddress" = "Street Address";
-"postalTown" = "Postal Town";
-"postcode" = "Postcode";
-"phone" = "Phone";
+"streetAddress" = "Street Address*";
+"postalTown" = "Postal Town*";
+"postcode" = "Postcode*";
+"phone" = "Phone*";
 
 "acceptedCards" = "Accepted Cards";

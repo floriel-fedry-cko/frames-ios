@@ -1,7 +1,7 @@
 import Foundation
 
 /// A view controller that allows the user to enter address information.
-public class AddressViewController: UIViewController, CountrySelectionViewControllerDelegate {
+public class AddressViewController: UIViewController, CountrySelectionViewControllerDelegate, UITextFieldDelegate {
 
     let stackView = UIStackView()
     let nameInputView = StandardInputView()
@@ -23,19 +23,11 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        nameInputView.set(label: "name", backgroundColor: .white)
-        countryRegionInputView.set(label: "countryRegion", backgroundColor: .white)
-        organizationInputView.set(label: "organization", backgroundColor: .white)
-        streetAddressInputView.set(label: "streetAddress", backgroundColor: .white)
-        postalTownInputView.set(label: "postalTown", backgroundColor: .white)
-        postcodeInputView.set(label: "postcode", backgroundColor: .white)
-        phoneInputView.set(label: "phone", backgroundColor: .white)
-
+        setInputViews()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                             target: self,
                                                             action: #selector(onTapDoneButton))
-
+        navigationItem.rightBarButtonItem?.isEnabled = false
         // add gesture recognizer
         countryRegionTapGesture.addTarget(self, action: #selector(onTapCountryRegionView))
         countryRegionInputView.addGestureRecognizer(countryRegionTapGesture)
@@ -47,6 +39,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
 
         addViews()
         addConstraints()
+        addTextFieldsDelegate()
         addKeyboardToolbarNavigation(textFields: [
             nameInputView.textField,
             organizationInputView.textField,
@@ -77,6 +70,24 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         countryRegionInputView.value.text = country
     }
 
+    private func setInputViews() {
+        nameInputView.set(label: "name", backgroundColor: .white)
+        countryRegionInputView.set(label: "countryRegion", backgroundColor: .white)
+        organizationInputView.set(label: "organization", backgroundColor: .white)
+        streetAddressInputView.set(label: "streetAddress", backgroundColor: .white)
+        postalTownInputView.set(label: "postalTown", backgroundColor: .white)
+        postcodeInputView.set(label: "postcode", backgroundColor: .white)
+        phoneInputView.set(label: "phone", backgroundColor: .white)
+        // set content type
+        organizationInputView.textField.textContentType = .organizationName
+        streetAddressInputView.textField.textContentType = .fullStreetAddress
+        postalTownInputView.textField.textContentType = .addressCity
+        postcodeInputView.textField.textContentType = .postalCode
+        phoneInputView.textField.textContentType = .telephoneNumber
+        // set keyboard
+        phoneInputView.textField.keyboardType = .phonePad
+    }
+
     private func addViews() {
         stackView.addArrangedSubview(nameInputView)
         stackView.addArrangedSubview(countryRegionInputView)
@@ -93,6 +104,43 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         stackView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
         stackView.topAnchor.constraint(equalTo: self.view.safeTopAnchor, constant: 16).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor, constant: 16).isActive = true
+    }
+
+    private func addTextFieldsDelegate() {
+        streetAddressInputView.textField.delegate = self
+        postalTownInputView.textField.delegate = self
+        postcodeInputView.textField.delegate = self
+        phoneInputView.textField.delegate = self
+    }
+
+    private func validateFieldsValues() -> Bool {
+        /// required values are not nil
+        guard
+            let countryRegion = countryRegionInputView.value.text,
+            let streetAddress = streetAddressInputView.textField.text,
+            let postalTown = postalTownInputView.textField.text,
+            let postcode = postcodeInputView.textField.text,
+            let phone = phoneInputView.textField.text
+            else {
+                navigationItem.rightBarButtonItem?.isEnabled = false
+                return false
+        }
+        /// required values are not empty
+        if
+            countryRegion.isEmpty ||
+            streetAddress.isEmpty ||
+            postalTown.isEmpty ||
+            postcode.isEmpty ||
+            phone.isEmpty {
+                navigationItem.rightBarButtonItem?.isEnabled = false
+                return false
+        }
+        navigationItem.rightBarButtonItem?.isEnabled = true
+        return true
+    }
+
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        _ = validateFieldsValues()
     }
 
 }

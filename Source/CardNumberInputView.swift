@@ -5,6 +5,8 @@ import UIKit
 @IBDesignable public class CardNumberInputView: StandardInputView, UITextFieldDelegate {
 
     var cardsUtils: CardUtils?
+    /// Text field delegate
+    public var delegate: UITextFieldDelegate?
 
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     public override init(frame: CGRect) {
@@ -40,5 +42,10 @@ import UIKit
             }
             textField.text = cardsUtils!.format(cardNumber: cardNumber, cardType: cardTypeUnwrap)
         return false
+    }
+
+    /// Tells the delegate that editing stopped for the specified text field.
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        delegate?.textFieldDidEndEditing?(textField)
     }
 }

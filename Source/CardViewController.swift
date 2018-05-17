@@ -1,7 +1,7 @@
 import Foundation
 
 /// A view controller that allows the user to enter card information.
-public class CardViewController: UIViewController, AddressViewControllerDelegate {
+public class CardViewController: UIViewController, AddressViewControllerDelegate, UITextFieldDelegate {
 
     let cardUtils = CardUtils()
 
@@ -13,12 +13,10 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     let expirationDateInputView = ExpirationDateInputView()
     let cvvInputView = StandardInputView()
     let billingDetailsInputView = DetailsInputView()
+    var billingDetailsAddress: Address?
 
     let addressViewController = AddressViewController()
     let addressTapGesture = UITapGestureRecognizer()
-
-    let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done,
-                                     target: self, action: nil)
 
     var availableSchemes: [CardScheme] = [.visa, .mastercard, .americanExpress, .dinersClub]
 
@@ -34,24 +32,16 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                             target: self,
                                                             action: #selector(onTapDoneCardButton))
+        navigationItem.rightBarButtonItem?.isEnabled = false
         // add gesture recognizer
         addressTapGesture.addTarget(self, action: #selector(onTapAddressView))
         billingDetailsInputView.addGestureRecognizer(addressTapGesture)
 
         addressViewController.delegate = self
 
-        // add views
-        stackView.addArrangedSubview(cardNumberInputView)
-        stackView.addArrangedSubview(cardHolderNameInputView)
-        stackView.addArrangedSubview(expirationDateInputView)
-        stackView.addArrangedSubview(cvvInputView)
-        stackView.addArrangedSubview(billingDetailsInputView)
-        self.view.addSubview(acceptedCardLabel)
-        self.view.addSubview(schemeIconsView)
-        self.view.addSubview(stackView)
-
-        // add constraints
-        setupConstraints()
+        addViews()
+        addConstraints()
+        addTextFieldsDelegate()
 
         // add schemes icons
         availableSchemes.forEach { scheme in
@@ -100,8 +90,10 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     /// Executed when an user tap on the done button.
     public func onTapDoneButton(address: Address) {
+        billingDetailsAddress = address
         let value = "\(address.addressLine1 ?? ""), \(address.addressLine2 ?? ""), \(address.city ?? "")"
         billingDetailsInputView.value.text = value
+        _ = validateFieldsValues()
     }
 
     private func setupUIViews() {
@@ -114,6 +106,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         cardNumberInputView.textField.placeholder = "4242"
         expirationDateInputView.textField.placeholder = "06/2020"
         cvvInputView.textField.placeholder = "100"
+        cvvInputView.textField.keyboardType = .numberPad
 
         self.view.backgroundColor = UIColor.groupTableViewBackground
         schemeIconsView.spacing = 8
@@ -121,7 +114,18 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         stackView.spacing = 16
     }
 
-    private func setupConstraints() {
+    private func addViews() {
+        stackView.addArrangedSubview(cardNumberInputView)
+        stackView.addArrangedSubview(cardHolderNameInputView)
+        stackView.addArrangedSubview(expirationDateInputView)
+        stackView.addArrangedSubview(cvvInputView)
+        stackView.addArrangedSubview(billingDetailsInputView)
+        self.view.addSubview(acceptedCardLabel)
+        self.view.addSubview(schemeIconsView)
+        self.view.addSubview(stackView)
+    }
+
+    private func addConstraints() {
         acceptedCardLabel.translatesAutoresizingMaskIntoConstraints = false
         acceptedCardLabel.trailingAnchor
             .constraint(equalTo: self.view.safeTrailingAnchor, constant: -16)
@@ -138,6 +142,13 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         stackView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
         stackView.topAnchor.constraint(equalTo: self.schemeIconsView.bottomAnchor, constant: 16).isActive = true
         stackView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor, constant: 16).isActive = true
+    }
+
+    private func addTextFieldsDelegate() {
+        cardNumberInputView.delegate = self
+        cardHolderNameInputView.textField.delegate = self
+        expirationDateInputView.textField.delegate = self
+        cvvInputView.textField.delegate = self
     }
 
     private func addSchemeIcon(scheme: CardScheme) {
@@ -159,6 +170,33 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         fillerView.backgroundColor = .clear
         fillerView.translatesAutoresizingMaskIntoConstraints = false
         schemeIconsView.addArrangedSubview(fillerView)
+    }
+
+    private func validateFieldsValues() -> Bool {
+        // values are not nil
+        guard
+            let cardNumber = cardNumberInputView.textField.text,
+            let cardholdersName = cardHolderNameInputView.textField.text,
+            let expirationDate = expirationDateInputView.textField.text,
+            let cvv = cvvInputView.textField.text,
+            let _ = billingDetailsAddress
+            else {
+                navigationItem.rightBarButtonItem?.isEnabled = false
+                return false
+        }
+        // values are not empty strings
+        if cardNumber.isEmpty || cardholdersName.isEmpty || expirationDate.isEmpty ||
+            cvv.isEmpty {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            return false
+        }
+        navigationItem.rightBarButtonItem?.isEnabled = true
+        return true
+    }
+
+    /// Tells the delegate that editing stopped for the specified text field.
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        _ = validateFieldsValues()
     }
 
 }

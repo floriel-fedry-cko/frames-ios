@@ -31,8 +31,13 @@ public class CardListCell: UITableViewCell {
 
     /// Sets the selected state of the cell, optionally animating the transition between states.
     override public func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // configure the view for the selected state
+        if selected {
+            let image = UIImage(named: "checkmarks/checkmark", in: Bundle(for: CardListCell.self),
+                                compatibleWith: nil)
+            selectedImageView.image = image
+        } else {
+            selectedImageView.image = nil
+        }
     }
 
     /// Set the scheme icon of the card cell.
@@ -52,8 +57,6 @@ public class CardListCell: UITableViewCell {
         self.addSubview(selectedImageView)
         stackView.axis = .vertical
         stackView.spacing = 16
-        selectedImageView.image = UIImage(named: "arrows/keyboard-next", in: Bundle(for: CardListCell.self),
-                                          compatibleWith: nil)
         addConstraints()
     }
 
@@ -73,7 +76,7 @@ public class CardListCell: UITableViewCell {
             .isActive = true
         selectedImageView.leadingAnchor.constraint(equalTo: schemeImageView.trailingAnchor, constant: 8).isActive = true
         selectedImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        selectedImageView.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        selectedImageView.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        selectedImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
+        selectedImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
     }
 }

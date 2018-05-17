@@ -87,6 +87,9 @@
 		E6DC290020A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */; };
 		E6DED6E9208DF82500D5D70B /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */; };
 		E6F6B56F20AD832B0091A8AF /* applePayToken.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B56E20AD832B0091A8AF /* applePayToken.json */; };
+		E6F6B57120ADBD230091A8AF /* applePayTokenInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */; };
+		E6F6B57320ADC0BA0091A8AF /* checkmarks in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57220ADC0BA0091A8AF /* checkmarks */; };
+		E6F6B57420ADC70A0091A8AF /* checkmarks in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57220ADC0BA0091A8AF /* checkmarks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +210,8 @@
 		E6DED6E4208DF82500D5D70B /* CheckoutSdkIosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckoutSdkIosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DED6E8208DF82500D5D70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6F6B56E20AD832B0091A8AF /* applePayToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applePayToken.json; sourceTree = "<group>"; };
+		E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applePayTokenInvalid.json; sourceTree = "<group>"; };
+		E6F6B57220ADC0BA0091A8AF /* checkmarks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = checkmarks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +409,7 @@
 			children = (
 				E67AB9A4208F41AB00593FBE /* cardProviders.json */,
 				E6F6B56E20AD832B0091A8AF /* applePayToken.json */,
+				E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */,
 				E68802472092294B00220CE2 /* cardToken.json */,
 				E631CB672097552700023472 /* cardTokenInvalidNumber.json */,
 			);
@@ -437,6 +443,7 @@
 		E6AF0A1320AADE6F00D29929 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E6F6B57220ADC0BA0091A8AF /* checkmarks */,
 				E6AF0A3C20AAE46600D29929 /* schemes */,
 				E6AF0A1C20AADFF600D29929 /* arrows */,
 			);
@@ -574,6 +581,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F6B57420ADC70A0091A8AF /* checkmarks in Resources */,
 				E625EE5920907FFE0019B750 /* README.md in Resources */,
 				E625EE5C2090801C0019B750 /* CHANGELOG.md in Resources */,
 				E6AF0A4320AB29D400D29929 /* Localizable.strings in Resources */,
@@ -596,6 +604,8 @@
 				E688024920922FEF00220CE2 /* cardToken.json in Resources */,
 				E67AB9A5208F41AB00593FBE /* cardProviders.json in Resources */,
 				E6F6B56F20AD832B0091A8AF /* applePayToken.json in Resources */,
+				E6F6B57320ADC0BA0091A8AF /* checkmarks in Resources */,
+				E6F6B57120ADBD230091A8AF /* applePayTokenInvalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

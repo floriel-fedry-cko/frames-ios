@@ -43,7 +43,7 @@ class DetailsInputViewTests: XCTestCase {
 
     func testSetLabelAndBackgroundColor() {
         detailsInputView.set(label: "streetAddress", backgroundColor: .white)
-        XCTAssertEqual(detailsInputView.label.text, "Street Address")
+        XCTAssertEqual(detailsInputView.label.text, "Street Address*")
         XCTAssertEqual(detailsInputView.backgroundColor, UIColor.white)
     }
 }

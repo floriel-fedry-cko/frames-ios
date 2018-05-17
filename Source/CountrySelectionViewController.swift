@@ -96,6 +96,7 @@ import UIKit
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             filteredCountries = countries
+            tableView.reloadData()
         } else {
             updateSearchResults(text: searchText)
         }

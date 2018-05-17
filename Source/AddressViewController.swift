@@ -48,12 +48,12 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         addViews()
         addConstraints()
         addKeyboardToolbarNavigation(textFields: [
-            nameInputView.textField!,
-            organizationInputView.textField!,
-            streetAddressInputView.textField!,
-            postalTownInputView.textField!,
-            postcodeInputView.textField!,
-            phoneInputView.textField!
+            nameInputView.textField,
+            organizationInputView.textField,
+            streetAddressInputView.textField,
+            postalTownInputView.textField,
+            postcodeInputView.textField,
+            phoneInputView.textField
             ])
     }
 
@@ -62,10 +62,10 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     }
 
     @objc func onTapDoneButton() {
-        let address = Address(addressLine1: streetAddressInputView.textField?.text,
+        let address = Address(addressLine1: streetAddressInputView.textField.text,
                               addressLine2: nil,
-                              postcode: postcodeInputView.textField?.text,
-                              country: countryRegionInputView.value?.text,
+                              postcode: postcodeInputView.textField.text,
+                              country: countryRegionInputView.value.text,
                               city: nil,
                               state: nil,
                               phone: nil)
@@ -74,7 +74,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     }
 
     public func onCountrySelected(country: String) {
-        countryRegionInputView.value!.text = country
+        countryRegionInputView.value.text = country
     }
 
     private func addViews() {

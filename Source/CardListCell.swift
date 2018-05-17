@@ -1,13 +1,18 @@
 import UIKit
 
+/// 
 public class CardListCell: UITableViewCell {
 
-    // MARK: Properties
+    // MARK: - Properties
 
-    public let stackView = UIStackView()
+    let stackView = UIStackView()
+    /// Scheme Image View
     public let schemeImageView = UIImageView()
+    /// Selected Cell Image View
     public let selectedImageView = UIImageView()
+    /// Card Information Label
     public let cardInfoLabel = UILabel()
+    /// Name Label
     public let nameLabel = UILabel()
 
     // MARK: - Initialization

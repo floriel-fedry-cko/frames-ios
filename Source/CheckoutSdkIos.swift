@@ -1,5 +1,8 @@
 import Foundation
 
+/// Add a keyboard toolbar with navigation buttons. Use it to navigate between text fields.
+///
+/// - parameter textFields: Array of text fields
 public func addKeyboardToolbarNavigation(textFields: [UITextField]) {
     // create the toolbar
     for (index, textField) in textFields.enumerated() {

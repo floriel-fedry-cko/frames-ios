@@ -1,5 +1,6 @@
 import Foundation
 
+/// A view controller that allows the user to enter card information.
 public class CardViewController: UIViewController, AddressViewControllerDelegate {
 
     let cardUtils = CardUtils()
@@ -59,10 +60,10 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         self.addFillerView()
 
         addKeyboardToolbarNavigation(textFields: [
-            cardNumberInputView.textField!,
-            cardHolderNameInputView.textField!,
-            expirationDateInputView.textField!,
-            cvvInputView.textField!
+            cardNumberInputView.textField,
+            cardHolderNameInputView.textField,
+            expirationDateInputView.textField,
+            cvvInputView.textField
             ])
     }
 
@@ -73,9 +74,9 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     @objc func onTapDoneCardButton() {
         // Get the values
         guard
-            let cardNumber = cardNumberInputView.textField!.text,
-            let expirationDate = expirationDateInputView.textField!.text,
-            let cvv = cvvInputView.textField!.text
+            let cardNumber = cardNumberInputView.textField.text,
+            let expirationDate = expirationDateInputView.textField.text,
+            let cvv = cvvInputView.textField.text
             else { return }
         let cardNumberStandardized = cardUtils.standardize(cardNumber: cardNumber)
         // Validate the values
@@ -90,7 +91,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
             else { return }
 
         let card = CardRequest(number: cardNumberStandardized, expiryMonth: expiryMonth, expiryYear: expiryYear,
-                               cvv: cvv, name: cardHolderNameInputView.textField!.text)
+                               cvv: cvv, name: cardHolderNameInputView.textField.text)
         self.delegate?.onTapDone(card: card)
         navigationController?.popViewController(animated: true)
     }
@@ -100,7 +101,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     /// Executed when an user tap on the done button.
     public func onTapDoneButton(address: Address) {
         let value = "\(address.addressLine1 ?? ""), \(address.addressLine2 ?? ""), \(address.city ?? "")"
-        billingDetailsInputView.value?.text = value
+        billingDetailsInputView.value.text = value
     }
 
     private func setupUIViews() {
@@ -110,9 +111,9 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         expirationDateInputView.set(label: "expirationDate", backgroundColor: .white)
         cvvInputView.set(label: "cvv", backgroundColor: .white)
         billingDetailsInputView.set(label: "billingDetails", backgroundColor: .white)
-        cardNumberInputView.textField?.placeholder = "4242"
-        expirationDateInputView.textField?.placeholder = "06/2020"
-        cvvInputView.textField?.placeholder = "100"
+        cardNumberInputView.textField.placeholder = "4242"
+        expirationDateInputView.textField.placeholder = "06/2020"
+        cvvInputView.textField.placeholder = "100"
 
         self.view.backgroundColor = UIColor.groupTableViewBackground
         schemeIconsView.spacing = 8

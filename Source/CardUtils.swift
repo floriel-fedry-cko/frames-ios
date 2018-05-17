@@ -61,6 +61,8 @@ public class CardUtils {
                            isLuhnChecked: true)
     ]
 
+    // MARK: - Initialization
+
     /// Create an instance of `CardUtils`
     ///
     /// - returns: The new `CardUtils` instance

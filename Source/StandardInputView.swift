@@ -3,23 +3,22 @@ import UIKit
 /// Standard Input View containing a label and an input field.
 @IBDesignable public class StandardInputView: UIView, UIGestureRecognizerDelegate {
 
-    public var label: UILabel?
-    public var textField: UITextField?
-    public var tapGesture: UITapGestureRecognizer?
+    /// Label
+    public let label = UILabel()
+    /// Text Field
+    public let textField = UITextField()
+    let tapGesture = UITapGestureRecognizer()
 
     @IBInspectable var text: String = "Label" {
         didSet {
-            label?.text = text
+            label.text = text
         }
     }
     @IBInspectable var placeholder: String = "" {
         didSet {
-            textField?.placeholder = placeholder
+            textField.placeholder = placeholder
         }
     }
-    @IBInspectable var required: Bool = true
-    var keyboardType: UIKeyboardType = .default
-    var contentType: UITextContentType = .name
 
     // MARK: - Initialization
 
@@ -38,10 +37,7 @@ import UIKit
     // MARK: - Setup
 
     private func setup() {
-        self.label = UILabel()
-        self.textField = UITextField()
-        self.tapGesture = UITapGestureRecognizer()
-        self.tapGesture?.addTarget(self, action: #selector(StandardInputView.onTapView))
+        self.tapGesture.addTarget(self, action: #selector(StandardInputView.onTapView))
 
         #if TARGET_INTERFACE_BUILDER
         if self.placeholder.isEmpty {
@@ -50,40 +46,40 @@ import UIKit
         #endif
 
         // add gesture recognizer
-        self.addGestureRecognizer(self.tapGesture!)
+        self.addGestureRecognizer(self.tapGesture)
 
         // add values
-        textField!.keyboardType = keyboardType
-        textField!.textContentType = contentType
-        textField!.textAlignment = .right
+        textField.keyboardType = .default
+        textField.textContentType = .name
+        textField.textAlignment = .right
         // inspectable
-        label!.text = text
-        textField!.placeholder = placeholder
+        label.text = text
+        textField.placeholder = placeholder
 
         // add to view
-        self.addSubview(label!)
-        self.addSubview(textField!)
+        self.addSubview(label)
+        self.addSubview(textField)
 
         addConstraints()
     }
 
     @objc func onTapView() {
-        textField?.becomeFirstResponder()
+        textField.becomeFirstResponder()
     }
 
     private func addConstraints() {
-        label!.translatesAutoresizingMaskIntoConstraints = false
-        textField!.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        textField.translatesAutoresizingMaskIntoConstraints = false
         self.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        self.trailingAnchor.constraint(equalTo: textField!.trailingAnchor, constant: 8).isActive = true
-        label!.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        label!.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 8).isActive = true
-        textField!.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        textField!.leadingAnchor.constraint(equalTo: label!.trailingAnchor, constant: 8).isActive = true
+        self.trailingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 8).isActive = true
+        label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 8).isActive = true
+        textField.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        textField.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
     }
 
     func set(label: String, backgroundColor: UIColor) {
-        self.label?.text = NSLocalizedString(label, bundle: Bundle(for: StandardInputView.self), comment: "")
+        self.label.text = NSLocalizedString(label, bundle: Bundle(for: StandardInputView.self), comment: "")
         self.backgroundColor = backgroundColor
     }
 }

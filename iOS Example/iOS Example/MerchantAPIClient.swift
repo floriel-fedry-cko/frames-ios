@@ -4,7 +4,7 @@ import Alamofire
 
 class MerchantAPIClient {
 
-    let baseUrl = "https://honest-snail-86.localtunnel.me/"
+    let baseUrl = "https://ugly-cougar-81.localtunnel.me/"
 
     func get(customer: String, successHandler: @escaping (Customer) -> Void) {
         let endpoint = "customer/\(customer)"

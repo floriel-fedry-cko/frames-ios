@@ -1,5 +1,7 @@
 import UIKit
 
+/// Expiration Date Input View containing a label and an input field.
+/// Uses the `ExpirationDatePicker` as the input keyboard.
 @IBDesignable public class ExpirationDateInputView: StandardInputView, ExpirationDatePickerDelegate {
 
     // MARK: - Initialization
@@ -21,10 +23,10 @@ import UIKit
     private func setup() {
         let expirationDatePicker = ExpirationDatePicker()
         expirationDatePicker.pickerDelegate = self
-        self.textField?.inputView = expirationDatePicker
+        self.textField.inputView = expirationDatePicker
     }
 
     public func onDateChanged(month: String, year: String) {
-        self.textField?.text = "\(month)/\(year)"
+        self.textField.text = "\(month)/\(year)"
     }
 }

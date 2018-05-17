@@ -1,5 +1,7 @@
 import UIKit
 
+/// Card Number Input View containing a label and an input field.
+/// Handles the formatting of the text field.
 @IBDesignable public class CardNumberInputView: StandardInputView, UITextFieldDelegate {
 
     var cardsUtils: CardUtils?
@@ -20,11 +22,12 @@ import UIKit
         #if !TARGET_INTERFACE_BUILDER
         cardsUtils = CardUtils()
         #endif
-        self.textField?.keyboardType = .default
-        self.textField?.textContentType = .creditCardNumber
-        self.textField?.delegate = self
+        self.textField.keyboardType = .default
+        self.textField.textContentType = .creditCardNumber
+        self.textField.delegate = self
     }
 
+    /// Asks the delegate if the specified text should be changed.
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                           replacementString string: String) -> Bool {
         // Card Number Formatting

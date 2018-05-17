@@ -5,7 +5,8 @@ import CheckoutSdkIos
 class StartViewController: UIViewController,
                             UITableViewDelegate,
                             UITableViewDataSource,
-CardViewControllerDelegate {
+CardViewControllerDelegate,
+PKPaymentAuthorizationViewControllerDelegate {
 
     @IBOutlet weak var cardsTableView: UITableView!
     @IBOutlet weak var payButtonsView: UIStackView!
@@ -90,11 +91,6 @@ CardViewControllerDelegate {
         payButtonsView.addArrangedSubview(applePayButton)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func onTapDone(card: CardRequest) {
         createdCards.append(card)
         cardsTableView.reloadData()
@@ -162,6 +158,7 @@ CardViewControllerDelegate {
         if PKPaymentAuthorizationController.canMakePayments() {
             let paymentRequest = createPaymentRequest()
             if let applePayViewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest) {
+                applePayViewController.delegate = self
                 self.present(applePayViewController, animated: true)
             }
         }
@@ -204,4 +201,23 @@ CardViewControllerDelegate {
 
         return [demoProduct1, demoDiscount, shipping, totalPrice]
     }
+
+    // Delegate method Apple Pay
+
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController,
+                                            didAuthorizePayment payment: PKPayment,
+                                            handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
+        checkoutAPIClient.createApplePayToken(paymentData: payment.token.paymentData, successHandler: { applePayToken in
+            print(applePayToken)
+            completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+        }, errorHandler: { error in
+            completion(PKPaymentAuthorizationResult(status: .failure, errors: nil))
+            print(error)
+        })
+    }
+
 }

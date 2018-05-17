@@ -75,4 +75,23 @@ class CheckoutAPIClientTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
 
+    func testSuccessfulCreateApplePayToken() {
+        // Stub the response
+        let path = Bundle(for: type(of: self)).path(forResource: "applePayToken", ofType: "json")!
+        let data = NSData(contentsOfFile: path)!
+        stub(everything, delay: 0, jsonData(data as Data))
+        // Test the function
+        let expectation = XCTestExpectation(description: "create apple pay token")
+        let applePayData = Data()
+        checkoutAPIClient.createApplePayToken(paymentData: applePayData, successHandler: { applePayToken in
+            XCTAssertNotNil(applePayToken)
+            XCTAssertNotNil(applePayToken.token)
+            XCTAssertNotNil(applePayToken.expiresOn)
+            expectation.fulfill()
+        }, errorHandler: { _ in
+        })
+
+        wait(for: [expectation], timeout: 1.0)
+    }
+
 }

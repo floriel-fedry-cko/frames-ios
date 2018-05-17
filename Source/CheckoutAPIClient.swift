@@ -93,34 +93,35 @@ public class CheckoutAPIClient {
 
     /// Create a card token with Apple Pay
     ///
-    /// - parameter applePayData: Apple Pay data such as version, payment data, signature
-    ///                           used to create a card token
+    /// - parameter paymentData: Apple Pay payment data used to create a card token
     /// - parameter successHandler: Callback to execute if the request is successful
     /// - parameter erroHandler: Callback to execute if the request failed
-    public func createApplePayToken(applePayData: ApplePayData,
+    public func createApplePayToken(paymentData: Data,
                                     successHandler: @escaping (ApplePayToken) -> Void,
                                     errorHandler: @escaping (ErrorResponse) -> Void) {
         let url = "\(environment.rawValue)\(Endpoint.createApplePayToken.rawValue)"
-        request(url, method: .post, parameters: applePayData.toDictionary(),
-                          encoding: JSONEncoding.default, headers: headers)
-            .validate().responseJSON { response in
-                let decoder = JSONDecoder()
-                switch response.result {
-                case .success:
-                    do {
-                        let applePayToken = try decoder.decode(ApplePayToken.self, from: response.data!)
-                        successHandler(applePayToken)
-                    } catch let error {
-                        print(error)
-                    }
-                case .failure:
-                    do {
-                        let applePayTokenError = try decoder.decode(ErrorResponse.self, from: response.data!)
-                        errorHandler(applePayTokenError)
-                    } catch let error {
-                        print(error)
-                    }
+        // swiftlint:disable:next force_try
+        var urlRequest = try! URLRequest(url: URL(string: url)!, method: HTTPMethod.post, headers: headers)
+        urlRequest.httpBody = paymentData
+        request(urlRequest).validate().responseJSON { response in
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            switch response.result {
+            case .success:
+                do {
+                    let applePayToken = try decoder.decode(ApplePayToken.self, from: response.data!)
+                    successHandler(applePayToken)
+                } catch let error {
+                    print(error)
                 }
+            case .failure:
+                do {
+                    let applePayTokenError = try decoder.decode(ErrorResponse.self, from: response.data!)
+                    errorHandler(applePayTokenError)
+                } catch let error {
+                    print(error)
+                }
+            }
         }
     }
 

@@ -179,7 +179,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
             let cardholdersName = cardHolderNameInputView.textField.text,
             let expirationDate = expirationDateInputView.textField.text,
             let cvv = cvvInputView.textField.text,
-            let _ = billingDetailsAddress
+            billingDetailsAddress != nil
             else {
                 navigationItem.rightBarButtonItem?.isEnabled = false
                 return false

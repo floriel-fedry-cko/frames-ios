@@ -6,7 +6,7 @@ import UIKit
 
     var cardsUtils: CardUtils?
     /// Text field delegate
-    public var delegate: UITextFieldDelegate?
+    public weak var delegate: UITextFieldDelegate?
 
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     public override init(frame: CGRect) {

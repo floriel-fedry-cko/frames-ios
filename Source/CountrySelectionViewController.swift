@@ -43,8 +43,10 @@ import UIKit
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "countryCell")
         view.addSubview(searchBar)
         view.addSubview(tableView)
+        addConstraints()
+    }
 
-        // add constraints
+    private func addConstraints() {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.topAnchor.constraint(equalTo: self.view.safeTopAnchor).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor).isActive = true

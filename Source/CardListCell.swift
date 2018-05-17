@@ -1,6 +1,6 @@
 import UIKit
 
-/// 
+/// Table View Cell adapted to display a card.
 public class CardListCell: UITableViewCell {
 
     // MARK: - Properties

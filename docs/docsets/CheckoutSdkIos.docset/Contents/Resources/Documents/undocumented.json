@@ -1,19 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardListCell.swift",
-      "line": 3,
-      "symbol": "CardListCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardNumberInputView.swift",
-      "line": 30,
-      "symbol": "CardNumberInputView.textField(_:shouldChangeCharactersIn:replacementString:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/floriel.fedry/Documents/GitHub/just-a-test"
 }

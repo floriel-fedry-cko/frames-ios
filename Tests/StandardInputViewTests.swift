@@ -28,39 +28,39 @@ class StandardInputViewTests: XCTestCase {
 
     func testEmptyInitialization() {
         let standardInputView = StandardInputView()
-        XCTAssertEqual(standardInputView.textField!.textContentType, UITextContentType.name)
+        XCTAssertEqual(standardInputView.textField.textContentType, UITextContentType.name)
     }
 
     func testCoderInitialization() {
         let coder = NSKeyedUnarchiver(forReadingWith: Data())
         let standardInputView = StandardInputView(coder: coder)
-        XCTAssertEqual(standardInputView!.textField!.textContentType, UITextContentType.name)
+        XCTAssertEqual(standardInputView!.textField.textContentType, UITextContentType.name)
     }
 
     func testFrameInitialization() {
         let standardInputView = StandardInputView(frame: CGRect(x: 0, y: 0, width: 400, height: 48))
-        XCTAssertEqual(standardInputView.textField!.textContentType, UITextContentType.name)
+        XCTAssertEqual(standardInputView.textField.textContentType, UITextContentType.name)
     }
 
     func testTextFieldBecomeFirstResponderOnTap() {
         standardInputView.onTapView()
-        XCTAssertTrue(self.standardInputView.textField!.isFirstResponder)
+        XCTAssertTrue(self.standardInputView.textField.isFirstResponder)
     }
 
     func testSetTextAndBackgroundColor() {
         standardInputView.set(label: "streetAddress", backgroundColor: .white)
-        XCTAssertEqual(standardInputView.label!.text, "Street Address")
+        XCTAssertEqual(standardInputView.label.text, "Street Address")
         XCTAssertEqual(standardInputView.backgroundColor, UIColor.white)
     }
 
     func testSetPlaceholder() {
         standardInputView.placeholder = "Placeholder"
-        XCTAssertEqual(standardInputView.textField!.placeholder, "Placeholder")
+        XCTAssertEqual(standardInputView.textField.placeholder, "Placeholder")
     }
 
     func testSetText() {
         standardInputView.text = "Text"
-        XCTAssertEqual(standardInputView.label!.text, "Text")
+        XCTAssertEqual(standardInputView.label.text, "Text")
     }
 
 }

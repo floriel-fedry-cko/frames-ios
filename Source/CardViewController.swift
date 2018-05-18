@@ -7,10 +7,9 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     var scrollView: UIScrollView {
         let scrollView = UIScrollView.init(frame: view.bounds)
-        scrollView.contentSize = CGSize(width: self.view., height: <#T##CGFloat#>)
         return scrollView
     }
-    let scrollContentView = UIView()
+    let contentView = UIView()
     let stackView = UIStackView()
     let schemeIconsView = UIStackView()
     let acceptedCardLabel = UILabel()
@@ -24,7 +23,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     var lastOffset: CGPoint!
     var keyboardHeight: CGFloat!
 
-    var scrollViewHeightConstraint: NSLayoutConstraint!
+    var contentViewHeightConstraint: NSLayoutConstraint!
 
     let addressViewController = AddressViewController()
     let addressTapGesture = UITapGestureRecognizer()
@@ -52,6 +51,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
         addViews()
         addConstraints()
+        addScrollview()
         addTextFieldsDelegate()
 
         // add schemes icons
@@ -121,51 +121,57 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         cvvInputView.textField.placeholder = "100"
         cvvInputView.textField.keyboardType = .numberPad
 
-        self.view.backgroundColor = UIColor.groupTableViewBackground
-        acceptedCardLabel.backgroundColor = UIColor.purple
-        schemeIconsView.backgroundColor = UIColor.purple
-        stackView.backgroundColor = UIColor.purple
         schemeIconsView.spacing = 8
         stackView.axis = .vertical
         stackView.spacing = 16
     }
 
     private func addViews() {
+        self.view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(acceptedCardLabel)
+        contentView.addSubview(schemeIconsView)
+        contentView.addSubview(stackView)
         stackView.addArrangedSubview(cardNumberInputView)
         stackView.addArrangedSubview(cardHolderNameInputView)
         stackView.addArrangedSubview(expirationDateInputView)
         stackView.addArrangedSubview(cvvInputView)
         stackView.addArrangedSubview(billingDetailsInputView)
-        self.scrollView.addSubview(acceptedCardLabel)
-        self.scrollView.addSubview(schemeIconsView)
-        self.scrollView.addSubview(stackView)
-        self.view.addSubview(scrollView)
     }
 
     private func addConstraints() {
         acceptedCardLabel.translatesAutoresizingMaskIntoConstraints = false
         acceptedCardLabel.trailingAnchor
-            .constraint(equalTo: self.scrollView.safeTrailingAnchor, constant: -16)
+            .constraint(equalTo: self.contentView.trailingAnchor, constant: -16)
             .isActive = true
-        acceptedCardLabel.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 16).isActive = true
-        acceptedCardLabel.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 16).isActive = true
+        acceptedCardLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16).isActive = true
+        acceptedCardLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16)
+            .isActive = true
 
         schemeIconsView.translatesAutoresizingMaskIntoConstraints = false
-        schemeIconsView.trailingAnchor.constraint(equalTo: self.scrollView.safeTrailingAnchor, constant: -16).isActive = true
+        schemeIconsView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16)
+            .isActive = true
         schemeIconsView.topAnchor.constraint(equalTo: acceptedCardLabel.bottomAnchor, constant: 16).isActive = true
-        schemeIconsView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 16).isActive = true
+        schemeIconsView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16).isActive = true
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16).isActive = true
         stackView.topAnchor.constraint(equalTo: self.schemeIconsView.bottomAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16).isActive = true
+    }
 
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor.blue
-        scrollView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: self.view.safeTopAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor).isActive = true
+    private func addScrollview() {
+//        scrollView.translatesAutoresizingMaskIntoConstraints = false
+//        scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+//        scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+//        scrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+//        scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+
+//        contentViewHeightConstraint = contentView.heightAnchor.constraint(equalTo: self.view.heightAnchor,
+//                                                                          multiplier: 1.0)
+//        contentViewHeightConstraint.priority = .defaultLow
+//        contentViewHeightConstraint.isActive = true
+//        contentView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
     }
 
     private func addTextFieldsDelegate() {

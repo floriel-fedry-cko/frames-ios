@@ -8,19 +8,19 @@
 
 Pod::Spec.new do |s|
   s.name         = "CheckoutSdkIos"
-  s.version      = "1.1.2"
+  s.version      = "0.1.0"
   s.summary      = "Checkout API Client and Payment Form Utilities in Swift"
   s.description  = <<-DESC
   Checkout API Client and Payment Form Utilities in Swift.
-  This library contains methods to implement a payment form.
+  This library contains methods to implement a payment form as well as UI elements.
                    DESC
   s.homepage     = "https://github.com/floriel-fedry-cko/just-a-test.git"
+  s.swift_version = "4.1"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
   s.license      = "MIT"
   s.author             = { "Checkout.com Integration" => "integration@checkout.com" }
-  s.social_media_url   = "http://twitter.com/floriel-fedry-cko"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

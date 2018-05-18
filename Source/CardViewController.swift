@@ -5,6 +5,12 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     let cardUtils = CardUtils()
 
+    var scrollView: UIScrollView {
+        let scrollView = UIScrollView.init(frame: view.bounds)
+        scrollView.contentSize = CGSize(width: self.view., height: <#T##CGFloat#>)
+        return scrollView
+    }
+    let scrollContentView = UIView()
     let stackView = UIStackView()
     let schemeIconsView = UIStackView()
     let acceptedCardLabel = UILabel()
@@ -14,6 +20,11 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     let cvvInputView = StandardInputView()
     let billingDetailsInputView = DetailsInputView()
     var billingDetailsAddress: Address?
+
+    var lastOffset: CGPoint!
+    var keyboardHeight: CGFloat!
+
+    var scrollViewHeightConstraint: NSLayoutConstraint!
 
     let addressViewController = AddressViewController()
     let addressTapGesture = UITapGestureRecognizer()
@@ -55,6 +66,8 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
             expirationDateInputView.textField,
             cvvInputView.textField
             ])
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     @objc func onTapAddressView() {
@@ -109,6 +122,9 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         cvvInputView.textField.keyboardType = .numberPad
 
         self.view.backgroundColor = UIColor.groupTableViewBackground
+        acceptedCardLabel.backgroundColor = UIColor.purple
+        schemeIconsView.backgroundColor = UIColor.purple
+        stackView.backgroundColor = UIColor.purple
         schemeIconsView.spacing = 8
         stackView.axis = .vertical
         stackView.spacing = 16
@@ -120,28 +136,36 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         stackView.addArrangedSubview(expirationDateInputView)
         stackView.addArrangedSubview(cvvInputView)
         stackView.addArrangedSubview(billingDetailsInputView)
-        self.view.addSubview(acceptedCardLabel)
-        self.view.addSubview(schemeIconsView)
-        self.view.addSubview(stackView)
+        self.scrollView.addSubview(acceptedCardLabel)
+        self.scrollView.addSubview(schemeIconsView)
+        self.scrollView.addSubview(stackView)
+        self.view.addSubview(scrollView)
     }
 
     private func addConstraints() {
         acceptedCardLabel.translatesAutoresizingMaskIntoConstraints = false
         acceptedCardLabel.trailingAnchor
-            .constraint(equalTo: self.view.safeTrailingAnchor, constant: -16)
+            .constraint(equalTo: self.scrollView.safeTrailingAnchor, constant: -16)
             .isActive = true
-        acceptedCardLabel.topAnchor.constraint(equalTo: self.view.safeTopAnchor, constant: 16).isActive = true
-        acceptedCardLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
+        acceptedCardLabel.topAnchor.constraint(equalTo: self.scrollView.topAnchor, constant: 16).isActive = true
+        acceptedCardLabel.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 16).isActive = true
 
         schemeIconsView.translatesAutoresizingMaskIntoConstraints = false
-        schemeIconsView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
+        schemeIconsView.trailingAnchor.constraint(equalTo: self.scrollView.safeTrailingAnchor, constant: -16).isActive = true
         schemeIconsView.topAnchor.constraint(equalTo: acceptedCardLabel.bottomAnchor, constant: 16).isActive = true
-        schemeIconsView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
+        schemeIconsView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 16).isActive = true
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16).isActive = true
         stackView.topAnchor.constraint(equalTo: self.schemeIconsView.bottomAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
+
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = UIColor.blue
+        scrollView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: self.view.safeTopAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor).isActive = true
     }
 
     private func addTextFieldsDelegate() {
@@ -197,6 +221,51 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
         _ = validateFieldsValues()
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if keyboardHeight != nil {
+            return
+        }
+
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            keyboardHeight = keyboardSize.height
+
+            // so increase contentView's height by keyboard height
+            UIView.animate(withDuration: 0.3, animations: {
+//                self.scrollViewBottomConstraint.constant += self.keyboardHeight
+//                print(self.scrollViewBottomConstraint.constant)
+                self.scrollView.layoutIfNeeded()
+//                self.constraintContentHeight.constant += self.keyboardHeight
+            })
+
+            // move if keyboard hide input field
+            guard let activeField = UIResponder.current as? UITextField else { return }
+            let distanceToBottom = self.scrollView.frame.size.height - (activeField.frame.origin.y)
+                - (activeField.frame.size.height)
+            let collapseSpace = keyboardHeight - distanceToBottom
+
+            if collapseSpace < 0 {
+                // no collapse
+                return
+            }
+
+            // set new offset for scroll view
+            UIView.animate(withDuration: 0.3, animations: {
+                // scroll to the position above keyboard 10 points
+                self.scrollView.contentOffset = CGPoint(x: 0, y: collapseSpace + 10)
+            })
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.3) {
+//            self.constraintContentHeight.constant -= self.keyboardHeight
+//            self.scrollViewBottomConstraint.constant -= self.keyboardHeight
+            self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        }
+
+        keyboardHeight = nil
     }
 
 }

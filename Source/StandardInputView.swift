@@ -71,7 +71,7 @@ import UIKit
         label.translatesAutoresizingMaskIntoConstraints = false
         textField.translatesAutoresizingMaskIntoConstraints = false
         self.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        self.trailingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 8).isActive = true
+        textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
         label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         label.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 8).isActive = true
         textField.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true

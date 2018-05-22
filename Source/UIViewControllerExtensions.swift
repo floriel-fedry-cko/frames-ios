@@ -25,12 +25,6 @@ extension UIViewController {
         return scrollViewBottomConstraint
     }
 
-    @objc func scrollViewOnKeyboardWillShow(notification: NSNotification, bottomConstraint: NSLayoutConstraint) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            bottomConstraint.constant = keyboardSize.height
-        }
-    }
-
     @objc func scrollViewOnKeyboardWillShow(notification: NSNotification, scrollView: UIScrollView) {
         guard let activeField = UIResponder.current as? UITextField else { return }
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
@@ -48,10 +42,6 @@ extension UIViewController {
                 scrollView.scrollRectToVisible(activeTextFieldRect!, animated: true)
             }
         }
-    }
-
-    @objc func scrollViewOnKeyboardWillHide(notification: NSNotification, bottomConstraint: NSLayoutConstraint) {
-        bottomConstraint.constant = 0
     }
 
     @objc func scrollViewOnKeyboardWillHide(notification: NSNotification, scrollView: UIScrollView) {

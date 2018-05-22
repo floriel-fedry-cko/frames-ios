@@ -74,30 +74,11 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-//        self.scrollViewOnKeyboardWillShow(notification: notification, bottomConstraint: scrollViewBottomConstraint)
-        guard let activeField = UIResponder.current as? UITextField else { return }
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-            scrollView.contentInset = contentInsets
-            scrollView.scrollIndicatorInsets = contentInsets
-
-            // If active text field is hidden by keyboard, scroll it so it's visible
-            // Your app might not need or want this behavior.
-            var aRect: CGRect = self.view.frame
-            aRect.size.height -= keyboardSize.height
-            let activeTextFieldRect: CGRect? = activeField.frame
-            let activeTextFieldOrigin: CGPoint? = activeTextFieldRect?.origin
-            if !aRect.contains(activeTextFieldOrigin!) {
-                scrollView.scrollRectToVisible(activeTextFieldRect!, animated: true)
-            }
-        }
+        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-//        self.scrollViewOnKeyboardWillHide(notification: notification, bottomConstraint: scrollViewBottomConstraint)
-        let contentInsets: UIEdgeInsets = .zero
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
+        self.scrollViewOnKeyboardWillHide(notification: notification, scrollView: scrollView)
     }
 
     @objc func onTapCountryRegionView() {

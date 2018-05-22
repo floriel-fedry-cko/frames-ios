@@ -17,10 +17,6 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     let billingDetailsInputView = DetailsInputView()
     var billingDetailsAddress: Address?
 
-    var lastOffset: CGPoint!
-    var keyboardHeight: CGFloat!
-
-    var contentViewHeightConstraint: NSLayoutConstraint!
     var scrollViewBottomConstraint: NSLayoutConstraint!
 
     let addressViewController = AddressViewController()
@@ -49,7 +45,6 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
         addViews()
         addTextFieldsDelegate()
-        scrollViewBottomConstraint = self.addScrollViewContraints(scrollView: scrollView, contentView: contentView)
         addConstraints()
 
         // add schemes icons
@@ -68,20 +63,13 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self,
-                                       selector: #selector(keyboardWillShow),
-                                       name: NSNotification.Name.UIKeyboardWillShow,
-                                       object: nil)
-        NotificationCenter.default.addObserver(self,
-                                       selector: #selector(keyboardWillHide),
-                                       name: NSNotification.Name.UIKeyboardWillHide,
-                                       object: nil)
+        self.registerKeyboardHandlers(keyboardWillShow: #selector(keyboardWillShow),
+                                      keyboardWillHide: #selector(keyboardWillHide))
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.deregisterKeyboardHandlers()
     }
 
     @objc func onTapAddressView() {
@@ -155,6 +143,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     }
 
     private func addConstraints() {
+        scrollViewBottomConstraint = self.addScrollViewContraints(scrollView: scrollView, contentView: contentView)
         acceptedCardLabel.translatesAutoresizingMaskIntoConstraints = false
         schemeIconsView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false

@@ -42,7 +42,6 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         stackView.spacing = 16
 
         addViews()
-        scrollViewBottomConstraint = self.addScrollViewContraints(scrollView: scrollView, contentView: contentView)
         addConstraints()
         addTextFieldsDelegate()
         addKeyboardToolbarNavigation(textFields: [
@@ -133,6 +132,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     }
 
     private func addConstraints() {
+        scrollViewBottomConstraint = self.addScrollViewContraints(scrollView: scrollView, contentView: contentView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.trailingAnchor.constraint(equalTo: self.contentView.safeTrailingAnchor, constant: -16).isActive = true
         stackView.topAnchor.constraint(equalTo: self.contentView.safeTopAnchor, constant: 16).isActive = true

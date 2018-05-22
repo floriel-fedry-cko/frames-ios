@@ -3,6 +3,8 @@ import Foundation
 /// A view controller that allows the user to enter address information.
 public class AddressViewController: UIViewController, CountrySelectionViewControllerDelegate, UITextFieldDelegate {
 
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     let stackView = UIStackView()
     let nameInputView = StandardInputView()
     let countryRegionInputView = DetailsInputView()
@@ -17,6 +19,8 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
 
     let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done,
                                      target: self, action: nil)
+    var scrollViewBottomConstraint: NSLayoutConstraint!
+
     /// Delegate
     public weak var delegate: AddressViewControllerDelegate?
 
@@ -38,6 +42,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         stackView.spacing = 16
 
         addViews()
+        scrollViewBottomConstraint = self.addScrollViewContraints(scrollView: scrollView, contentView: contentView)
         addConstraints()
         addTextFieldsDelegate()
         addKeyboardToolbarNavigation(textFields: [
@@ -48,6 +53,51 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
             postcodeInputView.textField,
             phoneInputView.textField
             ])
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               object: nil)
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+//        self.scrollViewOnKeyboardWillShow(notification: notification, bottomConstraint: scrollViewBottomConstraint)
+        guard let activeField = UIResponder.current as? UITextField else { return }
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+            scrollView.contentInset = contentInsets
+            scrollView.scrollIndicatorInsets = contentInsets
+
+            // If active text field is hidden by keyboard, scroll it so it's visible
+            // Your app might not need or want this behavior.
+            var aRect: CGRect = self.view.frame
+            aRect.size.height -= keyboardSize.height
+            let activeTextFieldRect: CGRect? = activeField.frame
+            let activeTextFieldOrigin: CGPoint? = activeTextFieldRect?.origin
+            if !aRect.contains(activeTextFieldOrigin!) {
+                scrollView.scrollRectToVisible(activeTextFieldRect!, animated: true)
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+//        self.scrollViewOnKeyboardWillHide(notification: notification, bottomConstraint: scrollViewBottomConstraint)
+        let contentInsets: UIEdgeInsets = .zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
 
     @objc func onTapCountryRegionView() {
@@ -96,14 +146,17 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         stackView.addArrangedSubview(postalTownInputView)
         stackView.addArrangedSubview(postcodeInputView)
         stackView.addArrangedSubview(phoneInputView)
-        self.view.addSubview(stackView)
+        contentView.addSubview(stackView)
+        scrollView.addSubview(contentView)
+        self.view.addSubview(scrollView)
     }
 
     private func addConstraints() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
-        stackView.topAnchor.constraint(equalTo: self.view.safeTopAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor, constant: 16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.contentView.safeTrailingAnchor, constant: -16).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.contentView.safeTopAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.contentView.safeLeadingAnchor, constant: 16).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: self.contentView.safeBottomAnchor).isActive = true
     }
 
     private func addTextFieldsDelegate() {

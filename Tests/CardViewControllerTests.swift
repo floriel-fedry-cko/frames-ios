@@ -25,8 +25,37 @@ class CardViewControllerTests: XCTestCase {
     }
 
     func testInitialization() {
+        /// Empty constructor
         let cardViewController = CardViewController()
+        XCTAssertEqual(cardViewController.cardHolderNameState, .required)
+        XCTAssertEqual(cardViewController.billingDetailsState, .required)
         cardViewController.viewDidLoad()
+        XCTAssertEqual(cardViewController.stackView.subviews.count, 5)
+    }
+
+    func testInitializationHiddenFields() {
+        let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .hidden)
+        XCTAssertEqual(cardViewController.cardHolderNameState, .hidden)
+        XCTAssertEqual(cardViewController.billingDetailsState, .hidden)
+        cardViewController.viewDidLoad()
+        XCTAssertEqual(cardViewController.stackView.subviews.count, 3)
+    }
+
+    func testInitializationNibBundle() {
+        let cardViewController = CardViewController(nibName: nil, bundle: nil)
+        XCTAssertEqual(cardViewController.cardHolderNameState, .required)
+        XCTAssertEqual(cardViewController.billingDetailsState, .required)
+        cardViewController.viewDidLoad()
+        XCTAssertEqual(cardViewController.stackView.subviews.count, 5)
+    }
+
+    func testInitializationCoder() {
+        let coder = NSKeyedUnarchiver(forReadingWith: Data())
+        let cardViewController = CardViewController(coder: coder)
+        XCTAssertEqual(cardViewController?.cardHolderNameState, .required)
+        XCTAssertEqual(cardViewController?.billingDetailsState, .required)
+        cardViewController?.viewDidLoad()
+        XCTAssertEqual(cardViewController?.stackView.subviews.count, 5)
     }
 
     func testAddHandlersInViewWillAppear() {

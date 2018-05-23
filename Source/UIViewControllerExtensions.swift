@@ -27,10 +27,11 @@ extension UIViewController {
 
     @objc func scrollViewOnKeyboardWillShow(notification: NSNotification, scrollView: UIScrollView,
                                             activeField: UITextField?) {
+        let additionalSpace = CGFloat(80.0)
         let textField = activeField ?? UIResponder.current as? UITextField
         guard let activeField = textField else { return }
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
+            let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + additionalSpace, right: 0.0)
             scrollView.contentInset = contentInsets
             scrollView.scrollIndicatorInsets = contentInsets
 

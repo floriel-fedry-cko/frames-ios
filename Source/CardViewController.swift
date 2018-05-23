@@ -3,6 +3,8 @@ import Foundation
 /// A view controller that allows the user to enter card information.
 public class CardViewController: UIViewController, AddressViewControllerDelegate, UITextFieldDelegate {
 
+    // MARK: - Properties
+
     let cardUtils = CardUtils()
 
     let scrollView = UIScrollView()
@@ -13,7 +15,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     let cardNumberInputView = CardNumberInputView()
     let cardHolderNameInputView = StandardInputView()
     let expirationDateInputView = ExpirationDateInputView()
-    let cvvInputView = StandardInputView()
+    let cvvInputView = CvvInputView()
     let billingDetailsInputView = DetailsInputView()
     var billingDetailsAddress: Address?
 
@@ -27,6 +29,32 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     /// Delegate
     public weak var delegate: CardViewControllerDelegate?
+
+    // Input options
+    let cardHolderNameState: InputState
+    let billingDetailsState: InputState
+
+    // MARK: - Initialization
+
+    public init(cardHolderNameState: InputState, billingDetailsState: InputState) {
+        self.cardHolderNameState = cardHolderNameState
+        self.billingDetailsState = billingDetailsState
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        cardHolderNameState = .required
+        billingDetailsState = .required
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        cardHolderNameState = .required
+        billingDetailsState = .required
+        super.init(coder: aDecoder)
+    }
+
+    // MARK: - Methods
 
     /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
@@ -138,10 +166,14 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         contentView.addSubview(schemeIconsView)
         contentView.addSubview(stackView)
         stackView.addArrangedSubview(cardNumberInputView)
-        stackView.addArrangedSubview(cardHolderNameInputView)
+        if cardHolderNameState != .hidden {
+            stackView.addArrangedSubview(cardHolderNameInputView)
+        }
         stackView.addArrangedSubview(expirationDateInputView)
         stackView.addArrangedSubview(cvvInputView)
-        stackView.addArrangedSubview(billingDetailsInputView)
+        if billingDetailsState != .hidden {
+            stackView.addArrangedSubview(billingDetailsInputView)
+        }
     }
 
     private func addConstraints() {
@@ -172,7 +204,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         cardNumberInputView.delegate = self
         cardHolderNameInputView.textField.delegate = self
         expirationDateInputView.textField.delegate = self
-        cvvInputView.textField.delegate = self
+        cvvInputView.delegate = self
     }
 
     private func addSchemeIcon(scheme: CardScheme) {
@@ -196,31 +228,44 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         schemeIconsView.addArrangedSubview(fillerView)
     }
 
-    private func validateFieldsValues() -> Bool {
+    private func validateFieldsValues() {
         // values are not nil
         guard
             let cardNumber = cardNumberInputView.textField.text,
-            let cardholdersName = cardHolderNameInputView.textField.text,
             let expirationDate = expirationDateInputView.textField.text,
-            let cvv = cvvInputView.textField.text,
-            billingDetailsAddress != nil
+            let cvv = cvvInputView.textField.text
             else {
                 navigationItem.rightBarButtonItem?.isEnabled = false
-                return false
+                return
+        }
+        // check card holder's name
+        if cardHolderNameState == .required && (cardHolderNameInputView.textField.text?.isEmpty)! {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            return
+        }
+        // check billing details
+        if billingDetailsState == .required && billingDetailsAddress == nil {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+            return
         }
         // values are not empty strings
-        if cardNumber.isEmpty || cardholdersName.isEmpty || expirationDate.isEmpty ||
+        if cardNumber.isEmpty || expirationDate.isEmpty ||
             cvv.isEmpty {
             navigationItem.rightBarButtonItem?.isEnabled = false
-            return false
+            return
         }
         navigationItem.rightBarButtonItem?.isEnabled = true
-        return true
     }
 
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        _ = validateFieldsValues()
+        validateFieldsValues()
+        if textField.superview is CardNumberInputView {
+            let cardNumber = textField.text!
+            let cardNumberStandardized = cardUtils.standardize(cardNumber: cardNumber)
+            let cardType = cardUtils.getTypeOf(cardNumber: cardNumberStandardized)
+            cvvInputView.cardType = cardType
+        }
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {

@@ -25,7 +25,7 @@ PKPaymentAuthorizationViewControllerDelegate {
     var createdCards: [CardRequest] = []
     var selectedCard: Any?
 
-    let cardViewController = CardViewController()
+    let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .normal)
 
     @IBAction func onTapAddCard(_ sender: Any) {
         navigationController?.pushViewController(cardViewController, animated: true)

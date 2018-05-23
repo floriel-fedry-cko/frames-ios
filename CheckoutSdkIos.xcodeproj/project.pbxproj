@@ -51,6 +51,8 @@
 		E632AABA20B5779B00D2B9B6 /* AddressViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632AAB920B5779B00D2B9B6 /* AddressViewControllerMock.swift */; };
 		E632AABC20B578B200D2B9B6 /* CardViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632AABB20B578B200D2B9B6 /* CardViewControllerMock.swift */; };
 		E632AABE20B578FF00D2B9B6 /* NotificationCenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632AABD20B578FF00D2B9B6 /* NotificationCenterMock.swift */; };
+		E632AAC020B57EDF00D2B9B6 /* CvvInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632AABF20B57EDF00D2B9B6 /* CvvInputView.swift */; };
+		E632AAC220B58CE900D2B9B6 /* InputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E632AAC120B58CE900D2B9B6 /* InputState.swift */; };
 		E63352D820A2EE09002C61C0 /* AddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352D720A2EE09002C61C0 /* AddressViewController.swift */; };
 		E63352DB20A34992002C61C0 /* AddressViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */; };
 		E63352E120A45C07002C61C0 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E020A45C07002C61C0 /* CardViewController.swift */; };
@@ -169,6 +171,8 @@
 		E632AAB920B5779B00D2B9B6 /* AddressViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewControllerMock.swift; sourceTree = "<group>"; };
 		E632AABB20B578B200D2B9B6 /* CardViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewControllerMock.swift; sourceTree = "<group>"; };
 		E632AABD20B578FF00D2B9B6 /* NotificationCenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterMock.swift; sourceTree = "<group>"; };
+		E632AABF20B57EDF00D2B9B6 /* CvvInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvInputView.swift; sourceTree = "<group>"; };
+		E632AAC120B58CE900D2B9B6 /* InputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputState.swift; sourceTree = "<group>"; };
 		E63352D720A2EE09002C61C0 /* AddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewController.swift; sourceTree = "<group>"; };
 		E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E63352E020A45C07002C61C0 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 				E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */,
 				E6837285209C628B00C11D67 /* CardNumberInputView.swift */,
 				E6837287209C62A100C11D67 /* ExpirationDateInputView.swift */,
+				E632AABF20B57EDF00D2B9B6 /* CvvInputView.swift */,
 				E6837289209C62B300C11D67 /* StandardInputView.swift */,
 				E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */,
 				E631CB802098B5D900023472 /* ExpirationDatePickerDelegate.swift */,
@@ -379,6 +384,7 @@
 				E67AB993208E1CC600593FBE /* CardProvider.swift */,
 				E664071E208DE199000431E5 /* CardScheme.swift */,
 				E664071A208DE11D000431E5 /* Endpoint.swift */,
+				E632AAC120B58CE900D2B9B6 /* InputState.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -752,6 +758,7 @@
 				E631CB6F2097713C00023472 /* ErrorResponse.swift in Sources */,
 				E602EE91209D86E200CC62A2 /* SessionDelegate.swift in Sources */,
 				E625EE51208F8FD80019B750 /* Phone.swift in Sources */,
+				E632AAC220B58CE900D2B9B6 /* InputState.swift in Sources */,
 				E602EE89209D869E00CC62A2 /* Response.swift in Sources */,
 				E68802412091C6C000220CE2 /* CardRequest.swift in Sources */,
 				E6DC290020A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift in Sources */,
@@ -771,6 +778,7 @@
 				E602EE95209D870700CC62A2 /* TaskDelegate.swift in Sources */,
 				E67AB994208E1CC600593FBE /* CardProvider.swift in Sources */,
 				E6AC018120A9938D00310E43 /* Customer.swift in Sources */,
+				E632AAC020B57EDF00D2B9B6 /* CvvInputView.swift in Sources */,
 				E602EE8B209D86B000CC62A2 /* ResponseSerialization.swift in Sources */,
 				E625EE4D208F8F370019B750 /* Card.swift in Sources */,
 				E63352D820A2EE09002C61C0 /* AddressViewController.swift in Sources */,

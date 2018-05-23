@@ -1,10 +1,10 @@
 import UIKit
 
-/// Card Number Input View containing a label and an input field.
+/// Cvv Input View containing a label and an input field.
 /// Handles the formatting of the text field.
-@IBDesignable public class CardNumberInputView: StandardInputView, UITextFieldDelegate {
+@IBDesignable public class CvvInputView: StandardInputView, UITextFieldDelegate {
 
-    var cardsUtils: CardUtils?
+    var cardType: CardType?
     /// Text field delegate
     public weak var delegate: UITextFieldDelegate?
 
@@ -21,27 +21,21 @@ import UIKit
     }
 
     private func setup() {
-        #if !TARGET_INTERFACE_BUILDER
-        cardsUtils = CardUtils()
-        #endif
-        self.textField.keyboardType = .default
-        self.textField.textContentType = .creditCardNumber
+        self.textField.keyboardType = .numberPad
+        self.textField.textContentType = nil
         self.textField.delegate = self
     }
 
     /// Asks the delegate if the specified text should be changed.
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                           replacementString string: String) -> Bool {
-        // Card Number Formatting
-        let cardNumber = cardsUtils!.standardize(cardNumber: "\(textField.text!)\(string)")
         if string.isEmpty { return true }
-        let cardType = cardsUtils!.getTypeOf(cardNumber: cardNumber)
-        guard let cardTypeUnwrap = cardType else { return true }
-        guard cardNumber.count <= cardTypeUnwrap.validLengths.last! else {
+        guard let cardType = self.cardType else { return true }
+        let cvv = "\(textField.text!)\(string)"
+        guard cvv.count <= cardType.validCvvLengths.last! else {
             return false
         }
-        textField.text = cardsUtils!.format(cardNumber: cardNumber, cardType: cardTypeUnwrap)
-        return false
+        return true
     }
 
     /// Tells the delegate that editing stopped for the specified text field.

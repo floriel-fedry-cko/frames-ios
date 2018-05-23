@@ -63,7 +63,7 @@ class AddressViewControllerTests: XCTestCase {
         addressViewController.scrollViewOnKeyboardWillShow(notification: notification,
                                                            scrollView: addressViewController.scrollView,
                                                            activeField: addressViewController.phoneInputView.textField)
-        let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 300, right: 0.0)
+        let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 380, right: 0.0)
         XCTAssertEqual(addressViewController.scrollView.contentInset, contentInsets)
     }
 

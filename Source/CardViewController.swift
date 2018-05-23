@@ -5,6 +5,8 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     let cardUtils = CardUtils()
 
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     let stackView = UIStackView()
     let schemeIconsView = UIStackView()
     let acceptedCardLabel = UILabel()
@@ -14,6 +16,9 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     let cvvInputView = StandardInputView()
     let billingDetailsInputView = DetailsInputView()
     var billingDetailsAddress: Address?
+
+    var scrollViewBottomConstraint: NSLayoutConstraint!
+    var notificationCenter = NotificationCenter.default
 
     let addressViewController = AddressViewController()
     let addressTapGesture = UITapGestureRecognizer()
@@ -40,8 +45,8 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         addressViewController.delegate = self
 
         addViews()
-        addConstraints()
         addTextFieldsDelegate()
+        addConstraints()
 
         // add schemes icons
         availableSchemes.forEach { scheme in
@@ -55,6 +60,18 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
             expirationDateInputView.textField,
             cvvInputView.textField
             ])
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.registerKeyboardHandlers(notificationCenter: notificationCenter,
+                                      keyboardWillShow: #selector(keyboardWillShow),
+                                      keyboardWillHide: #selector(keyboardWillHide))
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
     }
 
     @objc func onTapAddressView() {
@@ -97,6 +114,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     }
 
     private func setupUIViews() {
+        self.view.backgroundColor = UIColor.groupTableViewBackground
         acceptedCardLabel.text = "Accepted Cards"
         cardNumberInputView.set(label: "cardNumber", backgroundColor: .white)
         cardHolderNameInputView.set(label: "cardholderName", backgroundColor: .white)
@@ -108,40 +126,46 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         cvvInputView.textField.placeholder = "100"
         cvvInputView.textField.keyboardType = .numberPad
 
-        self.view.backgroundColor = UIColor.groupTableViewBackground
         schemeIconsView.spacing = 8
         stackView.axis = .vertical
         stackView.spacing = 16
     }
 
     private func addViews() {
+        self.view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(acceptedCardLabel)
+        contentView.addSubview(schemeIconsView)
+        contentView.addSubview(stackView)
         stackView.addArrangedSubview(cardNumberInputView)
         stackView.addArrangedSubview(cardHolderNameInputView)
         stackView.addArrangedSubview(expirationDateInputView)
         stackView.addArrangedSubview(cvvInputView)
         stackView.addArrangedSubview(billingDetailsInputView)
-        self.view.addSubview(acceptedCardLabel)
-        self.view.addSubview(schemeIconsView)
-        self.view.addSubview(stackView)
     }
 
     private func addConstraints() {
+        scrollViewBottomConstraint = self.addScrollViewContraints(scrollView: scrollView, contentView: contentView)
         acceptedCardLabel.translatesAutoresizingMaskIntoConstraints = false
-        acceptedCardLabel.trailingAnchor
-            .constraint(equalTo: self.view.safeTrailingAnchor, constant: -16)
-            .isActive = true
-        acceptedCardLabel.topAnchor.constraint(equalTo: self.view.safeTopAnchor, constant: 16).isActive = true
-        acceptedCardLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
-
         schemeIconsView.translatesAutoresizingMaskIntoConstraints = false
-        schemeIconsView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
-        schemeIconsView.topAnchor.constraint(equalTo: acceptedCardLabel.bottomAnchor, constant: 16).isActive = true
-        schemeIconsView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16).isActive = true
-
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
+
+        acceptedCardLabel.trailingAnchor
+            .constraint(equalTo: self.contentView.trailingAnchor, constant: -16)
+            .isActive = true
+        acceptedCardLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16).isActive = true
+        acceptedCardLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16)
+            .isActive = true
+
+        schemeIconsView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16)
+            .isActive = true
+        schemeIconsView.topAnchor.constraint(equalTo: acceptedCardLabel.bottomAnchor, constant: 16).isActive = true
+        schemeIconsView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16).isActive = true
+
+        stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16).isActive = true
         stackView.topAnchor.constraint(equalTo: self.schemeIconsView.bottomAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor).isActive = true
     }
 
     private func addTextFieldsDelegate() {
@@ -197,6 +221,14 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
         _ = validateFieldsValues()
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView, activeField: nil)
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.scrollViewOnKeyboardWillHide(notification: notification, scrollView: scrollView)
     }
 
 }

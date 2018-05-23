@@ -3,6 +3,8 @@ import Foundation
 /// A view controller that allows the user to enter address information.
 public class AddressViewController: UIViewController, CountrySelectionViewControllerDelegate, UITextFieldDelegate {
 
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     let stackView = UIStackView()
     let nameInputView = StandardInputView()
     let countryRegionInputView = DetailsInputView()
@@ -17,6 +19,9 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
 
     let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done,
                                      target: self, action: nil)
+    var scrollViewBottomConstraint: NSLayoutConstraint!
+    var notificationCenter: NotificationCenter = NotificationCenter.default
+
     /// Delegate
     public weak var delegate: AddressViewControllerDelegate?
 
@@ -48,6 +53,26 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
             postcodeInputView.textField,
             phoneInputView.textField
             ])
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.registerKeyboardHandlers(notificationCenter: notificationCenter,
+                                      keyboardWillShow: #selector(keyboardWillShow),
+                                      keyboardWillHide: #selector(keyboardWillHide))
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView, activeField: nil)
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.scrollViewOnKeyboardWillHide(notification: notification, scrollView: scrollView)
     }
 
     @objc func onTapCountryRegionView() {
@@ -96,14 +121,18 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         stackView.addArrangedSubview(postalTownInputView)
         stackView.addArrangedSubview(postcodeInputView)
         stackView.addArrangedSubview(phoneInputView)
-        self.view.addSubview(stackView)
+        contentView.addSubview(stackView)
+        scrollView.addSubview(contentView)
+        self.view.addSubview(scrollView)
     }
 
     private func addConstraints() {
+        scrollViewBottomConstraint = self.addScrollViewContraints(scrollView: scrollView, contentView: contentView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor, constant: -16).isActive = true
-        stackView.topAnchor.constraint(equalTo: self.view.safeTopAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor, constant: 16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.contentView.safeTrailingAnchor, constant: -16).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.contentView.safeTopAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.contentView.safeLeadingAnchor, constant: 16).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: self.contentView.safeBottomAnchor).isActive = true
     }
 
     private func addTextFieldsDelegate() {

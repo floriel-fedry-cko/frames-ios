@@ -1,9 +1,11 @@
 
 "cardNumber" = "Card Number*";
-"cardholderName" = "Cardholder's name*";
+"cardholderName" = "Cardholder's name";
+"cardholderNameRequired" = "Cardholder's name*";
 "expirationDate" = "Expiration Date*";
 "cvv" = "CVV*";
-"billingDetails" = "Billing Details*";
+"billingDetails" = "Billing Details";
+"billingDetailsRequired" = "Billing Details*";
 "name" = "Name";
 "countryRegion" = "Country/Region*";
 "organization" = "Organization";

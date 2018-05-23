@@ -145,10 +145,18 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         self.view.backgroundColor = UIColor.groupTableViewBackground
         acceptedCardLabel.text = "Accepted Cards"
         cardNumberInputView.set(label: "cardNumber", backgroundColor: .white)
-        cardHolderNameInputView.set(label: "cardholderName", backgroundColor: .white)
+        if cardHolderNameState == .required {
+            cardHolderNameInputView.set(label: "cardholderNameRequired", backgroundColor: .white)
+        } else {
+            cardHolderNameInputView.set(label: "cardholderName", backgroundColor: .white)
+        }
         expirationDateInputView.set(label: "expirationDate", backgroundColor: .white)
         cvvInputView.set(label: "cvv", backgroundColor: .white)
-        billingDetailsInputView.set(label: "billingDetails", backgroundColor: .white)
+        if billingDetailsState == .required {
+            billingDetailsInputView.set(label: "billingDetailsRequired", backgroundColor: .white)
+        } else {
+            billingDetailsInputView.set(label: "billingDetails", backgroundColor: .white)
+        }
         cardNumberInputView.textField.placeholder = "4242"
         expirationDateInputView.textField.placeholder = "06/2020"
         cvvInputView.textField.placeholder = "100"

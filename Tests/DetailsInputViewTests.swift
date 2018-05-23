@@ -24,16 +24,16 @@ class DetailsInputViewTests: XCTestCase {
     }
 
     func testEmptyInitialization() {
-        let detailsInputView = DetailsInputView()
+        _ = DetailsInputView()
     }
 
     func testCoderInitialization() {
         let coder = NSKeyedUnarchiver(forReadingWith: Data())
-        let detailsInputView = DetailsInputView(coder: coder)
+        _ = DetailsInputView(coder: coder)
     }
 
     func testFrameInitialization() {
-        let detailsInputView = DetailsInputView(frame: CGRect(x: 0, y: 0, width: 400, height: 48))
+        _ = DetailsInputView(frame: CGRect(x: 0, y: 0, width: 400, height: 48))
     }
 
     func testSetText() {

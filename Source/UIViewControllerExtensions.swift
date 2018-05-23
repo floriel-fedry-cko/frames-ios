@@ -25,8 +25,10 @@ extension UIViewController {
         return scrollViewBottomConstraint
     }
 
-    @objc func scrollViewOnKeyboardWillShow(notification: NSNotification, scrollView: UIScrollView) {
-        guard let activeField = UIResponder.current as? UITextField else { return }
+    @objc func scrollViewOnKeyboardWillShow(notification: NSNotification, scrollView: UIScrollView,
+                                            activeField: UITextField?) {
+        let textField = activeField ?? UIResponder.current as? UITextField
+        guard let activeField = textField else { return }
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
             scrollView.contentInset = contentInsets
@@ -50,19 +52,21 @@ extension UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
 
-    func registerKeyboardHandlers(keyboardWillShow: Selector, keyboardWillHide: Selector) {
-        NotificationCenter.default.addObserver(self,
-                                               selector: keyboardWillShow,
-                                               name: NSNotification.Name.UIKeyboardWillShow,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: keyboardWillHide,
-                                               name: NSNotification.Name.UIKeyboardWillHide,
-                                               object: nil)
+    func registerKeyboardHandlers(notificationCenter: NotificationCenter,
+                                  keyboardWillShow: Selector,
+                                  keyboardWillHide: Selector) {
+        notificationCenter.addObserver(self,
+                                       selector: keyboardWillShow,
+                                       name: NSNotification.Name.UIKeyboardWillShow,
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: keyboardWillHide,
+                                       name: NSNotification.Name.UIKeyboardWillHide,
+                                       object: nil)
     }
 
-    func deregisterKeyboardHandlers() {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    func deregisterKeyboardHandlers(notificationCenter: NotificationCenter) {
+        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 }

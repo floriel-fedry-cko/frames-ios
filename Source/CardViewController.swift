@@ -18,6 +18,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     var billingDetailsAddress: Address?
 
     var scrollViewBottomConstraint: NSLayoutConstraint!
+    var notificationCenter = NotificationCenter.default
 
     let addressViewController = AddressViewController()
     let addressTapGesture = UITapGestureRecognizer()
@@ -63,13 +64,14 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.registerKeyboardHandlers(keyboardWillShow: #selector(keyboardWillShow),
+        self.registerKeyboardHandlers(notificationCenter: notificationCenter,
+                                      keyboardWillShow: #selector(keyboardWillShow),
                                       keyboardWillHide: #selector(keyboardWillHide))
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.deregisterKeyboardHandlers()
+        self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
     }
 
     @objc func onTapAddressView() {
@@ -222,7 +224,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView)
+        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView, activeField: nil)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {

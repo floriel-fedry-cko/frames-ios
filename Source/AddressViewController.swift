@@ -20,6 +20,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done,
                                      target: self, action: nil)
     var scrollViewBottomConstraint: NSLayoutConstraint!
+    var notificationCenter: NotificationCenter = NotificationCenter.default
 
     /// Delegate
     public weak var delegate: AddressViewControllerDelegate?
@@ -56,24 +57,18 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
 
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillShow),
-                                               name: NSNotification.Name.UIKeyboardWillShow,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: NSNotification.Name.UIKeyboardWillHide,
-                                               object: nil)
+        self.registerKeyboardHandlers(notificationCenter: notificationCenter,
+                                      keyboardWillShow: #selector(keyboardWillShow),
+                                      keyboardWillHide: #selector(keyboardWillHide))
     }
 
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView)
+        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView, activeField: nil)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {

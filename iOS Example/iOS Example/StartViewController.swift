@@ -12,13 +12,13 @@ PKPaymentAuthorizationViewControllerDelegate {
     @IBOutlet weak var payButtonsView: UIStackView!
     var cardsTableViewHeightConstraint: NSLayoutConstraint?
 
-    let publicKey = "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"
+    let publicKey = "pk_test_03728582-062b-419c-91b5-63ac2a481e07"
     var checkoutAPIClient: CheckoutAPIClient { return CheckoutAPIClient(publicKey: publicKey, environment: .sandbox) }
     let cardUtils = CardUtils()
     var availableSchemes: [CardScheme] = []
 
     let merchantAPIClient = MerchantAPIClient()
-    let customerId = "cust_B81EA007-0A12-4E68-9312-39CE171029D5"
+    let customerId = "cust_800B5A20-C516-4565-8473-D806BCCF09BE"
     let merchantId = "merchant.com.floriel"
 
     var customerCardList: CustomerCardList?
@@ -70,6 +70,17 @@ PKPaymentAuthorizationViewControllerDelegate {
             .constraint(equalToConstant: self.cardsTableView.contentSize.height)
         cardsTableViewHeightConstraint?.isActive = true
 
+        updateCustomerCardList()
+
+        // Apple Pay Button
+        let buttonType: PKPaymentButtonType = PKPaymentAuthorizationController.canMakePayments() ? .buy : .setUp
+        let applePayButton = PKPaymentButton(paymentButtonType: buttonType, paymentButtonStyle: .black)
+        applePayButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        applePayButton.addTarget(self, action: #selector(onTouchApplePayButton), for: .touchUpInside)
+        payButtonsView.addArrangedSubview(applePayButton)
+    }
+
+    func updateCustomerCardList() {
         merchantAPIClient.get(customer: customerId) { customer in
             self.customerCardList = customer.cards
             self.cardsTableView.reloadData()
@@ -82,19 +93,26 @@ PKPaymentAuthorizationViewControllerDelegate {
             let indexPath = IndexPath(row: indexDefaultCard, section: 0)
             self.cardsTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         }
-
-        // Apple Pay Button
-        let buttonType: PKPaymentButtonType = PKPaymentAuthorizationController.canMakePayments() ? .buy : .setUp
-        let applePayButton = PKPaymentButton(paymentButtonType: buttonType, paymentButtonStyle: .black)
-        applePayButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        applePayButton.addTarget(self, action: #selector(onTouchApplePayButton), for: .touchUpInside)
-        payButtonsView.addArrangedSubview(applePayButton)
     }
 
     func onTapDone(card: CardRequest) {
-        createdCards.append(card)
-        cardsTableView.reloadData()
+//        createdCards.append(card)
+//        cardsTableView.reloadData()
         self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 2
+        checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
+            // Get the card token and call the merchant api to do a zero dollar authorization charge
+            // This will verify the card and save it to the customer
+            self.merchantAPIClient.save(cardWith: cardToken.id, for: self.customerId) {
+                print("Should be saved now")
+                // update the customer card list with the new card
+                self.updateCustomerCardList()
+            }
+        }, errorHandler: { error in
+            let alert = UIAlertController(title: "Payment unsuccessful",
+                                          message: "Error: \(error)", preferredStyle: .alert)
+            self.addOkAlertButton(alert: alert)
+            self.present(alert, animated: true, completion: nil)
+        })
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

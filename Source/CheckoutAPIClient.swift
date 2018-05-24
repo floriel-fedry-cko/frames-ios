@@ -40,7 +40,7 @@ public class CheckoutAPIClient {
     /// - parameter errorHandler: Callback to execute if the request failed
     public func getCardProviders(successHandler: @escaping ([CardProvider]) -> Void,
                                  errorHandler: @escaping (Error) -> Void) {
-        let url = "\(environment.rawValue)\(Endpoint.cardProviders.rawValue)"
+        let url = "\(environment.urlApi)\(Endpoint.cardProviders.rawValue)"
         request(url, headers: headers).validate().responseJSON { response in
             switch response.result {
             case .success(let value):

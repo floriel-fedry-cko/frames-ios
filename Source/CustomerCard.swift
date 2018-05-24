@@ -21,7 +21,7 @@ public struct CustomerCard: Decodable {
     /// Card fingerprint
     public let fingerprint: String
     /// Name of the card owner
-    public let name: String
+    public let name: String?
     /// True if it is the default card
     public let defaultCard: Bool
 }

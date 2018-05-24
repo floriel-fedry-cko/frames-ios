@@ -5,8 +5,26 @@ import Foundation
 /// - live
 /// - sandbox
 public enum Environment: String {
-    /// live environment used for production
-    case live = "https://api2.checkout.com/v2/"
+    /// live environment used for production using
+    case live
     /// sandbox environment used for development
-    case sandbox = "https://sandbox.checkout.com/api2/v2/"
+    case sandbox
+    
+    var urlApi: String {
+        switch self {
+        case .live:
+            return "https://api2.checkout.com/v2/"
+        case .sandbox:
+            return "https://sandbox.checkout.com/api2/v2/"
+        }
+    }
+
+    var urlPaymentApi: String {
+        switch self {
+        case .live:
+            return "https://api.checkout.com/payments"
+        case .sandbox:
+            return "https://sandbox.checkout.com/payments"
+        }
+    }
 }

@@ -20,7 +20,7 @@ public struct Customer: Decodable {
     /// - false if the test keys were used in the request.
     public let livemode: Bool
     /// The customer's name.
-    public let name: String
+    public let name: String?
     /// Phone number of the customer.
     public let phone: Phone
 }

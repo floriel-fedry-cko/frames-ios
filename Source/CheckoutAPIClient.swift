@@ -67,7 +67,7 @@ public class CheckoutAPIClient {
     public func createCardToken(card: CardRequest,
                                 successHandler: @escaping (CardTokenResponse) -> Void,
                                 errorHandler: @escaping (ErrorResponse) -> Void) {
-        let url = "\(environment.rawValue)\(Endpoint.createCardToken.rawValue)"
+        let url = "\(environment.urlApi)\(Endpoint.createCardToken.rawValue)"
         request(url, method: .post, parameters: card.toDictionary(),
                           encoding: JSONEncoding.default, headers: headers)
             .validate().responseJSON { response in

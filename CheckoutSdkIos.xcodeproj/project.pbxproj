@@ -26,6 +26,7 @@
 		E602EE95209D870700CC62A2 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE94209D870700CC62A2 /* TaskDelegate.swift */; };
 		E602EE97209D871D00CC62A2 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE96209D871D00CC62A2 /* Timeline.swift */; };
 		E602EE99209D872B00CC62A2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE98209D872B00CC62A2 /* Validation.swift */; };
+		E61C69D020BD906D0057DBA8 /* Demo.md in Resources */ = {isa = PBXBuildFile; fileRef = E61C69CF20BD906D0057DBA8 /* Demo.md */; };
 		E625EE4B208F8ECE0019B750 /* CardTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4A208F8ECE0019B750 /* CardTokenResponse.swift */; };
 		E625EE4D208F8F370019B750 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4C208F8F370019B750 /* Card.swift */; };
 		E625EE4F208F8F790019B750 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4E208F8F790019B750 /* Address.swift */; };
@@ -145,6 +146,7 @@
 		E602EE94209D870700CC62A2 /* TaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
 		E602EE96209D871D00CC62A2 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		E602EE98209D872B00CC62A2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		E61C69CF20BD906D0057DBA8 /* Demo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Demo.md; path = Documentation/Demo.md; sourceTree = "<group>"; };
 		E625EE4A208F8ECE0019B750 /* CardTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTokenResponse.swift; sourceTree = "<group>"; };
 		E625EE4C208F8F370019B750 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E625EE4E208F8F790019B750 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				E625EE5720907FCB0019B750 /* Usage.md */,
+				E61C69CF20BD906D0057DBA8 /* Demo.md */,
 				E625EE5820907FFE0019B750 /* README.md */,
 				E625EE5F209080A40019B750 /* CODE_OF_CONDUCT.md */,
 				E625EE60209080A40019B750 /* ISSUE_TEMPLATE.md */,
@@ -616,6 +619,7 @@
 				E6AF0A4320AB29D400D29929 /* Localizable.strings in Resources */,
 				E625EE63209080A40019B750 /* ISSUE_TEMPLATE.md in Resources */,
 				E6AF0A3D20AAE46600D29929 /* schemes in Resources */,
+				E61C69D020BD906D0057DBA8 /* Demo.md in Resources */,
 				E6AF0A2F20AADFF700D29929 /* arrows in Resources */,
 				E625EE672090926F0019B750 /* LICENSE in Resources */,
 				E625EE5D2090801C0019B750 /* CONTRIBUTING.md in Resources */,

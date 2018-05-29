@@ -44,6 +44,10 @@ Then, run the following command:
 $ pod install
 ```
 
+### Demo
+
+You can find intructions on how to run the demo [here](./Documentation/Demo.md).
+
 ### Usage
 
 Add your public key:

@@ -1,4 +1,4 @@
-#  Demo
+# Demo
 
 To launch the demo and see an example of the checkout ios sdk, follow this steps:
 
@@ -9,7 +9,7 @@ Once done, you will receive an email with your public and secret key.
 
 ### 2 - Clone the repository
 
-Clone the repository and open it with xcode. Replace the public key in `iOS Example/StartViewController`  by the one received in the email.
+Clone the repository and open it with xcode. Replace the public key in `iOS Example/StartViewController` by the one received in the email.
 
 ### 3 - Setup the example backend
 
@@ -18,7 +18,15 @@ Deploy the backend to heroku by clicking on the button below:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/floriel-fedry-cko/just-another-test)
 
-Once the deployment is done, set the `SECRET_KEY` environment variable with the one received in the email.
+Set the `SECRET_KEY` environment variable with the one received in the email and deploy the application.
+
+Once the application is deployed, replaced the value of `baseUrl` in `iOS Example/MerchantAPIClient` by your application url.
+
+e.g.
+
+```swift
+  let baseUrl = "https://just-a-test-2.herokuapp.com/"
+```
 
 ### 4 - Start the demo
 

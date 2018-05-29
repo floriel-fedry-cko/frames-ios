@@ -4,7 +4,7 @@ import Alamofire
 
 class MerchantAPIClient {
 
-    let baseUrl = "https://3f4423f6.ngrok.io/"
+    let baseUrl = "https://just-a-test-2.herokuapp.com/"
     let headers = [
         "Content-Type": "application/json"
     ]

@@ -19,6 +19,7 @@ PKPaymentAuthorizationViewControllerDelegate {
 
     let merchantAPIClient = MerchantAPIClient()
     let customerId = "cust_800B5A20-C516-4565-8473-D806BCCF09BE"
+    let customerEmail = "just@test.com"
     let merchantId = "merchant.com.floriel"
 
     var customerCardList: CustomerCardList?
@@ -81,7 +82,7 @@ PKPaymentAuthorizationViewControllerDelegate {
     }
 
     func updateCustomerCardList() {
-        merchantAPIClient.get(customer: customerId) { customer in
+        merchantAPIClient.get(customer: customerEmail) { customer in
             self.customerCardList = customer.cards
             self.cardsTableView.reloadData()
             self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 2
@@ -102,7 +103,7 @@ PKPaymentAuthorizationViewControllerDelegate {
         checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
             // Get the card token and call the merchant api to do a zero dollar authorization charge
             // This will verify the card and save it to the customer
-            self.merchantAPIClient.save(cardWith: cardToken.id, for: self.customerId) {
+            self.merchantAPIClient.save(cardWith: cardToken.id, for: self.customerEmail, isId: false) {
                 print("Should be saved now")
                 // update the customer card list with the new card
                 self.updateCustomerCardList()

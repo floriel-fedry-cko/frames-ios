@@ -4,7 +4,7 @@ import Alamofire
 
 class MerchantAPIClient {
 
-    let baseUrl = "https://31a24024.ngrok.io/"
+    let baseUrl = "https://3f4423f6.ngrok.io/"
     let headers = [
         "Content-Type": "application/json"
     ]
@@ -29,13 +29,18 @@ class MerchantAPIClient {
         }
     }
 
-    func save(cardWith cardToken: String, for customerId: String, successHandler: @escaping () -> Void) {
+    func save(cardWith cardToken: String, for customer: String, isId: Bool = false, successHandler: @escaping () -> Void) {
         let endpoint = "cards/verify"
         let url = "\(baseUrl)\(endpoint)"
         // swiftlint:disable:next force_try
         var urlRequest = try! URLRequest(url: URL(string: url)!, method: HTTPMethod.post, headers: headers)
-        urlRequest.httpBody = "{ \"cardToken\": \"\(cardToken)\", \"customerId\": \"\(customerId)\" }"
-            .data(using: .utf8)
+        if isId {
+            urlRequest.httpBody = "{ \"cardToken\": \"\(cardToken)\", \"customerId\": \"\(customer)\" }"
+                .data(using: .utf8)
+        } else {
+            urlRequest.httpBody = "{ \"cardToken\": \"\(cardToken)\", \"customerEmail\": \"\(customer)\" }"
+                .data(using: .utf8)
+        }
         request(urlRequest).validate().responseJSON { response in
             switch response.result {
             case .success(let value):

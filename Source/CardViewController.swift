@@ -12,11 +12,11 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     let stackView = UIStackView()
     let schemeIconsView = UIStackView()
     let acceptedCardLabel = UILabel()
-    let cardNumberInputView = CardNumberInputView()
-    let cardHolderNameInputView = StandardInputView()
-    let expirationDateInputView = ExpirationDateInputView()
-    let cvvInputView = CvvInputView()
-    let billingDetailsInputView = DetailsInputView()
+    public let cardNumberInputView = CardNumberInputView()
+    public let cardHolderNameInputView = StandardInputView()
+    public let expirationDateInputView = ExpirationDateInputView()
+    public let cvvInputView = CvvInputView()
+    public let billingDetailsInputView = DetailsInputView()
     var billingDetailsAddress: Address?
 
     var scrollViewBottomConstraint: NSLayoutConstraint!
@@ -108,11 +108,10 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     @objc func onTapDoneCardButton() {
         // Get the values
-        guard
-            let cardNumber = cardNumberInputView.textField.text,
-            let expirationDate = expirationDateInputView.textField.text,
-            let cvv = cvvInputView.textField.text
-            else { return }
+        let cardNumber = cardNumberInputView.textField.text!
+        let expirationDate = expirationDateInputView.textField.text!
+        let cvv = cvvInputView.textField.text!
+
         let cardNumberStandardized = cardUtils.standardize(cardNumber: cardNumber)
         // Validate the values
         guard
@@ -138,7 +137,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         billingDetailsAddress = address
         let value = "\(address.addressLine1 ?? ""), \(address.addressLine2 ?? ""), \(address.city ?? "")"
         billingDetailsInputView.value.text = value
-        _ = validateFieldsValues()
+        validateFieldsValues()
     }
 
     private func setupUIViews() {
@@ -238,14 +237,10 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     private func validateFieldsValues() {
         // values are not nil
-        guard
-            let cardNumber = cardNumberInputView.textField.text,
-            let expirationDate = expirationDateInputView.textField.text,
-            let cvv = cvvInputView.textField.text
-            else {
-                navigationItem.rightBarButtonItem?.isEnabled = false
-                return
-        }
+        let cardNumber = cardNumberInputView.textField.text!
+        let expirationDate = expirationDateInputView.textField.text!
+        let cvv = cvvInputView.textField.text!
+
         // check card holder's name
         if cardHolderNameState == .required && (cardHolderNameInputView.textField.text?.isEmpty)! {
             navigationItem.rightBarButtonItem?.isEnabled = false

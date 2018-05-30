@@ -29,7 +29,8 @@ class MerchantAPIClient {
         }
     }
 
-    func save(cardWith cardToken: String, for customer: String, isId: Bool = false, successHandler: @escaping () -> Void) {
+    func save(cardWith cardToken: String, for customer: String, isId: Bool = false,
+              successHandler: @escaping () -> Void) {
         let endpoint = "cards/verify"
         let url = "\(baseUrl)\(endpoint)"
         // swiftlint:disable:next force_try

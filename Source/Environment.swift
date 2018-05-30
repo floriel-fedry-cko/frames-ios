@@ -9,7 +9,7 @@ public enum Environment: String {
     case live
     /// sandbox environment used for development
     case sandbox
-    
+
     var urlApi: String {
         switch self {
         case .live:

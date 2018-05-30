@@ -12,20 +12,30 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     let stackView = UIStackView()
     let schemeIconsView = UIStackView()
     let acceptedCardLabel = UILabel()
-    public let cardNumberInputView = CardNumberInputView()
-    public let cardHolderNameInputView = StandardInputView()
-    public let expirationDateInputView = ExpirationDateInputView()
-    public let cvvInputView = CvvInputView()
-    public let billingDetailsInputView = DetailsInputView()
-    var billingDetailsAddress: Address?
 
+    /// Card number input view
+    public let cardNumberInputView = CardNumberInputView()
+
+    /// Card holder's name input view
+    public let cardHolderNameInputView = StandardInputView()
+
+    /// Expiration date input view
+    public let expirationDateInputView = ExpirationDateInputView()
+
+    /// Cvv input view
+    public let cvvInputView = CvvInputView()
+
+    /// Billing details input view
+    public let billingDetailsInputView = DetailsInputView()
+
+    var billingDetailsAddress: Address?
     var scrollViewBottomConstraint: NSLayoutConstraint!
     var notificationCenter = NotificationCenter.default
-
     let addressViewController = AddressViewController()
     let addressTapGesture = UITapGestureRecognizer()
 
-    var availableSchemes: [CardScheme] = [.visa, .mastercard, .americanExpress, .dinersClub]
+    /// List of available schemes
+    public var availableSchemes: [CardScheme] = [.visa, .mastercard, .americanExpress, .dinersClub]
 
     /// Delegate
     public weak var delegate: CardViewControllerDelegate?

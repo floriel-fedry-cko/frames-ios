@@ -14,6 +14,11 @@ target 'CheckoutSdkIos' do
     end
 end
 
+target 'iOS Example Apple Pay' do
+  project 'iOS Example Apple Pay/iOS Example Apple Pay.xcodeproj'
+  pod 'Alamofire', '~> 4.7'
+end
+
 target 'iOS Example' do
   project 'iOS Example/iOS Example.xcodeproj'
   pod 'Alamofire', '~> 4.7'

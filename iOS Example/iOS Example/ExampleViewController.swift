@@ -2,14 +2,12 @@ import UIKit
 import PassKit
 import CheckoutSdkIos
 
-class StartViewController: UIViewController,
+class ExampleViewController: UIViewController,
                             UITableViewDelegate,
                             UITableViewDataSource,
-CardViewControllerDelegate,
-PKPaymentAuthorizationViewControllerDelegate {
+                            CardViewControllerDelegate {
 
     @IBOutlet weak var cardsTableView: UITableView!
-    @IBOutlet weak var payButtonsView: UIStackView!
     var cardsTableViewHeightConstraint: NSLayoutConstraint?
 
     let publicKey = "pk_test_03728582-062b-419c-91b5-63ac2a481e07"
@@ -18,9 +16,7 @@ PKPaymentAuthorizationViewControllerDelegate {
     var availableSchemes: [CardScheme] = []
 
     let merchantAPIClient = MerchantAPIClient()
-    let customerId = "cust_800B5A20-C516-4565-8473-D806BCCF09BE"
     let customerEmail = "just@test.com"
-    let merchantId = "merchant.com.floriel"
 
     var customerCardList: CustomerCardList?
     var createdCards: [CardRequest] = []
@@ -72,13 +68,6 @@ PKPaymentAuthorizationViewControllerDelegate {
         cardsTableViewHeightConstraint?.isActive = true
 
         updateCustomerCardList()
-
-        // Apple Pay Button
-        let buttonType: PKPaymentButtonType = PKPaymentAuthorizationController.canMakePayments() ? .buy : .setUp
-        let applePayButton = PKPaymentButton(paymentButtonType: buttonType, paymentButtonStyle: .black)
-        applePayButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        applePayButton.addTarget(self, action: #selector(onTouchApplePayButton), for: .touchUpInside)
-        payButtonsView.addArrangedSubview(applePayButton)
     }
 
     func updateCustomerCardList() {
@@ -97,14 +86,11 @@ PKPaymentAuthorizationViewControllerDelegate {
     }
 
     func onTapDone(card: CardRequest) {
-//        createdCards.append(card)
-//        cardsTableView.reloadData()
         self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 2
         checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
             // Get the card token and call the merchant api to do a zero dollar authorization charge
             // This will verify the card and save it to the customer
             self.merchantAPIClient.save(cardWith: cardToken.id, for: self.customerEmail, isId: false) {
-                print("Should be saved now")
                 // update the customer card list with the new card
                 self.updateCustomerCardList()
             }
@@ -169,74 +155,6 @@ PKPaymentAuthorizationViewControllerDelegate {
         } else {
             selectedCard = createdCards[indexPath.row - customerCardCount]
         }
-    }
-
-    // View Controller
-
-    @objc func onTouchApplePayButton() {
-        if PKPaymentAuthorizationController.canMakePayments() {
-            let paymentRequest = createPaymentRequest()
-            if let applePayViewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest) {
-                applePayViewController.delegate = self
-                self.present(applePayViewController, animated: true)
-            }
-        }
-    }
-
-    private func createPaymentRequest() -> PKPaymentRequest {
-        let paymentRequest = PKPaymentRequest()
-
-        paymentRequest.currencyCode = "GBP"
-        paymentRequest.countryCode = "GB"
-        paymentRequest.merchantIdentifier = merchantId
-        paymentRequest.supportedNetworks = [.visa, .masterCard, .amex, .discover, .JCB]
-        paymentRequest.merchantCapabilities = .capability3DS
-        paymentRequest.paymentSummaryItems = getProductsToSell()
-
-        let sameDayShipping = PKShippingMethod(label: "Same Day Shipping", amount: 4.99)
-        sameDayShipping.detail = "Same day guaranteed delivery"
-        sameDayShipping.identifier = "sameDay"
-
-        let twoDayShipping = PKShippingMethod(label: "Two Day Shipping", amount: 2.99)
-        twoDayShipping.detail = "Delivered within the following 2 days"
-        twoDayShipping.identifier = "twoDay"
-
-        let oneWeekShipping = PKShippingMethod(label: "Same day", amount: 0.99)
-        oneWeekShipping.detail = "Delivered within 1 week"
-        oneWeekShipping.identifier = "oneWeek"
-
-        paymentRequest.shippingMethods = [sameDayShipping, twoDayShipping, oneWeekShipping]
-
-        return paymentRequest
-    }
-
-    private func getProductsToSell() -> [PKPaymentSummaryItem] {
-        let demoProduct1 = PKPaymentSummaryItem(label: "Demo Product 1", amount: 9.99)
-        let demoDiscount = PKPaymentSummaryItem(label: "Demo Discount", amount: 2.99)
-        let shipping = PKPaymentSummaryItem(label: "Shipping", amount: 14.99)
-
-        let totalAmount = demoProduct1.amount.adding(demoDiscount.amount)
-        let totalPrice = PKPaymentSummaryItem(label: "Checkout.com", amount: totalAmount)
-
-        return [demoProduct1, demoDiscount, shipping, totalPrice]
-    }
-
-    // Delegate method Apple Pay
-
-    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-
-    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController,
-                                            didAuthorizePayment payment: PKPayment,
-                                            handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
-        checkoutAPIClient.createApplePayToken(paymentData: payment.token.paymentData, successHandler: { applePayToken in
-            print(applePayToken)
-            completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
-        }, errorHandler: { error in
-            completion(PKPaymentAuthorizationResult(status: .failure, errors: nil))
-            print(error)
-        })
     }
 
 }

@@ -1,0 +1,6 @@
+framework module Pods_iOS_Example_Apple_Pay {
+  umbrella header "Pods-iOS Example Apple Pay-umbrella.h"
+
+  export *
+  module * { export * }
+}

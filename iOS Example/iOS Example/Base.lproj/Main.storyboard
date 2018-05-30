@@ -13,7 +13,7 @@
         <!--Pay-->
         <scene sceneID="BjH-Ui-ExD">
             <objects>
-                <viewController id="1hs-ab-I17" customClass="StartViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1hs-ab-I17" customClass="ExampleViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tO5-Ih-CTh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3k-SI-l9D">
-                                                    <rect key="frame" x="305" y="22" width="22" height="44"/>
+                                                    <rect key="frame" x="298" y="22" width="22" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="22" id="GeX-6e-wVJ"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="X4n-Yn-kCG"/>
@@ -81,7 +81,7 @@
                                                     <state key="normal" title="Button" image="keyboard-next"/>
                                                 </button>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="81W-rf-cO6">
-                                                    <rect key="frame" x="16" y="16" width="97" height="56"/>
+                                                    <rect key="frame" x="23" y="16" width="97" height="56"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mat Okon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rG1-t1-MpW">
                                                             <rect key="frame" x="0.0" y="0.0" width="97" height="20.5"/>
@@ -123,7 +123,7 @@
                                 </constraints>
                                 <state key="normal" title="Add Card"/>
                                 <connections>
-                                    <action selector="onTapAddCard:" destination="1hs-ab-I17" eventType="touchUpInside" id="J7c-fX-Jyo"/>
+                                    <action selector="onTapAddCard:" destination="1hs-ab-I17" eventType="touchUpInside" id="dnn-K7-9Z9"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l7G-2S-JOr" userLabel="PayButtons">
@@ -133,7 +133,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <state key="normal" title="Pay with Card"/>
                                         <connections>
-                                            <action selector="onTapPayWithCard:" destination="1hs-ab-I17" eventType="touchUpInside" id="vcV-8i-HU8"/>
+                                            <action selector="onTapPayWithCard:" destination="1hs-ab-I17" eventType="touchUpInside" id="UpE-vI-Avn"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -159,8 +159,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pay" id="xjs-Md-1CI"/>
                     <connections>
-                        <outlet property="cardsTableView" destination="tyW-uA-EXp" id="dyC-hO-cF2"/>
-                        <outlet property="payButtonsView" destination="l7G-2S-JOr" id="IIg-Jg-h6c"/>
+                        <outlet property="cardsTableView" destination="tyW-uA-EXp" id="rvO-QE-U0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uve-tc-f78" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,74 +170,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3882.4000000000001" y="911.69415292353835"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="S1T-cl-AJe">
-            <objects>
-                <viewController id="xs0-N4-Iij" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X7V-Uz-afL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="always" translatesAutoresizingMaskIntoConstraints="NO" id="WPJ-bD-2L1">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EXD-y5-krr" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jlg-W0-bp1">
-                                                <rect key="frame" x="67" y="0.0" width="240" height="672"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNg-Pd-kZ3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebc-Pr-CVM">
-                                                        <rect key="frame" x="0.0" y="136" width="240" height="128"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-qX-Pqk">
-                                                        <rect key="frame" x="0.0" y="272" width="240" height="128"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-QU-Q8D">
-                                                        <rect key="frame" x="0.0" y="408" width="240" height="128"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H2Y-e7-eqz">
-                                                        <rect key="frame" x="0.0" y="544" width="240" height="128"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="EXD-y5-krr" firstAttribute="leading" secondItem="WPJ-bD-2L1" secondAttribute="leading" id="NcV-hf-Ced"/>
-                                    <constraint firstItem="EXD-y5-krr" firstAttribute="top" secondItem="WPJ-bD-2L1" secondAttribute="top" id="WoU-GF-Flg"/>
-                                    <constraint firstAttribute="trailing" secondItem="EXD-y5-krr" secondAttribute="trailing" id="ce3-mE-EUX"/>
-                                    <constraint firstAttribute="bottom" secondItem="EXD-y5-krr" secondAttribute="bottom" id="y1E-KN-rvI"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="EXD-y5-krr" firstAttribute="height" secondItem="X7V-Uz-afL" secondAttribute="height" priority="250" id="3F3-52-Zsh"/>
-                            <constraint firstItem="EXD-y5-krr" firstAttribute="width" secondItem="X7V-Uz-afL" secondAttribute="width" id="DhN-RY-yKC"/>
-                            <constraint firstItem="WPJ-bD-2L1" firstAttribute="trailing" secondItem="hd1-hR-vsI" secondAttribute="trailing" id="Y6W-Mw-Cdp"/>
-                            <constraint firstItem="WPJ-bD-2L1" firstAttribute="leading" secondItem="hd1-hR-vsI" secondAttribute="leading" id="qBE-fp-o7D"/>
-                            <constraint firstItem="WPJ-bD-2L1" firstAttribute="top" secondItem="hd1-hR-vsI" secondAttribute="top" id="tEi-Ob-LXA"/>
-                            <constraint firstItem="WPJ-bD-2L1" firstAttribute="bottom" secondItem="hd1-hR-vsI" secondAttribute="bottom" id="zCr-iq-5PD"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="hd1-hR-vsI"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AaY-2b-c6E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4748" y="911.69415292353835"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vn2-u5-bQZ">

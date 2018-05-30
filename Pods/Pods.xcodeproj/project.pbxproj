@@ -9,28 +9,30 @@
 /* Begin PBXBuildFile section */
 		00E2AAB721A5A0E90D38261204A018B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2EE7D6E287CB1C675AA9599984CE9 /* Foundation.framework */; };
 		05BC7F85F9D863AD38BF8B4070628CD3 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5799D6074B3F00A6BCDD543215AE78F8 /* XCTest.swift */; };
-		0D28E21A99C65F27CA2D1D25B72A8DFA /* Pods-iOS Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 960BCA9F0E07FC15549CB6F6254787B8 /* Pods-iOS Example-dummy.m */; };
+		0D28E21A99C65F27CA2D1D25B72A8DFA /* Pods-iOS Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3868613B053DE2474F1F6B2CAEFEA706 /* Pods-iOS Example-dummy.m */; };
 		10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FDC708ED7F796245E045C45D67836 /* Timeline.swift */; };
 		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8C7A91BE181CA8084C1AEE5E07C841E /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21E0E1B39E23E1148F66C678F872AD78 /* Mockingjay.h in Headers */ = {isa = PBXBuildFile; fileRef = B53BC2C910ECBBA88875DEA64BA04092 /* Mockingjay.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2789E055D57530065F56CD00E3C797ED /* Pods-CheckoutSdkIos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 308DC42CA8A38DFA34E1D418C1ECC87D /* Pods-CheckoutSdkIos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2789E055D57530065F56CD00E3C797ED /* Pods-CheckoutSdkIos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A772F18BB2C9F94E755ACF224234A7 /* Pods-CheckoutSdkIos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E24F19031F2EE01811E6E75A9B3A0A5 /* TaskDelegate.swift */; };
 		422D28BF7E5613B73046DEB6F0EAA781 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2EE7D6E287CB1C675AA9599984CE9 /* Foundation.framework */; };
 		4890A732CBCF7342D3ACEE4C60D64109 /* NSURLSessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B2C3BB05E327C1F174D1FD35B1E39 /* NSURLSessionConfiguration.swift */; };
 		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF80B5CDA7B104BB4F99AB74ABA9A0 /* Request.swift */; };
-		554D571C31D422E0D68BAD40E56F4614 /* Pods-CheckoutSdkIos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 443AA7D0CBCDC18CDCA354EF33FB1C11 /* Pods-CheckoutSdkIos-dummy.m */; };
+		554D571C31D422E0D68BAD40E56F4614 /* Pods-CheckoutSdkIos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15056B09002E40A87FC6FCFC7664393E /* Pods-CheckoutSdkIos-dummy.m */; };
 		562BA5BF51D84691C5EEF13022CC24B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2EE7D6E287CB1C675AA9599984CE9 /* Foundation.framework */; };
 		5DC775308F9CFA7373500839B4F870FA /* Mockingjay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB12C191234681F0A6D03B08A90A348 /* Mockingjay.swift */; };
 		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A22E1AE1E05DBC3D6493046DF6E700D /* DispatchQueue+Alamofire.swift */; };
 		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6810849B3E45C260321D8C3AE756BDE5 /* ServerTrustPolicy.swift */; };
+		69023C354995F3FEC638F9B1B8826841 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2EE7D6E287CB1C675AA9599984CE9 /* Foundation.framework */; };
 		69627B1284EB3494300C000F0C03823E /* URITemplate-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 129A26C51F6FCEA8FE6E20EF1D93D74D /* URITemplate-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73B9C996AED49ED7CF8EC2A6F1738059 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2EE7D6E287CB1C675AA9599984CE9 /* Foundation.framework */; };
+		772E910292B510CCE6C987F6004EE971 /* Pods-iOS Example Apple Pay-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 39DA828DD0103784A09CE0F56A709516 /* Pods-iOS Example Apple Pay-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F115EBEC6D603806845AEB34221BDB2 /* SessionDelegate.swift */; };
 		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E0F09D820345F7F89EB12602578F7 /* Result.swift */; };
 		7EE7AA93F7502632922AAC484D1A3B14 /* Builders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E39BE94A048BAA96B381BF4E7EE2B1F /* Builders.swift */; };
 		84BCEDA9326C0AF97E65C141BCBD75ED /* Matchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE798F2347D7818E2CC04E67BB7A878 /* Matchers.swift */; };
 		8C863F805422A836C0415970D848B511 /* MockingjayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93CE6C90413CEC6FA7E709B7E60BCDF /* MockingjayProtocol.swift */; };
-		9C3A614B6DAFF6E51C82A6AD94157190 /* Pods-iOS Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A32311995D9C91A5EA54E37B6E4412EF /* Pods-iOS Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C3A614B6DAFF6E51C82A6AD94157190 /* Pods-iOS Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF5A8F892CC13240E2440BF7E3ECEEF /* Pods-iOS Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302BBAC7B2847EE028F5E9478111F02E /* AFError.swift */; };
 		A1136007D0AE6FA6A4880E97642D1E49 /* URITemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E4F79849556C25CED115FE8F04F89A /* URITemplate.framework */; };
 		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B76AF57451C84C451FF301DAA063B5 /* NetworkReachabilityManager.swift */; };
@@ -38,14 +40,15 @@
 		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C4A61D65DF7BA0F7FDB9B5EA6B964 /* Alamofire-dummy.m */; };
 		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8CCADDFE640F16FCCC6DEC04AFAD7F /* SessionManager.swift */; };
 		AFEB228EE8773B9A92A5837E0EEDD85F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2EE7D6E287CB1C675AA9599984CE9 /* Foundation.framework */; };
+		B48AD8B0DCF03BCD41C30DB10B0A325D /* Pods-iOS Example Apple Pay-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA15BABA86D69422833F3F7E744100A /* Pods-iOS Example Apple Pay-dummy.m */; };
 		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2051F82B4D296CC0BAA370658FB8E633 /* MultipartFormData.swift */; };
 		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B44E7A1E6BED66A38F4147DC60EC94 /* Validation.swift */; };
 		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B44F1B326E7A8B185C296E3DF3B8F1 /* ParameterEncoding.swift */; };
-		C366F5F9E8E192F0659C1F6849EAA7D9 /* Pods-CheckoutSdkIosTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4964E45ED135C4E23F466A4D5316E902 /* Pods-CheckoutSdkIosTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C366F5F9E8E192F0659C1F6849EAA7D9 /* Pods-CheckoutSdkIosTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF41D06A89D76FCF2F2A171E3A26B779 /* Pods-CheckoutSdkIosTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6DC5F4E9DE8018DB4AE41DDECB3F205 /* URITemplate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20129CEB8200B2A1EE225C1AA90490AE /* URITemplate-dummy.m */; };
 		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51278707C11580208F491342F97D4630 /* Response.swift */; };
 		CBD95DE2475DD3C44711E77F0BC7B08A /* URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7122B5BAC645E31A249ECED3CCCB33C /* URITemplate.swift */; };
-		CE97FE3E5CECC6A8F6C4FC65D96014AF /* Pods-CheckoutSdkIosTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECECCC59E8B397412730D855EE2A3FF /* Pods-CheckoutSdkIosTests-dummy.m */; };
+		CE97FE3E5CECC6A8F6C4FC65D96014AF /* Pods-CheckoutSdkIosTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 482F7AAE3E1BBC0A06D69AD93C6F441D /* Pods-CheckoutSdkIosTests-dummy.m */; };
 		CE9CE7814F53B75ABD81D7320D6A638E /* MockingjayURLSessionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1D4652594ED7D176F0BC8F2ED80F4B /* MockingjayURLSessionConfiguration.m */; };
 		D0603A6402B21FE4FAC8EB9E4024E54F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A2EE7D6E287CB1C675AA9599984CE9 /* Foundation.framework */; };
 		D5542F9674E63C82920F99B4A25CB3EB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A335FE2B3CEC7AF34DDE4BBBF14F1C7 /* XCTest.framework */; };
@@ -69,6 +72,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5BAEE407D509A3F67350A21DD9179E25;
 			remoteInfo = URITemplate;
+		};
+		75D8BA406EF6689B16ECCEAB252507CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
+			remoteInfo = Alamofire;
 		};
 		857F2E30054C4B5268D46A182B22CA8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -94,89 +104,100 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		044FDEA9C1C290CF1C2CE332B8D29DC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09D6BE62975C28E6EE8D139B05C82D1F /* Pods-CheckoutSdkIosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckoutSdkIosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		036EF4192582E4FF54377FD3D2AD1167 /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
+		0BD704D72613004B2A980172406BBC99 /* Pods-CheckoutSdkIos-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckoutSdkIos-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0C6AC1BACDF6D8976DE02580DEDC3765 /* Pods-CheckoutSdkIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckoutSdkIos.debug.xcconfig"; sourceTree = "<group>"; };
+		0DD05671BB2CEA1C4AE1E9D115FFFD1E /* Pods-iOS Example Apple Pay-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example Apple Pay-frameworks.sh"; sourceTree = "<group>"; };
 		129A26C51F6FCEA8FE6E20EF1D93D74D /* URITemplate-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URITemplate-umbrella.h"; sourceTree = "<group>"; };
 		13A307046E70047C5C38E70B404D165B /* Mockingjay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mockingjay-dummy.m"; sourceTree = "<group>"; };
 		140E0F09D820345F7F89EB12602578F7 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		1B14033F3686D441B817537706357CA3 /* Pods-CheckoutSdkIos-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckoutSdkIos-acknowledgements.markdown"; sourceTree = "<group>"; };
+		15056B09002E40A87FC6FCFC7664393E /* Pods-CheckoutSdkIos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckoutSdkIos-dummy.m"; sourceTree = "<group>"; };
+		15CCD79964A6C9FCAE127511AA5B8758 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Example.framework; path = "Pods-iOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20129CEB8200B2A1EE225C1AA90490AE /* URITemplate-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "URITemplate-dummy.m"; sourceTree = "<group>"; };
 		2051F82B4D296CC0BAA370658FB8E633 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		215A5E6FCC50F975F5DE062757BD17CB /* Mockingjay.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Mockingjay.modulemap; sourceTree = "<group>"; };
 		22CF80B5CDA7B104BB4F99AB74ABA9A0 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		275752487375FA1CE89F7FBF3999CD0D /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		291B3EE3A8CBF03EA1D0552CC7F7F89C /* Pods-CheckoutSdkIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckoutSdkIos.release.xcconfig"; sourceTree = "<group>"; };
-		2ECECCC59E8B397412730D855EE2A3FF /* Pods-CheckoutSdkIosTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckoutSdkIosTests-dummy.m"; sourceTree = "<group>"; };
+		245CC4777B6E92E4C6BC375354076798 /* Pods-iOS Example Apple Pay-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Example Apple Pay-acknowledgements.plist"; sourceTree = "<group>"; };
 		2F115EBEC6D603806845AEB34221BDB2 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		302BBAC7B2847EE028F5E9478111F02E /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		308DC42CA8A38DFA34E1D418C1ECC87D /* Pods-CheckoutSdkIos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckoutSdkIos-umbrella.h"; sourceTree = "<group>"; };
 		316369D28535DDFEDB4B31609BECB2E6 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		34A772F18BB2C9F94E755ACF224234A7 /* Pods-CheckoutSdkIos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckoutSdkIos-umbrella.h"; sourceTree = "<group>"; };
 		3733A54A010E3FFF4F0B7673ABA948B0 /* URITemplate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = URITemplate.modulemap; sourceTree = "<group>"; };
-		3C07B2A1A84C265B8B3454174538F8C1 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Example.framework; path = "Pods-iOS Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D4475C50D6356622637D537CD06A56D /* Pods-iOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Example.modulemap"; sourceTree = "<group>"; };
-		443AA7D0CBCDC18CDCA354EF33FB1C11 /* Pods-CheckoutSdkIos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckoutSdkIos-dummy.m"; sourceTree = "<group>"; };
-		4964E45ED135C4E23F466A4D5316E902 /* Pods-CheckoutSdkIosTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckoutSdkIosTests-umbrella.h"; sourceTree = "<group>"; };
+		3868613B053DE2474F1F6B2CAEFEA706 /* Pods-iOS Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Example-dummy.m"; sourceTree = "<group>"; };
+		39DA828DD0103784A09CE0F56A709516 /* Pods-iOS Example Apple Pay-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Example Apple Pay-umbrella.h"; sourceTree = "<group>"; };
+		3F3FFD777F87CE3A06BD0AF1B649B69C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		482F7AAE3E1BBC0A06D69AD93C6F441D /* Pods-CheckoutSdkIosTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckoutSdkIosTests-dummy.m"; sourceTree = "<group>"; };
+		4FF5A8F892CC13240E2440BF7E3ECEEF /* Pods-iOS Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Example-umbrella.h"; sourceTree = "<group>"; };
 		51278707C11580208F491342F97D4630 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		52D8BC9B44B99A16FAF50AD589B089A3 /* Mockingjay-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mockingjay-umbrella.h"; sourceTree = "<group>"; };
-		53010C963FA2A4EFC7D8D5EEF60A405D /* Pods_CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckoutSdkIos.framework; path = "Pods-CheckoutSdkIos.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		543AEB3911EEFDBA44FC6AE8A59AF80D /* Pods-iOS Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-frameworks.sh"; sourceTree = "<group>"; };
 		5799D6074B3F00A6BCDD543215AE78F8 /* XCTest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XCTest.swift; path = Sources/Mockingjay/XCTest.swift; sourceTree = "<group>"; };
+		5A5645948AA975C7AAECEAA4656DE19E /* Pods_CheckoutSdkIosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckoutSdkIosTests.framework; path = "Pods-CheckoutSdkIosTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B8B2C3BB05E327C1F174D1FD35B1E39 /* NSURLSessionConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSURLSessionConfiguration.swift; path = Sources/Mockingjay/NSURLSessionConfiguration.swift; sourceTree = "<group>"; };
 		5C0D6E80A77BCC005DA95169D916EB50 /* Mockingjay.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Mockingjay.xcconfig; sourceTree = "<group>"; };
 		5E24F19031F2EE01811E6E75A9B3A0A5 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
-		5EDAFCC29130440DD652D5464459D40E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		628EA11FB2D0EAD65357A7DB50E3FC0E /* Pods-CheckoutSdkIosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckoutSdkIosTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E337AD8BFBB54EAF7CE7AE28CE75134 /* Pods-iOS Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Example.modulemap"; sourceTree = "<group>"; };
 		65B44E7A1E6BED66A38F4147DC60EC94 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		6810849B3E45C260321D8C3AE756BDE5 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		683A79D13B84830D0630DE250ABB116F /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		69C5069E0CD5A6CE5B2FF46CEAB5A034 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6958C6DC96F79BDACBFCB57B6D55EB9C /* Pods-CheckoutSdkIosTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckoutSdkIosTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6AF2358940C264049C4BE80B16CEC25B /* Pods-iOS Example Apple Pay-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example Apple Pay-resources.sh"; sourceTree = "<group>"; };
 		6B084BC48C3496698030147F8FC0C806 /* URITemplate-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "URITemplate-prefix.pch"; sourceTree = "<group>"; };
 		6C0B5069A15F0E2C69DFFFFB97C5FB31 /* Mockingjay-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mockingjay-prefix.pch"; sourceTree = "<group>"; };
-		73C16EA3611D4EC437B686FBCDC4CD2E /* Mockingjay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Mockingjay.framework; path = Mockingjay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DD1BFE866FE4F3CACE72B1C9944E482 /* Pods-iOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		70393CC2EEB2D06BFBA4B33D0B74C2E9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73E4F79849556C25CED115FE8F04F89A /* URITemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = URITemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7516D4ABC54BA86A5E01990E099EECE2 /* Pods-CheckoutSdkIosTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CheckoutSdkIosTests.modulemap"; sourceTree = "<group>"; };
+		77C8C89BB785F84A5E08BFC53E43EAF9 /* Pods-iOS Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		78311D1A5D8A501026036C19BCC2DCDE /* Pods-iOS Example Apple Pay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example Apple Pay.debug.xcconfig"; sourceTree = "<group>"; };
+		79A91CE0564FC1ABA2D8D3518BCEF410 /* Pods-CheckoutSdkIosTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckoutSdkIosTests-frameworks.sh"; sourceTree = "<group>"; };
+		79F574CA9276D052C59034ABA2420D09 /* Pods-CheckoutSdkIosTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckoutSdkIosTests-resources.sh"; sourceTree = "<group>"; };
+		7A69EFB7DCC549CCAFB0237BDDFCD6A0 /* Pods-CheckoutSdkIos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CheckoutSdkIos.modulemap"; sourceTree = "<group>"; };
 		7CB80BFE7476BCF3FACF3E69D41EAB60 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B44F1B326E7A8B185C296E3DF3B8F1 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		8341C582FCA39ADDF1AF8A2322C12FA4 /* URITemplate.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URITemplate.xcconfig; sourceTree = "<group>"; };
+		846B3949AC9E071FD9BF9B5113E3EE8E /* Pods-CheckoutSdkIosTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckoutSdkIosTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8CE443B43C0AD7B9EA9BD6950A949446 /* Pods-iOS Example Apple Pay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example Apple Pay.release.xcconfig"; sourceTree = "<group>"; };
 		8D824E8C0A982A93EA95D9D1F13C2AC5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E39BE94A048BAA96B381BF4E7EE2B1F /* Builders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Builders.swift; path = Sources/Mockingjay/Builders.swift; sourceTree = "<group>"; };
 		8E43F8CC3B07AAB51ADF922EB68C5BF7 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		8EED0FD8137FB8FB493E40324A8B0E11 /* Pods-iOS Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-resources.sh"; sourceTree = "<group>"; };
+		8FB594A970DCF57E7F57228F4A9CD6CA /* Pods-CheckoutSdkIosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckoutSdkIosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8FFB2CB2B37D2941612A854F22D787B0 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		942AC77DBF986A6F459840DD6AFB4A4C /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
-		960BCA9F0E07FC15549CB6F6254787B8 /* Pods-iOS Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Example-dummy.m"; sourceTree = "<group>"; };
 		9A22E1AE1E05DBC3D6493046DF6E700D /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		9A335FE2B3CEC7AF34DDE4BBBF14F1C7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9E84E12044CFAB8506A98253F757F866 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		9FE798F2347D7818E2CC04E67BB7A878 /* Matchers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Matchers.swift; path = Sources/Mockingjay/Matchers.swift; sourceTree = "<group>"; };
-		A25CD9B4359C5288480444BA0ABF1955 /* Pods_CheckoutSdkIosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckoutSdkIosTests.framework; path = "Pods-CheckoutSdkIosTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A32311995D9C91A5EA54E37B6E4412EF /* Pods-iOS Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Example-umbrella.h"; sourceTree = "<group>"; };
 		A8A2EE7D6E287CB1C675AA9599984CE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		AEB12C191234681F0A6D03B08A90A348 /* Mockingjay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mockingjay.swift; path = Sources/Mockingjay/Mockingjay.swift; sourceTree = "<group>"; };
-		B33564A959BB1B1AE8AB817077BE6A4F /* Pods-CheckoutSdkIosTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckoutSdkIosTests-resources.sh"; sourceTree = "<group>"; };
 		B3470967D958694723C13D2E8C337F50 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53BC2C910ECBBA88875DEA64BA04092 /* Mockingjay.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mockingjay.h; path = Sources/Mockingjay/Mockingjay.h; sourceTree = "<group>"; };
-		BCEA8A58F8961F89AC13551E03FD4579 /* Pods-CheckoutSdkIos-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckoutSdkIos-acknowledgements.plist"; sourceTree = "<group>"; };
-		BD403A1FFCAC3A29ABC7BBA95B4CD7C5 /* Pods-iOS Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B540D02A7B995AEA8D8296F67E9F48BE /* Mockingjay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Mockingjay.framework; path = Mockingjay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90631F686B5E8A1BAE3053AB523D3AB /* Pods-CheckoutSdkIosTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CheckoutSdkIosTests.modulemap"; sourceTree = "<group>"; };
+		BA4B29BE907242DDBC8633B908A808B9 /* Pods-CheckoutSdkIos-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckoutSdkIos-resources.sh"; sourceTree = "<group>"; };
+		BFD6F248A62CC69FDC75596255E78FBA /* Pods-CheckoutSdkIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckoutSdkIos.release.xcconfig"; sourceTree = "<group>"; };
 		C03072CC37901E0686D8F05C77013596 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		CA0D3B38C93D4C24357C980ECF55BC50 /* Pods-iOS Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		C7E540E8E364E6B3DD3B2717512EF066 /* URITemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = URITemplate.framework; path = URITemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8CCADDFE640F16FCCC6DEC04AFAD7F /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		D130AA278325A6576EE248C8BE5D7D7C /* Pods-iOS Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-frameworks.sh"; sourceTree = "<group>"; };
+		CD8E6B93276C69AAB2475D69B252FECE /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
+		CF41D06A89D76FCF2F2A171E3A26B779 /* Pods-CheckoutSdkIosTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckoutSdkIosTests-umbrella.h"; sourceTree = "<group>"; };
+		D2D39B9A42534A7FC3E27352B795309F /* Pods-CheckoutSdkIos-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckoutSdkIos-acknowledgements.plist"; sourceTree = "<group>"; };
+		D5E86CC042303B4FE544AA5438344BAF /* Pods_CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckoutSdkIos.framework; path = "Pods-CheckoutSdkIos.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7122B5BAC645E31A249ECED3CCCB33C /* URITemplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URITemplate.swift; path = Sources/URITemplate.swift; sourceTree = "<group>"; };
+		D76D6EDF900FB7B2294D74A7D0ED696B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93CE6C90413CEC6FA7E709B7E60BCDF /* MockingjayProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockingjayProtocol.swift; path = Sources/Mockingjay/MockingjayProtocol.swift; sourceTree = "<group>"; };
-		D9BD6A4EBEC92D363C5FA8C2D3513C49 /* URITemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = URITemplate.framework; path = URITemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAF2D3B66B1ADAB5CD4BFEBBE33FF069 /* Pods-CheckoutSdkIosTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckoutSdkIosTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DA6A56DCF910D8B7D7B2FA4B79F9BEB1 /* Pods-iOS Example Apple Pay.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Example Apple Pay.modulemap"; sourceTree = "<group>"; };
+		DBA15BABA86D69422833F3F7E744100A /* Pods-iOS Example Apple Pay-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Example Apple Pay-dummy.m"; sourceTree = "<group>"; };
 		E00C4A61D65DF7BA0F7FDB9B5EA6B964 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		E05F1922FE1C4060F7E446241EE0A310 /* Pods-CheckoutSdkIosTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckoutSdkIosTests-frameworks.sh"; sourceTree = "<group>"; };
-		E236FA606335218224FD4752CCAE9A91 /* Pods-CheckoutSdkIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckoutSdkIos.debug.xcconfig"; sourceTree = "<group>"; };
-		E4156E069FEC09D08C2098B2BA4D57CB /* Pods-CheckoutSdkIos-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckoutSdkIos-resources.sh"; sourceTree = "<group>"; };
+		E377B84B1D052FE57E5538A4C4AB5FBE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E68FDC708ED7F796245E045C45D67836 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
-		EE9D7E2CBBC847F6E181B511678546E8 /* Pods-CheckoutSdkIos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CheckoutSdkIos.modulemap"; sourceTree = "<group>"; };
-		EFCF2C38D014D19379D033DDF18BACF3 /* Pods-iOS Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Example-resources.sh"; sourceTree = "<group>"; };
+		EC23B37999E4BEF965848FCAB4EB95A5 /* Pods_iOS_Example_Apple_Pay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Example_Apple_Pay.framework; path = "Pods-iOS Example Apple Pay.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE0B84398BE9D534AC887DCCDEA9DB3B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F21ECADAFC0C6B4CAF9E1AA9AD1FF740 /* Pods-iOS Example Apple Pay-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Example Apple Pay-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F6B76AF57451C84C451FF301DAA063B5 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		F8C7A91BE181CA8084C1AEE5E07C841E /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		F8E9ADA0A21A3B59465982C82391262A /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
-		FA4666547FE038653E5AE3DAB4C6FB97 /* Pods-CheckoutSdkIosTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckoutSdkIosTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		FD1D4652594ED7D176F0BC8F2ED80F4B /* MockingjayURLSessionConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MockingjayURLSessionConfiguration.m; path = Sources/Mockingjay/MockingjayURLSessionConfiguration.m; sourceTree = "<group>"; };
+		FDD1AAC6E6FA19412BBB294172C19232 /* Pods-CheckoutSdkIosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckoutSdkIosTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +206,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				422D28BF7E5613B73046DEB6F0EAA781 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FAD2471575675C11D4ED4D7989AC55E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69023C354995F3FEC638F9B1B8826841 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,23 +262,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		038492B4FD310C1C32CCDDDC8CB9A3F5 /* Pods-CheckoutSdkIos */ = {
-			isa = PBXGroup;
-			children = (
-				5EDAFCC29130440DD652D5464459D40E /* Info.plist */,
-				EE9D7E2CBBC847F6E181B511678546E8 /* Pods-CheckoutSdkIos.modulemap */,
-				1B14033F3686D441B817537706357CA3 /* Pods-CheckoutSdkIos-acknowledgements.markdown */,
-				BCEA8A58F8961F89AC13551E03FD4579 /* Pods-CheckoutSdkIos-acknowledgements.plist */,
-				443AA7D0CBCDC18CDCA354EF33FB1C11 /* Pods-CheckoutSdkIos-dummy.m */,
-				E4156E069FEC09D08C2098B2BA4D57CB /* Pods-CheckoutSdkIos-resources.sh */,
-				308DC42CA8A38DFA34E1D418C1ECC87D /* Pods-CheckoutSdkIos-umbrella.h */,
-				E236FA606335218224FD4752CCAE9A91 /* Pods-CheckoutSdkIos.debug.xcconfig */,
-				291B3EE3A8CBF03EA1D0552CC7F7F89C /* Pods-CheckoutSdkIos.release.xcconfig */,
-			);
-			name = "Pods-CheckoutSdkIos";
-			path = "Target Support Files/Pods-CheckoutSdkIos";
-			sourceTree = "<group>";
-		};
 		18B9EF48E12F65821F7989106F7E46B0 /* URITemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +286,24 @@
 			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
+		1FFFFA3F82C65318FFCD3C09A8C651D9 /* Pods-iOS Example */ = {
+			isa = PBXGroup;
+			children = (
+				3F3FFD777F87CE3A06BD0AF1B649B69C /* Info.plist */,
+				5E337AD8BFBB54EAF7CE7AE28CE75134 /* Pods-iOS Example.modulemap */,
+				6DD1BFE866FE4F3CACE72B1C9944E482 /* Pods-iOS Example-acknowledgements.markdown */,
+				77C8C89BB785F84A5E08BFC53E43EAF9 /* Pods-iOS Example-acknowledgements.plist */,
+				3868613B053DE2474F1F6B2CAEFEA706 /* Pods-iOS Example-dummy.m */,
+				543AEB3911EEFDBA44FC6AE8A59AF80D /* Pods-iOS Example-frameworks.sh */,
+				8EED0FD8137FB8FB493E40324A8B0E11 /* Pods-iOS Example-resources.sh */,
+				4FF5A8F892CC13240E2440BF7E3ECEEF /* Pods-iOS Example-umbrella.h */,
+				036EF4192582E4FF54377FD3D2AD1167 /* Pods-iOS Example.debug.xcconfig */,
+				CD8E6B93276C69AAB2475D69B252FECE /* Pods-iOS Example.release.xcconfig */,
+			);
+			name = "Pods-iOS Example";
+			path = "Target Support Files/Pods-iOS Example";
+			sourceTree = "<group>";
+		};
 		243F1E3B238EF00E2D554E4D746434E5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +316,24 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Mockingjay";
+			sourceTree = "<group>";
+		};
+		29558B911038233B4D6D505F99D211B4 /* Pods-iOS Example Apple Pay */ = {
+			isa = PBXGroup;
+			children = (
+				E377B84B1D052FE57E5538A4C4AB5FBE /* Info.plist */,
+				DA6A56DCF910D8B7D7B2FA4B79F9BEB1 /* Pods-iOS Example Apple Pay.modulemap */,
+				F21ECADAFC0C6B4CAF9E1AA9AD1FF740 /* Pods-iOS Example Apple Pay-acknowledgements.markdown */,
+				245CC4777B6E92E4C6BC375354076798 /* Pods-iOS Example Apple Pay-acknowledgements.plist */,
+				DBA15BABA86D69422833F3F7E744100A /* Pods-iOS Example Apple Pay-dummy.m */,
+				0DD05671BB2CEA1C4AE1E9D115FFFD1E /* Pods-iOS Example Apple Pay-frameworks.sh */,
+				6AF2358940C264049C4BE80B16CEC25B /* Pods-iOS Example Apple Pay-resources.sh */,
+				39DA828DD0103784A09CE0F56A709516 /* Pods-iOS Example Apple Pay-umbrella.h */,
+				78311D1A5D8A501026036C19BCC2DCDE /* Pods-iOS Example Apple Pay.debug.xcconfig */,
+				8CE443B43C0AD7B9EA9BD6950A949446 /* Pods-iOS Example Apple Pay.release.xcconfig */,
+			);
+			name = "Pods-iOS Example Apple Pay";
+			path = "Target Support Files/Pods-iOS Example Apple Pay";
 			sourceTree = "<group>";
 		};
 		30E357B3177C8E1EBC569B6975D797BD /* Support Files */ = {
@@ -327,22 +375,21 @@
 			path = Mockingjay;
 			sourceTree = "<group>";
 		};
-		4B236AED19A29C48A70AB22B69E90DFA /* Pods-CheckoutSdkIosTests */ = {
+		5AB2C13D6EA58FBF2891411736D22048 /* Pods-CheckoutSdkIos */ = {
 			isa = PBXGroup;
 			children = (
-				044FDEA9C1C290CF1C2CE332B8D29DC7 /* Info.plist */,
-				7516D4ABC54BA86A5E01990E099EECE2 /* Pods-CheckoutSdkIosTests.modulemap */,
-				DAF2D3B66B1ADAB5CD4BFEBBE33FF069 /* Pods-CheckoutSdkIosTests-acknowledgements.markdown */,
-				FA4666547FE038653E5AE3DAB4C6FB97 /* Pods-CheckoutSdkIosTests-acknowledgements.plist */,
-				2ECECCC59E8B397412730D855EE2A3FF /* Pods-CheckoutSdkIosTests-dummy.m */,
-				E05F1922FE1C4060F7E446241EE0A310 /* Pods-CheckoutSdkIosTests-frameworks.sh */,
-				B33564A959BB1B1AE8AB817077BE6A4F /* Pods-CheckoutSdkIosTests-resources.sh */,
-				4964E45ED135C4E23F466A4D5316E902 /* Pods-CheckoutSdkIosTests-umbrella.h */,
-				09D6BE62975C28E6EE8D139B05C82D1F /* Pods-CheckoutSdkIosTests.debug.xcconfig */,
-				628EA11FB2D0EAD65357A7DB50E3FC0E /* Pods-CheckoutSdkIosTests.release.xcconfig */,
+				EE0B84398BE9D534AC887DCCDEA9DB3B /* Info.plist */,
+				7A69EFB7DCC549CCAFB0237BDDFCD6A0 /* Pods-CheckoutSdkIos.modulemap */,
+				0BD704D72613004B2A980172406BBC99 /* Pods-CheckoutSdkIos-acknowledgements.markdown */,
+				D2D39B9A42534A7FC3E27352B795309F /* Pods-CheckoutSdkIos-acknowledgements.plist */,
+				15056B09002E40A87FC6FCFC7664393E /* Pods-CheckoutSdkIos-dummy.m */,
+				BA4B29BE907242DDBC8633B908A808B9 /* Pods-CheckoutSdkIos-resources.sh */,
+				34A772F18BB2C9F94E755ACF224234A7 /* Pods-CheckoutSdkIos-umbrella.h */,
+				0C6AC1BACDF6D8976DE02580DEDC3765 /* Pods-CheckoutSdkIos.debug.xcconfig */,
+				BFD6F248A62CC69FDC75596255E78FBA /* Pods-CheckoutSdkIos.release.xcconfig */,
 			);
-			name = "Pods-CheckoutSdkIosTests";
-			path = "Target Support Files/Pods-CheckoutSdkIosTests";
+			name = "Pods-CheckoutSdkIos";
+			path = "Target Support Files/Pods-CheckoutSdkIos";
 			sourceTree = "<group>";
 		};
 		77A43DC373723C2F6F90E60BE014B7BC /* iOS */ = {
@@ -360,37 +407,9 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				B9D96DDB2A580195276DEA4CCB386A35 /* Frameworks */,
 				A15B27F462066F462634EC86008B701A /* Pods */,
-				BB476DC030465502ACDBBC4B47554587 /* Products */,
-				8D3F476FF24D9736CB9F64DB190088CC /* Targets Support Files */,
+				C356C34A96D78A241C4467D5C88185E2 /* Products */,
+				C3249542D741D90821ED145B01F3223B /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		87B2BA71EC771070E5DE48EA4D52C830 /* Pods-iOS Example */ = {
-			isa = PBXGroup;
-			children = (
-				69C5069E0CD5A6CE5B2FF46CEAB5A034 /* Info.plist */,
-				3D4475C50D6356622637D537CD06A56D /* Pods-iOS Example.modulemap */,
-				BD403A1FFCAC3A29ABC7BBA95B4CD7C5 /* Pods-iOS Example-acknowledgements.markdown */,
-				CA0D3B38C93D4C24357C980ECF55BC50 /* Pods-iOS Example-acknowledgements.plist */,
-				960BCA9F0E07FC15549CB6F6254787B8 /* Pods-iOS Example-dummy.m */,
-				D130AA278325A6576EE248C8BE5D7D7C /* Pods-iOS Example-frameworks.sh */,
-				EFCF2C38D014D19379D033DDF18BACF3 /* Pods-iOS Example-resources.sh */,
-				A32311995D9C91A5EA54E37B6E4412EF /* Pods-iOS Example-umbrella.h */,
-				F8E9ADA0A21A3B59465982C82391262A /* Pods-iOS Example.debug.xcconfig */,
-				942AC77DBF986A6F459840DD6AFB4A4C /* Pods-iOS Example.release.xcconfig */,
-			);
-			name = "Pods-iOS Example";
-			path = "Target Support Files/Pods-iOS Example";
-			sourceTree = "<group>";
-		};
-		8D3F476FF24D9736CB9F64DB190088CC /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				038492B4FD310C1C32CCDDDC8CB9A3F5 /* Pods-CheckoutSdkIos */,
-				4B236AED19A29C48A70AB22B69E90DFA /* Pods-CheckoutSdkIosTests */,
-				87B2BA71EC771070E5DE48EA4D52C830 /* Pods-iOS Example */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		A15B27F462066F462634EC86008B701A /* Pods */ = {
@@ -438,15 +457,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BB476DC030465502ACDBBC4B47554587 /* Products */ = {
+		C3249542D741D90821ED145B01F3223B /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				275752487375FA1CE89F7FBF3999CD0D /* Alamofire.framework */,
-				73C16EA3611D4EC437B686FBCDC4CD2E /* Mockingjay.framework */,
-				53010C963FA2A4EFC7D8D5EEF60A405D /* Pods_CheckoutSdkIos.framework */,
-				A25CD9B4359C5288480444BA0ABF1955 /* Pods_CheckoutSdkIosTests.framework */,
-				3C07B2A1A84C265B8B3454174538F8C1 /* Pods_iOS_Example.framework */,
-				D9BD6A4EBEC92D363C5FA8C2D3513C49 /* URITemplate.framework */,
+				5AB2C13D6EA58FBF2891411736D22048 /* Pods-CheckoutSdkIos */,
+				DBE89C26620BE69CEC9BD9A94A3CF2C9 /* Pods-CheckoutSdkIosTests */,
+				1FFFFA3F82C65318FFCD3C09A8C651D9 /* Pods-iOS Example */,
+				29558B911038233B4D6D505F99D211B4 /* Pods-iOS Example Apple Pay */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C356C34A96D78A241C4467D5C88185E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D76D6EDF900FB7B2294D74A7D0ED696B /* Alamofire.framework */,
+				B540D02A7B995AEA8D8296F67E9F48BE /* Mockingjay.framework */,
+				D5E86CC042303B4FE544AA5438344BAF /* Pods_CheckoutSdkIos.framework */,
+				5A5645948AA975C7AAECEAA4656DE19E /* Pods_CheckoutSdkIosTests.framework */,
+				15CCD79964A6C9FCAE127511AA5B8758 /* Pods_iOS_Example.framework */,
+				EC23B37999E4BEF965848FCAB4EB95A5 /* Pods_iOS_Example_Apple_Pay.framework */,
+				C7E540E8E364E6B3DD3B2717512EF066 /* URITemplate.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -457,6 +488,24 @@
 				5799D6074B3F00A6BCDD543215AE78F8 /* XCTest.swift */,
 			);
 			name = XCTest;
+			sourceTree = "<group>";
+		};
+		DBE89C26620BE69CEC9BD9A94A3CF2C9 /* Pods-CheckoutSdkIosTests */ = {
+			isa = PBXGroup;
+			children = (
+				70393CC2EEB2D06BFBA4B33D0B74C2E9 /* Info.plist */,
+				B90631F686B5E8A1BAE3053AB523D3AB /* Pods-CheckoutSdkIosTests.modulemap */,
+				6958C6DC96F79BDACBFCB57B6D55EB9C /* Pods-CheckoutSdkIosTests-acknowledgements.markdown */,
+				846B3949AC9E071FD9BF9B5113E3EE8E /* Pods-CheckoutSdkIosTests-acknowledgements.plist */,
+				482F7AAE3E1BBC0A06D69AD93C6F441D /* Pods-CheckoutSdkIosTests-dummy.m */,
+				79A91CE0564FC1ABA2D8D3518BCEF410 /* Pods-CheckoutSdkIosTests-frameworks.sh */,
+				79F574CA9276D052C59034ABA2420D09 /* Pods-CheckoutSdkIosTests-resources.sh */,
+				CF41D06A89D76FCF2F2A171E3A26B779 /* Pods-CheckoutSdkIosTests-umbrella.h */,
+				8FB594A970DCF57E7F57228F4A9CD6CA /* Pods-CheckoutSdkIosTests.debug.xcconfig */,
+				FDD1AAC6E6FA19412BBB294172C19232 /* Pods-CheckoutSdkIosTests.release.xcconfig */,
+			);
+			name = "Pods-CheckoutSdkIosTests";
+			path = "Target Support Files/Pods-CheckoutSdkIosTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,6 +544,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB89ED14863254D2EB0D183A689118DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772E910292B510CCE6C987F6004EE971 /* Pods-iOS Example Apple Pay-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F11BBBC7D04E273ABA5176E538C832AE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,7 +585,7 @@
 			);
 			name = "Pods-CheckoutSdkIos";
 			productName = "Pods-CheckoutSdkIos";
-			productReference = 53010C963FA2A4EFC7D8D5EEF60A405D /* Pods_CheckoutSdkIos.framework */;
+			productReference = D5E86CC042303B4FE544AA5438344BAF /* Pods_CheckoutSdkIos.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		4C1E81A4BEA45650D1CC0A60A30EBC67 /* Pods-iOS Example */ = {
@@ -546,7 +603,7 @@
 			);
 			name = "Pods-iOS Example";
 			productName = "Pods-iOS Example";
-			productReference = 3C07B2A1A84C265B8B3454174538F8C1 /* Pods_iOS_Example.framework */;
+			productReference = 15CCD79964A6C9FCAE127511AA5B8758 /* Pods_iOS_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5BAACC736A5215103E10E2DC0A74FDCD /* Mockingjay */ = {
@@ -564,7 +621,7 @@
 			);
 			name = Mockingjay;
 			productName = Mockingjay;
-			productReference = 73C16EA3611D4EC437B686FBCDC4CD2E /* Mockingjay.framework */;
+			productReference = B540D02A7B995AEA8D8296F67E9F48BE /* Mockingjay.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5BAEE407D509A3F67350A21DD9179E25 /* URITemplate */ = {
@@ -581,7 +638,25 @@
 			);
 			name = URITemplate;
 			productName = URITemplate;
-			productReference = D9BD6A4EBEC92D363C5FA8C2D3513C49 /* URITemplate.framework */;
+			productReference = C7E540E8E364E6B3DD3B2717512EF066 /* URITemplate.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		63281284AB164CCD93E32AA88BA2D97B /* Pods-iOS Example Apple Pay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47CBBE3609F644A0E88CAB38FC6B9E71 /* Build configuration list for PBXNativeTarget "Pods-iOS Example Apple Pay" */;
+			buildPhases = (
+				7EC32D3C23ED604C16860CAC72F99EEB /* Sources */,
+				3FAD2471575675C11D4ED4D7989AC55E /* Frameworks */,
+				EB89ED14863254D2EB0D183A689118DF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14766973E69A4F77490E0E7B8EBA7E86 /* PBXTargetDependency */,
+			);
+			name = "Pods-iOS Example Apple Pay";
+			productName = "Pods-iOS Example Apple Pay";
+			productReference = EC23B37999E4BEF965848FCAB4EB95A5 /* Pods_iOS_Example_Apple_Pay.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */ = {
@@ -598,7 +673,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 275752487375FA1CE89F7FBF3999CD0D /* Alamofire.framework */;
+			productReference = D76D6EDF900FB7B2294D74A7D0ED696B /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BD036146E15E9CC9AEF02C9B0511DDE3 /* Pods-CheckoutSdkIosTests */ = {
@@ -618,7 +693,7 @@
 			);
 			name = "Pods-CheckoutSdkIosTests";
 			productName = "Pods-CheckoutSdkIosTests";
-			productReference = A25CD9B4359C5288480444BA0ABF1955 /* Pods_CheckoutSdkIosTests.framework */;
+			productReference = 5A5645948AA975C7AAECEAA4656DE19E /* Pods_CheckoutSdkIosTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -638,7 +713,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = BB476DC030465502ACDBBC4B47554587 /* Products */;
+			productRefGroup = C356C34A96D78A241C4467D5C88185E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -647,6 +722,7 @@
 				01F79440E6DC2B40F817032000302BFB /* Pods-CheckoutSdkIos */,
 				BD036146E15E9CC9AEF02C9B0511DDE3 /* Pods-CheckoutSdkIosTests */,
 				4C1E81A4BEA45650D1CC0A60A30EBC67 /* Pods-iOS Example */,
+				63281284AB164CCD93E32AA88BA2D97B /* Pods-iOS Example Apple Pay */,
 				5BAEE407D509A3F67350A21DD9179E25 /* URITemplate */,
 			);
 		};
@@ -709,6 +785,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EC32D3C23ED604C16860CAC72F99EEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B48AD8B0DCF03BCD41C30DB10B0A325D /* Pods-iOS Example Apple Pay-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DE90B2517C82524DCC0ABE2CBE7DD94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -734,6 +818,12 @@
 			name = Mockingjay;
 			target = 5BAACC736A5215103E10E2DC0A74FDCD /* Mockingjay */;
 			targetProxy = 857F2E30054C4B5268D46A182B22CA8A /* PBXContainerItemProxy */;
+		};
+		14766973E69A4F77490E0E7B8EBA7E86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
+			targetProxy = 75D8BA406EF6689B16ECCEAB252507CF /* PBXContainerItemProxy */;
 		};
 		42A5B9BE489B692B3E67AD401737FA2A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -762,9 +852,45 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1476AB6B49928E298794AA7BB5DF8BFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78311D1A5D8A501026036C19BCC2DCDE /* Pods-iOS Example Apple Pay.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Example Apple Pay/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Example Apple Pay/Pods-iOS Example Apple Pay.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		173F20CFF8BF8D0E1EADB0FBEDC7ABE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E236FA606335218224FD4752CCAE9A91 /* Pods-CheckoutSdkIos.debug.xcconfig */;
+			baseConfigurationReference = 0C6AC1BACDF6D8976DE02580DEDC3765 /* Pods-CheckoutSdkIos.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -798,7 +924,7 @@
 		};
 		397BF2E68EF006E13C5C63F763A74A0B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09D6BE62975C28E6EE8D139B05C82D1F /* Pods-CheckoutSdkIosTests.debug.xcconfig */;
+			baseConfigurationReference = 8FB594A970DCF57E7F57228F4A9CD6CA /* Pods-CheckoutSdkIosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -955,7 +1081,7 @@
 		};
 		65B2B4788C345E03E3393F575A9FD6A7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 628EA11FB2D0EAD65357A7DB50E3FC0E /* Pods-CheckoutSdkIosTests.release.xcconfig */;
+			baseConfigurationReference = FDD1AAC6E6FA19412BBB294172C19232 /* Pods-CheckoutSdkIosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1024,7 +1150,7 @@
 		};
 		AA1CDB2B3CC1F9EEABD0B58B22632607 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 291B3EE3A8CBF03EA1D0552CC7F7F89C /* Pods-CheckoutSdkIos.release.xcconfig */;
+			baseConfigurationReference = BFD6F248A62CC69FDC75596255E78FBA /* Pods-CheckoutSdkIos.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1122,9 +1248,45 @@
 			};
 			name = Debug;
 		};
+		D596A3B445D0A3764F7D243ACE12A5D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CE443B43C0AD7B9EA9BD6950A949446 /* Pods-iOS Example Apple Pay.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iOS Example Apple Pay/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iOS Example Apple Pay/Pods-iOS Example Apple Pay.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D5D2073B7CCE52C3596F4114BCEF0DA9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 942AC77DBF986A6F459840DD6AFB4A4C /* Pods-iOS Example.release.xcconfig */;
+			baseConfigurationReference = CD8E6B93276C69AAB2475D69B252FECE /* Pods-iOS Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1257,7 +1419,7 @@
 		};
 		F1FE60B704637D735035CFBBA5F4D7B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F8E9ADA0A21A3B59465982C82391262A /* Pods-iOS Example.debug.xcconfig */;
+			baseConfigurationReference = 036EF4192582E4FF54377FD3D2AD1167 /* Pods-iOS Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1317,6 +1479,15 @@
 			buildConfigurations = (
 				EA0ADC75B20BB62958101306980460E6 /* Debug */,
 				A18C9CC7E37563F2891E7DC87F2DE6CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47CBBE3609F644A0E88CAB38FC6B9E71 /* Build configuration list for PBXNativeTarget "Pods-iOS Example Apple Pay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1476AB6B49928E298794AA7BB5DF8BFB /* Debug */,
+				D596A3B445D0A3764F7D243ACE12A5D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

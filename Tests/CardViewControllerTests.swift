@@ -9,14 +9,29 @@
 import XCTest
 @testable import CheckoutSdkIos
 
+class CardViewControllerMockDelegate: CardViewControllerDelegate {
+    var calledTimes = 0
+    var lastCalledWith: CardRequest?
+
+    func onTapDone(card: CardRequest) {
+        calledTimes += 1
+        lastCalledWith = card
+    }
+}
+
 class CardViewControllerTests: XCTestCase {
 
     var cardViewController: CardViewController!
+    // swiftlint:disable:next weak_delegate
+    var cardViewControllerDelegate: CardViewControllerMockDelegate!
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         cardViewController = CardViewController()
+        cardViewControllerDelegate = CardViewControllerMockDelegate()
+        let navigation = UINavigationController()
+        navigation.viewControllers = [cardViewController]
     }
 
     override func tearDown() {
@@ -108,4 +123,125 @@ class CardViewControllerTests: XCTestCase {
         XCTAssertEqual(cardVC?.kbHideLastCalledWith?.0, notification)
         XCTAssertEqual(cardVC?.kbHideLastCalledWith?.1, cardVC?.scrollView)
     }
+
+    func testValidateFieldsWithRequiredBillingDetailsMissing() {
+        // Setup
+        let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .required)
+        cardViewController.viewDidLoad()
+        XCTAssertFalse((cardViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+        // Simulate the end of a text field editing
+        cardViewController.textFieldDidEndEditing(cardViewController.cvvInputView.textField)
+        // Assert
+        XCTAssertFalse((cardViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+    }
+
+    func testValidateFieldsWithRequiredNameMissing() {
+        // Setup
+        let cardViewController = CardViewController(cardHolderNameState: .required, billingDetailsState: .hidden)
+        cardViewController.viewDidLoad()
+        XCTAssertFalse((cardViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+        // Simulate the end of a text field editing
+        cardViewController.textFieldDidEndEditing(cardViewController.cvvInputView.textField)
+        // Assert
+        XCTAssertFalse((cardViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+    }
+
+    func testValidateFields() {
+        // Setup
+        let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .hidden)
+        cardViewController.viewDidLoad()
+        XCTAssertFalse((cardViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+        cardViewController.cardNumberInputView.textField.text = "4242 4242 4242 4242"
+        cardViewController.expirationDateInputView.textField.text = "06/2020"
+        cardViewController.cvvInputView.textField.text = "100"
+        // Simulate the end of a text field editing
+        cardViewController.textFieldDidEndEditing(cardViewController.cvvInputView.textField)
+        // Assert
+        XCTAssertTrue((cardViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+    }
+
+    func testValidateFieldsWithEmptyValues() {
+        // Setup
+        let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .hidden)
+        cardViewController.viewDidLoad()
+        XCTAssertFalse((cardViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+        // Simulate the end of a text field editing
+        cardViewController.textFieldDidEndEditing(cardViewController.cvvInputView.textField)
+        // Assert
+        XCTAssertFalse((cardViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+    }
+
+    func testDoNothingWhenTapDoneIfCardDoesNotHaveType() {
+        // Setup
+        cardViewController.viewDidLoad()
+        cardViewController.cardNumberInputView.textField.text = "5"
+        cardViewController.expirationDateInputView.textField.text = "06/2020"
+        cardViewController.cvvInputView.textField.text = "100"
+        // Execute
+        cardViewController.delegate = cardViewControllerDelegate
+        cardViewController.onTapDoneCardButton()
+        // Assert
+        XCTAssertEqual(cardViewControllerDelegate.calledTimes, 0)
+        XCTAssertNil(cardViewControllerDelegate.lastCalledWith)
+    }
+
+    func testDoNothingWhenTapDoneIfCardNumberInvalid() {
+        // Setup
+        cardViewController.viewDidLoad()
+        cardViewController.cardNumberInputView.textField.text = "4242 4242 4242 4243"
+        cardViewController.expirationDateInputView.textField.text = "06/2020"
+        cardViewController.cvvInputView.textField.text = "100"
+        // Execute
+        cardViewController.delegate = cardViewControllerDelegate
+        cardViewController.onTapDoneCardButton()
+        // Assert
+        XCTAssertEqual(cardViewControllerDelegate.calledTimes, 0)
+        XCTAssertNil(cardViewControllerDelegate.lastCalledWith)
+    }
+
+    func testDoNothingWhenTapDoneIfExpirationDateInvalid() {
+        // Setup
+        cardViewController.viewDidLoad()
+        cardViewController.cardNumberInputView.textField.text = "4242 4242 4242 4242"
+        cardViewController.expirationDateInputView.textField.text = "06/2017"
+        cardViewController.cvvInputView.textField.text = "100"
+        // Execute
+        cardViewController.delegate = cardViewControllerDelegate
+        cardViewController.onTapDoneCardButton()
+        // Assert
+        XCTAssertEqual(cardViewControllerDelegate.calledTimes, 0)
+        XCTAssertNil(cardViewControllerDelegate.lastCalledWith)
+    }
+
+    func testDoNothingWhenTapDoneIfCvvInvalid() {
+        // Setup
+        cardViewController.viewDidLoad()
+        cardViewController.cardNumberInputView.textField.text = "4242 4242 4242 4242"
+        cardViewController.expirationDateInputView.textField.text = "06/2020"
+        cardViewController.cvvInputView.textField.text = "10"
+        // Execute
+        cardViewController.delegate = cardViewControllerDelegate
+        cardViewController.onTapDoneCardButton()
+        // Assert
+        XCTAssertEqual(cardViewControllerDelegate.calledTimes, 0)
+        XCTAssertNil(cardViewControllerDelegate.lastCalledWith)
+    }
+
+    func testCalledDelegateMethodWhenTapDoneIfDataValid() {
+        // Setup
+        cardViewController.viewDidLoad()
+        cardViewController.cardNumberInputView.textField.text = "4242 4242 4242 4242"
+        cardViewController.expirationDateInputView.textField.text = "06/2020"
+        cardViewController.cvvInputView.textField.text = "100"
+        // Execute
+        cardViewController.delegate = cardViewControllerDelegate
+        cardViewController.onTapDoneCardButton()
+        // Assert
+        XCTAssertEqual(cardViewControllerDelegate.calledTimes, 1)
+        XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.number, "4242424242424242")
+        XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.expiryMonth, "06")
+        XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.expiryYear, "20")
+        XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.cvv, "100")
+    }
+
 }

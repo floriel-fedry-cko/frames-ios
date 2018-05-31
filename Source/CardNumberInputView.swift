@@ -4,9 +4,13 @@ import UIKit
 /// Handles the formatting of the text field.
 @IBDesignable public class CardNumberInputView: StandardInputView, UITextFieldDelegate {
 
+    // MARK: - Properties
+
     var cardsUtils: CardUtils?
     /// Text field delegate
     public weak var delegate: UITextFieldDelegate?
+
+    // MARK: - Initialization
 
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     public override init(frame: CGRect) {
@@ -29,11 +33,14 @@ import UIKit
         self.textField.delegate = self
     }
 
+    // MARK: - UITextFieldDelegate
+
     /// Asks the delegate if the specified text should be changed.
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                           replacementString string: String) -> Bool {
         // Card Number Formatting
         let cardNumber = cardsUtils!.standardize(cardNumber: "\(textField.text!)\(string)")
+        _ = delegate?.textField!(textField, shouldChangeCharactersIn: range, replacementString: string)
         if string.isEmpty { return true }
         let cardType = cardsUtils!.getTypeOf(cardNumber: cardNumber)
         guard let cardTypeUnwrap = cardType else { return true }

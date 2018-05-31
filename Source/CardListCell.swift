@@ -29,6 +29,8 @@ public class CardListCell: UITableViewCell {
         setup()
     }
 
+    // MARK: - Methods
+
     /// Sets the selected state of the cell, optionally animating the transition between states.
     override public func setSelected(_ selected: Bool, animated: Bool) {
         if selected {

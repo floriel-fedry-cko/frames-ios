@@ -46,12 +46,15 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
 
     // MARK: - Initialization
 
+    /// Returns a newly initialized view controller with the cardholder's name and billing details
+    /// state specified.
     public init(cardHolderNameState: InputState, billingDetailsState: InputState) {
         self.cardHolderNameState = cardHolderNameState
         self.billingDetailsState = billingDetailsState
         super.init(nibName: nil, bundle: nil)
     }
 
+    /// Returns a newly initialized view controller with the nib file in the specified bundle.
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         cardHolderNameState = .required
         billingDetailsState = .required
@@ -64,7 +67,7 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         super.init(coder: aDecoder)
     }
 
-    // MARK: - Methods
+    // MARK: - Lifecycle
 
     /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {

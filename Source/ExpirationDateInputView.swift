@@ -26,6 +26,8 @@ import UIKit
         self.textField.inputView = expirationDatePicker
     }
 
+    // MARK: - ExpirationDatePickerDelegate
+
     public func onDateChanged(month: String, year: String) {
         self.textField.text = "\(month)/\(year)"
     }

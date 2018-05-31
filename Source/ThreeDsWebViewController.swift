@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-public class ThreeDsWebViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
+public class ThreeDsWebViewController: UIViewController, WKNavigationDelegate {
 
     // MARK: - Properties
 
@@ -22,6 +22,7 @@ public class ThreeDsWebViewController: UIViewController, WKUIDelegate, WKNavigat
         super.init(nibName: nil, bundle: nil)
     }
 
+    /// Returns a newly initialized view controller with the nib file in the specified bundle.
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         successUrl = ""
         failUrl = ""
@@ -34,6 +35,9 @@ public class ThreeDsWebViewController: UIViewController, WKUIDelegate, WKNavigat
         super.init(coder: aDecoder)
     }
 
+    // MARK: - Lifecycle
+
+    /// Creates the view that the controller manages.
     public override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
@@ -41,6 +45,7 @@ public class ThreeDsWebViewController: UIViewController, WKUIDelegate, WKNavigat
         view = webView
     }
 
+    /// Called after the controller's view is loaded into memory.
     public override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +56,9 @@ public class ThreeDsWebViewController: UIViewController, WKUIDelegate, WKNavigat
         webView.load(myRequest)
     }
 
+    // MARK: - WKNavigationDelegate
+
+    /// Called when a web view receives a server redirect.
     public func webView(_ webView: WKWebView,
                         didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         // stop the redirection

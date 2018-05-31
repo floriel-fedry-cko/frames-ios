@@ -3,6 +3,8 @@ import Foundation
 /// A view controller that allows the user to enter address information.
 public class AddressViewController: UIViewController, CountrySelectionViewControllerDelegate, UITextFieldDelegate {
 
+    // MARK: - Properties
+
     let scrollView = UIScrollView()
     let contentView = UIView()
     let stackView = UIStackView()
@@ -24,6 +26,8 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
 
     /// Delegate
     public weak var delegate: AddressViewControllerDelegate?
+
+    // MARK: - Lifecycle
 
     /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
@@ -55,6 +59,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
             ])
     }
 
+    /// Notifies the view controller that its view is about to be added to a view hierarchy.
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.registerKeyboardHandlers(notificationCenter: notificationCenter,
@@ -62,10 +67,13 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
                                       keyboardWillHide: #selector(keyboardWillHide))
     }
 
+    /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
     }
+
+    // MARK: - Methods
 
     @objc func keyboardWillShow(notification: NSNotification) {
         self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView, activeField: nil)
@@ -89,10 +97,6 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
                               phone: nil)
         self.delegate?.onTapDoneButton(address: address)
         navigationController?.popViewController(animated: true)
-    }
-
-    public func onCountrySelected(country: String) {
-        countryRegionInputView.value.text = country
     }
 
     private func setInputViews() {
@@ -142,7 +146,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         phoneInputView.textField.delegate = self
     }
 
-    private func validateFieldsValues() -> Bool {
+    private func validateFieldsValues() {
         /// required values are not nil
         guard
             let countryRegion = countryRegionInputView.value.text,
@@ -152,7 +156,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
             let phone = phoneInputView.textField.text
             else {
                 navigationItem.rightBarButtonItem?.isEnabled = false
-                return false
+                return
         }
         /// required values are not empty
         if
@@ -162,14 +166,23 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
             postcode.isEmpty ||
             phone.isEmpty {
                 navigationItem.rightBarButtonItem?.isEnabled = false
-                return false
+                return
         }
         navigationItem.rightBarButtonItem?.isEnabled = true
-        return true
     }
 
+    // MARK: - CountrySelectionViewControllerDelegate
+
+    /// Executed when an user select a country.
+    public func onCountrySelected(country: String) {
+        countryRegionInputView.value.text = country
+    }
+
+    // MARK: - UITextFieldDelegate
+
+    /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        _ = validateFieldsValues()
+        validateFieldsValues()
     }
 
 }

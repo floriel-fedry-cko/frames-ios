@@ -6,6 +6,8 @@ import UIKit
                                                         UITableViewDataSource,
                                                         UISearchBarDelegate {
 
+    // MARK: - Properties
+
     var countries: [String] {
         let locale = Locale.current
         let countries = Locale.isoRegionCodes.map { locale.localizedString(forRegionCode: $0)! }
@@ -22,6 +24,8 @@ import UIKit
 
     /// Country selection view controller delegate
     public weak var delegate: CountrySelectionViewControllerDelegate?
+
+    // MARK: - Lifecycle
 
     /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {

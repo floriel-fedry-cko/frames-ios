@@ -2,6 +2,9 @@ import UIKit
 
 /// Expiration Date Picker is a control used for the inputting of expiration date.
 @IBDesignable public class ExpirationDatePicker: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
+
+    // MARK: - Properties
+
     // Managing the date and calendar
     let calendar: Calendar = Calendar(identifier: .gregorian)
     let timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!
@@ -45,7 +48,23 @@ import UIKit
         years = Array(yearsUsed)
         setDate(minimumDate, animated: false)
         #endif
+    }
 
+    // MARK: - Methods
+
+    /// Set the date of the expiration picker
+    ///
+    /// - parameter date: Date
+    /// - parameter animated: set it to true if the picker should be animated
+    public func setDate(_ date: Date, animated: Bool) {
+        let month = calendar.component(.month, from: date)
+        let year = calendar.component(.year, from: date)
+
+        let monthIndex = month - 1
+        let yearIndex = years.index(of: String(year))
+
+        self.selectRow(monthIndex, inComponent: 0, animated: animated)
+        self.selectRow(yearIndex!, inComponent: 1, animated: animated)
     }
 
     // MARK: - UIPickerViewDelegate
@@ -98,22 +117,5 @@ import UIKit
         default:
             return nil
         }
-    }
-
-    // MARK: - Methods
-
-    /// Set the date of the expiration picker
-    ///
-    /// - parameter date: Date
-    /// - parameter animated: set it to true if the picker should be animated
-    public func setDate(_ date: Date, animated: Bool) {
-        let month = calendar.component(.month, from: date)
-        let year = calendar.component(.year, from: date)
-
-        let monthIndex = month - 1
-        let yearIndex = years.index(of: String(year))
-
-        self.selectRow(monthIndex, inComponent: 0, animated: animated)
-        self.selectRow(yearIndex!, inComponent: 1, animated: animated)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C084B56AE10CB0F554D54782 /* Pods_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2CEFC7F0253E39130E2F8A /* Pods_iOS_Example.framework */; };
 		E63352E520A46A64002C61C0 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E420A46A64002C61C0 /* ExampleViewController.swift */; };
+		E6637F1A20BFE934005EE375 /* Authorize3dsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6637F1920BFE934005EE375 /* Authorize3dsResponse.swift */; };
 		E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66406EB2089FAA9000431E5 /* AppDelegate.swift */; };
 		E66406F12089FAA9000431E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406EF2089FAA9000431E5 /* Main.storyboard */; };
 		E66406F32089FAAB000431E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66406F22089FAAB000431E5 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		6B310CC3B241B8FDBDB00DF3 /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C254D784E9C1A36631F2AD17 /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
 		E63352E420A46A64002C61C0 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		E6637F1920BFE934005EE375 /* Authorize3dsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorize3dsResponse.swift; sourceTree = "<group>"; };
 		E66406E82089FAA9000431E5 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406EB2089FAA9000431E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66406F02089FAA9000431E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				E6B2EAD82099C8D8002516DF /* iOS Example.entitlements */,
 				E66406EB2089FAA9000431E5 /* AppDelegate.swift */,
 				E63352E420A46A64002C61C0 /* ExampleViewController.swift */,
+				E6637F1920BFE934005EE375 /* Authorize3dsResponse.swift */,
 				E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */,
 				E66406EF2089FAA9000431E5 /* Main.storyboard */,
 				E66406F22089FAAB000431E5 /* Assets.xcassets */,
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E63352E520A46A64002C61C0 /* ExampleViewController.swift in Sources */,
+				E6637F1A20BFE934005EE375 /* Authorize3dsResponse.swift in Sources */,
 				E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */,
 				E6AC017F20A98FB800310E43 /* MerchantAPIClient.swift in Sources */,
 			);

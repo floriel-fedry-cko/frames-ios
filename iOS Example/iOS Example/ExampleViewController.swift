@@ -5,7 +5,8 @@ import CheckoutSdkIos
 class ExampleViewController: UIViewController,
                             UITableViewDelegate,
                             UITableViewDataSource,
-                            CardViewControllerDelegate {
+                            CardViewControllerDelegate,
+                            ThreeDsWebViewControllerDelegate {
 
     @IBOutlet weak var cardsTableView: UITableView!
     var cardsTableViewHeightConstraint: NSLayoutConstraint?
@@ -23,30 +24,21 @@ class ExampleViewController: UIViewController,
     var selectedCard: Any?
 
     let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .normal)
+    let threeDsViewController = ThreeDsWebViewController(
+        successUrl: "https://github.com/floriel-fedry-cko/just-a-test/",
+        failUrl: ""
+    )
 
     @IBAction func onTapAddCard(_ sender: Any) {
         navigationController?.pushViewController(cardViewController, animated: true)
     }
 
     @IBAction func onTapPayWithCard(_ sender: Any) {
-        if let card = selectedCard as? CardRequest {
-            // Newly created card
-            checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
-                let alert = UIAlertController(title: "Payment successful",
-                                              message: "Your card token: \(cardToken.id)", preferredStyle: .alert)
-                self.addOkAlertButton(alert: alert)
-                self.present(alert, animated: true, completion: nil)
-            }, errorHandler: { error in
-                let alert = UIAlertController(title: "Payment unsuccessful",
-                                              message: "Error: \(error)", preferredStyle: .alert)
-                self.addOkAlertButton(alert: alert)
-                self.present(alert, animated: true, completion: nil)
-            })
-        } else if let card = selectedCard as? CustomerCard {
-            // Card from the merchant api
-            let alert = UIAlertController(title: "Card id", message: "Your card id: \(card.id)", preferredStyle: .alert)
-            self.addOkAlertButton(alert: alert)
-            self.present(alert, animated: true, completion: nil)
+        if let card = selectedCard as? CustomerCard {
+            merchantAPIClient.payWith3ds(value: 10, cardId: card.id, cvv: "100", customer: customerEmail) { response in
+                self.threeDsViewController.url = response.redirectUrl
+                self.present(self.threeDsViewController, animated: true)
+            }
         }
     }
 
@@ -59,6 +51,7 @@ class ExampleViewController: UIViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // setup table view
         cardsTableView.register(CardListCell.self, forCellReuseIdentifier: "cardCell")
         cardViewController.delegate = self
         cardsTableView.delegate = self
@@ -66,6 +59,8 @@ class ExampleViewController: UIViewController,
         cardsTableViewHeightConstraint = cardsTableView.heightAnchor
             .constraint(equalToConstant: self.cardsTableView.contentSize.height)
         cardsTableViewHeightConstraint?.isActive = true
+        // set 3ds delegate
+        threeDsViewController.delegate = self
 
         updateCustomerCardList()
     }
@@ -155,6 +150,14 @@ class ExampleViewController: UIViewController,
         } else {
             selectedCard = createdCards[indexPath.row - customerCardCount]
         }
+    }
+
+    func onSuccess3D() {
+        print("dismissed 😎")
+    }
+
+    func onFailure3D() {
+        print("dismissed 😢")
     }
 
 }

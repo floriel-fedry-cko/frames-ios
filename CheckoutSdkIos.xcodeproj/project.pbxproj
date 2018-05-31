@@ -27,6 +27,8 @@
 		E602EE97209D871D00CC62A2 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE96209D871D00CC62A2 /* Timeline.swift */; };
 		E602EE99209D872B00CC62A2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE98209D872B00CC62A2 /* Validation.swift */; };
 		E61C69D020BD906D0057DBA8 /* Demo.md in Resources */ = {isa = PBXBuildFile; fileRef = E61C69CF20BD906D0057DBA8 /* Demo.md */; };
+		E61D068C20C02714007FC847 /* ThreeDsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068B20C02714007FC847 /* ThreeDsWebViewController.swift */; };
+		E61D068E20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068D20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift */; };
 		E625EE4B208F8ECE0019B750 /* CardTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4A208F8ECE0019B750 /* CardTokenResponse.swift */; };
 		E625EE4D208F8F370019B750 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4C208F8F370019B750 /* Card.swift */; };
 		E625EE4F208F8F790019B750 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4E208F8F790019B750 /* Address.swift */; };
@@ -147,6 +149,8 @@
 		E602EE96209D871D00CC62A2 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		E602EE98209D872B00CC62A2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		E61C69CF20BD906D0057DBA8 /* Demo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Demo.md; path = Documentation/Demo.md; sourceTree = "<group>"; };
+		E61D068B20C02714007FC847 /* ThreeDsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDsWebViewController.swift; sourceTree = "<group>"; };
+		E61D068D20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDsWebViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E625EE4A208F8ECE0019B750 /* CardTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTokenResponse.swift; sourceTree = "<group>"; };
 		E625EE4C208F8F370019B750 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E625EE4E208F8F790019B750 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -288,7 +292,9 @@
 			isa = PBXGroup;
 			children = (
 				E631CB7E2098B5C000023472 /* ExpirationDatePicker.swift */,
+				E61D068B20C02714007FC847 /* ThreeDsWebViewController.swift */,
 				E680EBCC20A9E75C000BEED8 /* CardListCell.swift */,
+				E61D068D20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift */,
 				E63352D720A2EE09002C61C0 /* AddressViewController.swift */,
 				E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */,
 				E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */,
@@ -746,6 +752,7 @@
 				E6837286209C628B00C11D67 /* CardNumberInputView.swift in Sources */,
 				E683728A209C62B300C11D67 /* StandardInputView.swift in Sources */,
 				E602EE8F209D86D200CC62A2 /* ServerTrustPolicy.swift in Sources */,
+				E61D068C20C02714007FC847 /* ThreeDsWebViewController.swift in Sources */,
 				E602EE7D209D861300CC62A2 /* DispatchQueue+Alamofire.swift in Sources */,
 				E602EE81209D863F00CC62A2 /* NetworkReachabilityManager.swift in Sources */,
 				E602EE97209D871D00CC62A2 /* Timeline.swift in Sources */,
@@ -781,6 +788,7 @@
 				E602EE83209D866300CC62A2 /* Notifications.swift in Sources */,
 				E602EE95209D870700CC62A2 /* TaskDelegate.swift in Sources */,
 				E67AB994208E1CC600593FBE /* CardProvider.swift in Sources */,
+				E61D068E20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift in Sources */,
 				E6AC018120A9938D00310E43 /* Customer.swift in Sources */,
 				E632AAC020B57EDF00D2B9B6 /* CvvInputView.swift in Sources */,
 				E602EE8B209D86B000CC62A2 /* ResponseSerialization.swift in Sources */,

@@ -41,7 +41,6 @@ public class ThreeDsWebViewController: UIViewController, WKNavigationDelegate {
     public override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: .zero, configuration: webConfiguration)
-        webView.uiDelegate = self
         view = webView
     }
 

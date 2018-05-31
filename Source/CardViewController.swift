@@ -273,6 +273,14 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         navigationItem.rightBarButtonItem?.isEnabled = true
     }
 
+    @objc func keyboardWillShow(notification: NSNotification) {
+        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView, activeField: nil)
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.scrollViewOnKeyboardWillHide(notification: notification, scrollView: scrollView)
+    }
+
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
         validateFieldsValues()
@@ -282,14 +290,6 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
             let cardType = cardUtils.getTypeOf(cardNumber: cardNumberStandardized)
             cvvInputView.cardType = cardType
         }
-    }
-
-    @objc func keyboardWillShow(notification: NSNotification) {
-        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: scrollView, activeField: nil)
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        self.scrollViewOnKeyboardWillHide(notification: notification, scrollView: scrollView)
     }
 
 }

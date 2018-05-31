@@ -1,7 +1,10 @@
 import Foundation
 
 /// A view controller that allows the user to enter card information.
-public class CardViewController: UIViewController, AddressViewControllerDelegate, UITextFieldDelegate {
+public class CardViewController: UIViewController,
+    AddressViewControllerDelegate,
+    CardNumberInputViewDelegate,
+    UITextFieldDelegate {
 
     // MARK: - Properties
 
@@ -43,6 +46,9 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
     // Input options
     let cardHolderNameState: InputState
     let billingDetailsState: InputState
+
+    // Scheme Icons
+    private var lastSelected: UIImageView?
 
     // MARK: - Initialization
 
@@ -281,6 +287,8 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
         self.scrollViewOnKeyboardWillHide(notification: notification, scrollView: scrollView)
     }
 
+    // MARK: - UITextFieldDelegate
+
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
         validateFieldsValues()
@@ -289,6 +297,30 @@ public class CardViewController: UIViewController, AddressViewControllerDelegate
             let cardNumberStandardized = cardUtils.standardize(cardNumber: cardNumber)
             let cardType = cardUtils.getTypeOf(cardNumber: cardNumberStandardized)
             cvvInputView.cardType = cardType
+        }
+    }
+
+    // MARK: - CardNumberInputViewDelegate
+
+    public func onChange(cardType: CardType?) {
+        // reset if the card number is empty
+        if cardType == nil && lastSelected != nil {
+            schemeIconsView.arrangedSubviews.forEach { $0.alpha = 1 }
+            lastSelected = nil
+        }
+        guard let type = cardType else { return }
+        let index = availableSchemes.index(of: type.scheme)
+        guard let indexScheme = index else { return }
+        let imageView = schemeIconsView.arrangedSubviews[indexScheme] as? UIImageView
+
+        if lastSelected == nil {
+            schemeIconsView.arrangedSubviews.forEach { $0.alpha = 0.5 }
+            imageView?.alpha = 1
+            lastSelected = imageView
+        } else {
+            lastSelected!.alpha = 1
+            imageView?.alpha = 0.5
+            lastSelected = imageView
         }
     }
 

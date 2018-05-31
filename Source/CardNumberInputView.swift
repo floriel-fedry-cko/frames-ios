@@ -6,9 +6,9 @@ import UIKit
 
     // MARK: - Properties
 
-    var cardsUtils: CardUtils?
+    var cardsUtils: CardUtils!
     /// Text field delegate
-    public weak var delegate: UITextFieldDelegate?
+    public weak var delegate: CardNumberInputViewDelegate?
 
     // MARK: - Initialization
 
@@ -40,14 +40,16 @@ import UIKit
                           replacementString string: String) -> Bool {
         // Card Number Formatting
         let cardNumber = cardsUtils!.standardize(cardNumber: "\(textField.text!)\(string)")
-        _ = delegate?.textField!(textField, shouldChangeCharactersIn: range, replacementString: string)
+        let cardType = cardsUtils.getTypeOf(cardNumber: cardNumber)
+        delegate?.onChange(cardType: nil)
         if string.isEmpty { return true }
-        let cardType = cardsUtils!.getTypeOf(cardNumber: cardNumber)
         guard let cardTypeUnwrap = cardType else { return true }
         guard cardNumber.count <= cardTypeUnwrap.validLengths.last! else {
             return false
         }
-        textField.text = cardsUtils!.format(cardNumber: cardNumber, cardType: cardTypeUnwrap)
+        // send the card type via the delegate method
+        delegate?.onChange(cardType: cardTypeUnwrap)
+        textField.text = cardsUtils.format(cardNumber: cardNumber, cardType: cardTypeUnwrap)
         return false
     }
 

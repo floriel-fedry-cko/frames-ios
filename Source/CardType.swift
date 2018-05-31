@@ -2,6 +2,8 @@ import Foundation
 
 /// Data about a card type
 public struct CardType: Equatable {
+    /// Card Scheme
+    public let scheme: CardScheme
     /// Name of the scheme (e.g. Visa, Mastercard)
     public let name: String
     /// Pattern to detect the scheme based on the card number

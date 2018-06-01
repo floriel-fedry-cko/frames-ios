@@ -58,22 +58,29 @@ public class ThreeDsWebViewController: UIViewController, WKNavigationDelegate {
 
     // MARK: - WKNavigationDelegate
 
+    public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        shouldDismiss(absoluteUrl: webView.url!)
+    }
+
     /// Called when a web view receives a server redirect.
     public func webView(_ webView: WKWebView,
                         didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
         // stop the redirection
         webView.stopLoading()
-        // get the redirection absoluteUrl
-        let absoluteUrl = webView.url!
+        shouldDismiss(absoluteUrl: webView.url!)
+        
+    }
+
+    private func shouldDismiss(absoluteUrl: URL) {
         // get URL conforming to RFC 1808 without the query
         let url = "\(absoluteUrl.scheme ?? "https")://\(absoluteUrl.host ?? "localhost")\(absoluteUrl.path)/"
-
+        
         if url == successUrl {
             // success url, dismissing the page with the payment token
             self.dismiss(animated: true) {
                 self.delegate?.onSuccess3D()
             }
-        } else {
+        } else if url == failUrl {
             // fail url, dismissing the page
             self.dismiss(animated: true) {
                 self.delegate?.onFailure3D()

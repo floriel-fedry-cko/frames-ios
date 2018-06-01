@@ -26,7 +26,7 @@ class ExampleViewController: UIViewController,
     let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .normal)
     let threeDsViewController = ThreeDsWebViewController(
         successUrl: "https://github.com/floriel-fedry-cko/just-a-test/",
-        failUrl: ""
+        failUrl: "https://github.com/floriel-fedry-cko/just-a-test/master/"
     )
 
     @IBAction func onTapAddCard(_ sender: Any) {
@@ -35,7 +35,7 @@ class ExampleViewController: UIViewController,
 
     @IBAction func onTapPayWithCard(_ sender: Any) {
         if let card = selectedCard as? CustomerCard {
-            merchantAPIClient.payWith3ds(value: 10, cardId: card.id, cvv: "100", customer: customerEmail) { response in
+            merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
                 self.threeDsViewController.url = response.redirectUrl
                 self.present(self.threeDsViewController, animated: true)
             }

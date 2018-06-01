@@ -80,12 +80,12 @@ class ExampleViewController: UIViewController,
         }
     }
 
-    func onTapDone(card: CardRequest) {
+    func onTapDone(card: CardTokenRequest) {
         self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 2
         checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
             // Get the card token and call the merchant api to do a zero dollar authorization charge
             // This will verify the card and save it to the customer
-            self.merchantAPIClient.save(cardWith: cardToken.id, for: self.customerEmail, isId: false) {
+            self.merchantAPIClient.save(cardWith: cardToken.token, for: self.customerEmail, isId: false) {
                 // update the customer card list with the new card
                 self.updateCustomerCardList()
             }

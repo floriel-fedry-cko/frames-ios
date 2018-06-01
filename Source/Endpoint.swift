@@ -9,4 +9,5 @@ enum Endpoint: String {
     case cardProviders = "providers/cards"
     case createCardToken = "tokens/card"
     case createApplePayToken = "applepay/token"
+    case tokens = "tokens"
 }

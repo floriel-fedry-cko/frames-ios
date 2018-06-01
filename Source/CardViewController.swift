@@ -143,8 +143,11 @@ public class CardViewController: UIViewController,
             cardUtils.isValid(cvv: cvv, cardType: cardType)
             else { return }
 
-        let card = CardRequest(number: cardNumberStandardized, expiryMonth: expiryMonth, expiryYear: expiryYear,
-                               cvv: cvv, name: cardHolderNameInputView.textField.text)
+        let card = CardTokenRequest(number: cardNumberStandardized,
+                                    expiryMonth: Int(expiryMonth)!,
+                                    expiryYear: Int(expiryYear)!,
+                                    name: cardHolderNameInputView.textField.text,
+                                    cvv: cvv, billingAdress: nil, phone: nil)
         self.delegate?.onTapDone(card: card)
         navigationController?.popViewController(animated: true)
     }

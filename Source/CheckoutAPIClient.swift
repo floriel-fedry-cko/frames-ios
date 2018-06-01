@@ -14,7 +14,20 @@ public class CheckoutAPIClient {
 
     /// headers used for the requests
     private var headers: [String: String] {
-        return ["Authorization": self.publicKey]
+        return ["Authorization": self.publicKey,
+                "Content-Type": "application/json"]
+    }
+
+    private var jsonEncoder: JSONEncoder {
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
+        return jsonEncoder
+    }
+
+    private var jsonDecoder: JSONDecoder {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        return jsonDecoder
     }
 
     // MARK: - Initialization
@@ -64,25 +77,28 @@ public class CheckoutAPIClient {
     /// - parameter card: Card used to create the token
     /// - parameter successHandler: Callback to execute if the request is successful
     /// - parameter errorHandler: Callback to execute if the request failed
-    public func createCardToken(card: CardRequest,
-                                successHandler: @escaping (CardTokenResponse) -> Void,
+    public func createCardToken(card: CardTokenRequest,
+                                successHandler: @escaping (TokenResponse) -> Void,
                                 errorHandler: @escaping (ErrorResponse) -> Void) {
-        let url = "\(environment.urlApi)\(Endpoint.createCardToken.rawValue)"
-        request(url, method: .post, parameters: card.toDictionary(),
-                          encoding: JSONEncoding.default, headers: headers)
+        let url = "\(environment.urlPaymentApi)\(Endpoint.tokens.rawValue)"
+        // swiftlint:disable:next force_try
+        var urlRequest = try! URLRequest(url: URL(string: url)!, method: HTTPMethod.post, headers: headers)
+        urlRequest.httpBody = try? jsonEncoder.encode(card)
+
+        request(urlRequest)
             .validate().responseJSON { response in
-            let decoder = JSONDecoder()
+                print(response)
             switch response.result {
             case .success:
                 do {
-                    let cardTokenResponse = try decoder.decode(CardTokenResponse.self, from: response.data!)
+                    let cardTokenResponse = try self.jsonDecoder.decode(TokenResponse.self, from: response.data!)
                     successHandler(cardTokenResponse)
                 } catch let error {
                     print(error)
                 }
             case .failure:
                 do {
-                    let cardTokenError = try decoder.decode(ErrorResponse.self, from: response.data!)
+                    let cardTokenError = try self.jsonDecoder.decode(ErrorResponse.self, from: response.data!)
                     errorHandler(cardTokenError)
                 } catch let error {
                     print(error)
@@ -102,7 +118,9 @@ public class CheckoutAPIClient {
         let url = "\(environment.rawValue)\(Endpoint.createApplePayToken.rawValue)"
         // swiftlint:disable:next force_try
         var urlRequest = try! URLRequest(url: URL(string: url)!, method: HTTPMethod.post, headers: headers)
-        urlRequest.httpBody = paymentData
+        let applePayTokenRequest = ApplePayTokenRequest(tokenData: paymentData)
+        urlRequest.httpBody = try? jsonEncoder.encode(applePayTokenRequest)
+
         request(urlRequest).validate().responseJSON { response in
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase

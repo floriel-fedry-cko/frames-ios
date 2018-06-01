@@ -22,9 +22,9 @@ public enum Environment: String {
     var urlPaymentApi: String {
         switch self {
         case .live:
-            return "https://api.checkout.com/payments"
+            return "https://api.checkout.com/"
         case .sandbox:
-            return "https://sandbox.checkout.com/payments"
+            return "https://sandbox.checkout.com/api2/"
         }
     }
 }

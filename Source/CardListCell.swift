@@ -29,27 +29,7 @@ public class CardListCell: UITableViewCell {
         setup()
     }
 
-    // MARK: - Methods
-
-    /// Sets the selected state of the cell, optionally animating the transition between states.
-    override public func setSelected(_ selected: Bool, animated: Bool) {
-        if selected {
-            let image = UIImage(named: "checkmarks/checkmark", in: Bundle(for: CardListCell.self),
-                                compatibleWith: nil)
-            selectedImageView.image = image
-        } else {
-            selectedImageView.image = nil
-        }
-    }
-
-    /// Set the scheme icon of the card cell.
-    ///
-    /// - parameter scheme: Scheme (e.g. CardScheme.visa)
-    public func setSchemeIcon(scheme: CardScheme) {
-        let image = UIImage(named: "schemes/icon-\(scheme.rawValue)", in: Bundle(for: CardListCell.self),
-                compatibleWith: nil)
-        schemeImageView.image = image
-    }
+    // MARK: - Setup
 
     private func setup() {
         stackView.addArrangedSubview(cardInfoLabel)
@@ -81,4 +61,27 @@ public class CardListCell: UITableViewCell {
         selectedImageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
         selectedImageView.widthAnchor.constraint(equalToConstant: 25).isActive = true
     }
+
+    // MARK: - Methods
+
+    /// Sets the selected state of the cell, optionally animating the transition between states.
+    override public func setSelected(_ selected: Bool, animated: Bool) {
+        if selected {
+            let image = UIImage(named: "checkmarks/checkmark", in: Bundle(for: CardListCell.self),
+                                compatibleWith: nil)
+            selectedImageView.image = image
+        } else {
+            selectedImageView.image = nil
+        }
+    }
+
+    /// Set the scheme icon of the card cell.
+    ///
+    /// - parameter scheme: Scheme (e.g. CardScheme.visa)
+    public func setSchemeIcon(scheme: CardScheme) {
+        let image = UIImage(named: "schemes/icon-\(scheme.rawValue)", in: Bundle(for: CardListCell.self),
+                compatibleWith: nil)
+        schemeImageView.image = image
+    }
+
 }

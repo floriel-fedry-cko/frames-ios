@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CountrySelectionViewControllerDelegate Protocol Reference</title>
+    <title>CardNumberInputViewDelegate Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Protocol/CountrySelectionViewControllerDelegate" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/CardNumberInputViewDelegate" class="dashAnchor"></a>
 
-    <a title="CountrySelectionViewControllerDelegate Protocol Reference"></a>
+    <a title="CardNumberInputViewDelegate Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">CheckoutSdkIos Reference</a>
       <img class="carat" src="../img/carat.png" />
-      CountrySelectionViewControllerDelegate Protocol Reference
+      CardNumberInputViewDelegate Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -205,14 +205,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>CountrySelectionViewControllerDelegate</h1>
+            <h1>CardNumberInputViewDelegate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CountrySelectionViewControllerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CardNumberInputViewDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="p">,</span> <span class="kt">UITextFieldDelegate</span></code></pre>
 
                 </div>
               </div>
-            <p>Method that you can use to handle the country selection by the user</p>
+            <p>Method that you can use to handle the card number changes.</p>
 
           </div>
         </section>
@@ -224,9 +224,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14CheckoutSdkIos38CountrySelectionViewControllerDelegateP02onD8SelectedySS7country_tF"></a>
-                    <a name="//apple_ref/swift/Method/onCountrySelected(country:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14CheckoutSdkIos38CountrySelectionViewControllerDelegateP02onD8SelectedySS7country_tF">onCountrySelected(country:)</a>
+                    <a name="/s:14CheckoutSdkIos27CardNumberInputViewDelegateP8onChangeyAA0D4TypeVSg04cardK0_tF"></a>
+                    <a name="//apple_ref/swift/Method/onChange(cardType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14CheckoutSdkIos27CardNumberInputViewDelegateP8onChangeyAA0D4TypeVSg04cardK0_tF">onChange(cardType:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -234,14 +234,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Executed when an user select a country</p>
+                        <p>Called when the card number changed.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onCountrySelected</span><span class="p">(</span><span class="nv">country</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onChange</span><span class="p">(</span><span class="nv">cardType</span><span class="p">:</span> <span class="kt"><a href="../Structs/CardType.html">CardType</a></span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -252,12 +252,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>country</em>
+                                <em>cardType</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Country selected</p>
+                                  <p>Type of the card number.</p>
                                 </div>
                               </td>
                             </tr>

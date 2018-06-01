@@ -4,6 +4,8 @@ import UIKit
 /// Add a gesture recognizer and an handler on tap, or a segue.
 @IBDesignable public class DetailsInputView: UIView, UIGestureRecognizerDelegate {
 
+    // MARK: - Properties
+
     let stackView = UIStackView()
     /// Label
     public let label = UILabel()

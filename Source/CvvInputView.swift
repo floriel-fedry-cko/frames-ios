@@ -4,9 +4,13 @@ import UIKit
 /// Handles the formatting of the text field.
 @IBDesignable public class CvvInputView: StandardInputView, UITextFieldDelegate {
 
+    // MARK: - Properties
+
     var cardType: CardType?
     /// Text field delegate
     public weak var delegate: UITextFieldDelegate?
+
+    // MARK: - Initialization
 
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     public override init(frame: CGRect) {
@@ -20,11 +24,15 @@ import UIKit
         setup()
     }
 
+    // MARK: - Setup
+
     private func setup() {
         self.textField.keyboardType = .numberPad
         self.textField.textContentType = nil
         self.textField.delegate = self
     }
+
+    // MARK: - UITextFieldDelegate
 
     /// Asks the delegate if the specified text should be changed.
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,

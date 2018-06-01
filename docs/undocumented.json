@@ -2,21 +2,21 @@
   "warnings": [
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
-      "line": 64,
+      "line": 70,
       "symbol": "CardViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
-      "line": 106,
+      "line": 112,
       "symbol": "CardViewController.viewWillAppear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
-      "line": 113,
+      "line": 119,
       "symbol": "CardViewController.viewWillDisappear(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -30,36 +30,15 @@
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ThreeDsWebViewController.swift",
-      "line": 19,
+      "line": 20,
       "symbol": "ThreeDsWebViewController.init(successUrl:failUrl:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ThreeDsWebViewController.swift",
-      "line": 32,
+      "line": 33,
       "symbol": "ThreeDsWebViewController.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ThreeDsWebViewControllerDelegate.swift",
-      "line": 3,
-      "symbol": "ThreeDsWebViewControllerDelegate",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ThreeDsWebViewControllerDelegate.swift",
-      "line": 4,
-      "symbol": "ThreeDsWebViewControllerDelegate.onSuccess3D()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ThreeDsWebViewControllerDelegate.swift",
-      "line": 5,
-      "symbol": "ThreeDsWebViewControllerDelegate.onFailure3D()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

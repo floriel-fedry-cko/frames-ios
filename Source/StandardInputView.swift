@@ -3,6 +3,8 @@ import UIKit
 /// Standard Input View containing a label and an input field.
 @IBDesignable public class StandardInputView: UIView, UIGestureRecognizerDelegate {
 
+    // MARK: - Properties
+
     /// Label
     public let label = UILabel()
     /// Text Field

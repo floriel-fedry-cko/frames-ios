@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           CheckoutSdkIos Docs
         </a>
-         (95% documented)
+         (96% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -142,6 +142,9 @@
                 <a class="nav-group-task-link" href="../Protocols/AddressViewControllerDelegate.html">AddressViewControllerDelegate</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/CardNumberInputViewDelegate.html">CardNumberInputViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/CardViewControllerDelegate.html">CardViewControllerDelegate</a>
               </li>
               <li class="nav-group-task">
@@ -205,7 +208,10 @@
             <h1>CardViewController</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CardViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/AddressViewControllerDelegate.html">AddressViewControllerDelegate</a></span><span class="p">,</span> <span class="kt">UITextFieldDelegate</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">CardViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span>
+    <span class="kt"><a href="../Protocols/AddressViewControllerDelegate.html">AddressViewControllerDelegate</a></span><span class="p">,</span>
+    <span class="kt"><a href="../Protocols/CardNumberInputViewDelegate.html">CardNumberInputViewDelegate</a></span><span class="p">,</span>
+    <span class="kt">UITextFieldDelegate</span></code></pre>
 
                 </div>
               </div>
@@ -637,6 +643,17 @@ state specified.</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UITextFieldDelegate"></a>
+                <a name="//apple_ref/swift/Section/UITextFieldDelegate" class="dashAnchor"></a>
+                <a href="#/UITextFieldDelegate">
+                  <h3 class="section-name">UITextFieldDelegate</h3>
+                </a>
+              </div>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -666,13 +683,50 @@ state specified.</p>
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/CardNumberInputViewDelegate"></a>
+                <a name="//apple_ref/swift/Section/CardNumberInputViewDelegate" class="dashAnchor"></a>
+                <a href="#/CardNumberInputViewDelegate">
+                  <h3 class="section-name">CardNumberInputViewDelegate</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14CheckoutSdkIos27CardNumberInputViewDelegateP8onChangeyAA0D4TypeVSg04cardK0_tF"></a>
+                    <a name="//apple_ref/swift/Method/onChange(cardType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14CheckoutSdkIos27CardNumberInputViewDelegateP8onChangeyAA0D4TypeVSg04cardK0_tF">onChange(cardType:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">onChange</span><span class="p">(</span><span class="nv">cardType</span><span class="p">:</span> <span class="kt"><a href="../Structs/CardType.html">CardType</a></span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-05-31)</p>
+      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-06-01)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

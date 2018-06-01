@@ -46,10 +46,11 @@ class CheckoutAPIClientTests: XCTestCase {
         stub(everything, delay: 0, jsonData(data as Data))
         // Test the function
         let expectation = XCTestExpectation(description: "Create card token")
-        let cardRequest = CardRequest(number: "", expiryMonth: "", expiryYear: "", cvv: "", name: "")
+        let cardRequest = CardTokenRequest(number: "", expiryMonth: 0, expiryYear: 0, cvv: "")
+
         checkoutAPIClient.createCardToken(card: cardRequest, successHandler: { cardToken in
             XCTAssertNotNil(cardToken)
-            XCTAssertNotNil(cardToken.id)
+            XCTAssertNotNil(cardToken.token)
             expectation.fulfill()
         }, errorHandler: { _ in
         })
@@ -64,7 +65,7 @@ class CheckoutAPIClientTests: XCTestCase {
         stub(everything, delay: 0, jsonData(data as Data, status: 401))
         // Test the function
         let expectation = XCTestExpectation(description: "Create card token (error)")
-        let cardRequest = CardRequest(number: "", expiryMonth: "", expiryYear: "", cvv: "", name: "")
+        let cardRequest = CardTokenRequest(number: "", expiryMonth: 0, expiryYear: 0, cvv: "")
         checkoutAPIClient.createCardToken(card: cardRequest, successHandler: { _ in
         }, errorHandler: { error in
             XCTAssertNotNil(error)

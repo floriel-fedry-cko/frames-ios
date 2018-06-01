@@ -46,8 +46,7 @@ class MerchantAPIClient {
             switch response.result {
             case .success(let value):
                 do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: value)
-                    let data = String(data: jsonData, encoding: .utf8)?.data(using: .utf8)
+//                    let jsonData = try JSONSerialization.data(withJSONObject: value)
                     successHandler()
                 } catch let error {
                     print(error)

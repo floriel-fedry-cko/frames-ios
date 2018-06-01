@@ -68,13 +68,12 @@ public class ThreeDsWebViewController: UIViewController, WKNavigationDelegate {
         // stop the redirection
         webView.stopLoading()
         shouldDismiss(absoluteUrl: webView.url!)
-        
     }
 
     private func shouldDismiss(absoluteUrl: URL) {
         // get URL conforming to RFC 1808 without the query
         let url = "\(absoluteUrl.scheme ?? "https")://\(absoluteUrl.host ?? "localhost")\(absoluteUrl.path)/"
-        
+
         if url == successUrl {
             // success url, dismissing the page with the payment token
             self.dismiss(animated: true) {

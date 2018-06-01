@@ -30,6 +30,22 @@ class iOS_Example_CustomUITests: XCTestCase {
     
     func testExample() {
         // Use recording to get started writing UI tests.
+        
+        let app = XCUIApplication()
+        app.textFields["4242"].tap()
+        app.textFields["4242"].typeText("424242424242424242")
+        let textField = app.textFields["06/2019"]
+        textField.tap()
+        app/*@START_MENU_TOKEN@*/.pickerWheels["06"]/*[[".pickers.pickerWheels[\"06\"]",".pickerWheels[\"06\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeDown()
+        app.textFields["100"].tap()
+        app.textFields["100"].typeText("100")
+        app.buttons["Button"].tap()
+        
+        let exists = NSPredicate(format: "exists == true")
+        expectation(for: exists, evaluatedWith: app.alerts["Payment"], handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
+        app.alerts["Payment"].buttons["OK"].tap()
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     

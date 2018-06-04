@@ -59,6 +59,9 @@
 		E63352DB20A34992002C61C0 /* AddressViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */; };
 		E63352E120A45C07002C61C0 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E020A45C07002C61C0 /* CardViewController.swift */; };
 		E63352E720A4B252002C61C0 /* CardViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */; };
+		E653FEFC20C583A2002E4790 /* CardListCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFB20C583A2002E4790 /* CardListCellName.swift */; };
+		E653FEFE20C58FA9002E4790 /* SimpleLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */; };
+		E653FF0020C59CCC002E4790 /* CvvConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */; };
 		E66406D92089FA39000431E5 /* CheckoutSdkIos.h in Headers */ = {isa = PBXBuildFile; fileRef = E66406D72089FA39000431E5 /* CheckoutSdkIos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6640710208DD550000431E5 /* CheckoutAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664070F208DD550000431E5 /* CheckoutAPIClient.swift */; };
 		E664071B208DE11D000431E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664071A208DE11D000431E5 /* Endpoint.swift */; };
@@ -185,6 +188,9 @@
 		E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E63352E020A45C07002C61C0 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewControllerDelegate.swift; sourceTree = "<group>"; };
+		E653FEFB20C583A2002E4790 /* CardListCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCellName.swift; sourceTree = "<group>"; };
+		E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoadingViewController.swift; sourceTree = "<group>"; };
+		E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvConfirmationViewController.swift; sourceTree = "<group>"; };
 		E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406D72089FA39000431E5 /* CheckoutSdkIos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutSdkIos.h; sourceTree = "<group>"; };
 		E66406D82089FA39000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 			children = (
 				E63352D720A2EE09002C61C0 /* AddressViewController.swift */,
 				E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */,
+				E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */,
 				E63352E020A45C07002C61C0 /* CardViewController.swift */,
 				E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */,
 				E6837285209C628B00C11D67 /* CardNumberInputView.swift */,
@@ -310,10 +317,12 @@
 				E61D068B20C02714007FC847 /* ThreeDsWebViewController.swift */,
 				E61D068D20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift */,
 				E680EBCC20A9E75C000BEED8 /* CardListCell.swift */,
+				E653FEFB20C583A2002E4790 /* CardListCellName.swift */,
 				E6837287209C62A100C11D67 /* ExpirationDateInputView.swift */,
 				E632AABF20B57EDF00D2B9B6 /* CvvInputView.swift */,
 				E6837289209C62B300C11D67 /* StandardInputView.swift */,
 				E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */,
+				E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -754,6 +763,7 @@
 				E683728E209C6CB000C11D67 /* CheckoutSdkIos.swift in Sources */,
 				E680EBCD20A9E75C000BEED8 /* CardListCell.swift in Sources */,
 				E6640710208DD550000431E5 /* CheckoutAPIClient.swift in Sources */,
+				E653FF0020C59CCC002E4790 /* CvvConfirmationViewController.swift in Sources */,
 				E602EE87209D868E00CC62A2 /* Request.swift in Sources */,
 				E6640721208DE2AA000431E5 /* CardUtils.swift in Sources */,
 				E6837288209C62A200C11D67 /* ExpirationDateInputView.swift in Sources */,
@@ -788,7 +798,9 @@
 				E625EE53208F905E0019B750 /* Environment.swift in Sources */,
 				E67AB996208E1CF100593FBE /* CardProviderResponse.swift in Sources */,
 				E631CB812098B5D900023472 /* ExpirationDatePickerDelegate.swift in Sources */,
+				E653FEFE20C58FA9002E4790 /* SimpleLoadingViewController.swift in Sources */,
 				E632AAB220AECA9500D2B9B6 /* UIResponderExtensions.swift in Sources */,
+				E653FEFC20C583A2002E4790 /* CardListCellName.swift in Sources */,
 				E6BEBDBE20C171FA00C3130A /* ApplePayTokenRequest.swift in Sources */,
 				E631CB772098658000023472 /* ApplePayToken.swift in Sources */,
 				E63352E120A45C07002C61C0 /* CardViewController.swift in Sources */,

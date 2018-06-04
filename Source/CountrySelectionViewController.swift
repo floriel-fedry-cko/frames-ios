@@ -12,7 +12,6 @@ import UIKit
         let locale = Locale.current
         let countries = Locale.isoRegionCodes.map {
             return (locale.localizedString(forRegionCode: $0)!, $0)
-            
         }
         return countries.sorted { $0.0 < $1.0 }
     }

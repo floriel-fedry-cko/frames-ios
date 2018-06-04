@@ -28,6 +28,7 @@ class ExampleViewController: UIViewController,
         successUrl: "https://github.com/floriel-fedry-cko/just-a-test/",
         failUrl: "https://github.com/floriel-fedry-cko/just-a-test/master/"
     )
+    let simpleLoadingViewController = SimpleLoadingViewController()
 
     @IBAction func onTapAddCard(_ sender: Any) {
         navigationController?.pushViewController(cardViewController, animated: true)
@@ -66,10 +67,12 @@ class ExampleViewController: UIViewController,
     }
 
     func updateCustomerCardList() {
+        self.present(simpleLoadingViewController, animated: false, completion: nil)
         merchantAPIClient.get(customer: customerEmail) { customer in
             self.customerCardList = customer.cards
             self.cardsTableView.reloadData()
-            self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 2
+            self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 1.2
+            self.dismiss(animated: true, completion: nil)
             // select the default card
             let indexDefaultCardOpt = customer.cards.data.index { card in
                 card.id == customer.defaultCard
@@ -81,7 +84,7 @@ class ExampleViewController: UIViewController,
     }
 
     func onTapDone(card: CardTokenRequest) {
-        self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 2
+        self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height
         checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
             // Get the card token and call the merchant api to do a zero dollar authorization charge
             // This will verify the card and save it to the customer
@@ -114,7 +117,6 @@ class ExampleViewController: UIViewController,
             // customer card
             guard let card = customerCardList?.data[indexPath.row] else { return cell }
             cell.cardInfoLabel.text = "\(card.paymentMethod.capitalized) ····\(card.last4)"
-            cell.nameLabel.text = card.name
             if let cardScheme = CardScheme(rawValue: card.paymentMethod.lowercased()) {
                 cell.setSchemeIcon(scheme: cardScheme)
             }
@@ -138,7 +140,6 @@ class ExampleViewController: UIViewController,
                 cell.setSchemeIcon(scheme: cardScheme)
             }
         }
-        cell.nameLabel.text = card.name
         return cell
     }
 

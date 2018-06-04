@@ -12,8 +12,6 @@ public class CardListCell: UITableViewCell {
     public let selectedImageView = UIImageView()
     /// Card Information Label
     public let cardInfoLabel = UILabel()
-    /// Name Label
-    public let nameLabel = UILabel()
 
     // MARK: - Initialization
 
@@ -33,7 +31,6 @@ public class CardListCell: UITableViewCell {
 
     private func setup() {
         stackView.addArrangedSubview(cardInfoLabel)
-        stackView.addArrangedSubview(nameLabel)
         self.addSubview(stackView)
         self.addSubview(schemeImageView)
         self.addSubview(selectedImageView)
@@ -43,7 +40,7 @@ public class CardListCell: UITableViewCell {
     }
 
     private func addConstraints() {
-        self.heightAnchor.constraint(equalToConstant: 90).isActive = true
+        self.heightAnchor.constraint(equalToConstant: 50).isActive = true
         // constraints
         stackView.translatesAutoresizingMaskIntoConstraints = false
         schemeImageView.translatesAutoresizingMaskIntoConstraints = false

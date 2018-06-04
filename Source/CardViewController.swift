@@ -211,10 +211,12 @@ public class CardViewController: UIViewController,
         acceptedCardLabel.translatesAutoresizingMaskIntoConstraints = false
         schemeIconsView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
 
         acceptedCardLabel.trailingAnchor
             .constraint(equalTo: self.contentView.trailingAnchor, constant: -16)
             .isActive = true
+        acceptedCardLabel.heightAnchor.constraint(equalToConstant: 16).isActive = true
         acceptedCardLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16).isActive = true
         acceptedCardLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16)
             .isActive = true

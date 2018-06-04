@@ -1,6 +1,104 @@
 {
   "warnings": [
     {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ApplePayTokenRequest.swift",
+      "line": 3,
+      "symbol": "ApplePayTokenRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ApplePayTokenRequest.swift",
+      "line": 4,
+      "symbol": "ApplePayTokenRequest.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ApplePayTokenRequest.swift",
+      "line": 5,
+      "symbol": "ApplePayTokenRequest.tokenData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 3,
+      "symbol": "CardTokenRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 4,
+      "symbol": "CardTokenRequest.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 5,
+      "symbol": "CardTokenRequest.number",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 6,
+      "symbol": "CardTokenRequest.expiryMonth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 7,
+      "symbol": "CardTokenRequest.expiryYear",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 8,
+      "symbol": "CardTokenRequest.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 9,
+      "symbol": "CardTokenRequest.cvv",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 10,
+      "symbol": "CardTokenRequest.billingAdress",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 11,
+      "symbol": "CardTokenRequest.phone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 13,
+      "symbol": "CardTokenRequest.init(number:expiryMonth:expiryYear:name:cvv:billingAdress:phone:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardTokenRequest.swift",
+      "line": 25,
+      "symbol": "CardTokenRequest.init(number:expiryMonth:expiryYear:cvv:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
       "line": 70,
       "symbol": "CardViewController.init(coder:)",
@@ -18,6 +116,41 @@
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
       "line": 119,
       "symbol": "CardViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/Phone.swift",
+      "line": 8,
+      "symbol": "Phone",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/Phone.swift",
+      "line": 10,
+      "symbol": "Phone.countryCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/Phone.swift",
+      "line": 11,
+      "symbol": "Phone.number",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/Phone.swift",
+      "line": 13,
+      "symbol": "Phone.init(countryCode:number:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumber.swift",
+      "line": 12,
+      "symbol": "PhoneNumber.init(countryCode:number:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -40,6 +173,41 @@
       "line": 33,
       "symbol": "ThreeDsWebViewController.init(coder:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ThreeDsWebViewController.swift",
+      "line": 61,
+      "symbol": "ThreeDsWebViewController.webView(_:didCommit:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/TokenResponse.swift",
+      "line": 3,
+      "symbol": "TokenResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/TokenResponse.swift",
+      "line": 4,
+      "symbol": "TokenResponse.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/TokenResponse.swift",
+      "line": 5,
+      "symbol": "TokenResponse.token",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/TokenResponse.swift",
+      "line": 6,
+      "symbol": "TokenResponse.expiresOn",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {

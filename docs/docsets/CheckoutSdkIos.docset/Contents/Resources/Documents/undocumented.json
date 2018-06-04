@@ -1,20 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardNumberInputViewDelegate.swift",
-      "line": 3,
-      "symbol": "CardNumberInputViewDelegate",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardNumberInputViewDelegate.swift",
-      "line": 4,
-      "symbol": "CardNumberInputViewDelegate.onChange(cardType:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
       "line": 70,
       "symbol": "CardViewController.init(coder:)",
@@ -32,13 +18,6 @@
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
       "line": 119,
       "symbol": "CardViewController.viewWillDisappear(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
-      "line": 305,
-      "symbol": "CardViewController.onChange(cardType:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

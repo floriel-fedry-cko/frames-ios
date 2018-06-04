@@ -32,7 +32,6 @@
 		E61D069120C049BD007FC847 /* CardNumberInputViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */; };
 		E625EE4D208F8F370019B750 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4C208F8F370019B750 /* Card.swift */; };
 		E625EE4F208F8F790019B750 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4E208F8F790019B750 /* Address.swift */; };
-		E625EE51208F8FD80019B750 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE50208F8FD80019B750 /* Phone.swift */; };
 		E625EE53208F905E0019B750 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE52208F905E0019B750 /* Environment.swift */; };
 		E625EE5920907FFE0019B750 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E625EE5820907FFE0019B750 /* README.md */; };
 		E625EE5C2090801C0019B750 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = E625EE5A2090801C0019B750 /* CHANGELOG.md */; };
@@ -158,7 +157,6 @@
 		E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberInputViewDelegate.swift; sourceTree = "<group>"; };
 		E625EE4C208F8F370019B750 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E625EE4E208F8F790019B750 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		E625EE50208F8FD80019B750 /* Phone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
 		E625EE52208F905E0019B750 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E625EE5720907FCB0019B750 /* Usage.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Usage.md; path = Documentation/Usage.md; sourceTree = "<group>"; };
 		E625EE5820907FFE0019B750 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -398,7 +396,6 @@
 				E631CB6A209766E300023472 /* CustomerCard.swift */,
 				E6AC018020A9938D00310E43 /* Customer.swift */,
 				E631CB6C20976A0400023472 /* CustomerCardList.swift */,
-				E625EE50208F8FD80019B750 /* Phone.swift */,
 				E664071C208DE174000431E5 /* CardType.swift */,
 				E67AB995208E1CF100593FBE /* CardProviderResponse.swift */,
 				E67AB993208E1CC600593FBE /* CardProvider.swift */,
@@ -781,7 +778,6 @@
 				E602EE8D209D86C200CC62A2 /* Result.swift in Sources */,
 				E631CB6F2097713C00023472 /* ErrorResponse.swift in Sources */,
 				E602EE91209D86E200CC62A2 /* SessionDelegate.swift in Sources */,
-				E625EE51208F8FD80019B750 /* Phone.swift in Sources */,
 				E632AAC220B58CE900D2B9B6 /* InputState.swift in Sources */,
 				E602EE89209D869E00CC62A2 /* Response.swift in Sources */,
 				E68802412091C6C000220CE2 /* CardRequest.swift in Sources */,

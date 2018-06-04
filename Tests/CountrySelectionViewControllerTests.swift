@@ -12,11 +12,11 @@ import XCTest
 class MockDelegate: CountrySelectionViewControllerDelegate {
 
     public var methodCalledTimes = 0
-    public var methodLastCalledWith = ""
+    public var methodLastCalledWith = ("", "")
 
-    func onCountrySelected(country: String) {
+    func onCountrySelected(country: String, regionCode: String) {
         methodCalledTimes += 1
-        methodLastCalledWith = country
+        methodLastCalledWith = (country, regionCode)
     }
 }
 
@@ -59,7 +59,8 @@ class CountrySelectionViewControllerTests: XCTestCase {
         countrySelectionViewController.tableView(countrySelectionViewController.tableView,
                                                  didSelectRowAt: IndexPath(row: 0, section: 0))
         XCTAssertEqual(delegate.methodCalledTimes, 1)
-        XCTAssertEqual(delegate.methodLastCalledWith, countrySelectionViewController.countries[0])
+        XCTAssertEqual(delegate.methodLastCalledWith.0, countrySelectionViewController.countries[0].0)
+        XCTAssertEqual(delegate.methodLastCalledWith.1, countrySelectionViewController.countries[0].1)
     }
 
     func testUpdateSearchResults() {

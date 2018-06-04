@@ -9,6 +9,24 @@
 import XCTest
 @testable import CheckoutSdkIos
 
+class CardNumberInputViewMockDelegate: CardNumberInputViewDelegate {
+    var onChangeTimes = 0
+    var onChangeLastCalledWith: CardType?
+
+    var textFieldDidEndEditingTimes = 0
+    var textFieldDidEndEditingLastCalledWith: UITextField?
+
+    func onChange(cardType: CardType?) {
+        onChangeTimes += 1
+        onChangeLastCalledWith = cardType
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textFieldDidEndEditingTimes += 1
+        textFieldDidEndEditingLastCalledWith = textField
+    }
+}
+
 class CardNumberInputViewTests: XCTestCase {
 
     override func setUp() {
@@ -42,29 +60,47 @@ class CardNumberInputViewTests: XCTestCase {
         let cardNumber = "4242424242424242"
         let expectedText = "4242 4242 4242 4242"
         let cardNumberInputView = CardNumberInputView()
-        _ = cardNumberInputView.textField(cardNumberInputView.textField,
-                                      shouldChangeCharactersIn: NSRange(),
-                                      replacementString: cardNumber)
+        cardNumberInputView.textField.text = cardNumber
+        cardNumberInputView.textFieldDidChange(textField: cardNumberInputView.textField)
         XCTAssertEqual(cardNumberInputView.textField.text, expectedText)
     }
 
     func testTextNotChangingAboveMaxLength() {
-        let expectedText = "4242 4242 4242 4242"
         let cardNumberInputView = CardNumberInputView()
-        _ = cardNumberInputView.textField(cardNumberInputView.textField,
+        var shouldChanged = cardNumberInputView.textField(cardNumberInputView.textField,
                                           shouldChangeCharactersIn: NSRange(),
                                           replacementString: "424242424242424")
-        XCTAssertEqual(cardNumberInputView.textField.text, "4242 4242 4242 424")
+        XCTAssertTrue(shouldChanged)
+        cardNumberInputView.textField.text = "424242424242424"
         // add a characters below the max length of a visa card
-        _ = cardNumberInputView.textField(cardNumberInputView.textField,
+        shouldChanged = cardNumberInputView.textField(cardNumberInputView.textField,
                                           shouldChangeCharactersIn: NSRange(),
                                           replacementString: "2")
-        XCTAssertEqual(cardNumberInputView.textField.text, expectedText)
+        XCTAssertTrue(shouldChanged)
+        cardNumberInputView.textField.text = "4242424242424242"
         // add a characters above the max length of a visa card
-        _ = cardNumberInputView.textField(cardNumberInputView.textField,
+        shouldChanged = cardNumberInputView.textField(cardNumberInputView.textField,
                                           shouldChangeCharactersIn: NSRange(),
                                           replacementString: "4")
-        XCTAssertEqual(cardNumberInputView.textField.text, expectedText)
+        XCTAssertFalse(shouldChanged)
+    }
+
+    func testReturnTrueIfStringEmpty() {
+        let cardNumberInputView = CardNumberInputView()
+        cardNumberInputView.textField.text = "4242 4242 4242 4242"
+        let value = cardNumberInputView.textField(cardNumberInputView.textField,
+                                                  shouldChangeCharactersIn: NSRange(),
+                                                  replacementString: "")
+        XCTAssertTrue(value)
+    }
+
+    func testCallDelegateMethodEndEditing() {
+        let cardNumberInputView = CardNumberInputView()
+        let cardNumberDelegate = CardNumberInputViewMockDelegate()
+        cardNumberInputView.delegate = cardNumberDelegate
+        cardNumberInputView.textFieldDidEndEditing(cardNumberInputView.textField)
+        XCTAssertEqual(cardNumberDelegate.textFieldDidEndEditingTimes, 1)
+        XCTAssertEqual(cardNumberDelegate.textFieldDidEndEditingLastCalledWith, cardNumberInputView.textField)
     }
 
 }

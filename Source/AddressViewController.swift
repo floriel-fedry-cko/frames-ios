@@ -8,13 +8,14 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     let scrollView = UIScrollView()
     let contentView = UIView()
     let stackView = UIStackView()
-    let nameInputView = StandardInputView()
-    let countryRegionInputView = DetailsInputView()
-    let organizationInputView = StandardInputView()
-    let streetAddressInputView = StandardInputView()
-    let postalTownInputView = StandardInputView()
-    let postcodeInputView = StandardInputView()
+
+    let addressLine1InputView = StandardInputView()
+    let addressLine2InputView = StandardInputView()
+    let cityInputView = StandardInputView()
+    let stateInputView = StandardInputView()
+    let zipInputView = StandardInputView()
     let phoneInputView = StandardInputView()
+    let countryRegionInputView = DetailsInputView()
 
     let countrySelectionViewController = CountrySelectionViewController()
     let countryRegionTapGesture = UITapGestureRecognizer()
@@ -23,6 +24,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
                                      target: self, action: nil)
     var scrollViewBottomConstraint: NSLayoutConstraint!
     var notificationCenter: NotificationCenter = NotificationCenter.default
+    var regionCodeSelected: String?
 
     /// Delegate
     public weak var delegate: AddressViewControllerDelegate?
@@ -50,11 +52,11 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         addConstraints()
         addTextFieldsDelegate()
         addKeyboardToolbarNavigation(textFields: [
-            nameInputView.textField,
-            organizationInputView.textField,
-            streetAddressInputView.textField,
-            postalTownInputView.textField,
-            postcodeInputView.textField,
+            addressLine1InputView.textField,
+            addressLine2InputView.textField,
+            cityInputView.textField,
+            stateInputView.textField,
+            zipInputView.textField,
             phoneInputView.textField
             ])
     }
@@ -88,42 +90,42 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     }
 
     @objc func onTapDoneButton() {
-        let address = Address(addressLine1: streetAddressInputView.textField.text,
-                              addressLine2: nil,
-                              postcode: postcodeInputView.textField.text,
-                              country: countryRegionInputView.value.text,
-                              city: nil,
-                              state: nil,
-                              phone: nil)
+        let address = Address(addressLine1: addressLine1InputView.textField.text,
+                              addressLine2: addressLine2InputView.textField.text,
+                              city: cityInputView.textField.text,
+                              state: stateInputView.textField.text,
+                              zip: zipInputView.textField.text,
+                              country: regionCodeSelected)
         self.delegate?.onTapDoneButton(address: address)
         navigationController?.popViewController(animated: true)
     }
 
     private func setInputViews() {
-        nameInputView.set(label: "name", backgroundColor: .white)
         countryRegionInputView.set(label: "countryRegion", backgroundColor: .white)
-        organizationInputView.set(label: "organization", backgroundColor: .white)
-        streetAddressInputView.set(label: "streetAddress", backgroundColor: .white)
-        postalTownInputView.set(label: "postalTown", backgroundColor: .white)
-        postcodeInputView.set(label: "postcode", backgroundColor: .white)
+        addressLine1InputView.set(label: "streetAddress", backgroundColor: .white)
+        addressLine2InputView.set(label: "streetAddress", backgroundColor: .white)
+        cityInputView.set(label: "postalTown", backgroundColor: .white)
+        stateInputView.set(label: "state", backgroundColor: .white)
+        zipInputView.set(label: "postcode", backgroundColor: .white)
         phoneInputView.set(label: "phone", backgroundColor: .white)
         // set content type
-        organizationInputView.textField.textContentType = .organizationName
-        streetAddressInputView.textField.textContentType = .fullStreetAddress
-        postalTownInputView.textField.textContentType = .addressCity
-        postcodeInputView.textField.textContentType = .postalCode
+        addressLine1InputView.textField.textContentType = .streetAddressLine1
+        addressLine2InputView.textField.textContentType = .streetAddressLine2
+        cityInputView.textField.textContentType = .addressCity
+        stateInputView.textField.textContentType = UITextContentType.addressState
+        zipInputView.textField.textContentType = .postalCode
         phoneInputView.textField.textContentType = .telephoneNumber
         // set keyboard
         phoneInputView.textField.keyboardType = .phonePad
     }
 
     private func addViews() {
-        stackView.addArrangedSubview(nameInputView)
         stackView.addArrangedSubview(countryRegionInputView)
-        stackView.addArrangedSubview(organizationInputView)
-        stackView.addArrangedSubview(streetAddressInputView)
-        stackView.addArrangedSubview(postalTownInputView)
-        stackView.addArrangedSubview(postcodeInputView)
+        stackView.addArrangedSubview(addressLine1InputView)
+        stackView.addArrangedSubview(addressLine2InputView)
+        stackView.addArrangedSubview(cityInputView)
+        stackView.addArrangedSubview(stateInputView)
+        stackView.addArrangedSubview(zipInputView)
         stackView.addArrangedSubview(phoneInputView)
         contentView.addSubview(stackView)
         scrollView.addSubview(contentView)
@@ -140,9 +142,10 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     }
 
     private func addTextFieldsDelegate() {
-        streetAddressInputView.textField.delegate = self
-        postalTownInputView.textField.delegate = self
-        postcodeInputView.textField.delegate = self
+        addressLine1InputView.textField.delegate = self
+        addressLine2InputView.textField.delegate = self
+        cityInputView.textField.delegate = self
+        zipInputView.textField.delegate = self
         phoneInputView.textField.delegate = self
     }
 
@@ -150,9 +153,9 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         /// required values are not nil
         guard
             let countryRegion = countryRegionInputView.value.text,
-            let streetAddress = streetAddressInputView.textField.text,
-            let postalTown = postalTownInputView.textField.text,
-            let postcode = postcodeInputView.textField.text,
+            let streetAddress = addressLine1InputView.textField.text,
+            let postalTown = cityInputView.textField.text,
+            let postcode = zipInputView.textField.text,
             let phone = phoneInputView.textField.text
             else {
                 navigationItem.rightBarButtonItem?.isEnabled = false
@@ -174,7 +177,8 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     // MARK: - CountrySelectionViewControllerDelegate
 
     /// Executed when an user select a country.
-    public func onCountrySelected(country: String) {
+    public func onCountrySelected(country: String, regionCode: String) {
+        regionCodeSelected = regionCode
         countryRegionInputView.value.text = country
     }
 

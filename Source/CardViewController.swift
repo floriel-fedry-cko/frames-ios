@@ -100,13 +100,14 @@ public class CardViewController: UIViewController,
             self.addSchemeIcon(scheme: scheme)
         }
         self.addFillerView()
-
-        addKeyboardToolbarNavigation(textFields: [
-            cardNumberInputView.textField,
-            cardHolderNameInputView.textField,
-            expirationDateInputView.textField,
-            cvvInputView.textField
-            ])
+        // add keyboard toolbar
+        var textFields = [cardNumberInputView.textField,
+                          expirationDateInputView.textField,
+                          cvvInputView.textField]
+        if cardHolderNameState != .hidden {
+            textFields.insert(cardHolderNameInputView.textField, at: 1)
+        }
+        addKeyboardToolbarNavigation(textFields: textFields)
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -147,7 +148,7 @@ public class CardViewController: UIViewController,
                                     expiryMonth: Int(expiryMonth)!,
                                     expiryYear: Int(expiryYear)!,
                                     name: cardHolderNameInputView.textField.text,
-                                    cvv: cvv, billingAdress: nil, phone: nil)
+                                    cvv: cvv, billingAdress: billingDetailsAddress, phone: nil)
         self.delegate?.onTapDone(card: card)
         navigationController?.popViewController(animated: true)
     }
@@ -321,8 +322,8 @@ public class CardViewController: UIViewController,
             imageView?.alpha = 1
             lastSelected = imageView
         } else {
-            lastSelected!.alpha = 1
-            imageView?.alpha = 0.5
+            lastSelected!.alpha = 0.5
+            imageView?.alpha = 1
             lastSelected = imageView
         }
     }

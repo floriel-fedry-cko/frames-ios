@@ -43,7 +43,7 @@ class iOS_Example_Apple_PayUITests: XCTestCase {
         let textField = elementsQuery.textFields["06/2020"]
         textField.tap()
 
-        app/*@START_MENU_TOKEN@*/.pickerWheels["05"]/*[[".pickers.pickerWheels[\"05\"]",".pickerWheels[\"05\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeDown()
+        app.pickerWheels.element(boundBy: 0).swipeDown()
         elementsQuery.textFields["100"].tap()
         elementsQuery.textFields["100"].typeText("100")
         app.toolbars["Toolbar"].buttons["Done"].tap()

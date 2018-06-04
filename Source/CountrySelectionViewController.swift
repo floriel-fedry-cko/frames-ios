@@ -8,13 +8,16 @@ import UIKit
 
     // MARK: - Properties
 
-    var countries: [String] {
+    var countries: [(String, String)] {
         let locale = Locale.current
-        let countries = Locale.isoRegionCodes.map { locale.localizedString(forRegionCode: $0)! }
-        return countries.sorted { $0 < $1 }
+        let countries = Locale.isoRegionCodes.map {
+            return (locale.localizedString(forRegionCode: $0)!, $0)
+            
+        }
+        return countries.sorted { $0.0 < $1.0 }
     }
 
-    var filteredCountries: [String] = []
+    var filteredCountries: [(String, String)] = []
 
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -78,20 +81,21 @@ import UIKit
     /// Asks the data source for a cell to insert in a particular location of the table view.
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "countryCell", for: indexPath)
-        cell.textLabel?.text = filteredCountries[indexPath.row]
+        cell.textLabel?.text = filteredCountries[indexPath.row].0
         return cell
     }
 
     /// Tells the delegate that the specified row is now selected.
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.onCountrySelected(country: filteredCountries[indexPath.row])
+        delegate?.onCountrySelected(country: filteredCountries[indexPath.row].0,
+                                    regionCode: filteredCountries[indexPath.row].1)
         navigationController?.popViewController(animated: true)
     }
 
     func updateSearchResults(text: String?) {
         guard let searchText = text else { return }
         self.filteredCountries = countries.filter { country in
-            return country.lowercased().contains(searchText.lowercased())
+            return country.0.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
     }

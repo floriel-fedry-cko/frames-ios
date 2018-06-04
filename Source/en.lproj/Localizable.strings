@@ -10,6 +10,7 @@
 "countryRegion" = "Country/Region*";
 "organization" = "Organization";
 "streetAddress" = "Street Address*";
+"state" = "State*";
 "postalTown" = "Postal Town*";
 "postcode" = "Postcode*";
 "phone" = "Phone*";

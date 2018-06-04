@@ -22,5 +22,5 @@ public struct Customer: Decodable {
     /// The customer's name.
     public let name: String?
     /// Phone number of the customer.
-    public let phone: Phone
+    public let phone: PhoneNumber
 }

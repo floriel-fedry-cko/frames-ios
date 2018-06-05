@@ -76,4 +76,27 @@ class CountrySelectionViewControllerTests: XCTestCase {
         XCTAssertLessThan(countrySelectionViewController.filteredCountries.count,
                           countrySelectionViewController.countries.count)
     }
+
+    func testSearchBarSearchButtonClicked() {
+        countrySelectionViewController.searchBar.text = "A"
+        XCTAssertEqual(countrySelectionViewController.filteredCountries.count,
+                       countrySelectionViewController.countries.count)
+        countrySelectionViewController.searchBarSearchButtonClicked(countrySelectionViewController.searchBar)
+        XCTAssertLessThan(countrySelectionViewController.filteredCountries.count,
+                          countrySelectionViewController.countries.count)
+    }
+
+    func testSearchBarCancelButtonClicked() {
+        // setup
+        countrySelectionViewController.searchBar.text = "A"
+        countrySelectionViewController.updateSearchResults(text: "A")
+        XCTAssertLessThan(countrySelectionViewController.filteredCountries.count,
+                          countrySelectionViewController.countries.count)
+        // execute
+        countrySelectionViewController.searchBarCancelButtonClicked(countrySelectionViewController.searchBar)
+        // assert
+        XCTAssertEqual(countrySelectionViewController.searchBar.text, "")
+        XCTAssertEqual(countrySelectionViewController.filteredCountries.count,
+                       countrySelectionViewController.countries.count)
+    }
 }

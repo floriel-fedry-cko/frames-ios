@@ -50,7 +50,7 @@ PKPaymentAuthorizationViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cardsTableView.register(CardListCell.self, forCellReuseIdentifier: "cardCell")
+        cardsTableView.register(CardListCellName.self, forCellReuseIdentifier: "cardCell")
         cardViewController.delegate = self
         cardsTableView.delegate = self
         cardsTableView.dataSource = self
@@ -110,7 +110,7 @@ PKPaymentAuthorizationViewControllerDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardListCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardListCellName
             else { fatalError("The dequeued cell is not an instance of CardCell.")}
         let customerCardCount = customerCardList?.count ?? 0
         if indexPath.row < customerCardCount {
@@ -127,7 +127,7 @@ PKPaymentAuthorizationViewControllerDelegate {
         return cell
     }
     
-    private func renderCreatedCard(row: Int, cell: CardListCell) -> UITableViewCell {
+    private func renderCreatedCard(row: Int, cell: CardListCellName) -> UITableViewCell {
         // created card
         let customerCardCount = customerCardList?.count ?? 0
         guard row - customerCardCount < createdCards.count else { return cell }

@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-public class ThreeDsWebViewController: UIViewController, WKNavigationDelegate {
+public class ThreedsWebViewController: UIViewController, WKNavigationDelegate {
 
     // MARK: - Properties
 
@@ -10,7 +10,7 @@ public class ThreeDsWebViewController: UIViewController, WKNavigationDelegate {
     let failUrl: String
 
     /// Delegate
-    public weak var delegate: ThreeDsWebViewControllerDelegate?
+    public weak var delegate: ThreedsWebViewControllerDelegate?
 
     /// Url
     public var url: String?
@@ -72,7 +72,7 @@ public class ThreeDsWebViewController: UIViewController, WKNavigationDelegate {
 
     private func shouldDismiss(absoluteUrl: URL) {
         // get URL conforming to RFC 1808 without the query
-        let url = "\(absoluteUrl.scheme ?? "https")://\(absoluteUrl.host ?? "localhost")\(absoluteUrl.path)/"
+        let url = "\(absoluteUrl.scheme ?? "https")://\(absoluteUrl.host ?? "localhost")\(absoluteUrl.path)"
 
         if url == successUrl {
             // success url, dismissing the page with the payment token

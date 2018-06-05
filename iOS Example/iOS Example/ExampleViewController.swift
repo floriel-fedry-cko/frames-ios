@@ -6,7 +6,7 @@ class ExampleViewController: UIViewController,
                             UITableViewDelegate,
                             UITableViewDataSource,
                             CardViewControllerDelegate,
-                            ThreeDsWebViewControllerDelegate {
+                            ThreedsWebViewControllerDelegate {
 
     @IBOutlet weak var cardsTableView: UITableView!
     var cardsTableViewHeightConstraint: NSLayoutConstraint?
@@ -24,7 +24,7 @@ class ExampleViewController: UIViewController,
     var selectedCard: Any?
 
     let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .normal)
-    let threeDsViewController = ThreeDsWebViewController(
+    let threeDsViewController = ThreedsWebViewController(
         successUrl: "https://github.com/floriel-fedry-cko/just-a-test/",
         failUrl: "https://github.com/floriel-fedry-cko/just-a-test/master/"
     )

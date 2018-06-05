@@ -1,7 +1,7 @@
 import Foundation
 
 /// Methods to handle the response in the 3ds web view
-public protocol ThreeDsWebViewControllerDelegate: class {
+public protocol ThreedsWebViewControllerDelegate: class {
 
     /// Called if the response is successful
     func onSuccess3D()

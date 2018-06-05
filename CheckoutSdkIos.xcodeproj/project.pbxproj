@@ -26,9 +26,10 @@
 		E602EE95209D870700CC62A2 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE94209D870700CC62A2 /* TaskDelegate.swift */; };
 		E602EE97209D871D00CC62A2 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE96209D871D00CC62A2 /* Timeline.swift */; };
 		E602EE99209D872B00CC62A2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE98209D872B00CC62A2 /* Validation.swift */; };
+		E608734620C689BB004E280C /* ThreedsWebViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E608734520C689BB004E280C /* ThreedsWebViewControllerTests.swift */; };
 		E61C69D020BD906D0057DBA8 /* Demo.md in Resources */ = {isa = PBXBuildFile; fileRef = E61C69CF20BD906D0057DBA8 /* Demo.md */; };
-		E61D068C20C02714007FC847 /* ThreeDsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068B20C02714007FC847 /* ThreeDsWebViewController.swift */; };
-		E61D068E20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068D20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift */; };
+		E61D068C20C02714007FC847 /* ThreedsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */; };
+		E61D068E20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */; };
 		E61D069120C049BD007FC847 /* CardNumberInputViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */; };
 		E625EE4D208F8F370019B750 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4C208F8F370019B750 /* Card.swift */; };
 		E625EE4F208F8F790019B750 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = E625EE4E208F8F790019B750 /* Address.swift */; };
@@ -154,9 +155,10 @@
 		E602EE94209D870700CC62A2 /* TaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
 		E602EE96209D871D00CC62A2 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		E602EE98209D872B00CC62A2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		E608734520C689BB004E280C /* ThreedsWebViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreedsWebViewControllerTests.swift; sourceTree = "<group>"; };
 		E61C69CF20BD906D0057DBA8 /* Demo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Demo.md; path = Documentation/Demo.md; sourceTree = "<group>"; };
-		E61D068B20C02714007FC847 /* ThreeDsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDsWebViewController.swift; sourceTree = "<group>"; };
-		E61D068D20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDsWebViewControllerDelegate.swift; sourceTree = "<group>"; };
+		E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreedsWebViewController.swift; sourceTree = "<group>"; };
+		E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreedsWebViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberInputViewDelegate.swift; sourceTree = "<group>"; };
 		E625EE4C208F8F370019B750 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		E625EE4E208F8F790019B750 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -314,8 +316,8 @@
 				E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */,
 				E631CB7E2098B5C000023472 /* ExpirationDatePicker.swift */,
 				E631CB802098B5D900023472 /* ExpirationDatePickerDelegate.swift */,
-				E61D068B20C02714007FC847 /* ThreeDsWebViewController.swift */,
-				E61D068D20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift */,
+				E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */,
+				E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */,
 				E680EBCC20A9E75C000BEED8 /* CardListCell.swift */,
 				E653FEFB20C583A2002E4790 /* CardListCellName.swift */,
 				E6837287209C62A100C11D67 /* ExpirationDateInputView.swift */,
@@ -484,6 +486,7 @@
 				E6AF0A0520AACE8A00D29929 /* ExpirationDatePickerTests.swift */,
 				E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */,
 				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
+				E608734520C689BB004E280C /* ThreedsWebViewControllerTests.swift */,
 				E6AF0A0B20AACF2100D29929 /* CountrySelectionViewControllerTests.swift */,
 				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
 				E6AF0A0F20AAD00600D29929 /* ExpirationDateInputViewTests.swift */,
@@ -771,7 +774,7 @@
 				E6837286209C628B00C11D67 /* CardNumberInputView.swift in Sources */,
 				E683728A209C62B300C11D67 /* StandardInputView.swift in Sources */,
 				E602EE8F209D86D200CC62A2 /* ServerTrustPolicy.swift in Sources */,
-				E61D068C20C02714007FC847 /* ThreeDsWebViewController.swift in Sources */,
+				E61D068C20C02714007FC847 /* ThreedsWebViewController.swift in Sources */,
 				E602EE7D209D861300CC62A2 /* DispatchQueue+Alamofire.swift in Sources */,
 				E602EE81209D863F00CC62A2 /* NetworkReachabilityManager.swift in Sources */,
 				E602EE97209D871D00CC62A2 /* Timeline.swift in Sources */,
@@ -811,7 +814,7 @@
 				E602EE83209D866300CC62A2 /* Notifications.swift in Sources */,
 				E602EE95209D870700CC62A2 /* TaskDelegate.swift in Sources */,
 				E67AB994208E1CC600593FBE /* CardProvider.swift in Sources */,
-				E61D068E20C0277D007FC847 /* ThreeDsWebViewControllerDelegate.swift in Sources */,
+				E61D068E20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift in Sources */,
 				E61D069120C049BD007FC847 /* CardNumberInputViewDelegate.swift in Sources */,
 				E6AC018120A9938D00310E43 /* Customer.swift in Sources */,
 				E632AAC020B57EDF00D2B9B6 /* CvvInputView.swift in Sources */,
@@ -835,6 +838,7 @@
 				E632AABE20B578FF00D2B9B6 /* NotificationCenterMock.swift in Sources */,
 				E6AF0A0C20AACF2100D29929 /* CountrySelectionViewControllerTests.swift in Sources */,
 				E6AF0A3F20AAF3E200D29929 /* CardViewControllerTests.swift in Sources */,
+				E608734620C689BB004E280C /* ThreedsWebViewControllerTests.swift in Sources */,
 				E6AF0A0620AACE8A00D29929 /* ExpirationDatePickerTests.swift in Sources */,
 				E632AABC20B578B200D2B9B6 /* CardViewControllerMock.swift in Sources */,
 				E6AF0A1020AAD00600D29929 /* ExpirationDateInputViewTests.swift in Sources */,

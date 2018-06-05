@@ -34,17 +34,4 @@ public class CardListCellName: CardListCell {
         self.heightAnchor.constraint(equalToConstant: 90).isActive = true
     }
 
-    // MARK: - Methods
-
-    /// Sets the selected state of the cell, optionally animating the transition between states.
-    override public func setSelected(_ selected: Bool, animated: Bool) {
-        if selected {
-            let image = UIImage(named: "checkmarks/checkmark", in: Bundle(for: CardListCell.self),
-                                compatibleWith: nil)
-            selectedImageView.image = image
-        } else {
-            selectedImageView.image = nil
-        }
-    }
-
 }

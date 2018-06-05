@@ -67,6 +67,7 @@ public class CardViewController: UIViewController,
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required public init?(coder aDecoder: NSCoder) {
         cardHolderNameState = .required
         billingDetailsState = .required
@@ -110,6 +111,7 @@ public class CardViewController: UIViewController,
         addKeyboardToolbarNavigation(textFields: textFields)
     }
 
+    /// Notifies the view controller that its view is about to be added to a view hierarchy.
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.registerKeyboardHandlers(notificationCenter: notificationCenter,
@@ -117,6 +119,7 @@ public class CardViewController: UIViewController,
                                       keyboardWillHide: #selector(keyboardWillHide))
     }
 
+    /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
@@ -148,7 +151,7 @@ public class CardViewController: UIViewController,
                                     expiryMonth: Int(expiryMonth)!,
                                     expiryYear: Int(expiryYear)!,
                                     name: cardHolderNameInputView.textField.text,
-                                    cvv: cvv, billingAdress: billingDetailsAddress, phone: nil)
+                                    cvv: cvv, billingAddress: billingDetailsAddress, phone: nil)
         self.delegate?.onTapDone(card: card)
         navigationController?.popViewController(animated: true)
     }
@@ -308,6 +311,7 @@ public class CardViewController: UIViewController,
 
     // MARK: - CardNumberInputViewDelegate
 
+    /// Called when the card number changed.
     public func onChange(cardType: CardType?) {
         // reset if the card number is empty
         if cardType == nil && lastSelected != nil {

@@ -1,6 +1,9 @@
 import Foundation
 
+/// Apple Pay Token
 public struct ApplePayTokenRequest: Codable {
-    public let type = "applepay"
+    /// Token Type: Apple Pay
+    let type = "applepay"
+    /// The Apple Pay Payment Token
     public let tokenData: Data
 }

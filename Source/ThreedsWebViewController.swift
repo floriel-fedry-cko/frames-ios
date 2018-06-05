@@ -17,6 +17,7 @@ public class ThreedsWebViewController: UIViewController, WKNavigationDelegate {
 
     // MARK: - Initialization
 
+    /// Initializes a web view controller adapted to handle 3dsecure.
     public init(successUrl: String, failUrl: String) {
         self.successUrl = successUrl
         self.failUrl = failUrl
@@ -30,6 +31,7 @@ public class ThreedsWebViewController: UIViewController, WKNavigationDelegate {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required public init?(coder aDecoder: NSCoder) {
         successUrl = ""
         failUrl = ""
@@ -58,6 +60,7 @@ public class ThreedsWebViewController: UIViewController, WKNavigationDelegate {
 
     // MARK: - WKNavigationDelegate
 
+    /// Called when the web view begins to receive web content.
     public func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         shouldDismiss(absoluteUrl: webView.url!)
     }

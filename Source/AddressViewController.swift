@@ -152,11 +152,10 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     private func validateFieldsValues() {
         /// required values are not nil
         guard
-            let countryRegion = countryRegionInputView.value.text,
+            let countryRegion = regionCodeSelected,
             let streetAddress = addressLine1InputView.textField.text,
             let postalTown = cityInputView.textField.text,
-            let postcode = zipInputView.textField.text,
-            let phone = phoneInputView.textField.text
+            let postcode = zipInputView.textField.text
             else {
                 navigationItem.rightBarButtonItem?.isEnabled = false
                 return
@@ -166,8 +165,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
             countryRegion.isEmpty ||
             streetAddress.isEmpty ||
             postalTown.isEmpty ||
-            postcode.isEmpty ||
-            phone.isEmpty {
+            postcode.isEmpty {
                 navigationItem.rightBarButtonItem?.isEnabled = false
                 return
         }

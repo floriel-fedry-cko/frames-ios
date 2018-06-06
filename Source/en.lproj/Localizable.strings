@@ -16,3 +16,7 @@
 "phone" = "Phone*";
 
 "acceptedCards" = "Accepted Cards";
+
+"cardNumberInvalid" = "The card number is invalid";
+"cardTypeNotAccepted" = "The card type is not accepted";
+"cvvInvalid" = "The cvv is invalid";

@@ -9,6 +9,18 @@
 import XCTest
 @testable import CheckoutSdkIos
 
+class AddressViewControllerMockDelegate: AddressViewControllerDelegate {
+
+    var onTapDoneButtonCalledTimes = 0
+    var onTapDoneButtonLastCalledWith: Address?
+
+    func onTapDoneButton(address: Address) {
+        onTapDoneButtonCalledTimes += 1
+        onTapDoneButtonLastCalledWith = address
+    }
+
+}
+
 class AddressViewControllerTests: XCTestCase {
 
     var addressViewController: AddressViewController!
@@ -17,11 +29,20 @@ class AddressViewControllerTests: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         addressViewController = AddressViewController()
+        let navigation = UINavigationController()
+        navigation.viewControllers = [addressViewController]
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+
+    func setupAddress() {
+        addressViewController.regionCodeSelected = "FR"
+        addressViewController.addressLine1InputView.textField.text = "12 rue de la boulangerie"
+        addressViewController.cityInputView.textField.text = "Lyon"
+        addressViewController.zipInputView.textField.text = "69002"
     }
 
     func testInitialization() {
@@ -102,5 +123,32 @@ class AddressViewControllerTests: XCTestCase {
         XCTAssertEqual(addressVC?.kbHideCalledTimes, 1)
         XCTAssertEqual(addressVC?.kbHideLastCalledWith?.0, notification)
         XCTAssertEqual(addressVC?.kbHideLastCalledWith?.1, addressVC?.scrollView)
+    }
+
+    func testDisableDoneButtonIfFormNotValid() {
+        addressViewController.viewDidLoad()
+        addressViewController.textFieldDidEndEditing(UITextField())
+        XCTAssertFalse((addressViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+    }
+
+    func testEnableDoneButtonIfFormIsValid() {
+        // Setup
+        addressViewController.viewDidLoad()
+        setupAddress()
+        // Assert
+        addressViewController.textFieldDidEndEditing(UITextField())
+        XCTAssertTrue((addressViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+    }
+
+    func testCallDelegateMethodOnTapDoneButton() {
+        let delegate = AddressViewControllerMockDelegate()
+        addressViewController.delegate = delegate
+        setupAddress()
+        addressViewController.onTapDoneButton()
+        XCTAssertEqual(delegate.onTapDoneButtonCalledTimes, 1)
+        XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.addressLine1, "12 rue de la boulangerie")
+        XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.city, "Lyon")
+        XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.country, "FR")
+        XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.zip, "69002")
     }
 }

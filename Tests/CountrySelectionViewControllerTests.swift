@@ -99,4 +99,26 @@ class CountrySelectionViewControllerTests: XCTestCase {
         XCTAssertEqual(countrySelectionViewController.filteredCountries.count,
                        countrySelectionViewController.countries.count)
     }
+
+    func testUpdateSearchOnTextChanged() {
+        countrySelectionViewController.searchBar(countrySelectionViewController.searchBar, textDidChange: "A")
+        XCTAssertLessThan(countrySelectionViewController.filteredCountries.count,
+                          countrySelectionViewController.countries.count)
+    }
+
+    func testResetSearchResultsWhenTextBecomesEmpty() {
+        testUpdateSearchOnTextChanged()
+        countrySelectionViewController.searchBar(countrySelectionViewController.searchBar, textDidChange: "")
+        XCTAssertEqual(countrySelectionViewController.filteredCountries.count,
+                          countrySelectionViewController.countries.count)
+    }
+
+    func testCellInsertedAtTheLocation() {
+        let countryAt50 = countrySelectionViewController.filteredCountries[50].0
+        let indexPath = IndexPath(row: 50, section: 0)
+        let cell = countrySelectionViewController.tableView(countrySelectionViewController.tableView,
+                                                            cellForRowAt: indexPath)
+        XCTAssertEqual(cell.textLabel?.text, countryAt50)
+    }
+
 }

@@ -36,10 +36,14 @@ import UIKit
 
     // MARK: - UITextFieldDelegate
 
+    /// Tells the delegate that editing began in the specified text field.
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        hideError()
+    }
+
     /// Asks the delegate if the specified text should be changed.
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                           replacementString string: String) -> Bool {
-
         // Card Number Formatting
         let cardNumber = cardsUtils!.standardize(cardNumber: "\(textField.text!)\(string)")
         let cardType = cardsUtils.getTypeOf(cardNumber: cardNumber)

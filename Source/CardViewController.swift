@@ -82,7 +82,7 @@ public class CardViewController: UIViewController,
         // Do any additional setup after loading the view.
         setupUIViews()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                             target: self,
                                                             action: #selector(onTapDoneCardButton))
         navigationItem.rightBarButtonItem?.isEnabled = false
@@ -91,7 +91,6 @@ public class CardViewController: UIViewController,
         billingDetailsInputView.addGestureRecognizer(addressTapGesture)
 
         addressViewController.delegate = self
-
         addViews()
         addTextFieldsDelegate()
         addConstraints()
@@ -141,11 +140,23 @@ public class CardViewController: UIViewController,
             let cardType = cardUtils.getTypeOf(cardNumber: cardNumberStandardized)
             else { return }
         let (expiryMonth, expiryYear) = cardUtils.standardize(expirationDate: expirationDate)
-        guard
-            cardUtils.isValid(cardNumber: cardNumberStandardized, cardType: cardType),
-            cardUtils.isValid(expirationMonth: expiryMonth, expirationYear: expiryYear),
-            cardUtils.isValid(cvv: cvv, cardType: cardType)
-            else { return }
+        // card number invalid
+        let isCardNumberValid = cardUtils.isValid(cardNumber: cardNumberStandardized, cardType: cardType)
+        let isExpirationDateValid = cardUtils.isValid(expirationMonth: expiryMonth, expirationYear: expiryYear)
+        let isCvvValid = cardUtils.isValid(cvv: cvv, cardType: cardType)
+
+        // TODO: Check if the card type is amongst the valid ones
+
+        if !isCardNumberValid {
+            let message = NSLocalizedString("cardNumberInvalid", bundle: Bundle(for: CardViewController.self),
+                                            comment: "")
+            cardNumberInputView.showError(message: message)
+        }
+        if !isCvvValid {
+            let message = NSLocalizedString("cvvInvalid", bundle: Bundle(for: CardViewController.self), comment: "")
+            cvvInputView.showError(message: message)
+        }
+        if !isCardNumberValid || !isExpirationDateValid || !isCvvValid { return }
 
         let card = CardTokenRequest(number: cardNumberStandardized,
                                     expiryMonth: Int(expiryMonth)!,
@@ -161,7 +172,7 @@ public class CardViewController: UIViewController,
     /// Executed when an user tap on the done button.
     public func onTapDoneButton(address: Address) {
         billingDetailsAddress = address
-        let value = "\(address.addressLine1 ?? ""), \(address.addressLine2 ?? ""), \(address.city ?? "")"
+        let value = "\(address.addressLine1 ?? ""), \(address.city ?? "")"
         billingDetailsInputView.value.text = value
         validateFieldsValues()
     }
@@ -264,7 +275,6 @@ public class CardViewController: UIViewController,
     }
 
     private func validateFieldsValues() {
-        // values are not nil
         let cardNumber = cardNumberInputView.textField.text!
         let expirationDate = expirationDateInputView.textField.text!
         let cvv = cvvInputView.textField.text!

@@ -39,9 +39,9 @@ class AddressViewControllerTests: XCTestCase {
 
     func setupAddress() {
         addressViewController.regionCodeSelected = "FR"
-        addressViewController.addressLine1InputView.textField.text = "12 rue de la boulangerie"
-        addressViewController.cityInputView.textField.text = "Lyon"
-        addressViewController.zipInputView.textField.text = "69002"
+        addressViewController.addressView.addressLine1InputView.textField.text = "12 rue de la boulangerie"
+        addressViewController.addressView.cityInputView.textField.text = "Lyon"
+        addressViewController.addressView.zipInputView.textField.text = "69002"
     }
 
     func testInitialization() {
@@ -76,52 +76,56 @@ class AddressViewControllerTests: XCTestCase {
     }
 
     func testScrollViewOnKeyboardWillShow() {
+        addressViewController.viewDidLoad()
         let notification = NSNotification(name: NSNotification.Name.UIKeyboardWillShow, object: nil, userInfo: [
                 UIKeyboardFrameBeginUserInfoKey: NSValue(cgRect: CGRect(x: 0, y: 0, width: 0, height: 300))
             ])
 
         addressViewController.scrollViewOnKeyboardWillShow(notification: notification,
-                                                           scrollView: addressViewController.scrollView,
-                                                           activeField: addressViewController.phoneInputView.textField)
+                                                           scrollView: addressViewController.addressView.scrollView,
+                                                           activeField: addressViewController.addressView.phoneInputView.textField)
         let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 380, right: 0.0)
-        XCTAssertEqual(addressViewController.scrollView.contentInset, contentInsets)
+        XCTAssertEqual(addressViewController.addressView.scrollView.contentInset, contentInsets)
     }
 
     func testScrollViewOnKeyboardWillHide() {
+        addressViewController.viewDidLoad()
         testScrollViewOnKeyboardWillShow()
         let notification = NSNotification(name: NSNotification.Name.UIKeyboardWillHide, object: nil, userInfo: [
             UIKeyboardFrameBeginUserInfoKey: NSValue(cgRect: CGRect(x: 0, y: 0, width: 0, height: 300))
             ])
         addressViewController.scrollViewOnKeyboardWillHide(notification: notification,
-                                                           scrollView: addressViewController.scrollView)
+                                                           scrollView: addressViewController.addressView.scrollView)
         let contentInsets = UIEdgeInsets.zero
-        XCTAssertEqual(addressViewController.scrollView.contentInset, contentInsets)
+        XCTAssertEqual(addressViewController.addressView.scrollView.contentInset, contentInsets)
     }
 
     func testKeyboardWillShow() {
         /// Mock Address View Controller
         let coder = NSKeyedUnarchiver(forReadingWith: Data())
         let addressVC = AddressViewControllerMock(coder: coder)
+        addressVC?.viewDidLoad()
         let notification = NSNotification(name: NSNotification.Name.UIKeyboardWillHide, object: nil, userInfo: [
             UIKeyboardFrameBeginUserInfoKey: NSValue(cgRect: CGRect(x: 0, y: 0, width: 0, height: 300))
             ])
         addressVC?.keyboardWillShow(notification: notification)
         XCTAssertEqual(addressVC?.kbShowCalledTimes, 1)
         XCTAssertEqual(addressVC?.kbShowLastCalledWith?.0, notification)
-        XCTAssertEqual(addressVC?.kbShowLastCalledWith?.1, addressVC?.scrollView)
+        XCTAssertEqual(addressVC?.kbShowLastCalledWith?.1, addressVC?.addressView.scrollView)
     }
 
     func testKeyboardWillHide() {
         /// Mock Address View Controller
         let coder = NSKeyedUnarchiver(forReadingWith: Data())
         let addressVC = AddressViewControllerMock(coder: coder)
+        addressVC?.viewDidLoad()
         let notification = NSNotification(name: NSNotification.Name.UIKeyboardWillHide, object: nil, userInfo: [
             UIKeyboardFrameBeginUserInfoKey: NSValue(cgRect: CGRect(x: 0, y: 0, width: 0, height: 300))
             ])
         addressVC?.keyboardWillHide(notification: notification)
         XCTAssertEqual(addressVC?.kbHideCalledTimes, 1)
         XCTAssertEqual(addressVC?.kbHideLastCalledWith?.0, notification)
-        XCTAssertEqual(addressVC?.kbHideLastCalledWith?.1, addressVC?.scrollView)
+        XCTAssertEqual(addressVC?.kbHideLastCalledWith?.1, addressVC?.addressView.scrollView)
     }
 
     func testDisableDoneButtonIfFormNotValid() {
@@ -133,6 +137,7 @@ class AddressViewControllerTests: XCTestCase {
     func testEnableDoneButtonIfFormIsValid() {
         // Setup
         addressViewController.viewDidLoad()
+//        addressViewController.viewDidLayoutSubviews()
         setupAddress()
         // Assert
         addressViewController.textFieldDidEndEditing(UITextField())
@@ -141,6 +146,7 @@ class AddressViewControllerTests: XCTestCase {
 
     func testCallDelegateMethodOnTapDoneButton() {
         let delegate = AddressViewControllerMockDelegate()
+        addressViewController.viewDidLoad()
         addressViewController.delegate = delegate
         setupAddress()
         addressViewController.onTapDoneButton()

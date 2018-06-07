@@ -31,6 +31,7 @@
 		E611019F20C956B2000BB9F4 /* FramesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E611019E20C956B2000BB9F4 /* FramesViewController.swift */; };
 		E61101A120C95880000BB9F4 /* SchemeIconsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61101A020C95880000BB9F4 /* SchemeIconsStackView.swift */; };
 		E61101A520C95C30000BB9F4 /* FramesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61101A420C95C30000BB9F4 /* FramesView.swift */; };
+		E61101A720C98B83000BB9F4 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61101A620C98B83000BB9F4 /* AddressView.swift */; };
 		E61C69D020BD906D0057DBA8 /* Demo.md in Resources */ = {isa = PBXBuildFile; fileRef = E61C69CF20BD906D0057DBA8 /* Demo.md */; };
 		E61D068C20C02714007FC847 /* ThreedsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */; };
 		E61D068E20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */; };
@@ -164,6 +165,7 @@
 		E611019E20C956B2000BB9F4 /* FramesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramesViewController.swift; sourceTree = "<group>"; };
 		E61101A020C95880000BB9F4 /* SchemeIconsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeIconsStackView.swift; sourceTree = "<group>"; };
 		E61101A420C95C30000BB9F4 /* FramesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramesView.swift; sourceTree = "<group>"; };
+		E61101A620C98B83000BB9F4 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		E61C69CF20BD906D0057DBA8 /* Demo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Demo.md; path = Documentation/Demo.md; sourceTree = "<group>"; };
 		E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreedsWebViewController.swift; sourceTree = "<group>"; };
 		E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreedsWebViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		E61101A220C95976000BB9F4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E63352D720A2EE09002C61C0 /* AddressViewController.swift */,
 				E611019E20C956B2000BB9F4 /* FramesViewController.swift */,
 			);
 			name = Controllers;
@@ -322,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				E61101A420C95C30000BB9F4 /* FramesView.swift */,
+				E61101A620C98B83000BB9F4 /* AddressView.swift */,
 				E61101A020C95880000BB9F4 /* SchemeIconsStackView.swift */,
 			);
 			name = Views;
@@ -332,7 +336,6 @@
 			children = (
 				E61101A320C95984000BB9F4 /* Views */,
 				E61101A220C95976000BB9F4 /* Controllers */,
-				E63352D720A2EE09002C61C0 /* AddressViewController.swift */,
 				E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */,
 				E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */,
 				E611019C20C9217E000BB9F4 /* CvvConfirmationViewControllerDelegate.swift */,
@@ -831,6 +834,7 @@
 				E625EE53208F905E0019B750 /* Environment.swift in Sources */,
 				E67AB996208E1CF100593FBE /* CardProviderResponse.swift in Sources */,
 				E631CB812098B5D900023472 /* ExpirationDatePickerDelegate.swift in Sources */,
+				E61101A720C98B83000BB9F4 /* AddressView.swift in Sources */,
 				E653FEFE20C58FA9002E4790 /* SimpleLoadingViewController.swift in Sources */,
 				E632AAB220AECA9500D2B9B6 /* UIResponderExtensions.swift in Sources */,
 				E611019D20C9217E000BB9F4 /* CvvConfirmationViewControllerDelegate.swift in Sources */,

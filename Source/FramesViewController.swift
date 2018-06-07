@@ -27,7 +27,6 @@ UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.groupTableViewBackground
         framesView = FramesView(frame: .zero)
-        self.view.addSubview(framesView)
 
         addTextFieldsDelegate()
 
@@ -48,8 +47,8 @@ UITextFieldDelegate {
                                       keyboardWillHide: #selector(keyboardWillHide))
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    public override func viewDidLayoutSubviews() {
+        self.view.addSubview(framesView)
         framesView.translatesAutoresizingMaskIntoConstraints = false
         self.framesView.leftAnchor.constraint(equalTo: view.safeLeftAnchor).isActive = true
         self.framesView.rightAnchor.constraint(equalTo: view.safeRightAnchor).isActive = true

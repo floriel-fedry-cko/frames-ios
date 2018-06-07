@@ -40,7 +40,7 @@ public class FramesView: UIView {
         cardNumberInputView.set(label: "cardNumber", backgroundColor: .white)
         expirationDateInputView.set(label: "expirationDate", backgroundColor: .white)
         cvvInputView.set(label: "cvv", backgroundColor: .white)
-        
+
         cardNumberInputView.textField.placeholder = "4242"
         expirationDateInputView.textField.placeholder = "06/2020"
         cvvInputView.textField.placeholder = "100"
@@ -79,7 +79,8 @@ public class FramesView: UIView {
         schemeIconsStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16)
             .isActive = true
         schemeIconsStackView.topAnchor.constraint(equalTo: acceptedCardLabel.bottomAnchor, constant: 16).isActive = true
-        schemeIconsStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16).isActive = true
+        schemeIconsStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor,
+                                                      constant: 16).isActive = true
 
         stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16).isActive = true
         stackView.topAnchor.constraint(equalTo: self.schemeIconsStackView.bottomAnchor, constant: 16).isActive = true

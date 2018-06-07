@@ -16,6 +16,7 @@ import UIKit
     var heightConstraint: NSLayoutConstraint!
     let stackview = UIStackView()
     let contentView = UIView()
+    let errorView = UIView()
 
     @IBInspectable var text: String = "Label" {
         didSet {
@@ -62,19 +63,18 @@ import UIKit
         textField.textAlignment = .right
         stackview.axis = .vertical
         stackview.backgroundColor = .clear
-        stackview.spacing = 2
         // inspectable
         label.text = text
         textField.placeholder = placeholder
-        self.backgroundColor = .black
 
         // add to view
         contentView.addSubview(label)
         contentView.addSubview(textField)
+        errorView.addSubview(errorLabel)
         stackview.addArrangedSubview(contentView)
-        stackview.addArrangedSubview(errorLabel)
+        stackview.addArrangedSubview(errorView)
 
-        errorLabel.isHidden = true
+        errorView.isHidden = true
         errorLabel.textColor = .red
 
         self.addSubview(stackview)
@@ -91,6 +91,8 @@ import UIKit
         textField.translatesAutoresizingMaskIntoConstraints = false
         stackview.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        errorView.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
 
         stackview.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         stackview.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
@@ -99,18 +101,21 @@ import UIKit
         heightConstraint = stackview.heightAnchor.constraint(equalToConstant: 48)
         heightConstraint.isActive = true
 
-        errorLabel.heightAnchor.constraint(equalToConstant: 32).isActive = true
-        errorLabel.leadingAnchor.constraint(equalTo: stackview.leadingAnchor, constant: 16).isActive = true
+        errorView.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        errorLabel.topAnchor.constraint(equalTo: errorView.topAnchor).isActive = true
+        errorLabel.bottomAnchor.constraint(equalTo: errorView.bottomAnchor).isActive = true
+        errorLabel.leadingAnchor.constraint(equalTo: errorView.leadingAnchor, constant: 16).isActive = true
+        errorLabel.trailingAnchor.constraint(equalTo: errorView.trailingAnchor, constant: 8).isActive = true
 
         contentView.leadingAnchor.constraint(equalTo: stackview.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: stackview.trailingAnchor).isActive = true
 
         textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
         label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        label.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor, constant: 8).isActive = true
+        label.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor, constant: 8)
+            .isActive = true
         textField.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         textField.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
-
     }
 
     func set(label: String, backgroundColor: UIColor) {
@@ -121,14 +126,14 @@ import UIKit
     // MARK: - Methods
 
     public func showError(message: String) {
-        errorLabel.isHidden = false
+        errorView.isHidden = false
         errorLabel.text = message
         self.heightConstraint.constant = 48 + 32
         self.layoutIfNeeded()
     }
 
     public func hideError() {
-        errorLabel.isHidden = true
+        errorView.isHidden = true
         self.heightConstraint.constant = 48
         self.layoutIfNeeded()
     }

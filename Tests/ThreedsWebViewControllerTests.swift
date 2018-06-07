@@ -22,7 +22,6 @@ class ThreedsWebViewControllerForDismiss: ThreedsWebViewController {
     }
 }
 
-
 class ThreedsWebViewControllerTests: XCTestCase {
 
     var threedsWebViewController: ThreedsWebViewController!

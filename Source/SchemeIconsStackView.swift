@@ -1,0 +1,40 @@
+class SchemeIconsStackView: UIStackView {
+
+    var shouldSetupConstraints = true
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    func addSchemeIcon(scheme: CardScheme) {
+        let imageView = UIImageView()
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        let image = UIImage(named: "schemes/icon-\(scheme.rawValue)", in: Bundle(for: CardViewController.self),
+                            compatibleWith: nil)
+        imageView.image = image
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        self.addArrangedSubview(imageView)
+        imageView.widthAnchor.constraint(equalToConstant: 36).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
+    }
+
+    public func setIcons(schemes: [CardScheme]) {
+        schemes.forEach { scheme in
+            addSchemeIcon(scheme: scheme)
+        }
+        addFillerView()
+    }
+
+    private func addFillerView() {
+        let fillerView = UIView()
+        fillerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        fillerView.backgroundColor = .clear
+        fillerView.translatesAutoresizingMaskIntoConstraints = false
+        self.addArrangedSubview(fillerView)
+    }
+}

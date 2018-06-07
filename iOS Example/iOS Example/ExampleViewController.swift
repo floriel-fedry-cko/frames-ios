@@ -6,7 +6,20 @@ class ExampleViewController: UIViewController,
                             UITableViewDelegate,
                             UITableViewDataSource,
                             CardViewControllerDelegate,
-                            ThreedsWebViewControllerDelegate {
+                            CvvConfirmationViewControllerDelegate,
+ThreedsWebViewControllerDelegate {
+    func onConfirm(controller: CvvConfirmationViewController, cvv: String) {
+        if let card = selectedCard as? CustomerCard {
+            merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
+                self.threeDsViewController.url = response.redirectUrl
+                self.present(self.threeDsViewController, animated: true)
+            }
+        }
+    }
+
+    func onCancel(controller: CvvConfirmationViewController) {
+        navigationController?.popViewController(animated: true)
+    }
 
     @IBOutlet weak var cardsTableView: UITableView!
     var cardsTableViewHeightConstraint: NSLayoutConstraint?
@@ -24,6 +37,7 @@ class ExampleViewController: UIViewController,
     var selectedCard: Any?
 
     let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .normal)
+    let cvvConfirmationViewController = CvvConfirmationViewController()
     let threeDsViewController = ThreedsWebViewController(
         successUrl: "https://github.com/floriel-fedry-cko/just-a-test/",
         failUrl: "https://github.com/floriel-fedry-cko/just-a-test/master/"
@@ -35,12 +49,14 @@ class ExampleViewController: UIViewController,
     }
 
     @IBAction func onTapPayWithCard(_ sender: Any) {
-        if let card = selectedCard as? CustomerCard {
-            merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
-                self.threeDsViewController.url = response.redirectUrl
-                self.present(self.threeDsViewController, animated: true)
-            }
-        }
+//        self.present(cvvConfirmationViewController, animated: true)
+        navigationController?.pushViewController(cvvConfirmationViewController, animated: true)
+//        if let card = selectedCard as? CustomerCard {
+//            merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
+//                self.threeDsViewController.url = response.redirectUrl
+//                self.present(self.threeDsViewController, animated: true)
+//            }
+//        }
     }
 
     func addOkAlertButton(alert: UIAlertController) {
@@ -60,8 +76,9 @@ class ExampleViewController: UIViewController,
         cardsTableViewHeightConstraint = cardsTableView.heightAnchor
             .constraint(equalToConstant: self.cardsTableView.contentSize.height)
         cardsTableViewHeightConstraint?.isActive = true
-        // set 3ds delegate
+        // set delegates
         threeDsViewController.delegate = self
+        cvvConfirmationViewController.delegate = self
 
         updateCustomerCardList()
     }

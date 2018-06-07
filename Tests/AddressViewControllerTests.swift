@@ -18,7 +18,6 @@ class AddressViewControllerMockDelegate: AddressViewControllerDelegate {
         onTapDoneButtonCalledTimes += 1
         onTapDoneButtonLastCalledWith = address
     }
-
 }
 
 class AddressViewControllerTests: XCTestCase {

@@ -51,12 +51,12 @@ ThreedsWebViewControllerDelegate {
     @IBAction func onTapPayWithCard(_ sender: Any) {
 //        self.present(cvvConfirmationViewController, animated: true)
         navigationController?.pushViewController(cvvConfirmationViewController, animated: true)
-//        if let card = selectedCard as? CustomerCard {
-//            merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
-//                self.threeDsViewController.url = response.redirectUrl
-//                self.present(self.threeDsViewController, animated: true)
-//            }
-//        }
+        if let card = selectedCard as? CustomerCard {
+            merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
+                self.threeDsViewController.url = response.redirectUrl
+                self.present(self.threeDsViewController, animated: true)
+            }
+        }
     }
 
     func addOkAlertButton(alert: UIAlertController) {

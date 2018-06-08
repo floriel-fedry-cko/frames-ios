@@ -6,6 +6,7 @@ import UIKit
 
     // MARK: - Properties
 
+    let maxLengthCvv = 4
     var cardType: CardType?
     /// Text field delegate
     public weak var delegate: UITextFieldDelegate?
@@ -37,11 +38,12 @@ import UIKit
     /// Asks the delegate if the specified text should be changed.
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                           replacementString string: String) -> Bool {
-        if string.isEmpty { return true }
-        guard let cardType = self.cardType else { return true }
         let cvv = "\(textField.text!)\(string)"
-        guard cvv.count <= cardType.validCvvLengths.last! else {
+        guard cvv.count <= maxLengthCvv else {
             return false
+        }
+        if let cardType = self.cardType {
+            if cvv.count > cardType.validCvvLengths.last! { return false }
         }
         return true
     }

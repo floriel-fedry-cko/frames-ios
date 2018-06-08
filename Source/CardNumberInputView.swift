@@ -54,6 +54,7 @@ import UIKit
         return true
     }
 
+    /// Called when the text changed.
     @objc public func textFieldDidChange(textField: UITextField) {
         let cardNumber = cardsUtils!.standardize(cardNumber: textField.text!)
         let cardType = cardsUtils.getTypeOf(cardNumber: cardNumber)

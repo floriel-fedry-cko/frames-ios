@@ -21,7 +21,6 @@ public class FramesView: UIView {
 
     var scrollViewBottomConstraint: NSLayoutConstraint!
 
-
     private func setup() {
         schemeIconsStackView.spacing = 8
         stackView.axis = .vertical

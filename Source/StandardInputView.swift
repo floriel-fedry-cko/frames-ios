@@ -125,6 +125,9 @@ import UIKit
 
     // MARK: - Methods
 
+    /// Show an error message
+    ///
+    /// - parameter message: Error message to show
     public func showError(message: String) {
         errorView.isHidden = false
         errorLabel.text = message
@@ -132,6 +135,7 @@ import UIKit
         self.layoutIfNeeded()
     }
 
+    /// Hide the error message
     public func hideError() {
         errorView.isHidden = true
         self.heightConstraint.constant = 48

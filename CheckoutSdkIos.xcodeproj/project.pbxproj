@@ -75,6 +75,7 @@
 		E664071D208DE174000431E5 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664071C208DE174000431E5 /* CardType.swift */; };
 		E664071F208DE199000431E5 /* CardScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664071E208DE199000431E5 /* CardScheme.swift */; };
 		E6640721208DE2AA000431E5 /* CardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6640720208DE2AA000431E5 /* CardUtils.swift */; };
+		E670A86720CA9722002348A5 /* CvvInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E670A86620CA9722002348A5 /* CvvInputViewTests.swift */; };
 		E67AB96E208DF9D800593FBE /* CardUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AB96D208DF9D800593FBE /* CardUtilsTests.swift */; };
 		E67AB994208E1CC600593FBE /* CardProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AB993208E1CC600593FBE /* CardProvider.swift */; };
 		E67AB996208E1CF100593FBE /* CardProviderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67AB995208E1CF100593FBE /* CardProviderResponse.swift */; };
@@ -214,6 +215,7 @@
 		E664071C208DE174000431E5 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 		E664071E208DE199000431E5 /* CardScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardScheme.swift; sourceTree = "<group>"; };
 		E6640720208DE2AA000431E5 /* CardUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUtils.swift; sourceTree = "<group>"; };
+		E670A86620CA9722002348A5 /* CvvInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvInputViewTests.swift; sourceTree = "<group>"; };
 		E67AB96D208DF9D800593FBE /* CardUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUtilsTests.swift; sourceTree = "<group>"; };
 		E67AB993208E1CC600593FBE /* CardProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProvider.swift; sourceTree = "<group>"; };
 		E67AB995208E1CF100593FBE /* CardProviderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProviderResponse.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
 				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
 				E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */,
+				E670A86620CA9722002348A5 /* CvvInputViewTests.swift */,
 				E6AF0A0B20AACF2100D29929 /* CountrySelectionViewControllerTests.swift */,
 				E6AF0A4E20AB448700D29929 /* DetailsInputViewTests.swift */,
 				E6AF0A0F20AAD00600D29929 /* ExpirationDateInputViewTests.swift */,
@@ -893,6 +896,7 @@
 				E67AB998208E2BBA00593FBE /* CheckoutAPIClientTests.swift in Sources */,
 				E6AF0A0820AACEC300D29929 /* CardListCellTests.swift in Sources */,
 				E6AF0A1220AADA9A00D29929 /* StandardInputViewTests.swift in Sources */,
+				E670A86720CA9722002348A5 /* CvvInputViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

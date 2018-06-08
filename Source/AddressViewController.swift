@@ -9,7 +9,6 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     let countrySelectionViewController = CountrySelectionViewController()
     let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done,
                                      target: self, action: nil)
-    var scrollViewBottomConstraint: NSLayoutConstraint!
     var notificationCenter: NotificationCenter = NotificationCenter.default
     var regionCodeSelected: String?
 
@@ -48,6 +47,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
         self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
     }
 
+    /// Called to notify the view controller that its view has just laid out its subviews.
     public override func viewDidLayoutSubviews() {
         self.view.addSubview(addressView)
         addressView.translatesAutoresizingMaskIntoConstraints = false

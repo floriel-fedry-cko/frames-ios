@@ -8,13 +8,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressView.swift",
-      "line": 38,
-      "symbol": "AddressView.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressViewController.swift",
       "line": 51,
       "symbol": "AddressViewController.viewDidLayoutSubviews()",
@@ -33,20 +26,6 @@
       "line": 3,
       "symbol": "CardView",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardView.swift",
-      "line": 42,
-      "symbol": "CardView.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
-      "line": 90,
-      "symbol": "CardViewController.viewDidLayoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {

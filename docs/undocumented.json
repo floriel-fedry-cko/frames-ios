@@ -1,10 +1,31 @@
 {
   "warnings": [
     {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressView.swift",
+      "line": 3,
+      "symbol": "AddressView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/AddressViewController.swift",
+      "line": 51,
+      "symbol": "AddressViewController.viewDidLayoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardNumberInputView.swift",
-      "line": 53,
+      "line": 57,
       "symbol": "CardNumberInputView.textFieldDidChange(textField:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardView.swift",
+      "line": 3,
+      "symbol": "CardView",
+      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
@@ -16,22 +37,43 @@
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 8,
+      "line": 11,
+      "symbol": "CvvConfirmationViewController.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
+      "line": 15,
       "symbol": "CvvConfirmationViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 15,
+      "line": 65,
       "symbol": "CvvConfirmationViewController.onConfirmCvv()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 17,
+      "line": 70,
       "symbol": "CvvConfirmationViewController.onCancel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/FramesViewController.swift",
+      "line": 11,
+      "symbol": "FramesViewController.framesView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/FramesViewController.swift",
+      "line": 50,
+      "symbol": "FramesViewController.viewDidLayoutSubviews()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -60,6 +102,20 @@
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/SimpleLoadingViewController.swift",
       "line": 11,
       "symbol": "SimpleLoadingViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/StandardInputView.swift",
+      "line": 128,
+      "symbol": "StandardInputView.showError(message:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/StandardInputView.swift",
+      "line": 135,
+      "symbol": "StandardInputView.hideError()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

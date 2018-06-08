@@ -32,13 +32,17 @@ public class CardView: UIView {
 
     var scrollViewBottomConstraint: NSLayoutConstraint!
 
-    override init(frame: CGRect) {
+    // MARK: - Initialization
+
+    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
+    override public init(frame: CGRect) {
         cardHolderNameState = .required
         billingDetailsState = .required
         super.init(frame: frame)
         setup()
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required public init?(coder aDecoder: NSCoder) {
         cardHolderNameState = .required
         billingDetailsState = .required
@@ -53,24 +57,29 @@ public class CardView: UIView {
         setup()
     }
 
+    // MARK: - Methods
+
     private func setup() {
         addViews()
         addInitialConstraints()
         self.backgroundColor = UIColor.groupTableViewBackground
         acceptedCardLabel.text = "Accepted Cards"
         cardNumberInputView.set(label: "cardNumber", backgroundColor: .white)
+        expirationDateInputView.set(label: "expirationDate", backgroundColor: .white)
+        cvvInputView.set(label: "cvv", backgroundColor: .white)
+        // card holder name
         if cardHolderNameState == .required {
             cardHolderNameInputView.set(label: "cardholderNameRequired", backgroundColor: .white)
         } else {
             cardHolderNameInputView.set(label: "cardholderName", backgroundColor: .white)
         }
-        expirationDateInputView.set(label: "expirationDate", backgroundColor: .white)
-        cvvInputView.set(label: "cvv", backgroundColor: .white)
+        // billing details
         if billingDetailsState == .required {
             billingDetailsInputView.set(label: "billingDetailsRequired", backgroundColor: .white)
         } else {
             billingDetailsInputView.set(label: "billingDetails", backgroundColor: .white)
         }
+
         cardNumberInputView.textField.placeholder = "4242"
         expirationDateInputView.textField.placeholder = "06/2020"
         cvvInputView.textField.placeholder = "100"

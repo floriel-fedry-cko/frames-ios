@@ -25,16 +25,15 @@ public class AddressView: UIView {
     var notificationCenter: NotificationCenter = NotificationCenter.default
     var regionCodeSelected: String?
 
-    /// Delegate
-    public weak var delegate: AddressViewControllerDelegate?
-
     // MARK: - Initialization
 
-    override init(frame: CGRect) {
+    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()

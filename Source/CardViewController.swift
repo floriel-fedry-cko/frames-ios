@@ -87,6 +87,7 @@ public class CardViewController: UIViewController,
         self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
     }
 
+    /// Called to notify the view controller that its view has just laid out its subviews.
     public override func viewDidLayoutSubviews() {
         self.view.addSubview(cardView)
         cardView.translatesAutoresizingMaskIntoConstraints = false

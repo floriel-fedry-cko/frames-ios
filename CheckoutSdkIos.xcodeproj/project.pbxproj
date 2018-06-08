@@ -317,9 +317,12 @@
 		E61101A220C95976000BB9F4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E63352E020A45C07002C61C0 /* CardViewController.swift */,
 				E63352D720A2EE09002C61C0 /* AddressViewController.swift */,
+				E63352E020A45C07002C61C0 /* CardViewController.swift */,
+				E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */,
+				E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */,
 				E611019E20C956B2000BB9F4 /* FramesViewController.swift */,
+				E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -328,9 +331,14 @@
 			isa = PBXGroup;
 			children = (
 				E61101A620C98B83000BB9F4 /* AddressView.swift */,
+				E6837285209C628B00C11D67 /* CardNumberInputView.swift */,
 				E61101A820C9970D000BB9F4 /* CardView.swift */,
+				E632AABF20B57EDF00D2B9B6 /* CvvInputView.swift */,
+				E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */,
+				E6837287209C62A100C11D67 /* ExpirationDateInputView.swift */,
 				E61101A420C95C30000BB9F4 /* FramesView.swift */,
 				E61101A020C95880000BB9F4 /* SchemeIconsStackView.swift */,
+				E6837289209C62B300C11D67 /* StandardInputView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -338,27 +346,13 @@
 		E631CB7D2098B5A800023472 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E61101A320C95984000BB9F4 /* Views */,
-				E61101A220C95976000BB9F4 /* Controllers */,
-				E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */,
-				E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */,
-				E611019C20C9217E000BB9F4 /* CvvConfirmationViewControllerDelegate.swift */,
-				E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */,
-				E6837285209C628B00C11D67 /* CardNumberInputView.swift */,
-				E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */,
-				E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */,
-				E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */,
-				E631CB7E2098B5C000023472 /* ExpirationDatePicker.swift */,
-				E631CB802098B5D900023472 /* ExpirationDatePickerDelegate.swift */,
-				E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */,
-				E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */,
 				E680EBCC20A9E75C000BEED8 /* CardListCell.swift */,
 				E653FEFB20C583A2002E4790 /* CardListCellName.swift */,
-				E6837287209C62A100C11D67 /* ExpirationDateInputView.swift */,
-				E632AABF20B57EDF00D2B9B6 /* CvvInputView.swift */,
-				E6837289209C62B300C11D67 /* StandardInputView.swift */,
-				E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */,
+				E631CB7E2098B5C000023472 /* ExpirationDatePicker.swift */,
 				E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */,
+				E61101A220C95976000BB9F4 /* Controllers */,
+				E6B7378720CA86840038F2E5 /* Delegates */,
+				E61101A320C95984000BB9F4 /* Views */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -376,8 +370,8 @@
 		E66406CA2089FA39000431E5 = {
 			isa = PBXGroup;
 			children = (
-				E664070B208A07BE000431E5 /* Documentation */,
 				E664070A208A07B5000431E5 /* Deployment */,
+				E664070B208A07BE000431E5 /* Documentation */,
 				E66407062089FCB5000431E5 /* Tests */,
 				E66407052089FCA3000431E5 /* Source */,
 				E66406D52089FA39000431E5 /* Products */,
@@ -398,16 +392,16 @@
 		E66407052089FCA3000431E5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E6640720208DE2AA000431E5 /* CardUtils.swift */,
+				E664070F208DD550000431E5 /* CheckoutAPIClient.swift */,
+				E683728D209C6CB000C11D67 /* CheckoutSdkIos.swift */,
+				E602EE77209D855B00CC62A2 /* Alamofire */,
+				E6640707208A0753000431E5 /* Core */,
+				E6DC28FC20A1E0D0009FA38B /* Extensions */,
 				E6AF0A4020AB292A00D29929 /* Localizables */,
 				E6AF0A1320AADE6F00D29929 /* Resources */,
-				E6DC28FC20A1E0D0009FA38B /* Extensions */,
-				E602EE77209D855B00CC62A2 /* Alamofire */,
-				E6640720208DE2AA000431E5 /* CardUtils.swift */,
-				E683728D209C6CB000C11D67 /* CheckoutSdkIos.swift */,
-				E664070F208DD550000431E5 /* CheckoutAPIClient.swift */,
-				E631CB7D2098B5A800023472 /* UI */,
 				E6640709208A07A6000431E5 /* Supporting Files */,
-				E6640707208A0753000431E5 /* Core */,
+				E631CB7D2098B5A800023472 /* UI */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -415,12 +409,12 @@
 		E66407062089FCB5000431E5 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E632AAB620B5771B00D2B9B6 /* Mocks */,
 				E6640711208DDCF5000431E5 /* LinuxMain.swift */,
-				E6AF0A0420AACE4E00D29929 /* UI */,
-				E67AB9A3208F412500593FBE /* Fixtures */,
 				E6640715208DDFE6000431E5 /* Core */,
+				E67AB9A3208F412500593FBE /* Fixtures */,
+				E632AAB620B5771B00D2B9B6 /* Mocks */,
 				E67AB9A7208F4C8500593FBE /* Supporting Files */,
+				E6AF0A0420AACE4E00D29929 /* UI */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -428,25 +422,25 @@
 		E6640707208A0753000431E5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E625EE4E208F8F790019B750 /* Address.swift */,
 				E631CB762098658000023472 /* ApplePayToken.swift */,
 				E6BEBDBD20C171FA00C3130A /* ApplePayTokenRequest.swift */,
-				E6BEBDC120C1746800C3130A /* TokenResponse.swift */,
-				E6BEBDBF20C1721500C3130A /* CardTokenRequest.swift */,
-				E6BEBDB320C15EE700C3130A /* PhoneNumber.swift */,
-				E625EE4E208F8F790019B750 /* Address.swift */,
-				E631CB6E2097713C00023472 /* ErrorResponse.swift */,
-				E68802402091C6C000220CE2 /* CardRequest.swift */,
-				E625EE52208F905E0019B750 /* Environment.swift */,
 				E625EE4C208F8F370019B750 /* Card.swift */,
-				E631CB6A209766E300023472 /* CustomerCard.swift */,
-				E6AC018020A9938D00310E43 /* Customer.swift */,
-				E631CB6C20976A0400023472 /* CustomerCardList.swift */,
-				E664071C208DE174000431E5 /* CardType.swift */,
-				E67AB995208E1CF100593FBE /* CardProviderResponse.swift */,
 				E67AB993208E1CC600593FBE /* CardProvider.swift */,
+				E67AB995208E1CF100593FBE /* CardProviderResponse.swift */,
+				E68802402091C6C000220CE2 /* CardRequest.swift */,
 				E664071E208DE199000431E5 /* CardScheme.swift */,
+				E6BEBDBF20C1721500C3130A /* CardTokenRequest.swift */,
+				E664071C208DE174000431E5 /* CardType.swift */,
+				E6AC018020A9938D00310E43 /* Customer.swift */,
+				E631CB6A209766E300023472 /* CustomerCard.swift */,
+				E631CB6C20976A0400023472 /* CustomerCardList.swift */,
 				E664071A208DE11D000431E5 /* Endpoint.swift */,
+				E625EE52208F905E0019B750 /* Environment.swift */,
+				E631CB6E2097713C00023472 /* ErrorResponse.swift */,
 				E632AAC120B58CE900D2B9B6 /* InputState.swift */,
+				E6BEBDB320C15EE700C3130A /* PhoneNumber.swift */,
+				E6BEBDC120C1746800C3130A /* TokenResponse.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -497,9 +491,9 @@
 		E67AB9A3208F412500593FBE /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				E67AB9A4208F41AB00593FBE /* cardProviders.json */,
 				E6F6B56E20AD832B0091A8AF /* applePayToken.json */,
 				E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */,
+				E67AB9A4208F41AB00593FBE /* cardProviders.json */,
 				E68802472092294B00220CE2 /* cardToken.json */,
 				E631CB672097552700023472 /* cardTokenInvalidNumber.json */,
 			);
@@ -517,16 +511,16 @@
 		E6AF0A0420AACE4E00D29929 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E6AF0A0520AACE8A00D29929 /* ExpirationDatePickerTests.swift */,
-				E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */,
-				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
-				E608734520C689BB004E280C /* ThreedsWebViewControllerTests.swift */,
-				E6AF0A0B20AACF2100D29929 /* CountrySelectionViewControllerTests.swift */,
-				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
-				E6AF0A0F20AAD00600D29929 /* ExpirationDateInputViewTests.swift */,
 				E6AF0A0920AACEFA00D29929 /* AddressViewControllerTests.swift */,
+				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
+				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
+				E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */,
+				E6AF0A0B20AACF2100D29929 /* CountrySelectionViewControllerTests.swift */,
 				E6AF0A4E20AB448700D29929 /* DetailsInputViewTests.swift */,
+				E6AF0A0F20AAD00600D29929 /* ExpirationDateInputViewTests.swift */,
+				E6AF0A0520AACE8A00D29929 /* ExpirationDatePickerTests.swift */,
 				E6AF0A1120AADA9A00D29929 /* StandardInputViewTests.swift */,
+				E608734520C689BB004E280C /* ThreedsWebViewControllerTests.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -547,6 +541,20 @@
 				E6AF0A4520AB29D400D29929 /* Localizable.strings */,
 			);
 			name = Localizables;
+			sourceTree = "<group>";
+		};
+		E6B7378720CA86840038F2E5 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */,
+				E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */,
+				E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */,
+				E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */,
+				E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */,
+				E631CB802098B5D900023472 /* ExpirationDatePickerDelegate.swift */,
+				E611019C20C9217E000BB9F4 /* CvvConfirmationViewControllerDelegate.swift */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 		E6DC28FC20A1E0D0009FA38B /* Extensions */ = {

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:iOS Example Frame/iOS Example Frame.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:iOS Example Custom/iOS Example Custom.xcodeproj">
    </FileRef>
    <FileRef

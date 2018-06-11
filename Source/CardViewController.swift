@@ -27,6 +27,11 @@ public class CardViewController: UIViewController,
     // Scheme Icons
     private var lastSelected: UIImageView?
 
+    // Right bar button item
+    public var rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
+                                                    target: self,
+                                                    action: #selector(onTapDoneCardButton))
+
     // MARK: - Initialization
 
     /// Returns a newly initialized view controller with the cardholder's name and billing details
@@ -57,9 +62,9 @@ public class CardViewController: UIViewController,
     override public func viewDidLoad() {
         super.viewDidLoad()
         cardView = CardView(cardHolderNameState: cardHolderNameState, billingDetailsState: billingDetailsState)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
-                                                            target: self,
-                                                            action: #selector(onTapDoneCardButton))
+        rightBarButtonItem.target = self
+        rightBarButtonItem.action = #selector(onTapDoneCardButton)
+        navigationItem.rightBarButtonItem = rightBarButtonItem
         navigationItem.rightBarButtonItem?.isEnabled = false
         // add gesture recognizer
         cardView.addressTapGesture.addTarget(self, action: #selector(onTapAddressView))

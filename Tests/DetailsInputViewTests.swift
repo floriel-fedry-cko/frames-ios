@@ -42,8 +42,8 @@ class DetailsInputViewTests: XCTestCase {
     }
 
     func testSetLabelAndBackgroundColor() {
-        detailsInputView.set(label: "streetAddress", backgroundColor: .white)
-        XCTAssertEqual(detailsInputView.label.text, "Street Address*")
+        detailsInputView.set(label: "addressLine1", backgroundColor: .white)
+        XCTAssertEqual(detailsInputView.label.text, "Address line 1*")
         XCTAssertEqual(detailsInputView.backgroundColor, UIColor.white)
     }
 }

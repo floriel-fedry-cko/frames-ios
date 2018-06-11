@@ -10,20 +10,21 @@ import XCTest
 @testable import CheckoutSdkIos
 
 class CardNumberInputViewMockDelegate: CardNumberInputViewDelegate {
+
     var onChangeTimes = 0
     var onChangeLastCalledWith: CardType?
 
     var textFieldDidEndEditingTimes = 0
-    var textFieldDidEndEditingLastCalledWith: UITextField?
+    var textFieldDidEndEditingLastCalledWith: UIView?
 
     func onChange(cardType: CardType?) {
         onChangeTimes += 1
         onChangeLastCalledWith = cardType
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidEndEditing(view: UIView) {
         textFieldDidEndEditingTimes += 1
-        textFieldDidEndEditingLastCalledWith = textField
+        textFieldDidEndEditingLastCalledWith = view
     }
 }
 
@@ -100,7 +101,7 @@ class CardNumberInputViewTests: XCTestCase {
         cardNumberInputView.delegate = cardNumberDelegate
         cardNumberInputView.textFieldDidEndEditing(cardNumberInputView.textField)
         XCTAssertEqual(cardNumberDelegate.textFieldDidEndEditingTimes, 1)
-        XCTAssertEqual(cardNumberDelegate.textFieldDidEndEditingLastCalledWith, cardNumberInputView.textField)
+        XCTAssertEqual(cardNumberDelegate.textFieldDidEndEditingLastCalledWith, cardNumberInputView)
     }
 
 }

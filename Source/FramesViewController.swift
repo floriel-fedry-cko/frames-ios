@@ -136,8 +136,12 @@ UITextFieldDelegate {
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
         validateFieldsValues()
-        if textField.superview is CardNumberInputView {
-            let cardNumber = textField.text!
+    }
+
+    public func textFieldDidEndEditing(view: UIView) {
+        validateFieldsValues()
+        if let superView = view as? CardNumberInputView {
+            let cardNumber = superView.textField.text!
             let cardNumberStandardized = cardUtils.standardize(cardNumber: cardNumber)
             let cardType = cardUtils.getTypeOf(cardNumber: cardNumberStandardized)
             framesView.cvvInputView.cardType = cardType

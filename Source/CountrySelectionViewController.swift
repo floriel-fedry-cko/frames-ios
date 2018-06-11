@@ -33,6 +33,7 @@ import UIKit
     override public func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        self.view.backgroundColor = UIColor.groupTableViewBackground
         navigationItem.title = NSLocalizedString("countryRegion",
                                                  bundle: Bundle(for: CountrySelectionViewController.self),
                                                  comment: "")

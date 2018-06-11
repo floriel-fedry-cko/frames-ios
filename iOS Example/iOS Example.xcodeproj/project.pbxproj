@@ -14,6 +14,7 @@
 		E66406F12089FAA9000431E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406EF2089FAA9000431E5 /* Main.storyboard */; };
 		E66406F32089FAAB000431E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E66406F22089FAAB000431E5 /* Assets.xcassets */; };
 		E66406F62089FAAB000431E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406F42089FAAB000431E5 /* LaunchScreen.storyboard */; };
+		E670A86920CACB6B002348A5 /* UITableFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E670A86820CACB6B002348A5 /* UITableFullView.swift */; };
 		E6AC017F20A98FB800310E43 /* MerchantAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */; };
 		E6FD835D2093309F0094AC15 /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; };
 		E6FD835E2093309F0094AC15 /* CheckoutSdkIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -76,6 +77,7 @@
 		E66406F22089FAAB000431E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E66406F52089FAAB000431E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E66406F72089FAAB000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E670A86820CACB6B002348A5 /* UITableFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableFullView.swift; sourceTree = "<group>"; };
 		E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheckoutSdkIos.xcodeproj; path = ../CheckoutSdkIos.xcodeproj; sourceTree = "<group>"; };
 		E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantAPIClient.swift; sourceTree = "<group>"; };
 		E6AF0A4720AB37CD00D29929 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				E63352E420A46A64002C61C0 /* ExampleViewController.swift */,
 				E6637F1920BFE934005EE375 /* Authorize3dsResponse.swift */,
 				E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */,
+				E670A86820CACB6B002348A5 /* UITableFullView.swift */,
 				E66406EF2089FAA9000431E5 /* Main.storyboard */,
 				E66406F22089FAAB000431E5 /* Assets.xcassets */,
 				E66406F42089FAAB000431E5 /* LaunchScreen.storyboard */,
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E670A86920CACB6B002348A5 /* UITableFullView.swift in Sources */,
 				E63352E520A46A64002C61C0 /* ExampleViewController.swift in Sources */,
 				E6637F1A20BFE934005EE375 /* Authorize3dsResponse.swift in Sources */,
 				E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */,

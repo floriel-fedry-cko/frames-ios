@@ -1,17 +1,22 @@
 import Foundation
 
+/// CVV Confirmation View Controller
 public class CvvConfirmationViewController: UIViewController {
+
     // MARK: - Properties
 
     let contentView = UIView()
     let label = UILabel()
     let textField = UITextField()
     let underlineView = UIView()
+    var cardtype: CardType?
 
+    /// Delegate
     public weak var delegate: CvvConfirmationViewControllerDelegate?
 
     // MARK: - Lifecycle
 
+    /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
         navigationItem.title = "Confirm CVV"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
@@ -62,11 +67,13 @@ public class CvvConfirmationViewController: UIViewController {
 
     // MARK: - Methods
 
+    /// Called when tap on navigation item confirm
     @objc public func onConfirmCvv() {
         let cvv = "100"
         delegate?.onConfirm(controller: self, cvv: cvv)
     }
 
+    /// Called when tap on navigation item cancel
     @objc public func onCancel() {
         delegate?.onCancel(controller: self)
     }

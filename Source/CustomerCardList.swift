@@ -3,7 +3,7 @@ import Foundation
 /// Customer card list
 public struct CustomerCardList: Decodable {
     /// Number of cards
-    public let count: Int
+    public var count: Int
     /// Cards associated to the customer
-    public let data: [CustomerCard]
+    public var data: [CustomerCard]
 }

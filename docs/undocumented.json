@@ -1,13 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardNumberInputView.swift",
-      "line": 57,
-      "symbol": "CardNumberInputView.textFieldDidChange(textField:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardView.swift",
       "line": 3,
       "symbol": "CardView",
@@ -16,35 +9,28 @@
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 3,
-      "symbol": "CvvConfirmationViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 11,
+      "line": 14,
       "symbol": "CvvConfirmationViewController.delegate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 15,
+      "line": 18,
       "symbol": "CvvConfirmationViewController.viewDidLoad()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 65,
+      "line": 68,
       "symbol": "CvvConfirmationViewController.onConfirmCvv()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 70,
+      "line": 73,
       "symbol": "CvvConfirmationViewController.onCancel()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -60,13 +46,6 @@
       "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/FramesViewController.swift",
       "line": 50,
       "symbol": "FramesViewController.viewDidLayoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumber.swift",
-      "line": 12,
-      "symbol": "PhoneNumber.init(countryCode:number:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },

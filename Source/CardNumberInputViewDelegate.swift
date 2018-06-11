@@ -8,8 +8,8 @@ public protocol CardNumberInputViewDelegate: class {
     /// - parameter cardType: Type of the card number.
     func onChange(cardType: CardType?)
 
-    /// Tells the delegate that editing stopped for the specified text field.
+    /// Tells the delegate that editing stopped for the text field in the specified view.
     ///
-    /// - parameter _: Textfield
-    func textFieldDidEndEditing(_ textField: UITextField)
+    /// - parameter view: View containing the text field
+    func textFieldDidEndEditing(view: UIView)
 }

@@ -8,8 +8,8 @@
 "billingDetailsRequired" = "Billing Details*";
 "name" = "Name";
 "countryRegion" = "Country/Region*";
-"organization" = "Organization";
-"streetAddress" = "Street Address*";
+"addressLine1" = "Address line 1*";
+"addressLine2" = "Address line 2*";
 "state" = "State*";
 "postalTown" = "Postal Town*";
 "postcode" = "Postcode*";

@@ -7,7 +7,8 @@ class ExampleViewController: UIViewController,
                             UITableViewDataSource,
                             CardViewControllerDelegate,
                             CvvConfirmationViewControllerDelegate,
-ThreedsWebViewControllerDelegate {
+                            ThreedsWebViewControllerDelegate {
+
     func onConfirm(controller: CvvConfirmationViewController, cvv: String) {
         if let card = selectedCard as? CustomerCard {
             merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
@@ -22,7 +23,6 @@ ThreedsWebViewControllerDelegate {
     }
 
     @IBOutlet weak var cardsTableView: UITableView!
-    var cardsTableViewHeightConstraint: NSLayoutConstraint?
 
     let publicKey = "pk_test_03728582-062b-419c-91b5-63ac2a481e07"
     var checkoutAPIClient: CheckoutAPIClient { return CheckoutAPIClient(publicKey: publicKey, environment: .sandbox) }
@@ -49,7 +49,6 @@ ThreedsWebViewControllerDelegate {
     }
 
     @IBAction func onTapPayWithCard(_ sender: Any) {
-//        self.present(cvvConfirmationViewController, animated: true)
         navigationController?.pushViewController(cvvConfirmationViewController, animated: true)
         if let card = selectedCard as? CustomerCard {
             merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
@@ -73,9 +72,7 @@ ThreedsWebViewControllerDelegate {
         cardViewController.delegate = self
         cardsTableView.delegate = self
         cardsTableView.dataSource = self
-        cardsTableViewHeightConstraint = cardsTableView.heightAnchor
-            .constraint(equalToConstant: self.cardsTableView.contentSize.height)
-        cardsTableViewHeightConstraint?.isActive = true
+        cardsTableView.estimatedRowHeight = 50
         // set delegates
         threeDsViewController.delegate = self
         cvvConfirmationViewController.delegate = self
@@ -88,7 +85,6 @@ ThreedsWebViewControllerDelegate {
         merchantAPIClient.get(customer: customerEmail) { customer in
             self.customerCardList = customer.cards
             self.cardsTableView.reloadData()
-            self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height * 1.2
             self.dismiss(animated: true, completion: nil)
             // select the default card
             let indexDefaultCardOpt = customer.cards.data.index { card in
@@ -97,11 +93,11 @@ ThreedsWebViewControllerDelegate {
             guard let indexDefaultCard = indexDefaultCardOpt else { return }
             let indexPath = IndexPath(row: indexDefaultCard, section: 0)
             self.cardsTableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            self.cardsTableView.invalidateIntrinsicContentSize()
         }
     }
 
     func onTapDone(card: CardTokenRequest) {
-        self.cardsTableViewHeightConstraint?.constant = self.cardsTableView.contentSize.height
         checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
             // Get the card token and call the merchant api to do a zero dollar authorization charge
             // This will verify the card and save it to the customer
@@ -128,7 +124,7 @@ ThreedsWebViewControllerDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardListCell
-            else { fatalError("The dequeued cell is not an instance of CardCell.")}
+            else { fatalError("The dequeued cell is not an instance of CardCell.") }
         let customerCardCount = customerCardList?.count ?? 0
         if indexPath.row < customerCardCount {
             // customer card
@@ -168,6 +164,25 @@ ThreedsWebViewControllerDelegate {
         } else {
             selectedCard = createdCards[indexPath.row - customerCardCount]
         }
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCellEditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the card
+            customerCardList?.data.remove(at: indexPath.row)
+            customerCardList?.count -= 1
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     func onSuccess3D() {

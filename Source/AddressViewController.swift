@@ -21,6 +21,7 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     override public func viewDidLoad() {
         super.viewDidLoad()
         addressView = AddressView(frame: .zero)
+        self.view.backgroundColor = UIColor.groupTableViewBackground
         self.view.addSubview(addressView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                             target: self,

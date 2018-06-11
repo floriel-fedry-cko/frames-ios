@@ -66,6 +66,6 @@ import UIKit
 
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        delegate?.textFieldDidEndEditing(textField)
+        delegate?.textFieldDidEndEditing(view: self)
     }
 }

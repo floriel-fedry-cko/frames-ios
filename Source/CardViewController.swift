@@ -118,9 +118,13 @@ public class CardViewController: UIViewController,
         let isExpirationDateValid = cardUtils.isValid(expirationMonth: expiryMonth, expirationYear: expiryYear)
         let isCvvValid = cardUtils.isValid(cvv: cvv, cardType: cardType)
 
-        // TODO: Check if the card type is amongst the valid ones
-
-        if !isCardNumberValid {
+        // check if the card type is amongst the valid ones
+        if availableSchemes.contains(where: { cardType.scheme == $0 }) {
+            let message = NSLocalizedString("cardTypeNotAccepted",
+                                            bundle: Bundle(for: CardViewController.self),
+                                            comment: "")
+            cardView.cardNumberInputView.showError(message: message)
+        } else if !isCardNumberValid {
             let message = NSLocalizedString("cardNumberInvalid", bundle: Bundle(for: CardViewController.self),
                                             comment: "")
             cardView.cardNumberInputView.showError(message: message)
@@ -194,8 +198,14 @@ public class CardViewController: UIViewController,
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
         validateFieldsValues()
-        if textField.superview is CardNumberInputView {
-            let cardNumber = textField.text!
+    }
+
+    /// Tells the delegate that editing stopped for the textfield in the specified view.
+    public func textFieldDidEndEditing(view: UIView) {
+        validateFieldsValues()
+
+        if let superView = view as? CardNumberInputView {
+            let cardNumber = superView.textField.text!
             let cardNumberStandardized = cardUtils.standardize(cardNumber: cardNumber)
             let cardType = cardUtils.getTypeOf(cardNumber: cardNumberStandardized)
             cardView.cvvInputView.cardType = cardType

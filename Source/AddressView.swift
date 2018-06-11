@@ -47,8 +47,8 @@ public class AddressView: UIView {
         addViews()
         addInitialConstraints()
         countryRegionInputView.set(label: "countryRegion", backgroundColor: .white)
-        addressLine1InputView.set(label: "streetAddress", backgroundColor: .white)
-        addressLine2InputView.set(label: "streetAddress", backgroundColor: .white)
+        addressLine1InputView.set(label: "addressLine1", backgroundColor: .white)
+        addressLine2InputView.set(label: "addressLine2", backgroundColor: .white)
         cityInputView.set(label: "postalTown", backgroundColor: .white)
         stateInputView.set(label: "state", backgroundColor: .white)
         zipInputView.set(label: "postcode", backgroundColor: .white)
@@ -94,4 +94,5 @@ public class AddressView: UIView {
         stackView.leadingAnchor.constraint(equalTo: self.contentView.safeLeadingAnchor, constant: 16).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.contentView.safeBottomAnchor).isActive = true
     }
+
 }

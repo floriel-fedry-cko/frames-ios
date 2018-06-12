@@ -12,9 +12,9 @@ import XCTest
 class AddressViewControllerMockDelegate: AddressViewControllerDelegate {
 
     var onTapDoneButtonCalledTimes = 0
-    var onTapDoneButtonLastCalledWith: Address?
+    var onTapDoneButtonLastCalledWith: CkoAddress?
 
-    func onTapDoneButton(address: Address) {
+    func onTapDoneButton(address: CkoAddress) {
         onTapDoneButtonCalledTimes += 1
         onTapDoneButtonLastCalledWith = address
     }
@@ -38,6 +38,8 @@ class AddressViewControllerTests: XCTestCase {
     }
 
     func setupAddress() {
+        addressViewController.addressView.nameInputView.textField.text = "Pierre Paul"
+        addressViewController.addressView.phoneInputView.textField.text = "+33 6 22 54 56 88"
         addressViewController.regionCodeSelected = "FR"
         addressViewController.addressView.addressLine1InputView.textField.text = "12 rue de la boulangerie"
         addressViewController.addressView.cityInputView.textField.text = "Lyon"
@@ -81,9 +83,10 @@ class AddressViewControllerTests: XCTestCase {
                 UIKeyboardFrameBeginUserInfoKey: NSValue(cgRect: CGRect(x: 0, y: 0, width: 0, height: 300))
             ])
 
-        addressViewController.scrollViewOnKeyboardWillShow(notification: notification,
-                                                           scrollView: addressViewController.addressView.scrollView,
-                                                           activeField: addressViewController.addressView.phoneInputView.textField)
+        addressViewController
+            .scrollViewOnKeyboardWillShow(notification: notification,
+                                          scrollView: addressViewController.addressView.scrollView,
+                                          activeField: addressViewController.addressView.phoneInputView.textField)
         let contentInsets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 380, right: 0.0)
         XCTAssertEqual(addressViewController.addressView.scrollView.contentInset, contentInsets)
     }
@@ -149,11 +152,14 @@ class AddressViewControllerTests: XCTestCase {
         addressViewController.viewDidLoad()
         addressViewController.delegate = delegate
         setupAddress()
+        _ = addressViewController.addressView.phoneInputView.isValidNumber
         addressViewController.onTapDoneButton()
         XCTAssertEqual(delegate.onTapDoneButtonCalledTimes, 1)
         XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.addressLine1, "12 rue de la boulangerie")
         XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.city, "Lyon")
         XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.country, "FR")
-        XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.zip, "69002")
+        XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.postcode, "69002")
+        XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.phone?.countryCode, "33")
+        XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.phone?.number, "622545688")
     }
 }

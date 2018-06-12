@@ -1,7 +1,7 @@
 import Foundation
 
 /// A phone number
-public struct PhoneNumber: Codable {
+public struct CkoPhoneNumber: Codable {
 
     /// The international country calling code. Required for some risk checks.
     public let countryCode: String?

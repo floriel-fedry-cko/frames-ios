@@ -1,5 +1,6 @@
 import Foundation
 
+/// A view that displays card information inputs
 public class CardView: UIView {
 
     // MARK: - Properties

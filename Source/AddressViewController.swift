@@ -75,12 +75,17 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     }
 
     @objc func onTapDoneButton() {
-        let address = Address(addressLine1: addressView.addressLine1InputView.textField.text,
-                              addressLine2: addressView.addressLine2InputView.textField.text,
-                              city: addressView.cityInputView.textField.text,
-                              state: addressView.stateInputView.textField.text,
-                              zip: addressView.zipInputView.textField.text,
-                              country: regionCodeSelected)
+        let countryCode = "\(addressView.phoneInputView.phoneNumber?.countryCode ?? 44)"
+        let phone = CkoPhoneNumber(countryCode: countryCode,
+                                   number: addressView.phoneInputView.nationalNumber)
+        let address = CkoAddress(name: addressView.nameInputView.textField.text,
+                                 addressLine1: addressView.addressLine1InputView.textField.text,
+                                 addressLine2: addressView.addressLine2InputView.textField.text,
+                                 city: addressView.cityInputView.textField.text,
+                                 state: addressView.stateInputView.textField.text,
+                                 postcode: addressView.zipInputView.textField.text,
+                                 country: regionCodeSelected,
+                                 phone: phone)
         self.delegate?.onTapDoneButton(address: address)
         navigationController?.popViewController(animated: true)
     }
@@ -94,8 +99,9 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     }
 
     private func validateFieldsValues() {
-        /// required values are not nil
+        // required values are not nil
         guard
+            let name = addressView.nameInputView.textField.text,
             let countryRegion = regionCodeSelected,
             let streetAddress = addressView.addressLine1InputView.textField.text,
             let postalTown = addressView.cityInputView.textField.text,
@@ -104,15 +110,18 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
                 navigationItem.rightBarButtonItem?.isEnabled = false
                 return
         }
-        /// required values are not empty
+        // required values are not empty, and phone number is valid
         if
+            name.isEmpty ||
             countryRegion.isEmpty ||
             streetAddress.isEmpty ||
             postalTown.isEmpty ||
-            postcode.isEmpty {
+            postcode.isEmpty ||
+            !addressView.phoneInputView.isValidNumber {
                 navigationItem.rightBarButtonItem?.isEnabled = false
                 return
         }
+
         navigationItem.rightBarButtonItem?.isEnabled = true
     }
 

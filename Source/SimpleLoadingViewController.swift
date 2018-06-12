@@ -1,13 +1,18 @@
 import Foundation
 
+/// A simple loading view controller
 public class SimpleLoadingViewController: UIViewController {
 
     // MARK: - Properties
 
     let container = UIView()
+
+    /// Label
     public let label = UILabel()
+
     let activityIndicator = UIActivityIndicatorView()
 
+    /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.groupTableViewBackground

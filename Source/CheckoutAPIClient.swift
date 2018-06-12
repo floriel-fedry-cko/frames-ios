@@ -54,6 +54,7 @@ public class CheckoutAPIClient {
     public func getCardProviders(successHandler: @escaping ([CardProvider]) -> Void,
                                  errorHandler: @escaping (Error) -> Void) {
         let url = "\(environment.urlApi)\(Endpoint.cardProviders.rawValue)"
+
         request(url, headers: headers).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -104,6 +105,41 @@ public class CheckoutAPIClient {
                     print(error)
                 }
             }
+        }
+    }
+
+    /// Create a card token
+    ///
+    /// - parameter card: Card used to create the token
+    /// - parameter successHandler: Callback to execute if the request is successful
+    /// - parameter errorHandler: Callback to execute if the request failed
+    public func createCardToken(card: CkoCardTokenRequest,
+                                successHandler: @escaping (CkoCardTokenResponse) -> Void,
+                                errorHandler: @escaping (ErrorResponse) -> Void) {
+        let url = "\(environment.urlApi)\(Endpoint.createCardToken.rawValue)"
+        let jsonEncoder = JSONEncoder()
+        // swiftlint:disable:next force_try
+        var urlRequest = try! URLRequest(url: URL(string: url)!, method: HTTPMethod.post, headers: headers)
+        urlRequest.httpBody = try? jsonEncoder.encode(card)
+        request(urlRequest)
+            .validate().responseJSON { response in
+                let decoder = JSONDecoder()
+                switch response.result {
+                case .success:
+                    do {
+                        let cardTokenResponse = try decoder.decode(CkoCardTokenResponse.self, from: response.data!)
+                        successHandler(cardTokenResponse)
+                    } catch let error {
+                        print(error)
+                    }
+                case .failure:
+                    do {
+                        let cardTokenError = try decoder.decode(ErrorResponse.self, from: response.data!)
+                        errorHandler(cardTokenError)
+                    } catch let error {
+                        print(error)
+                    }
+                }
         }
     }
 

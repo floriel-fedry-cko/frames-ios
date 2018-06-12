@@ -27,10 +27,26 @@ class iOS_Example_FrameUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app.buttons["Go to payment page"].tap()
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.textFields["4242"].tap()
+        elementsQuery.textFields["4242"].typeText("424242424242424242")
+        elementsQuery.textFields["06/2020"].tap()
+        app.pickerWheels.element(boundBy: 0).swipeDown()
+
+        elementsQuery.textFields["100"].tap()
+        elementsQuery.textFields["100"].typeText("100")
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        app.navigationBars["CheckoutSdkIos.CardView"].buttons["Pay"].tap()
+        app.alerts["Payment"].buttons["OK"].tap()
+        
+        
     }
     
 }

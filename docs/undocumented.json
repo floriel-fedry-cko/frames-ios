@@ -1,80 +1,10 @@
 {
   "warnings": [
     {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardView.swift",
-      "line": 3,
-      "symbol": "CardView",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 14,
-      "symbol": "CvvConfirmationViewController.delegate",
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
+      "line": 32,
+      "symbol": "CardViewController.rightBarButtonItem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 18,
-      "symbol": "CvvConfirmationViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 68,
-      "symbol": "CvvConfirmationViewController.onConfirmCvv()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CvvConfirmationViewController.swift",
-      "line": 73,
-      "symbol": "CvvConfirmationViewController.onCancel()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/FramesViewController.swift",
-      "line": 11,
-      "symbol": "FramesViewController.framesView",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/FramesViewController.swift",
-      "line": 50,
-      "symbol": "FramesViewController.viewDidLayoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/SimpleLoadingViewController.swift",
-      "line": 3,
-      "symbol": "SimpleLoadingViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/SimpleLoadingViewController.swift",
-      "line": 8,
-      "symbol": "SimpleLoadingViewController.label",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/SimpleLoadingViewController.swift",
-      "line": 11,
-      "symbol": "SimpleLoadingViewController.viewDidLoad()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ThreedsWebViewController.swift",
-      "line": 4,
-      "symbol": "ThreedsWebViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     }
   ],

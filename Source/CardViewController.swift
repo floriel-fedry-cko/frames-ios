@@ -14,12 +14,13 @@ public class CardViewController: UIViewController,
     let cardHolderNameState: InputState
     let billingDetailsState: InputState
 
-    var billingDetailsAddress: Address?
+    var billingDetailsAddress: CkoAddress?
     var notificationCenter = NotificationCenter.default
     let addressViewController = AddressViewController()
 
     /// List of available schemes
-    public var availableSchemes: [CardScheme] = [.visa, .mastercard, .americanExpress, .dinersClub]
+    public var availableSchemes: [CardScheme] = [.visa, .mastercard, .americanExpress,
+                                                 .dinersClub, .discover, .jcb, .unionPay]
 
     /// Delegate
     public weak var delegate: CardViewControllerDelegate?
@@ -122,9 +123,10 @@ public class CardViewController: UIViewController,
         let isCardNumberValid = cardUtils.isValid(cardNumber: cardNumberStandardized, cardType: cardType)
         let isExpirationDateValid = cardUtils.isValid(expirationMonth: expiryMonth, expirationYear: expiryYear)
         let isCvvValid = cardUtils.isValid(cvv: cvv, cardType: cardType)
+        let isCardTypeValid = availableSchemes.contains(where: { cardType.scheme == $0 })
 
         // check if the card type is amongst the valid ones
-        if availableSchemes.contains(where: { cardType.scheme == $0 }) {
+        if !isCardTypeValid {
             let message = NSLocalizedString("cardTypeNotAccepted",
                                             bundle: Bundle(for: CardViewController.self),
                                             comment: "")
@@ -138,13 +140,14 @@ public class CardViewController: UIViewController,
             let message = NSLocalizedString("cvvInvalid", bundle: Bundle(for: CardViewController.self), comment: "")
             cardView.cvvInputView.showError(message: message)
         }
-        if !isCardNumberValid || !isExpirationDateValid || !isCvvValid { return }
+        if !isCardNumberValid || !isExpirationDateValid || !isCvvValid || !isCardTypeValid { return }
 
-        let card = CardTokenRequest(number: cardNumberStandardized,
-                                    expiryMonth: Int(expiryMonth)!,
-                                    expiryYear: Int(expiryYear)!,
+        let card = CkoCardTokenRequest(number: cardNumberStandardized,
+                                    expiryMonth: expiryMonth,
+                                    expiryYear: expiryYear,
+                                    cvv: cvv,
                                     name: cardView.cardHolderNameInputView.textField.text,
-                                    cvv: cvv, billingAddress: billingDetailsAddress, phone: nil)
+                                    billingAddress: billingDetailsAddress)
         self.delegate?.onTapDone(card: card)
         navigationController?.popViewController(animated: true)
     }
@@ -152,7 +155,7 @@ public class CardViewController: UIViewController,
     // MARK: - AddressViewControllerDelegate
 
     /// Executed when an user tap on the done button.
-    public func onTapDoneButton(address: Address) {
+    public func onTapDoneButton(address: CkoAddress) {
         billingDetailsAddress = address
         let value = "\(address.addressLine1 ?? ""), \(address.city ?? "")"
         cardView.billingDetailsInputView.value.text = value

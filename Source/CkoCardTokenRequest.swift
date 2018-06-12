@@ -1,24 +1,27 @@
 import Foundation
 
 /// Card used to create the card token
-public struct CardRequest {
+public struct CkoCardTokenRequest: Codable {
 
-    /// Initialize `CardRequest`
+    /// Initialize `CkoCardTokenRequest`
     ///
     /// - parameter number: Card number
     /// - parameter expiryMonth: Expiry month
     /// - parameter expiryYear: Expiry year
     /// - parameter cvv: CVV (card verification value)
     /// - parameter name: Name of the card owner
+    /// - parameter billingAddress: Billing Address
     ///
     ///
     /// - returns: The new `CardRequest` instance
-    public init(number: String, expiryMonth: String, expiryYear: String, cvv: String, name: String?) {
+    public init(number: String, expiryMonth: String, expiryYear: String, cvv: String,
+                name: String?, billingAddress: CkoAddress?) {
         self.number = number
         self.expiryMonth = expiryMonth
         self.expiryYear = expiryYear
         self.cvv = cvv
         self.name = name
+        self.billingAddress = billingAddress
     }
 
     /// Card number
@@ -27,21 +30,10 @@ public struct CardRequest {
     public let expiryMonth: String
     /// Expiry year
     public let expiryYear: String
-    /// CVV (card verification value
+    /// CVV (card verification value)
     public let cvv: String
     /// Name of the card owner
     public let name: String?
-
-    /// Get the struct represented as a dictionary of its values
-    ///
-    /// - returns: Dictionary representation of the struct
-    public func toDictionary() -> [String: Any] {
-        return [
-            "number": self.number,
-            "expiryMonth": self.expiryMonth,
-            "expiryYear": self.expiryYear,
-            "cvv": self.cvv,
-            "name": self.name ?? ""
-        ]
-    }
+    /// Billing address
+    public let billingAddress: CkoAddress?
 }

@@ -33,7 +33,6 @@ class ExampleViewController: UIViewController,
     let customerEmail = "just@test.com"
 
     var customerCardList: CustomerCardList?
-    var createdCards: [CardRequest] = []
     var selectedCard: Any?
 
     let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .normal)
@@ -143,7 +142,7 @@ class ExampleViewController: UIViewController,
         // created card
         let customerCardCount = customerCardList?.count ?? 0
         guard row - customerCardCount < createdCards.count else { return cell }
-        let card = createdCards[row - customerCardCount]
+        let card = createdCards[customerCardCount]
         let cardType = cardUtils.getTypeOf(cardNumber: card.number)
         if let cardTypeUnwrap = cardType {
             let last4Index = card.number.index(card.number.endIndex, offsetBy: -4)
@@ -161,8 +160,6 @@ class ExampleViewController: UIViewController,
         if indexPath.row < customerCardCount {
             guard let card = customerCardList?.data[indexPath.row] else { return }
             selectedCard = card
-        } else {
-            selectedCard = createdCards[indexPath.row - customerCardCount]
         }
     }
 

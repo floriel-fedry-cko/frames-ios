@@ -58,7 +58,6 @@ class iOS_Example_Apple_PayUITests: XCTestCase {
         
         app.buttons["Pay with Card"].tap()
         
-        
         expectation(for: exists, evaluatedWith: app.alerts["Card id"], handler: nil)
         waitForExpectations(timeout: 15, handler: nil)
         app.alerts["Card id"].buttons["OK"].tap()

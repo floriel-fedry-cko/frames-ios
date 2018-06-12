@@ -16,7 +16,7 @@ public struct CardTokenRequest: Codable {
     /// The payment source owner's billing address
     public var billingAddress: Address?
     /// The payment source owner's phone number
-    public var phone: PhoneNumber?
+    public var phone: CkoPhoneNumber?
 
     /// Initialize `CardTokenRequest`
     ///
@@ -32,7 +32,7 @@ public struct CardTokenRequest: Codable {
     /// - returns: The new `CardTokenRequest` instance
     public init(number: String, expiryMonth: Int, expiryYear: Int,
                 name: String?, cvv: String?, billingAddress: Address?,
-                phone: PhoneNumber?) {
+                phone: CkoPhoneNumber?) {
         self.number = number
         self.expiryMonth = expiryMonth
         self.expiryYear = expiryYear

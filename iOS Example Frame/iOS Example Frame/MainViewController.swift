@@ -11,12 +11,9 @@ import CheckoutSdkIos
 
 class MainViewController: UIViewController, CardViewControllerDelegate {
 
-    var checkoutAPIClient: CheckoutAPIClient {
-        return CheckoutAPIClient(publicKey: "pk_test_03728582-062b-419c-91b5-63ac2a481e07",
-                                 environment: .sandbox)
-    }
-
-    let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .hidden)
+    let checkoutAPIClient = CheckoutAPIClient(publicKey: "pk_test_03728582-062b-419c-91b5-63ac2a481e07",
+                                              environment: .sandbox)
+    let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .required)
 
     @IBAction func onClickGoToPaymentPage(_ sender: Any) {
         navigationController?.pushViewController(cardViewController, animated: true)
@@ -29,14 +26,9 @@ class MainViewController: UIViewController, CardViewControllerDelegate {
         cardViewController.rightBarButtonItem = UIBarButtonItem(title: "Pay", style: .done, target: nil, action: nil)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func onTapDone(card: CardTokenRequest) {
+    func onTapDone(card: CkoCardTokenRequest) {
         checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
-            self.showAlert(with: cardToken.token)
+            self.showAlert(with: cardToken.id)
         }, errorHandler: { error in
             print(error)
         })

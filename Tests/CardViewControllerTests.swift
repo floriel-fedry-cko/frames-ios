@@ -11,9 +11,9 @@ import XCTest
 
 class CardViewControllerMockDelegate: CardViewControllerDelegate {
     var calledTimes = 0
-    var lastCalledWith: CardTokenRequest?
+    var lastCalledWith: CkoCardTokenRequest?
 
-    func onTapDone(card: CardTokenRequest) {
+    func onTapDone(card: CkoCardTokenRequest) {
         calledTimes += 1
         lastCalledWith = card
     }
@@ -241,8 +241,8 @@ class CardViewControllerTests: XCTestCase {
         // Assert
         XCTAssertEqual(cardViewControllerDelegate.calledTimes, 1)
         XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.number, "4242424242424242")
-        XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.expiryMonth, 6)
-        XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.expiryYear, 20)
+        XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.expiryMonth, "06")
+        XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.expiryYear, "20")
         XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.cvv, "100")
     }
 

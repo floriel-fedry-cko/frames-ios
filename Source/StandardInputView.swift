@@ -8,7 +8,7 @@ import UIKit
     /// Label
     public let label = UILabel()
     /// Text Field
-    public let textField = UITextField()
+    public var textField = UITextField()
     /// Error label
     public let errorLabel = UILabel()
     let tapGesture = UITapGestureRecognizer()

@@ -1,0 +1,63 @@
+import UIKit
+
+/// Standard Input View containing a label and an input field.
+@IBDesignable public class PhoneNumberInputView: StandardInputView, UITextFieldDelegate {
+
+    // MARK: - Properties
+
+    /// Phone Number Kit
+    let phoneNumberKit = PhoneNumberKit()
+    var partialFormatter: PartialFormatter {
+        return PartialFormatter.init(phoneNumberKit: phoneNumberKit, defaultRegion: "GB", withPrefix: true)
+    }
+
+    public var nationalNumber: String {
+        let rawNumber = self.textField.text ?? String()
+        return partialFormatter.nationalNumber(from: rawNumber)
+    }
+
+    public var isValidNumber: Bool {
+        let rawNumber = self.textField.text ?? String()
+        do {
+            phoneNumber = try phoneNumberKit.parse(rawNumber, withRegion: partialFormatter.currentRegion)
+            return true
+        } catch {
+            return false
+        }
+    }
+
+    public var phoneNumber: PhoneNumber?
+
+    // MARK: - Initialization
+
+    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    /// Returns an object initialized from data in a given unarchiver.
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    // MARK: - Setup
+
+    private func setup() {
+        self.textField.delegate = self
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
+    }
+
+    @objc public func textFieldDidChange(textField: UITextField) {
+        let phoneNumber = textField.text!
+        let formatted = partialFormatter.formatPartial(phoneNumber)
+        do {
+            let phoneNumber = try phoneNumberKit.parse(phoneNumber, withRegion: "GB", ignoreType: true)
+            print(phoneNumber)
+        } catch {
+            print("oh well")
+        }
+        textField.text = formatted
+    }
+}

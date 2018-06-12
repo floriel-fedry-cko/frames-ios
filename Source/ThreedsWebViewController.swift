@@ -1,6 +1,7 @@
 import UIKit
 import WebKit
 
+/// A view controller to manage 3ds
 public class ThreedsWebViewController: UIViewController, WKNavigationDelegate {
 
     // MARK: - Properties

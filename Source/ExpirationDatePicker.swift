@@ -71,12 +71,14 @@ import UIKit
 
     /// Called by the picker view when the user selects a row in a component.
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // get the date
         let formatter = DateFormatter()
         formatter.dateFormat = "MMyyyy"
         let selectedDateString =
         "\(months[pickerView.selectedRow(inComponent: 0)])\(years[pickerView.selectedRow(inComponent: 1)])"
         let selectedDateOpt = formatter.date(from: selectedDateString)
 
+        // check if between minimum and maximum dates
         guard let selectedDate = selectedDateOpt else { return }
         if selectedDate > maximumDate {
             setDate(maximumDate, animated: true)
@@ -84,6 +86,8 @@ import UIKit
         if selectedDate < minimumDate {
             setDate(minimumDate, animated: true)
         }
+
+        // call the delegate method to trigger the onDateChanged
         self.pickerDelegate?.onDateChanged(month: months[pickerView.selectedRow(inComponent: 0)],
                                                    year: years[pickerView.selectedRow(inComponent: 1)])
     }

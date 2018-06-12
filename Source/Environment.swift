@@ -5,8 +5,10 @@ import Foundation
 /// - live
 /// - sandbox
 public enum Environment: String {
+
     /// live environment used for production using
     case live
+
     /// sandbox environment used for development
     case sandbox
 

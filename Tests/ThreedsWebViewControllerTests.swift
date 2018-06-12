@@ -101,7 +101,8 @@ class ThreedsWebViewControllerTests: XCTestCase {
 //        let delegate = ThreedsWebViewControllerMockDelegate()
 //        threedsWebViewController.delegate = delegate
 //        loadUrl(url: "https://www.successurl.com")
-//        threedsWebViewController.webView.navigationDelegate?.webView!(threedsWebViewController.webView, didCommit: WKNavigation())
+//        threedsWebViewController.webView.navigationDelegate?.webView!(threedsWebViewController.webView,
+//          didCommit: WKNavigation())
 //        XCTAssertEqual(delegate.onSuccess3DCalledTimes, 1)
 //    }
 //

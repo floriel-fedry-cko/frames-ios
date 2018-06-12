@@ -3,6 +3,24 @@ import Foundation
 /// Card used to create the card token
 public struct CkoCardTokenRequest: Codable {
 
+    /// Card number
+    public let number: String
+
+    /// Expiry month
+    public let expiryMonth: String
+
+    /// Expiry year
+    public let expiryYear: String
+
+    /// CVV (card verification value)
+    public let cvv: String
+
+    /// Name of the card owner
+    public let name: String?
+
+    /// Billing address
+    public let billingAddress: CkoAddress?
+
     /// Initialize `CkoCardTokenRequest`
     ///
     /// - parameter number: Card number
@@ -23,17 +41,4 @@ public struct CkoCardTokenRequest: Codable {
         self.name = name
         self.billingAddress = billingAddress
     }
-
-    /// Card number
-    public let number: String
-    /// Expiry month
-    public let expiryMonth: String
-    /// Expiry year
-    public let expiryYear: String
-    /// CVV (card verification value)
-    public let cvv: String
-    /// Name of the card owner
-    public let name: String?
-    /// Billing address
-    public let billingAddress: CkoAddress?
 }

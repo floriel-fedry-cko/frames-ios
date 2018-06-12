@@ -30,7 +30,6 @@ public class SimpleLoadingViewController: UIViewController {
     }
 
     private func addConstraints() {
-//        view.translatesAutoresizingMaskIntoConstraints = false
         container.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false

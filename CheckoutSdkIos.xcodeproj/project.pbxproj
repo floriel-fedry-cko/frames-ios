@@ -421,7 +421,6 @@
 		E66407052089FCA3000431E5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E664700420CED6A500D8353A /* PhoneNumberKit */,
 				E6640720208DE2AA000431E5 /* CardUtils.swift */,
 				E664070F208DD550000431E5 /* CheckoutAPIClient.swift */,
 				E683728D209C6CB000C11D67 /* CheckoutSdkIos.swift */,
@@ -429,6 +428,7 @@
 				E6640707208A0753000431E5 /* Core */,
 				E6DC28FC20A1E0D0009FA38B /* Extensions */,
 				E6AF0A4020AB292A00D29929 /* Localizables */,
+				E664700420CED6A500D8353A /* PhoneNumberKit */,
 				E6AF0A1320AADE6F00D29929 /* Resources */,
 				E6640709208A07A6000431E5 /* Supporting Files */,
 				E631CB7D2098B5A800023472 /* UI */,

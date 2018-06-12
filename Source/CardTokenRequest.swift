@@ -2,19 +2,27 @@ import Foundation
 
 /// Card Token
 public struct CardTokenRequest: Codable {
+
     let type = "card"
+
     /// The card number
     public var number: String
+
     /// The two-digit expiry month of the card
     public var expiryMonth: Int
+
     /// The four-digit expiry year of the card
     public var expiryYear: Int
+
     /// The card-holder name
     public var name: String?
+
     /// The card verification value/code. 3 digits, except Amex (4 digits).
     public var cvv: String?
+
     /// The payment source owner's billing address
     public var billingAddress: Address?
+
     /// The payment source owner's phone number
     public var phone: CkoPhoneNumber?
 

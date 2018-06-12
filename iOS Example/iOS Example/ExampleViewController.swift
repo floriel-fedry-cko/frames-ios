@@ -7,7 +7,7 @@ class ExampleViewController: UIViewController,
                             UITableViewDataSource,
                             CardViewControllerDelegate,
                             CvvConfirmationViewControllerDelegate,
-                            ThreedsWebViewControllerDelegate {
+ThreedsWebViewControllerDelegate {
 
     func onConfirm(controller: CvvConfirmationViewController, cvv: String) {
         if let card = selectedCard as? CustomerCard {
@@ -96,11 +96,11 @@ class ExampleViewController: UIViewController,
         }
     }
 
-    func onTapDone(card: CardTokenRequest) {
+    func onTapDone(card: CkoCardTokenRequest) {
         checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
             // Get the card token and call the merchant api to do a zero dollar authorization charge
             // This will verify the card and save it to the customer
-            self.merchantAPIClient.save(cardWith: cardToken.token, for: self.customerEmail, isId: false) {
+            self.merchantAPIClient.save(cardWith: cardToken.id, for: self.customerEmail, isId: false) {
                 // update the customer card list with the new card
                 self.updateCustomerCardList()
             }
@@ -114,7 +114,7 @@ class ExampleViewController: UIViewController,
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let customerCardCount = customerCardList?.count ?? 0
-        return createdCards.count + customerCardCount
+        return customerCardCount
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -124,34 +124,13 @@ class ExampleViewController: UIViewController,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath) as? CardListCell
             else { fatalError("The dequeued cell is not an instance of CardCell.") }
-        let customerCardCount = customerCardList?.count ?? 0
-        if indexPath.row < customerCardCount {
+
             // customer card
             guard let card = customerCardList?.data[indexPath.row] else { return cell }
             cell.cardInfoLabel.text = "\(card.paymentMethod.capitalized) ····\(card.last4)"
             if let cardScheme = CardScheme(rawValue: card.paymentMethod.lowercased()) {
                 cell.setSchemeIcon(scheme: cardScheme)
             }
-        } else {
-            return renderCreatedCard(row: indexPath.row, cell: cell)
-        }
-        return cell
-    }
-
-    private func renderCreatedCard(row: Int, cell: CardListCell) -> UITableViewCell {
-        // created card
-        let customerCardCount = customerCardList?.count ?? 0
-        guard row - customerCardCount < createdCards.count else { return cell }
-        let card = createdCards[customerCardCount]
-        let cardType = cardUtils.getTypeOf(cardNumber: card.number)
-        if let cardTypeUnwrap = cardType {
-            let last4Index = card.number.index(card.number.endIndex, offsetBy: -4)
-            let last4 = card.number[last4Index...]
-            cell.cardInfoLabel.text = "\(cardTypeUnwrap.name.capitalized) ····\(last4)"
-            if let cardScheme = CardScheme(rawValue: cardTypeUnwrap.name.lowercased()) {
-                cell.setSchemeIcon(scheme: cardScheme)
-            }
-        }
         return cell
     }
 

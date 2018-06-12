@@ -24,6 +24,7 @@ class MainViewController: UIViewController, CardViewControllerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         cardViewController.delegate = self
         cardViewController.rightBarButtonItem = UIBarButtonItem(title: "Pay", style: .done, target: nil, action: nil)
+        cardViewController.availableSchemes = [.visa, .mastercard]
     }
 
     func onTapDone(card: CkoCardTokenRequest) {

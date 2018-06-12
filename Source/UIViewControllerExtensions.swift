@@ -2,29 +2,6 @@ import Foundation
 
 extension UIViewController {
 
-    func addScrollViewContraints(scrollView: UIScrollView, contentView: UIView) -> NSLayoutConstraint {
-        // Content View Constraints
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
-        let contentViewHeightConstraint = contentView.heightAnchor.constraint(equalTo: self.view.heightAnchor,
-                                                                              multiplier: 1.0)
-        contentViewHeightConstraint.priority = .defaultLow
-        contentViewHeightConstraint.isActive = true
-        // Scroll View Constraints
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        let scrollViewBottomConstraint = scrollView.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor)
-        scrollViewBottomConstraint.isActive = true
-        // return scrollView bottom anchor constraint, used to manage the keyboard
-        return scrollViewBottomConstraint
-    }
-
     @objc func scrollViewOnKeyboardWillShow(notification: NSNotification, scrollView: UIScrollView,
                                             activeField: UITextField?) {
         let additionalSpace = CGFloat(80.0)

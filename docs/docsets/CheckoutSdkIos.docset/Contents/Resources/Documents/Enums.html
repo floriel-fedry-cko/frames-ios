@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           CheckoutSdkIos Docs
         </a>
-         (99% documented)
+         (84% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -110,6 +110,18 @@
                 <a class="nav-group-task-link" href="Classes/ExpirationDatePicker.html">ExpirationDatePicker</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/PartialFormatter.html">PartialFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/PhoneNumberInputView.html">PhoneNumberInputView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/PhoneNumberKit.html">PhoneNumberKit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/PhoneNumberTextField.html">PhoneNumberTextField</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/SimpleLoadingViewController.html">SimpleLoadingViewController</a>
               </li>
               <li class="nav-group-task">
@@ -131,6 +143,15 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/InputState.html">InputState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/PhoneNumberError.html">PhoneNumberError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/PhoneNumberFormat.html">PhoneNumberFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/PhoneNumberType.html">PhoneNumberType</a>
               </li>
             </ul>
           </li>
@@ -208,6 +229,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/CkoCardTokenResponse.html">CkoCardTokenResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/CkoPhoneNumber.html">CkoPhoneNumber</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/Customer.html">Customer</a>
@@ -361,13 +385,132 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Enums"></a>
+                <a name="//apple_ref/swift/Section/Public Enums" class="dashAnchor"></a>
+                <a href="#/Public%20Enums">
+                  <h3 class="section-name">Public Enums</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14CheckoutSdkIos16PhoneNumberErrorO"></a>
+                    <a name="//apple_ref/swift/Enum/PhoneNumberError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14CheckoutSdkIos16PhoneNumberErrorO">PhoneNumberError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enumeration for parsing error types</p>
+
+<ul>
+<li>GeneralError: A general error occured.</li>
+<li>InvalidCountryCode: A country code could not be found or the one found was invalid</li>
+<li>NotANumber: The string provided is not a number</li>
+<li>TooLong: The string provided is too long to be a valid number</li>
+<li>TooShort: The string provided is too short to be a valid number</li>
+<li>Deprecated: The method used was deprecated</li>
+</ul>
+
+                        <a href="Enums/PhoneNumberError.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PhoneNumberError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14CheckoutSdkIos17PhoneNumberFormatO"></a>
+                    <a name="//apple_ref/swift/Enum/PhoneNumberFormat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14CheckoutSdkIos17PhoneNumberFormatO">PhoneNumberFormat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Enums/PhoneNumberFormat.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PhoneNumberFormat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14CheckoutSdkIos15PhoneNumberTypeO"></a>
+                    <a name="//apple_ref/swift/Enum/PhoneNumberType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14CheckoutSdkIos15PhoneNumberTypeO">PhoneNumberType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Phone number type enumeration</p>
+
+<ul>
+<li>fixedLine: Fixed line numbers</li>
+<li>mobile: Mobile numbers</li>
+<li>fixedOrMobile: Either fixed or mobile numbers if we can&rsquo;t tell conclusively.</li>
+<li>pager: Pager numbers</li>
+<li>personalNumber: Personal number numbers</li>
+<li>premiumRate: Premium rate numbers</li>
+<li>sharedCost: Shared cost numbers</li>
+<li>tollFree: Toll free numbers</li>
+<li>voicemail: Voice mail numbers</li>
+<li>vOIP: Voip numbers</li>
+<li>uan: UAN numbers</li>
+<li>unknown: Unknown number type</li>
+</ul>
+
+                        <a href="Enums/PhoneNumberType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PhoneNumberType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-06-11)</p>
+      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-06-12)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

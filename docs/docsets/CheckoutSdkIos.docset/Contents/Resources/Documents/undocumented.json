@@ -6,13 +6,6 @@
       "symbol": "CardViewController.rightBarButtonItem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
-    },
-    {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/ThreedsWebViewController.swift",
-      "line": 4,
-      "symbol": "ThreedsWebViewController",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/floriel.fedry/Documents/GitHub/just-a-test"

@@ -6,6 +6,398 @@
       "symbol": "CardViewController.rightBarButtonItem",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberInputView.swift",
+      "line": 14,
+      "symbol": "PhoneNumberInputView.nationalNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberInputView.swift",
+      "line": 19,
+      "symbol": "PhoneNumberInputView.isValidNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberInputView.swift",
+      "line": 29,
+      "symbol": "PhoneNumberInputView.phoneNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberInputView.swift",
+      "line": 52,
+      "symbol": "PhoneNumberInputView.textFieldDidChange(textField:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 32,
+      "symbol": "PhoneNumberError.generalError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 33,
+      "symbol": "PhoneNumberError.invalidCountryCode",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 34,
+      "symbol": "PhoneNumberError.notANumber",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 35,
+      "symbol": "PhoneNumberError.unknownType",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 36,
+      "symbol": "PhoneNumberError.tooLong",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 37,
+      "symbol": "PhoneNumberError.tooShort",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 38,
+      "symbol": "PhoneNumberError.deprecated",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 57,
+      "symbol": "PhoneNumberFormat",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 58,
+      "symbol": "PhoneNumberFormat.e164",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 59,
+      "symbol": "PhoneNumberFormat.international",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 60,
+      "symbol": "PhoneNumberFormat.national",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 80,
+      "symbol": "PhoneNumberType.fixedLine",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 81,
+      "symbol": "PhoneNumberType.mobile",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 82,
+      "symbol": "PhoneNumberType.fixedOrMobile",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 83,
+      "symbol": "PhoneNumberType.pager",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 84,
+      "symbol": "PhoneNumberType.personalNumber",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 85,
+      "symbol": "PhoneNumberType.premiumRate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 86,
+      "symbol": "PhoneNumberType.sharedCost",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 87,
+      "symbol": "PhoneNumberType.tollFree",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 88,
+      "symbol": "PhoneNumberType.voicemail",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 89,
+      "symbol": "PhoneNumberType.voip",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 90,
+      "symbol": "PhoneNumberType.uan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 91,
+      "symbol": "PhoneNumberType.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/Constants.swift",
+      "line": 92,
+      "symbol": "PhoneNumberType.notParsed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PartialFormatter.swift",
+      "line": 20,
+      "symbol": "PartialFormatter.init(phoneNumberKit:defaultRegion:withPrefix:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PartialFormatter.swift",
+      "line": 35,
+      "symbol": "PartialFormatter.defaultRegion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PartialFormatter.swift",
+      "line": 60,
+      "symbol": "PartialFormatter.currentRegion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PartialFormatter.swift",
+      "line": 66,
+      "symbol": "PartialFormatter.nationalNumber(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumber.swift",
+      "line": 22,
+      "symbol": "PhoneNumber.numberString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumber.swift",
+      "line": 23,
+      "symbol": "PhoneNumber.countryCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumber.swift",
+      "line": 24,
+      "symbol": "PhoneNumber.leadingZero",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumber.swift",
+      "line": 25,
+      "symbol": "PhoneNumber.nationalNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumber.swift",
+      "line": 26,
+      "symbol": "PhoneNumber.numberExtension",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumber.swift",
+      "line": 27,
+      "symbol": "PhoneNumber.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumber.swift",
+      "line": 51,
+      "symbol": "PhoneNumber.notPhoneNumber()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumber.swift",
+      "line": 55,
+      "symbol": "PhoneNumber.notParsed()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumberKit.swift",
+      "line": 14,
+      "symbol": "PhoneNumberKit",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/PhoneNumberKit.swift",
+      "line": 23,
+      "symbol": "PhoneNumberKit.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 45,
+      "symbol": "PhoneNumberTextField.withPrefix",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 56,
+      "symbol": "PhoneNumberTextField.isPartialFormatterEnabled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 58,
+      "symbol": "PhoneNumberTextField.maxDigits",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 74,
+      "symbol": "PhoneNumberTextField.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 85,
+      "symbol": "PhoneNumberTextField.currentRegion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 91,
+      "symbol": "PhoneNumberTextField.nationalNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 98,
+      "symbol": "PhoneNumberTextField.isValidNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 204,
+      "symbol": "PhoneNumberTextField.textField(_:shouldChangeCharactersIn:replacementString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 256,
+      "symbol": "PhoneNumberTextField.textFieldShouldBeginEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 260,
+      "symbol": "PhoneNumberTextField.textFieldDidBeginEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 264,
+      "symbol": "PhoneNumberTextField.textFieldShouldEndEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 268,
+      "symbol": "PhoneNumberTextField.textFieldDidEndEditing(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 272,
+      "symbol": "PhoneNumberTextField.textFieldShouldClear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberKit/TextField.swift",
+      "line": 276,
+      "symbol": "PhoneNumberTextField.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/floriel.fedry/Documents/GitHub/just-a-test"

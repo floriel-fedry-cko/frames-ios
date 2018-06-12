@@ -6,10 +6,13 @@ public class CardListCell: UITableViewCell {
     // MARK: - Properties
 
     let stackView = UIStackView()
+
     /// Scheme Image View
     public let schemeImageView = UIImageView()
+
     /// Selected Cell Image View
     public let selectedImageView = UIImageView()
+
     /// Card Information Label
     public let cardInfoLabel = UILabel()
 

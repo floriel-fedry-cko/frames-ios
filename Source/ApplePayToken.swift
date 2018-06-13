@@ -1,7 +1,7 @@
 import Foundation
 
 /// Apple Pay token
-public struct ApplePayToken: Decodable {
+public struct ApplePayToken: Codable {
 
     /// Type of the token: applepay
     public let type: String

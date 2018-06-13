@@ -1,7 +1,7 @@
 import Foundation
 
 /// Card used to create the card token
-public struct Card: Decodable {
+public struct Card: Codable {
 
     /// Card Id
     public let id: String

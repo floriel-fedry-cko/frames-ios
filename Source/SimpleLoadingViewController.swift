@@ -16,7 +16,7 @@ public class SimpleLoadingViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.groupTableViewBackground
-        label.text = "Yo it's loading, be patient"
+        label.text = "Loading"
         activityIndicator.color = .black
         activityIndicator.startAnimating()
         addViews()

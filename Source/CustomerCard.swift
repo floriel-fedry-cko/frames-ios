@@ -1,7 +1,7 @@
 import Foundation
 
 /// Customer Card used when you want to get the list of cards.
-public struct CustomerCard: Decodable {
+public struct CustomerCard: Codable {
 
     /// Customer Id
     public let customerId: String

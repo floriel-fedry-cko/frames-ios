@@ -11,11 +11,13 @@ import UIKit
         return PartialFormatter.init(phoneNumberKit: phoneNumberKit, defaultRegion: "GB", withPrefix: true)
     }
 
+    /// National Number (e.g. )
     public var nationalNumber: String {
         let rawNumber = self.textField.text ?? String()
         return partialFormatter.nationalNumber(from: rawNumber)
     }
 
+    /// True if the phone number is valid, false otherwise
     public var isValidNumber: Bool {
         let rawNumber = self.textField.text ?? String()
         do {
@@ -26,6 +28,7 @@ import UIKit
         }
     }
 
+    /// Phone Number
     public var phoneNumber: PhoneNumber?
 
     // MARK: - Initialization
@@ -49,6 +52,7 @@ import UIKit
         textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
     }
 
+    /// Called when the text changed.
     @objc public func textFieldDidChange(textField: UITextField) {
         let phoneNumber = textField.text!
         let formatted = partialFormatter.formatPartial(phoneNumber)

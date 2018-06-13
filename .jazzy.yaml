@@ -3,4 +3,14 @@ author_url: https://www.checkout.com/
 github_url: https://github.com/checkout/checkout-sdk-ios
 output: docs
 theme: fullwidth
-documentation: Documentation/*.md
+documentation: Documentation/**/*.md
+exclude:
+  - Source/PhoneNumberKit/*.swift
+custom_categories:
+  - name: Guides
+    children:
+      - Usage
+      - Demo
+  - name: Walkthrough
+    children:
+      - iOS Example Frames

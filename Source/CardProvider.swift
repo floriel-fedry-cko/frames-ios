@@ -1,7 +1,7 @@
 import Foundation
 
 /// Card Provider
-public struct CardProvider: Decodable, Equatable {
+public struct CardProvider: Codable, Equatable {
 
     /// Card provider id (e.g. cp_1)
     public let id: String

@@ -1,9 +1,9 @@
 {
   "warnings": [
     {
-      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/CardViewController.swift",
-      "line": 32,
-      "symbol": "CardViewController.rightBarButtonItem",
+      "file": "/Users/floriel.fedry/Documents/GitHub/just-a-test/Source/PhoneNumberInputView.swift",
+      "line": 31,
+      "symbol": "PhoneNumberInputView.phoneNumber",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }

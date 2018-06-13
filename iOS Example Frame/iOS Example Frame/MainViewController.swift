@@ -13,7 +13,7 @@ class MainViewController: UIViewController, CardViewControllerDelegate {
 
     let checkoutAPIClient = CheckoutAPIClient(publicKey: "pk_test_03728582-062b-419c-91b5-63ac2a481e07",
                                               environment: .sandbox)
-    let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .required)
+    let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .normal)
 
     @IBAction func onClickGoToPaymentPage(_ sender: Any) {
         navigationController?.pushViewController(cardViewController, animated: true)

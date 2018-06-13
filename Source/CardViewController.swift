@@ -28,7 +28,7 @@ public class CardViewController: UIViewController,
     // Scheme Icons
     private var lastSelected: UIImageView?
 
-    // Right bar button item
+    /// Right bar button item
     public var rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
                                                     target: self,
                                                     action: #selector(onTapDoneCardButton))

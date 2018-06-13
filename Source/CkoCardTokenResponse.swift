@@ -1,7 +1,7 @@
 import Foundation
 
 /// Card Token Response returned by a successful called to `createCardToken`.
-public struct CkoCardTokenResponse: Decodable {
+public struct CkoCardTokenResponse: Codable {
 
     /// Card Token
     public let id: String

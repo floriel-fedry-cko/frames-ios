@@ -1,11 +1,13 @@
 import Foundation
 
 /// A view controller that allows the user to enter address information.
-public class AddressViewController: UIViewController, CountrySelectionViewControllerDelegate, UITextFieldDelegate {
+public class AddressViewController: UIViewController,
+    CountrySelectionViewControllerDelegate,
+    UITextFieldDelegate {
 
     // MARK: - Properties
 
-    var addressView: AddressView!
+    let addressView: AddressView! = AddressView(frame: .zero)
     let countrySelectionViewController = CountrySelectionViewController()
     let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done,
                                      target: self, action: nil)
@@ -20,7 +22,6 @@ public class AddressViewController: UIViewController, CountrySelectionViewContro
     /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
         super.viewDidLoad()
-        addressView = AddressView(frame: .zero)
         self.view.backgroundColor = UIColor.groupTableViewBackground
         self.view.addSubview(addressView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,

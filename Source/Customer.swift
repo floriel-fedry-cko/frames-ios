@@ -1,7 +1,7 @@
 import Foundation
 
 /// Customer object returned by Checkout Merchant API.
-public struct Customer: Decodable {
+public struct Customer: Codable {
 
     /// A string of characters (prefixed with cust_) that uniquely identifies the customer
     public let id: String

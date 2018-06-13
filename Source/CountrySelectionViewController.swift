@@ -1,10 +1,10 @@
 import UIKit
 
 /// A view controller that allows the user to select a country.
-@IBDesignable public class CountrySelectionViewController: UIViewController,
-                                                        UITableViewDelegate,
-                                                        UITableViewDataSource,
-                                                        UISearchBarDelegate {
+public class CountrySelectionViewController: UIViewController,
+    UITableViewDelegate,
+    UITableViewDataSource,
+    UISearchBarDelegate {
 
     // MARK: - Properties
 

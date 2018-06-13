@@ -11,6 +11,7 @@ custom_categories:
     children:
       - Usage
       - Demo
+      - Customizing the Card View
   - name: Walkthrough
     children:
       - iOS Example Frames

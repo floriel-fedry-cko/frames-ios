@@ -58,6 +58,9 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="demo.html">Demo</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="customizing-the-card-view.html">Customizing the Card View</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -246,7 +249,11 @@
         <section class="section">
           <div class="section-content">
             
-            <h1 id='checkoutsdkios-preview-wip' class='heading'>CheckoutSdkIos - Preview (WIP)</h1>
+            <h1 id='checkoutsdkios-beta' class='heading'>CheckoutSdkIos - Beta</h1>
+
+<blockquote>
+<p>Beta - Do not use before speaking to <a href="mailto:integration@checkout.com">integration@checkout.com</a></p>
+</blockquote>
 
 <p><a href="https://travis-ci.org/floriel-fedry-cko/just-a-test"><img src="https://travis-ci.org/floriel-fedry-cko/just-a-test.svg?branch=master" alt="Build Status"></a>
 <a href="https://img.shields.io/cocoapods/v/CheckoutSdkIos"><img src="https://img.shields.io/cocoapods/v/CheckoutSdkIos.svg" alt="CocoaPods Compatible"></a>
@@ -286,49 +293,51 @@
 <p>Then, run the following command:</p>
 <pre class="highlight shell"><code><span class="nv">$ </span>pod <span class="nb">install</span>
 </code></pre>
-<h3 id='demo' class='heading'>Demo</h3>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.</p>
+
+<p>You can install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following command:</p>
+<pre class="highlight shell"><code><span class="nv">$ </span>brew update
+<span class="nv">$ </span>brew <span class="nb">install </span>carthage
+</code></pre>
+
+<p>To integrate CheckoutSdkIos into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github "floriel-fedry-cko/just-a-test" ~&gt; 0.2
+</code></pre>
+
+<p>Run <code>carthage update</code> to build the framework and drag the built <code>CheckoutSdkIos</code> into your Xcode project.</p>
+<h2 id='demo' class='heading'>Demo</h2>
 
 <p>You can find intructions on how to run the demo <a href="./Documentation/Demo.md">here</a>.</p>
-<h3 id='usage' class='heading'>Usage</h3>
+<h2 id='usage' class='heading'>Usage</h2>
 
-<p>Add your public key:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">publicKey</span> <span class="o">=</span> <span class="s">"pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"</span>
+<p>Create the API Client <code><a href="Classes/CheckoutAPIClient.html">CheckoutAPIClient</a></code>:</p>
+<pre class="highlight swift"><code><span class="c1">// replace "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14" by your own public key</span>
+<span class="k">let</span> <span class="nv">checkoutAPIClient</span> <span class="o">=</span> <span class="kt">CheckoutAPIClient</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="s">"pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"</span><span class="p">,</span>
+                                          <span class="nv">environment</span><span class="p">:</span> <span class="o">.</span><span class="n">sandbox</span><span class="p">)</span>
 </code></pre>
 
-<p>Create api client and card utils instance:</p>
-<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">checkoutAPIClient</span><span class="p">:</span> <span class="kt">CheckoutAPIClient</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kt">CheckoutAPIClient</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="n">publicKey</span><span class="p">,</span> <span class="nv">environment</span><span class="p">:</span> <span class="o">.</span><span class="n">sandbox</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="k">let</span> <span class="nv">cardUtils</span> <span class="o">=</span> <span class="kt">CardUtils</span><span class="p">()</span>
+<p>Create the <code><a href="Classes/CardUtils.html">CardUtils</a></code> instance:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cardUtils</span> <span class="o">=</span> <span class="kt">CardUtils</span><span class="p">()</span>
 </code></pre>
 
-<p>Get the values:</p>
-<pre class="highlight swift"><code><span class="k">guard</span>
-    <span class="k">let</span> <span class="nv">cardNumber</span> <span class="o">=</span> <span class="n">cardNumberInputView</span><span class="o">.</span><span class="n">textField</span><span class="o">!.</span><span class="n">text</span><span class="p">,</span>
-    <span class="k">let</span> <span class="nv">expirationDate</span> <span class="o">=</span> <span class="n">expirationDateInputView</span><span class="o">.</span><span class="n">textField</span><span class="o">!.</span><span class="n">text</span><span class="p">,</span>
-    <span class="k">let</span> <span class="nv">cvv</span> <span class="o">=</span> <span class="n">cvvInputView</span><span class="o">.</span><span class="n">textField</span><span class="o">!.</span><span class="n">text</span>
-    <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
-<span class="k">let</span> <span class="p">(</span><span class="nv">expiryMonth</span><span class="p">,</span> <span class="nv">expiryYear</span><span class="p">)</span> <span class="o">=</span> <span class="n">cardUtils</span><span class="o">.</span><span class="nf">standardize</span><span class="p">(</span><span class="nv">expirationDate</span><span class="p">:</span> <span class="n">expirationDate</span><span class="p">)</span>
+<p>Create the card token request <code><a href="Structs/CardTokenRequest.html">CardTokenRequest</a></code>:</p>
+<pre class="highlight swift"><code><span class="c1">// create the phone number</span>
+<span class="k">let</span> <span class="nv">phoneNumber</span> <span class="o">=</span> <span class="kt">CkoPhoneNumber</span><span class="p">(</span><span class="nv">countryCode</span><span class="p">:</span><span class="nv">number</span><span class="p">:)</span>
+<span class="c1">// create the address</span>
+<span class="k">let</span> <span class="nv">address</span> <span class="o">=</span> <span class="kt">CkoAddress</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span><span class="nv">addressLine1</span><span class="p">:</span><span class="nv">addressLine2</span><span class="p">:</span><span class="nv">city</span><span class="p">:</span><span class="nv">state</span><span class="p">:</span><span class="nv">postcode</span><span class="p">:</span><span class="nv">country</span><span class="p">:</span><span class="nv">phone</span><span class="p">:)</span>
+<span class="c1">// create the card token request</span>
+<span class="k">let</span> <span class="nv">cardTokenRequest</span> <span class="o">=</span> <span class="kt">CkoCardTokenRequest</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span><span class="nv">expiryMonth</span><span class="p">:</span><span class="nv">expiryYear</span><span class="p">:</span><span class="nv">cvv</span><span class="p">:</span><span class="nv">name</span><span class="p">:</span><span class="nv">billingAddress</span><span class="p">:)</span>
 </code></pre>
 
-<p>Create the request object:</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">card</span> <span class="o">=</span> <span class="kt">CardRequest</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="n">cardUtils</span><span class="o">.</span><span class="nf">standardize</span><span class="p">(</span><span class="nv">cardNumber</span><span class="p">:</span> <span class="n">cardNumber</span><span class="p">),</span>
-                       <span class="nv">expiryMonth</span><span class="p">:</span> <span class="n">expiryMonth</span><span class="p">,</span>
-                       <span class="nv">expiryYear</span><span class="p">:</span> <span class="n">expiryYear</span><span class="p">,</span>
-                       <span class="nv">cvv</span><span class="p">:</span> <span class="n">cvv</span><span class="p">,</span>
-                       <span class="nv">name</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-</code></pre>
-
-<p>Create the card token:</p>
-<pre class="highlight swift"><code><span class="n">checkoutAPIClient</span><span class="o">.</span><span class="nf">createCardToken</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="n">card</span><span class="p">,</span> <span class="nv">successHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">cardToken</span> <span class="k">in</span>
-            <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Payment successful"</span><span class="p">,</span>
-                                          <span class="nv">message</span><span class="p">:</span> <span class="s">"Your card token: </span><span class="se">\(</span><span class="n">cardToken</span><span class="o">.</span><span class="n">id</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
-            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-        <span class="p">},</span> <span class="nv">errorHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
-            <span class="k">let</span> <span class="nv">alert</span> <span class="o">=</span> <span class="kt">UIAlertController</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="s">"Payment unsuccessful"</span><span class="p">,</span>
-                                          <span class="nv">message</span><span class="p">:</span> <span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">,</span> <span class="nv">preferredStyle</span><span class="p">:</span> <span class="o">.</span><span class="n">alert</span><span class="p">)</span>
-            <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">alert</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-        <span class="p">})</span>
+<p>Create a card token</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">checkoutAPIClient</span> <span class="o">=</span> <span class="kt">CheckoutAPIClient</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="s">"pk_......"</span><span class="p">,</span> <span class="nv">environment</span><span class="p">:</span> <span class="o">.</span><span class="n">live</span><span class="p">)</span>
+<span class="n">checkoutAPIClient</span><span class="o">.</span><span class="nf">createCardToken</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="n">cardTokenRequest</span><span class="p">,</span> <span class="nv">successHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">cardTokenResponse</span> <span class="k">in</span>
+    <span class="c1">// success</span>
+<span class="p">},</span> <span class="n">errorHandler</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="c1">// error</span>
+<span class="p">})</span>
 </code></pre>
 <h2 id='license' class='heading'>License</h2>
 

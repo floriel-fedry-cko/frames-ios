@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Other Protocols  Reference</title>
+    <title>Customizing the Card View  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,8 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Section/Other Protocols" class="dashAnchor"></a>
 
-    <a title="Other Protocols  Reference"></a>
+    <a title="Customizing the Card View  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +43,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">CheckoutSdkIos Reference</a>
       <img class="carat" src="img/carat.png" />
-      Other Protocols  Reference
+      Customizing the Card View  Reference
     </p>
 
     <div class="content-wrapper">
@@ -249,240 +248,50 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Other Protocols</h1>
-            <p>The following protocols are available globally.</p>
+            
+            <h1 id='customizing-the-card-view' class='heading'>Customizing the Card View</h1>
+
+<p>The SDK provides a <code><a href="Classes/CardViewController.html">CardViewController</a></code> that can be used to allow users to enter their card details.
+You can modify the card view after the initialization.</p>
+<h2 id='customizing-the-fields' class='heading'>Customizing the fields</h2>
+<pre class="highlight swift"><code>    <span class="k">let</span> <span class="nv">cardViewController</span> <span class="o">=</span> <span class="kt">CardViewController</span><span class="p">(</span><span class="nv">cardHolderNameState</span><span class="p">:</span> <span class="o">.</span><span class="n">hidden</span><span class="p">,</span> <span class="nv">billingDetailsState</span><span class="p">:</span> <span class="o">.</span><span class="n">hidden</span><span class="p">)</span>
+    <span class="k">let</span> <span class="nv">softBlack</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">34</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mi">41</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mi">47</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="n">cardViewController</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="n">softBlack</span>
+        <span class="nf">customizeFields</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">customizeFields</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">cardView</span> <span class="o">=</span> <span class="n">cardViewController</span><span class="o">.</span><span class="n">cardView</span>
+        <span class="k">let</span> <span class="nv">views</span><span class="p">:</span> <span class="p">[</span><span class="kt">StandardInputView</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">cardView</span><span class="o">.</span><span class="n">cardNumberInputView</span><span class="p">,</span>
+                                          <span class="n">cardView</span><span class="o">.</span><span class="n">expirationDateInputView</span><span class="p">,</span>
+                                          <span class="n">cardView</span><span class="o">.</span><span class="n">cvvInputView</span><span class="p">]</span>
+        <span class="n">cardView</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="n">softBlack</span>
+        <span class="n">cardView</span><span class="o">.</span><span class="n">acceptedCardLabel</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+        <span class="n">views</span><span class="o">.</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">view</span> <span class="k">in</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">lightGray</span><span class="o">.</span><span class="n">cgColor</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mi">10</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="n">softBlack</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">textField</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+            <span class="n">view</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">textColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
+
+<p>We start by initializing a card view controller without the card holder and billing details fields.</p>
+<pre class="highlight swift"><code>  <span class="k">let</span> <span class="nv">cardViewController</span> <span class="o">=</span> <span class="kt">CardViewController</span><span class="p">(</span><span class="nv">cardHolderNameState</span><span class="p">:</span> <span class="o">.</span><span class="n">hidden</span><span class="p">,</span> <span class="nv">billingDetailsState</span><span class="p">:</span> <span class="o">.</span><span class="n">hidden</span><span class="p">)</span>
+</code></pre>
+
+<p>Inside the <code>viewDidLoad</code> method, we can access the cardView <code>let cardView = cardViewController.cardView</code>.
+The public properties can be modified. This allows you to add different colors and style. In the code above,
+we implement a dark theme.</p>
 
           </div>
         </section>
 
-        <section class="section">
-          <div class="section-content">
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14CheckoutSdkIos29AddressViewControllerDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/AddressViewControllerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14CheckoutSdkIos29AddressViewControllerDelegateP">AddressViewControllerDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Method that you can use to handle when the user press done to save the address.</p>
-
-                        <a href="Protocols/AddressViewControllerDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AddressViewControllerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14CheckoutSdkIos27CardNumberInputViewDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/CardNumberInputViewDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14CheckoutSdkIos27CardNumberInputViewDelegateP">CardNumberInputViewDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Method that you can use to handle the card number changes.</p>
-
-                        <a href="Protocols/CardNumberInputViewDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CardNumberInputViewDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14CheckoutSdkIos26CardViewControllerDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/CardViewControllerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14CheckoutSdkIos26CardViewControllerDelegateP">CardViewControllerDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Method that you can use to manage the editing of the expiration date.</p>
-
-                        <a href="Protocols/CardViewControllerDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CardViewControllerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14CheckoutSdkIos38CountrySelectionViewControllerDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/CountrySelectionViewControllerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14CheckoutSdkIos38CountrySelectionViewControllerDelegateP">CountrySelectionViewControllerDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Method that you can use to handle the country selection by the user</p>
-
-                        <a href="Protocols/CountrySelectionViewControllerDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CountrySelectionViewControllerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14CheckoutSdkIos37CvvConfirmationViewControllerDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/CvvConfirmationViewControllerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14CheckoutSdkIos37CvvConfirmationViewControllerDelegateP">CvvConfirmationViewControllerDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Methods used to handle action on the cvv confirmation page</p>
-
-                        <a href="Protocols/CvvConfirmationViewControllerDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CvvConfirmationViewControllerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14CheckoutSdkIos28ExpirationDatePickerDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/ExpirationDatePickerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14CheckoutSdkIos28ExpirationDatePickerDelegateP">ExpirationDatePickerDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Method that you can use to manage the editing of the expiration date</p>
-
-                        <a href="Protocols/ExpirationDatePickerDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ExpirationDatePickerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:14CheckoutSdkIos32ThreedsWebViewControllerDelegateP"></a>
-                    <a name="//apple_ref/swift/Protocol/ThreedsWebViewControllerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14CheckoutSdkIos32ThreedsWebViewControllerDelegateP">ThreedsWebViewControllerDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Methods to handle the response in the 3ds web view</p>
-
-                        <a href="Protocols/ThreedsWebViewControllerDelegate.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ThreedsWebViewControllerDelegate</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
 
       </article>
     </div>

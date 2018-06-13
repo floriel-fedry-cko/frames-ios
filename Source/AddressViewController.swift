@@ -7,7 +7,8 @@ public class AddressViewController: UIViewController,
 
     // MARK: - Properties
 
-    let addressView: AddressView! = AddressView(frame: .zero)
+    /// Address View
+    public let addressView: AddressView! = AddressView(frame: .zero)
     let countrySelectionViewController = CountrySelectionViewController()
     let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done,
                                      target: self, action: nil)

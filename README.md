@@ -1,4 +1,6 @@
-# CheckoutSdkIos - Preview (WIP)
+# CheckoutSdkIos - Beta
+
+> Beta - Do not use before speaking to integration@checkout.com
 
 [![Build Status](https://travis-ci.org/floriel-fedry-cko/just-a-test.svg?branch=master)](https://travis-ci.org/floriel-fedry-cko/just-a-test)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/CheckoutSdkIos.svg)](https://img.shields.io/cocoapods/v/CheckoutSdkIos)
@@ -10,9 +12,9 @@
 
 ## Requirements
 
-* iOS 10.0+
-* Xcode 9.0+
-* Swift 4.1+
+- iOS 10.0+
+- Xcode 9.0+
+- Swift 4.1+
 
 ## Installation
 
@@ -44,60 +46,65 @@ Then, run the following command:
 $ pod install
 ```
 
-### Demo
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate CheckoutSdkIos into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "floriel-fedry-cko/just-a-test" ~> 0.2
+```
+
+Run `carthage update` to build the framework and drag the built `CheckoutSdkIos` into your Xcode project.
+
+## Demo
 
 You can find intructions on how to run the demo [here](./Documentation/Demo.md).
 
-### Usage
+## Usage
 
-Add your public key:
+Create the API Client `CheckoutAPIClient`:
 
 ```swift
-let publicKey = "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"
+// replace "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14" by your own public key
+let checkoutAPIClient = CheckoutAPIClient(publicKey: "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14",
+                                          environment: .sandbox)
 ```
 
-Create api client and card utils instance:
+Create the `CardUtils` instance:
 
 ```swift
-var checkoutAPIClient: CheckoutAPIClient {
-    return CheckoutAPIClient(publicKey: publicKey, environment: .sandbox)
-}
 let cardUtils = CardUtils()
 ```
 
-Get the values:
+Create the card token request `CardTokenRequest`:
 
 ```swift
-guard
-    let cardNumber = cardNumberInputView.textField!.text,
-    let expirationDate = expirationDateInputView.textField!.text,
-    let cvv = cvvInputView.textField!.text
-    else { return }
-let (expiryMonth, expiryYear) = cardUtils.standardize(expirationDate: expirationDate)
+// create the phone number
+let phoneNumber = CkoPhoneNumber(countryCode:number:)
+// create the address
+let address = CkoAddress(name:addressLine1:addressLine2:city:state:postcode:country:phone:)
+// create the card token request
+let cardTokenRequest = CkoCardTokenRequest(number:expiryMonth:expiryYear:cvv:name:billingAddress:)
 ```
 
-Create the request object:
+Create a card token
 
 ```swift
-let card = CardRequest(number: cardUtils.standardize(cardNumber: cardNumber),
-                       expiryMonth: expiryMonth,
-                       expiryYear: expiryYear,
-                       cvv: cvv,
-                       name: nil)
-```
-
-Create the card token:
-
-```swift
-checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
-            let alert = UIAlertController(title: "Payment successful",
-                                          message: "Your card token: \(cardToken.id)", preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-        }, errorHandler: { error in
-            let alert = UIAlertController(title: "Payment unsuccessful",
-                                          message: "Error: \(error)", preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-        })
+let checkoutAPIClient = CheckoutAPIClient(publicKey: "pk_......", environment: .live)
+checkoutAPIClient.createCardToken(card: cardTokenRequest, successHandler: { cardTokenResponse in
+    // success
+}, errorHandler { error in
+    // error
+})
 ```
 
 ## License

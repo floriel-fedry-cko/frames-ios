@@ -3,15 +3,15 @@ import PassKit
 import CheckoutSdkIos
 
 class ExampleViewController: UIViewController,
-                            UITableViewDelegate,
-                            UITableViewDataSource,
-                            CardViewControllerDelegate,
-                            CvvConfirmationViewControllerDelegate,
-ThreedsWebViewControllerDelegate {
+    UITableViewDelegate,
+    UITableViewDataSource,
+    CardViewControllerDelegate,
+    CvvConfirmationViewControllerDelegate,
+    ThreedsWebViewControllerDelegate {
 
     func onConfirm(controller: CvvConfirmationViewController, cvv: String) {
         if let card = selectedCard as? CustomerCard {
-            merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: "100", customer: customerEmail) { response in
+            merchantAPIClient.payWith3ds(value: 509, cardId: card.id, cvv: cvv, customer: customerEmail) { response in
                 self.threeDsViewController.url = response.redirectUrl
                 self.present(self.threeDsViewController, animated: true)
             }

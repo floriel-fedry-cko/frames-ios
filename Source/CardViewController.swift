@@ -8,7 +8,8 @@ public class CardViewController: UIViewController,
 
     // MARK: - Properties
 
-    var cardView: CardView!
+    /// Card View
+    public let cardView: CardView
     let cardUtils = CardUtils()
 
     let cardHolderNameState: InputState
@@ -40,6 +41,7 @@ public class CardViewController: UIViewController,
     public init(cardHolderNameState: InputState, billingDetailsState: InputState) {
         self.cardHolderNameState = cardHolderNameState
         self.billingDetailsState = billingDetailsState
+        cardView = CardView(cardHolderNameState: cardHolderNameState, billingDetailsState: billingDetailsState)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -47,6 +49,7 @@ public class CardViewController: UIViewController,
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         cardHolderNameState = .required
         billingDetailsState = .required
+        cardView = CardView(cardHolderNameState: cardHolderNameState, billingDetailsState: billingDetailsState)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
@@ -54,6 +57,7 @@ public class CardViewController: UIViewController,
     required public init?(coder aDecoder: NSCoder) {
         cardHolderNameState = .required
         billingDetailsState = .required
+        cardView = CardView(cardHolderNameState: cardHolderNameState, billingDetailsState: billingDetailsState)
         super.init(coder: aDecoder)
     }
 
@@ -62,7 +66,6 @@ public class CardViewController: UIViewController,
     /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
         super.viewDidLoad()
-        cardView = CardView(cardHolderNameState: cardHolderNameState, billingDetailsState: billingDetailsState)
         rightBarButtonItem.target = self
         rightBarButtonItem.action = #selector(onTapDoneCardButton)
         navigationItem.rightBarButtonItem = rightBarButtonItem

@@ -9,8 +9,10 @@ public class CardView: UIView {
     let contentView = UIView()
     let stackView = UIStackView()
     let schemeIconsStackView = SchemeIconsStackView()
-    let acceptedCardLabel = UILabel()
     let addressTapGesture = UITapGestureRecognizer()
+    
+    /// Accepted Card Label
+    public let acceptedCardLabel = UILabel()
 
     /// Card number input view
     public let cardNumberInputView = CardNumberInputView()

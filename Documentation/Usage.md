@@ -1,4 +1,4 @@
-##  Usage
+## Usage
 
 ### Importing the library
 
@@ -31,8 +31,13 @@ checkoutAPIClient.getCardProviders(successHandler: { cardProviders in
 
 ```swift
 let checkoutAPIClient = CheckoutAPIClient(publicKey: "pk_......", environment: .live)
-let cardRequest = CardRequest(number:expiryMonth:expiryYear:cvv:name:)
-checkoutAPIClient.createCardToken(card: CardRequest, successHandler: { cardTokenResponse in
+// create the phone number
+let phoneNumber = CkoPhoneNumber(countryCode:number:)
+// create the address
+let address = CkoAddress(name:addressLine1:addressLine2:city:state:postcode:country:phone:)
+// create the card token request
+let cardTokenRequest = CkoCardTokenRequest(number:expiryMonth:expiryYear:cvv:name:billingAddress:)
+checkoutAPIClient.createCardToken(card: cardTokenRequest, successHandler: { cardTokenResponse in
     // success
 }, errorHandler { error in
     // error
@@ -77,7 +82,7 @@ print(cardNumberStandardized) // "4242424242424242"
 
 ### Validate a card number
 
-You can validate a card number. 
+You can validate a card number.
 
 ```swift
 let cardUtils = CardUtils()
@@ -87,5 +92,3 @@ let cardType = cardUtils.getTypeOf(cardNumber: cardNumber)
 let isCardValid = cardType != nil ? cardUtils.isValid(cardNumber: cardNumber, cardType: cardType!) : false
 print(isCardValid) // true
 ```
-
-

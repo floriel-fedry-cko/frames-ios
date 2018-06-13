@@ -172,12 +172,14 @@ public class CardUtils {
     ///
     /// - returns: true if the expiration date is valid, false otherwise
     public func isValid(expirationMonth: String, expirationYear: String) -> Bool {
+        // check month and year are accepted values
         guard expirationMonth.count == 2 else { return false }
         guard expirationYear.count == 4 || expirationYear.count == 2 else { return false }
-        var expirationYear4Digits = expirationYear
-        if expirationYear.count == 2 { expirationYear4Digits = "20\(expirationYear)"}
+        let expirationYear4Digits = expirationYear.count == 2 ? "20\(expirationYear)" : expirationYear
         guard let month = Int(expirationMonth), let year = Int(expirationYear4Digits) else { return false }
-        if month > 12 || month < 0 { return false }
+        if month > 12 || month < 1 { return false }
+
+        // check the date is not before the current one
         let calendar = Calendar(identifier: .gregorian)
         let providedDate = calendar.date(from: DateComponents(year: year, month: month))
         let componentsCurrentDate = calendar.dateComponents([.month, .year], from: Date())

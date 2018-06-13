@@ -267,8 +267,13 @@ CardUtils contains methods to use for handling a payment form.</p>
 </code></pre>
 <h3 id='create-a-card-token' class='heading'>Create a card token</h3>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">checkoutAPIClient</span> <span class="o">=</span> <span class="kt">CheckoutAPIClient</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="s">"pk_......"</span><span class="p">,</span> <span class="nv">environment</span><span class="p">:</span> <span class="o">.</span><span class="n">live</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">cardRequest</span> <span class="o">=</span> <span class="kt">CardRequest</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span><span class="nv">expiryMonth</span><span class="p">:</span><span class="nv">expiryYear</span><span class="p">:</span><span class="nv">cvv</span><span class="p">:</span><span class="nv">name</span><span class="p">:)</span>
-<span class="n">checkoutAPIClient</span><span class="o">.</span><span class="nf">createCardToken</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="kt">CardRequest</span><span class="p">,</span> <span class="nv">successHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">cardTokenResponse</span> <span class="k">in</span>
+<span class="c1">// create the phone number</span>
+<span class="k">let</span> <span class="nv">phoneNumber</span> <span class="o">=</span> <span class="kt">CkoPhoneNumber</span><span class="p">(</span><span class="nv">countryCode</span><span class="p">:</span><span class="nv">number</span><span class="p">:)</span>
+<span class="c1">// create the address</span>
+<span class="k">let</span> <span class="nv">address</span> <span class="o">=</span> <span class="kt">CkoAddress</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span><span class="nv">addressLine1</span><span class="p">:</span><span class="nv">addressLine2</span><span class="p">:</span><span class="nv">city</span><span class="p">:</span><span class="nv">state</span><span class="p">:</span><span class="nv">postcode</span><span class="p">:</span><span class="nv">country</span><span class="p">:</span><span class="nv">phone</span><span class="p">:)</span>
+<span class="c1">// create the card token request</span>
+<span class="k">let</span> <span class="nv">cardTokenRequest</span> <span class="o">=</span> <span class="kt">CkoCardTokenRequest</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span><span class="nv">expiryMonth</span><span class="p">:</span><span class="nv">expiryYear</span><span class="p">:</span><span class="nv">cvv</span><span class="p">:</span><span class="nv">name</span><span class="p">:</span><span class="nv">billingAddress</span><span class="p">:)</span>
+<span class="n">checkoutAPIClient</span><span class="o">.</span><span class="nf">createCardToken</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="n">cardTokenRequest</span><span class="p">,</span> <span class="nv">successHandler</span><span class="p">:</span> <span class="p">{</span> <span class="n">cardTokenResponse</span> <span class="k">in</span>
     <span class="c1">// success</span>
 <span class="p">},</span> <span class="n">errorHandler</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
     <span class="c1">// error</span>
@@ -303,7 +308,7 @@ CardUtils contains methods to use for handling a payment form.</p>
 </code></pre>
 <h3 id='validate-a-card-number' class='heading'>Validate a card number</h3>
 
-<p>You can validate a card number. </p>
+<p>You can validate a card number.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cardUtils</span> <span class="o">=</span> <span class="kt">CardUtils</span><span class="p">()</span>
 
 <span class="k">let</span> <span class="nv">cardNumber</span> <span class="o">=</span> <span class="s">"4242424242424242"</span>

@@ -178,7 +178,7 @@ class CardUtilsTests: XCTestCase {
 
     }
 
-    func testValidCardNumber() {
+    func testValidCardNumberWithType() {
         // Visa
         visaCards.forEach { cardNumber in
             XCTAssertTrue(cards.isValid(cardNumber: cardNumber, cardType: visaCardType),
@@ -215,7 +215,7 @@ class CardUtilsTests: XCTestCase {
         }
     }
 
-    func testInvalidCardNumber() {
+    func testInvalidCardNumberWithType() {
         let invalidCards = ["4651997672049323",
          "5185868732238231",
          "62699920581",
@@ -232,6 +232,36 @@ class CardUtilsTests: XCTestCase {
         // UnionPay
         XCTAssertFalse(cards.isValid(cardNumber: "62699920581", cardType: unionPayCardType))
         XCTAssertFalse(cards.isValid(cardNumber: "6221558812340000567678", cardType: unionPayCardType))
+    }
+
+    func testValidCardNumber() {
+        let cardNumbers = visaCards + mastercardCards + amexCards + dinersClubCards +
+            discoverCards + maestroCards + jcbCards
+
+        cardNumbers.forEach { cardNumber in
+            XCTAssertTrue(cards.isValid(cardNumber: cardNumber),
+                          "card \(cardNumber)")
+        }
+    }
+
+    func testInvalidCardNumber() {
+        let invalidCards = ["4651997672049323",
+                            "5185868732238231",
+                            "62699920581",
+                            "6221558812340000567678",
+                            "5436787"
+        ]
+        // Validate with the wrong card type
+        invalidCards.forEach { cardNumber in
+            XCTAssertFalse(cards.isValid(cardNumber: cardNumber))
+        }
+        // Visa
+        XCTAssertFalse(cards.isValid(cardNumber: "4651997672049323"))
+        // Mastercard
+        XCTAssertFalse(cards.isValid(cardNumber: "5185868732238231"))
+        // UnionPay
+        XCTAssertFalse(cards.isValid(cardNumber: "62699920581"))
+        XCTAssertFalse(cards.isValid(cardNumber: "6221558812340000567678"))
     }
 
     func testValidExpirationDate() {

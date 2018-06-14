@@ -56,9 +56,6 @@ import UIKit
     @objc public func textFieldDidChange(textField: UITextField) {
         let phoneNumber = textField.text!
         let formatted = partialFormatter.formatPartial(phoneNumber)
-        do {
-            let phoneNumber = try phoneNumberKit.parse(phoneNumber, withRegion: "GB", ignoreType: true)
-        } catch {}
         textField.text = formatted
     }
 }

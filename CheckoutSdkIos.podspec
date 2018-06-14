@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CheckoutSdkIos"
-  s.version      = "0.2.3"
+  s.version      = "0.2.4"
   s.summary      = "Checkout API Client and Payment Form Utilities in Swift"
   s.description  = <<-DESC
   Checkout API Client and Payment Form Utilities in Swift.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
 
   s.license      = "MIT"
-  s.author             = { "Checkout.com Integration" => "integration@checkout.com" }
+  s.author       = { "Checkout.com Integration" => "integration@checkout.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

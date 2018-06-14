@@ -16,6 +16,16 @@
 - Xcode 9.0+
 - Swift 4.1+
 
+## Documentation
+
+You can find the CheckoutSdkIos [on this website]().
+
+- [Usage](https://floriel-fedry-cko.github.io/just-a-test/usage.html)
+- [Customizing the card view](https://floriel-fedry-cko.github.io/just-a-test/customizing-the-card-view.html)
+- [Demo](https://floriel-fedry-cko.github.io/just-a-test/demo.html)
+- Walkthrough
+  - [iOS Example](https://floriel-fedry-cko.github.io/just-a-test/ios-example-frames.html)
+
 ## Installation
 
 ### CocoaPods

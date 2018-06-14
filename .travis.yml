@@ -6,7 +6,7 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 deploy:
   provider: script
-  script: ./scripts/push.sh
+  script: chmod +x ./scripts/push.sh && ./scripts/push.sh
   skip_cleanup: true
   on:
     all_branches: true

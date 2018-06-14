@@ -11,4 +11,5 @@ deploy:
   provider: script
   script: ./scripts/push.sh
   on:
+    all_branches: true
     tags: true

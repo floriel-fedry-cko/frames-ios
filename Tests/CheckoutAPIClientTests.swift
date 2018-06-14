@@ -30,7 +30,6 @@ class CheckoutAPIClientTests: XCTestCase {
             XCTAssertNotNil(cardProviders)
             expectation.fulfill()
         }, errorHandler: { _ in
-
         })
 
         wait(for: [expectation], timeout: 1.0)
@@ -66,6 +65,45 @@ class CheckoutAPIClientTests: XCTestCase {
         // Test the function
         let expectation = XCTestExpectation(description: "Create card token (error)")
         let cardRequest = CardTokenRequest(number: "", expiryMonth: 0, expiryYear: 0, cvv: "")
+        checkoutAPIClient.createCardToken(card: cardRequest, successHandler: { _ in
+        }, errorHandler: { error in
+            XCTAssertNotNil(error)
+            XCTAssertEqual(error.errorCode, "70000")
+            expectation.fulfill()
+        })
+
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testSuccessfulCreateCkoCardToken() {
+        // Stub the response
+        let path = Bundle(for: type(of: self)).path(forResource: "ckoCardToken", ofType: "json")!
+        let data = NSData(contentsOfFile: path)!
+        stub(everything, delay: 0, jsonData(data as Data))
+        // Test the function
+        let expectation = XCTestExpectation(description: "Create card token")
+        let cardRequest = CkoCardTokenRequest(number: "", expiryMonth: "", expiryYear: "",
+                                              cvv: "", name: nil, billingAddress: nil)
+
+        checkoutAPIClient.createCardToken(card: cardRequest, successHandler: { cardToken in
+            XCTAssertNotNil(cardToken)
+            XCTAssertNotNil(cardToken.id)
+            expectation.fulfill()
+        }, errorHandler: { _ in
+        })
+
+        wait(for: [expectation], timeout: 1.0)
+    }
+
+    func testFailedCreateCkoCardToken() {
+        // Stub the response
+        let path = Bundle(for: type(of: self)).path(forResource: "cardTokenInvalidNumber", ofType: "json")!
+        let data = NSData(contentsOfFile: path)!
+        stub(everything, delay: 0, jsonData(data as Data, status: 401))
+        // Test the function
+        let expectation = XCTestExpectation(description: "Create card token (error)")
+        let cardRequest = CkoCardTokenRequest(number: "", expiryMonth: "", expiryYear: "", cvv: "",
+                                              name: nil, billingAddress: nil)
         checkoutAPIClient.createCardToken(card: cardRequest, successHandler: { _ in
         }, errorHandler: { error in
             XCTAssertNotNil(error)

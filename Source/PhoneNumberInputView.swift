@@ -13,13 +13,13 @@ import UIKit
 
     /// National Number (e.g. )
     public var nationalNumber: String {
-        let rawNumber = self.textField.text ?? String()
+        let rawNumber = self.textField.text ?? ""
         return partialFormatter.nationalNumber(from: rawNumber)
     }
 
     /// True if the phone number is valid, false otherwise
     public var isValidNumber: Bool {
-        let rawNumber = self.textField.text ?? String()
+        let rawNumber = self.textField.text ?? ""
         do {
             phoneNumber = try phoneNumberKit.parse(rawNumber, withRegion: partialFormatter.currentRegion)
             return true
@@ -58,10 +58,7 @@ import UIKit
         let formatted = partialFormatter.formatPartial(phoneNumber)
         do {
             let phoneNumber = try phoneNumberKit.parse(phoneNumber, withRegion: "GB", ignoreType: true)
-            print(phoneNumber)
-        } catch {
-            print("oh well")
-        }
+        } catch {}
         textField.text = formatted
     }
 }

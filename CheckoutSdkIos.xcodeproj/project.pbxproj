@@ -65,6 +65,11 @@
 		E63352DB20A34992002C61C0 /* AddressViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */; };
 		E63352E120A45C07002C61C0 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E020A45C07002C61C0 /* CardViewController.swift */; };
 		E63352E720A4B252002C61C0 /* CardViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */; };
+		E64B31DC20D1810F0088B7FD /* SchemeIconsStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B31DB20D1810F0088B7FD /* SchemeIconsStackViewTests.swift */; };
+		E64B31DE20D2642E0088B7FD /* PhoneNumberInputViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B31DD20D2642E0088B7FD /* PhoneNumberInputViewTests.swift */; };
+		E64B31E020D26A930088B7FD /* ckoCardToken.json in Resources */ = {isa = PBXBuildFile; fileRef = E64B31DF20D26A930088B7FD /* ckoCardToken.json */; };
+		E64B31E120D26CBC0088B7FD /* ckoCardToken.json in Resources */ = {isa = PBXBuildFile; fileRef = E64B31DF20D26A930088B7FD /* ckoCardToken.json */; };
+		E64B31E320D26EE80088B7FD /* CardViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B31E220D26EE80088B7FD /* CardViewTests.swift */; };
 		E653FEFC20C583A2002E4790 /* CardListCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFB20C583A2002E4790 /* CardListCellName.swift */; };
 		E653FEFE20C58FA9002E4790 /* SimpleLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */; };
 		E653FF0020C59CCC002E4790 /* CvvConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */; };
@@ -216,6 +221,10 @@
 		E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E63352E020A45C07002C61C0 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewControllerDelegate.swift; sourceTree = "<group>"; };
+		E64B31DB20D1810F0088B7FD /* SchemeIconsStackViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeIconsStackViewTests.swift; sourceTree = "<group>"; };
+		E64B31DD20D2642E0088B7FD /* PhoneNumberInputViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberInputViewTests.swift; sourceTree = "<group>"; };
+		E64B31DF20D26A930088B7FD /* ckoCardToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ckoCardToken.json; sourceTree = "<group>"; };
+		E64B31E220D26EE80088B7FD /* CardViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTests.swift; sourceTree = "<group>"; };
 		E653FEFB20C583A2002E4790 /* CardListCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCellName.swift; sourceTree = "<group>"; };
 		E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoadingViewController.swift; sourceTree = "<group>"; };
 		E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -396,6 +405,16 @@
 			name = Mocks;
 			sourceTree = "<group>";
 		};
+		E64B31D820D1806E0088B7FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E64B31DB20D1810F0088B7FD /* SchemeIconsStackViewTests.swift */,
+				E64B31DD20D2642E0088B7FD /* PhoneNumberInputViewTests.swift */,
+				E64B31E220D26EE80088B7FD /* CardViewTests.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E66406CA2089FA39000431E5 = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +566,7 @@
 				E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */,
 				E67AB9A4208F41AB00593FBE /* cardProviders.json */,
 				E68802472092294B00220CE2 /* cardToken.json */,
+				E64B31DF20D26A930088B7FD /* ckoCardToken.json */,
 				E631CB672097552700023472 /* cardTokenInvalidNumber.json */,
 			);
 			path = Fixtures;
@@ -564,6 +584,7 @@
 			isa = PBXGroup;
 			children = (
 				E6AF0A0920AACEFA00D29929 /* AddressViewControllerTests.swift */,
+				E64B31D820D1806E0088B7FD /* Views */,
 				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
 				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
 				E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */,
@@ -744,6 +765,7 @@
 				E61C69D020BD906D0057DBA8 /* Demo.md in Resources */,
 				E6AF0A2F20AADFF700D29929 /* arrows in Resources */,
 				E625EE672090926F0019B750 /* LICENSE in Resources */,
+				E64B31E020D26A930088B7FD /* ckoCardToken.json in Resources */,
 				E625EE5D2090801C0019B750 /* CONTRIBUTING.md in Resources */,
 				E625EE682090926F0019B750 /* CheckoutSdkIos.podspec in Resources */,
 				E625EE62209080A40019B750 /* CODE_OF_CONDUCT.md in Resources */,
@@ -756,6 +778,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E64B31E120D26CBC0088B7FD /* ckoCardToken.json in Resources */,
 				E631CB69209755FF00023472 /* cardTokenInvalidNumber.json in Resources */,
 				E688024920922FEF00220CE2 /* cardToken.json in Resources */,
 				E67AB9A5208F41AB00593FBE /* cardProviders.json in Resources */,
@@ -954,10 +977,13 @@
 				E6AF0A0C20AACF2100D29929 /* CountrySelectionViewControllerTests.swift in Sources */,
 				E6AF0A3F20AAF3E200D29929 /* CardViewControllerTests.swift in Sources */,
 				E608734620C689BB004E280C /* ThreedsWebViewControllerTests.swift in Sources */,
+				E64B31E320D26EE80088B7FD /* CardViewTests.swift in Sources */,
+				E64B31DE20D2642E0088B7FD /* PhoneNumberInputViewTests.swift in Sources */,
 				E6AF0A0620AACE8A00D29929 /* ExpirationDatePickerTests.swift in Sources */,
 				E632AABC20B578B200D2B9B6 /* CardViewControllerMock.swift in Sources */,
 				E6AF0A1020AAD00600D29929 /* ExpirationDateInputViewTests.swift in Sources */,
 				E67AB998208E2BBA00593FBE /* CheckoutAPIClientTests.swift in Sources */,
+				E64B31DC20D1810F0088B7FD /* SchemeIconsStackViewTests.swift in Sources */,
 				E6AF0A0820AACEC300D29929 /* CardListCellTests.swift in Sources */,
 				E6AF0A1220AADA9A00D29929 /* StandardInputViewTests.swift in Sources */,
 				E670A86720CA9722002348A5 /* CvvInputViewTests.swift in Sources */,

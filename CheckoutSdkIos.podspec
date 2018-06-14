@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CheckoutSdkIos"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "Checkout API Client and Payment Form Utilities in Swift"
   s.description  = <<-DESC
   Checkout API Client and Payment Form Utilities in Swift.

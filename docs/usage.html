@@ -254,9 +254,9 @@
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">CheckoutSdkIos</span>
 </code></pre>
 
-<p>Two classes are available globally: CheckoutAPIClient and CardUtils.
-CheckoutAPIClient is used to call the api endpoint of Checkout API available with your public key.
-CardUtils contains methods to use for handling a payment form.</p>
+<p>Two classes are available globally: <code><a href="Classes/CheckoutAPIClient.html">CheckoutAPIClient</a></code> and <code><a href="Classes/CardUtils.html">CardUtils</a></code>.
+<code><a href="Classes/CheckoutAPIClient.html">CheckoutAPIClient</a></code> is used to call the api endpoint of Checkout API available with your public key.
+<code><a href="Classes/CardUtils.html">CardUtils</a></code> contains methods to use for handling a payment form.</p>
 <h3 id='instantiate-code-checkoutapiclient-code' class='heading'>Instantiate <code><a href="Classes/CheckoutAPIClient.html">CheckoutAPIClient</a></code></h3>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">checkoutAPIClient</span> <span class="o">=</span> <span class="kt">CheckoutAPIClient</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="s">"pk_......"</span><span class="p">,</span> <span class="nv">environment</span><span class="p">:</span> <span class="o">.</span><span class="n">live</span><span class="p">)</span>
 </code></pre>
@@ -268,6 +268,9 @@ CardUtils contains methods to use for handling a payment form.</p>
     <span class="c1">// error</span>
 <span class="p">})</span>
 </code></pre>
+
+<p>The success handler takes a <code>[CardProvider]</code> as a parameter.
+The error handler takes a <code><a href="Structs/ErrorResponse.html">ErrorResponse</a></code> as a parameter</p>
 <h3 id='create-a-card-token' class='heading'>Create a card token</h3>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">checkoutAPIClient</span> <span class="o">=</span> <span class="kt">CheckoutAPIClient</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="s">"pk_......"</span><span class="p">,</span> <span class="nv">environment</span><span class="p">:</span> <span class="o">.</span><span class="n">live</span><span class="p">)</span>
 <span class="c1">// create the phone number</span>
@@ -312,11 +315,9 @@ CardUtils contains methods to use for handling a payment form.</p>
 <h3 id='validate-a-card-number' class='heading'>Validate a card number</h3>
 
 <p>You can validate a card number.</p>
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cardUtils</span> <span class="o">=</span> <span class="kt">CardUtils</span><span class="p">()</span>
-
-<span class="k">let</span> <span class="nv">cardNumber</span> <span class="o">=</span> <span class="s">"4242424242424242"</span>
-<span class="k">let</span> <span class="nv">cardType</span> <span class="o">=</span> <span class="n">cardUtils</span><span class="o">.</span><span class="nf">getTypeOf</span><span class="p">(</span><span class="nv">cardNumber</span><span class="p">:</span> <span class="n">cardNumber</span><span class="p">)</span>
-<span class="k">let</span> <span class="nv">isCardValid</span> <span class="o">=</span> <span class="n">cardType</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">?</span> <span class="n">cardUtils</span><span class="o">.</span><span class="nf">isValid</span><span class="p">(</span><span class="nv">cardNumber</span><span class="p">:</span> <span class="n">cardNumber</span><span class="p">,</span> <span class="nv">cardType</span><span class="p">:</span> <span class="n">cardType</span><span class="o">!</span><span class="p">)</span> <span class="p">:</span> <span class="kc">false</span>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">cardNumber</span> <span class="o">=</span> <span class="s">"4242424242424242"</span>
+<span class="k">let</span> <span class="nv">cardUtils</span> <span class="o">=</span> <span class="kt">CardUtils</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">isCardValid</span> <span class="o">=</span> <span class="n">cardUtils</span><span class="o">.</span><span class="nf">isValid</span><span class="p">(</span><span class="nv">cardNumber</span><span class="p">:</span> <span class="n">cardNumber</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">isCardValid</span><span class="p">)</span> <span class="c1">// true</span>
 </code></pre>
 
@@ -327,7 +328,7 @@ CardUtils contains methods to use for handling a payment form.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-06-13)</p>
+      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-06-15)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -18,7 +18,7 @@
 
 ## Documentation
 
-You can find the CheckoutSdkIos [on this website](https://floriel-fedry-cko.github.io/just-a-test/index.html).
+You can find the CheckoutSdkIos documentation [on this website](https://floriel-fedry-cko.github.io/just-a-test/index.html).
 
 - [Usage](https://floriel-fedry-cko.github.io/just-a-test/usage.html)
 - [Customizing the card view](https://floriel-fedry-cko.github.io/just-a-test/customizing-the-card-view.html)
@@ -75,11 +75,17 @@ github "floriel-fedry-cko/just-a-test" ~> 0.2
 
 Run `carthage update` to build the framework and drag the built `CheckoutSdkIos` into your Xcode project.
 
-## Demo
+## Demo walkthrough
 
 You can find intructions on how to run the demo [here](./Documentation/Demo.md).
 
 ## Usage
+
+Import the SDK:
+
+```swift
+import CheckoutSdkIos
+```
 
 Create the API Client `CheckoutAPIClient`:
 
@@ -93,6 +99,14 @@ Create the `CardUtils` instance:
 
 ```swift
 let cardUtils = CardUtils()
+```
+
+Use `CardUtils` to verify card number: 
+
+```swift
+/// verify card number
+let cardNumber = "4242424242424242"
+let isCardValid = cardUtils.isValid(cardNumber: cardNumber)
 ```
 
 Create the card token request `CardTokenRequest`:

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CheckoutSdkIos"
-  s.version      = "0.2.5"
+  s.version      = "0.2.6"
   s.summary      = "Checkout API Client and Payment Form Utilities in Swift"
   s.description  = <<-DESC
   Checkout API Client and Payment Form Utilities in Swift.
@@ -71,6 +71,10 @@ Pod::Spec.new do |s|
 
   # s.resource  = "icon.png"
   # s.resources = "Resources/*.png"
+
+  s.resource_bundles = {
+    'CheckoutSdkIos' => 'Source/Resources/**/*'
+  }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

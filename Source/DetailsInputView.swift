@@ -62,7 +62,7 @@ import UIKit
     }
 
     func set(label: String, backgroundColor: UIColor) {
-        self.label.text = NSLocalizedString(label, bundle: Bundle(for: DetailsInputView.self), comment: "")
+        self.label.text = label.localized(forClass: DetailsInputView.self)
         self.backgroundColor = backgroundColor
     }
 

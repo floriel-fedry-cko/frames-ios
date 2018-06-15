@@ -34,9 +34,7 @@ public class CountrySelectionViewController: UIViewController,
         super.viewDidLoad()
         setup()
         self.view.backgroundColor = UIColor.groupTableViewBackground
-        navigationItem.title = NSLocalizedString("countryRegion",
-                                                 bundle: Bundle(for: CountrySelectionViewController.self),
-                                                 comment: "")
+        navigationItem.title = "countryRegion".localized(forClass: CountrySelectionViewController.self)
         // table view
         self.filteredCountries = self.countries
         tableView.delegate = self

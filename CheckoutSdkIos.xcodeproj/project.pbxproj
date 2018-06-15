@@ -71,6 +71,7 @@
 		E64B31E120D26CBC0088B7FD /* ckoCardToken.json in Resources */ = {isa = PBXBuildFile; fileRef = E64B31DF20D26A930088B7FD /* ckoCardToken.json */; };
 		E64B31E320D26EE80088B7FD /* CardViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B31E220D26EE80088B7FD /* CardViewTests.swift */; };
 		E64B31EC20D2D2FF0088B7FD /* AddressViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B31EB20D2D2FF0088B7FD /* AddressViewTests.swift */; };
+		E64B321220D3D15A0088B7FD /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B321020D3CEBD0088B7FD /* StringExtensions.swift */; };
 		E653FEFC20C583A2002E4790 /* CardListCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFB20C583A2002E4790 /* CardListCellName.swift */; };
 		E653FEFE20C58FA9002E4790 /* SimpleLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */; };
 		E653FF0020C59CCC002E4790 /* CvvConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */; };
@@ -227,6 +228,7 @@
 		E64B31DF20D26A930088B7FD /* ckoCardToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ckoCardToken.json; sourceTree = "<group>"; };
 		E64B31E220D26EE80088B7FD /* CardViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewTests.swift; sourceTree = "<group>"; };
 		E64B31EB20D2D2FF0088B7FD /* AddressViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewTests.swift; sourceTree = "<group>"; };
+		E64B321020D3CEBD0088B7FD /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		E653FEFB20C583A2002E4790 /* CardListCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCellName.swift; sourceTree = "<group>"; };
 		E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoadingViewController.swift; sourceTree = "<group>"; };
 		E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -418,6 +420,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E64B320F20D3CD440088B7FD /* Localizables */ = {
+			isa = PBXGroup;
+			children = (
+				E6AF0A4520AB29D400D29929 /* Localizable.strings */,
+			);
+			name = Localizables;
+			sourceTree = "<group>";
+		};
 		E66406CA2089FA39000431E5 = {
 			isa = PBXGroup;
 			children = (
@@ -603,22 +613,13 @@
 		E6AF0A1320AADE6F00D29929 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E6AF0A4020AB292A00D29929 /* Localizables */,
+				E64B320F20D3CD440088B7FD /* Localizables */,
 				E60A5E5720CFCCA000EB7589 /* PhoneNumberMetadata.json */,
 				E6F6B57220ADC0BA0091A8AF /* checkmarks */,
 				E6AF0A3C20AAE46600D29929 /* schemes */,
 				E6AF0A1C20AADFF600D29929 /* arrows */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E6AF0A4020AB292A00D29929 /* Localizables */ = {
-			isa = PBXGroup;
-			children = (
-				E6AF0A4520AB29D400D29929 /* Localizable.strings */,
-			);
-			name = Localizables;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		E6B7378720CA86840038F2E5 /* Delegates */ = {
@@ -641,6 +642,7 @@
 				E6DC28FD20A1E0E7009FA38B /* UIViewExtensions.swift */,
 				E632AAB420B4567C00D2B9B6 /* UIViewControllerExtensions.swift */,
 				E632AAB120AECA9500D2B9B6 /* UIResponderExtensions.swift */,
+				E64B321020D3CEBD0088B7FD /* StringExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -884,6 +886,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E64B321220D3D15A0088B7FD /* StringExtensions.swift in Sources */,
 				E631CB7F2098B5C000023472 /* ExpirationDatePicker.swift in Sources */,
 				E6DC28F820A19F3C009FA38B /* DetailsInputView.swift in Sources */,
 				E683728E209C6CB000C11D67 /* CheckoutSdkIos.swift in Sources */,

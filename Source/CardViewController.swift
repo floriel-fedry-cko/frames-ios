@@ -130,17 +130,14 @@ public class CardViewController: UIViewController,
 
         // check if the card type is amongst the valid ones
         if !isCardTypeValid {
-            let message = NSLocalizedString("cardTypeNotAccepted",
-                                            bundle: Bundle(for: CardViewController.self),
-                                            comment: "")
+            let message = "cardTypeNotAccepted".localized(forClass: CardViewController.self)
             cardView.cardNumberInputView.showError(message: message)
         } else if !isCardNumberValid {
-            let message = NSLocalizedString("cardNumberInvalid", bundle: Bundle(for: CardViewController.self),
-                                            comment: "")
+            let message = "cardNumberInvalid".localized(forClass: CardViewController.self)
             cardView.cardNumberInputView.showError(message: message)
         }
         if !isCvvValid {
-            let message = NSLocalizedString("cvvInvalid", bundle: Bundle(for: CardViewController.self), comment: "")
+            let message = "cvvInvalid".localized(forClass: CardViewController.self)
             cardView.cvvInputView.showError(message: message)
         }
         if !isCardNumberValid || !isExpirationDateValid || !isCvvValid || !isCardTypeValid { return }

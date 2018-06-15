@@ -67,8 +67,7 @@ public class CardListCell: UITableViewCell {
     /// Sets the selected state of the cell, optionally animating the transition between states.
     override public func setSelected(_ selected: Bool, animated: Bool) {
         if selected {
-            let image = UIImage(named: "checkmarks/checkmark", in: Bundle(for: CardListCell.self),
-                                compatibleWith: nil)
+            let image = "checkmarks/checkmark".image(forClass: CardListCell.self)
             selectedImageView.image = image
         } else {
             selectedImageView.image = nil
@@ -79,8 +78,7 @@ public class CardListCell: UITableViewCell {
     ///
     /// - parameter scheme: Scheme (e.g. CardScheme.visa)
     public func setSchemeIcon(scheme: CardScheme) {
-        let image = UIImage(named: "schemes/icon-\(scheme.rawValue)", in: Bundle(for: CardListCell.self),
-                compatibleWith: nil)
+        let image = "schemes/icon-\(scheme.rawValue)".image(forClass: CardListCell.self)
         schemeImageView.image = image
     }
 

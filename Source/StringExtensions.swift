@@ -1,10 +1,21 @@
 import Foundation
 
 extension String {
-    func localized(forClass: AnyClass, comment: String = "") -> String {
+
+    private func getBundle(forClass: AnyClass) -> Bundle {
         let baseBundle = Bundle(for: forClass)
         let path = baseBundle.path(forResource: "CheckoutSdkIos", ofType: "bundle")
-        let bundleToUse = path == nil ? baseBundle : Bundle(path: path!)!
-        return NSLocalizedString(self, bundle: bundleToUse, comment: "")
+        return path == nil ? baseBundle : Bundle(path: path!)!
     }
+
+    func localized(forClass: AnyClass, comment: String = "") -> String {
+        let bundle = getBundle(forClass: forClass)
+        return NSLocalizedString(self, bundle: bundle, comment: "")
+    }
+
+    func image(forClass: AnyClass) -> UIImage {
+        let bundle = getBundle(forClass: forClass)
+        return UIImage(named: self, in: bundle, compatibleWith: nil) ?? UIImage()
+    }
+
 }

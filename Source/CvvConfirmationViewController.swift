@@ -69,7 +69,7 @@ public class CvvConfirmationViewController: UIViewController {
 
     /// Called when tap on navigation item confirm
     @objc public func onConfirmCvv() {
-        let cvv = "100"
+        let cvv = textField.text ?? ""
         delegate?.onConfirm(controller: self, cvv: cvv)
     }
 

@@ -180,6 +180,21 @@ class CardViewControllerTests: XCTestCase {
         XCTAssertNil(cardViewControllerDelegate.lastCalledWith)
     }
 
+    func testDoNothingWhenTapDoneIfCardTypeNotAccepted() {
+        // Setup
+        cardViewController.availableSchemes = [.mastercard]
+        cardViewController.viewDidLoad()
+        cardViewController.cardView.cardNumberInputView.textField.text = "4242 4242 4242 4242"
+        cardViewController.cardView.expirationDateInputView.textField.text = "06/2020"
+        cardViewController.cardView.cvvInputView.textField.text = "100"
+        // Execute
+        cardViewController.delegate = cardViewControllerDelegate
+        cardViewController.onTapDoneCardButton()
+        // Assert
+        XCTAssertEqual(cardViewControllerDelegate.calledTimes, 0)
+        XCTAssertNil(cardViewControllerDelegate.lastCalledWith)
+    }
+
     func testDoNothingWhenTapDoneIfExpirationDateInvalid() {
         // Setup
         cardViewController.viewDidLoad()
@@ -223,6 +238,30 @@ class CardViewControllerTests: XCTestCase {
         XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.expiryMonth, "06")
         XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.expiryYear, "20")
         XCTAssertEqual(cardViewControllerDelegate.lastCalledWith?.cvv, "100")
+    }
+
+    func testPushAddressViewControllerOnTapAddress() {
+        cardViewController = CardViewController()
+        cardViewControllerDelegate = CardViewControllerMockDelegate()
+        let navigation = MockNavigationController()
+        navigation.viewControllers = [cardViewController]
+        cardViewController.onTapAddressView()
+        XCTAssertTrue(navigation.pushedViewController is AddressViewController)
+    }
+
+    func testOnTapDoneButtonAddress() {
+        let address = CkoAddress(name: "Pierre Paul", addressLine1: "12 rue de la boulangerie",
+                                 addressLine2: nil, city: "Lyon", state: nil, postcode: "69002",
+                                 country: "FR", phone: nil)
+        cardViewController.onTapDoneButton(address: address)
+        XCTAssertFalse((cardViewController.cardView.billingDetailsInputView.value.text?.isEmpty)!)
+    }
+
+    func testChangeCvvCardTypeOnCardNumberEndEditing() {
+        cardViewController.cardView.cardNumberInputView.textField.text = "4242 4242 4242 4242"
+        cardViewController.textFieldDidEndEditing(view: cardViewController.cardView.cardNumberInputView)
+        let visaType = CardUtils().getCardType(scheme: .visa)
+        XCTAssertEqual(cardViewController.cardView.cvvInputView.cardType, visaType)
     }
 
 }

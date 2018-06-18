@@ -104,4 +104,12 @@ class CardNumberInputViewTests: XCTestCase {
         XCTAssertEqual(cardNumberDelegate.textFieldDidEndEditingLastCalledWith, cardNumberInputView)
     }
 
+    func testHideErrorWhenTextfieldBeginEditing() {
+        let cardNumberInputView = CardNumberInputView()
+        cardNumberInputView.showError(message: "This is an error")
+        XCTAssertEqual(cardNumberInputView.errorView.isHidden, false)
+        cardNumberInputView.textFieldDidBeginEditing(cardNumberInputView.textField)
+        XCTAssertEqual(cardNumberInputView.errorView.isHidden, true)
+    }
+
 }

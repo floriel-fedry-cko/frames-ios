@@ -20,6 +20,16 @@ class AddressViewControllerMockDelegate: AddressViewControllerDelegate {
     }
 }
 
+class MockNavigationController: UINavigationController {
+
+    var pushedViewController: UIViewController?
+
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        pushedViewController = viewController
+        super.pushViewController(viewController, animated: true)
+    }
+}
+
 class AddressViewControllerTests: XCTestCase {
 
     var addressViewController: AddressViewController!
@@ -139,10 +149,16 @@ class AddressViewControllerTests: XCTestCase {
         XCTAssertFalse((addressViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
     }
 
+    func testDisableDoneButtonIfFormNotValidEmpty() {
+        addressViewController.viewDidLoad()
+        addressViewController.regionCodeSelected = "FR"
+        addressViewController.textFieldDidEndEditing(UITextField())
+        XCTAssertFalse((addressViewController.navigationItem.rightBarButtonItem?.isEnabled)!)
+    }
+
     func testEnableDoneButtonIfFormIsValid() {
         // Setup
         addressViewController.viewDidLoad()
-//        addressViewController.viewDidLayoutSubviews()
         setupAddress()
         // Assert
         addressViewController.textFieldDidEndEditing(UITextField())
@@ -164,4 +180,19 @@ class AddressViewControllerTests: XCTestCase {
         XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.phone?.countryCode, "33")
         XCTAssertEqual(delegate.onTapDoneButtonLastCalledWith?.phone?.number, "622545688")
     }
+
+    func testSetCountryOnCountrySelected() {
+        addressViewController.onCountrySelected(country: "France", regionCode: "FR")
+        XCTAssertEqual(addressViewController.regionCodeSelected, "FR")
+        XCTAssertEqual(addressViewController.addressView.countryRegionInputView.value.text, "France")
+    }
+
+    func testPushCountrySelectionViewControllerOnTapCountryRegion() {
+        let navigation = MockNavigationController()
+        let addressViewController = AddressViewController()
+        navigation.viewControllers = [addressViewController]
+        addressViewController.onTapCountryRegionView()
+        XCTAssertTrue(navigation.pushedViewController is CountrySelectionViewController)
+    }
+
 }

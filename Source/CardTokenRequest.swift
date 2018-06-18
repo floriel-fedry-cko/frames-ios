@@ -60,12 +60,7 @@ public struct CardTokenRequest: Codable {
     ///
     /// - returns: The new `CardTokenRequest` instance
     public init(number: String, expiryMonth: Int, expiryYear: Int, cvv: String?) {
-        self.number = number
-        self.expiryMonth = expiryMonth
-        self.expiryYear = expiryYear
-        self.cvv = cvv
-        self.name = nil
-        self.billingAddress = nil
-        self.phone = nil
+        self.init(number: number, expiryMonth: expiryMonth, expiryYear: expiryYear, name: nil,
+                  cvv: cvv, billingAddress: nil, phone: nil)
     }
 }

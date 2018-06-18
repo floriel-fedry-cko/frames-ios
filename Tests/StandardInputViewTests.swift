@@ -63,4 +63,17 @@ class StandardInputViewTests: XCTestCase {
         XCTAssertEqual(standardInputView.label.text, "Text")
     }
 
+    func testShowError() {
+        let message = "This is an error message"
+        standardInputView.showError(message: message)
+        XCTAssertEqual(standardInputView.errorLabel.text, message)
+        XCTAssertEqual(standardInputView.errorView.isHidden, false)
+    }
+
+    func testHideError() {
+        testShowError()
+        standardInputView.hideError()
+        XCTAssertEqual(standardInputView.errorView.isHidden, true)
+    }
+
 }

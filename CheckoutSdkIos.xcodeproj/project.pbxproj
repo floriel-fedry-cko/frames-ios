@@ -32,7 +32,6 @@
 		E61101A120C95880000BB9F4 /* SchemeIconsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61101A020C95880000BB9F4 /* SchemeIconsStackView.swift */; };
 		E61101A720C98B83000BB9F4 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61101A620C98B83000BB9F4 /* AddressView.swift */; };
 		E61101A920C9970D000BB9F4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61101A820C9970D000BB9F4 /* CardView.swift */; };
-		E61C69D020BD906D0057DBA8 /* Demo.md in Resources */ = {isa = PBXBuildFile; fileRef = E61C69CF20BD906D0057DBA8 /* Demo.md */; };
 		E61D068C20C02714007FC847 /* ThreedsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */; };
 		E61D068E20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */; };
 		E61D069120C049BD007FC847 /* CardNumberInputViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */; };
@@ -75,6 +74,9 @@
 		E653FEFC20C583A2002E4790 /* CardListCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFB20C583A2002E4790 /* CardListCellName.swift */; };
 		E653FEFE20C58FA9002E4790 /* SimpleLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */; };
 		E653FF0020C59CCC002E4790 /* CvvConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */; };
+		E658531720D7C83600C261D7 /* iOS Example.md in Resources */ = {isa = PBXBuildFile; fileRef = E658531520D7C83600C261D7 /* iOS Example.md */; };
+		E658531820D7C83600C261D7 /* iOS Example Frames.md in Resources */ = {isa = PBXBuildFile; fileRef = E658531620D7C83600C261D7 /* iOS Example Frames.md */; };
+		E658531A20D7C84400C261D7 /* Customizing the Card View.md in Resources */ = {isa = PBXBuildFile; fileRef = E658531920D7C84400C261D7 /* Customizing the Card View.md */; };
 		E66406D92089FA39000431E5 /* CheckoutSdkIos.h in Headers */ = {isa = PBXBuildFile; fileRef = E66406D72089FA39000431E5 /* CheckoutSdkIos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6640710208DD550000431E5 /* CheckoutAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664070F208DD550000431E5 /* CheckoutAPIClient.swift */; };
 		E664071B208DE11D000431E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664071A208DE11D000431E5 /* Endpoint.swift */; };
@@ -189,7 +191,6 @@
 		E61101A020C95880000BB9F4 /* SchemeIconsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeIconsStackView.swift; sourceTree = "<group>"; };
 		E61101A620C98B83000BB9F4 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		E61101A820C9970D000BB9F4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		E61C69CF20BD906D0057DBA8 /* Demo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Demo.md; path = Documentation/Demo.md; sourceTree = "<group>"; };
 		E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreedsWebViewController.swift; sourceTree = "<group>"; };
 		E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreedsWebViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberInputViewDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +233,9 @@
 		E653FEFB20C583A2002E4790 /* CardListCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCellName.swift; sourceTree = "<group>"; };
 		E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoadingViewController.swift; sourceTree = "<group>"; };
 		E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvConfirmationViewController.swift; sourceTree = "<group>"; };
+		E658531520D7C83600C261D7 /* iOS Example.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "iOS Example.md"; path = "Documentation/Walkthrough/iOS Example.md"; sourceTree = "<group>"; };
+		E658531620D7C83600C261D7 /* iOS Example Frames.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "iOS Example Frames.md"; path = "Documentation/Walkthrough/iOS Example Frames.md"; sourceTree = "<group>"; };
+		E658531920D7C84400C261D7 /* Customizing the Card View.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Customizing the Card View.md"; path = "Documentation/Customizing the Card View.md"; sourceTree = "<group>"; };
 		E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406D72089FA39000431E5 /* CheckoutSdkIos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutSdkIos.h; sourceTree = "<group>"; };
 		E66406D82089FA39000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -428,6 +432,15 @@
 			name = Localizables;
 			sourceTree = "<group>";
 		};
+		E658531420D7C73800C261D7 /* Walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				E658531620D7C83600C261D7 /* iOS Example Frames.md */,
+				E658531520D7C83600C261D7 /* iOS Example.md */,
+			);
+			name = Walkthrough;
+			sourceTree = "<group>";
+		};
 		E66406CA2089FA39000431E5 = {
 			isa = PBXGroup;
 			children = (
@@ -530,11 +543,12 @@
 		E664070B208A07BE000431E5 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				E658531420D7C73800C261D7 /* Walkthrough */,
 				E625EE5720907FCB0019B750 /* Usage.md */,
-				E61C69CF20BD906D0057DBA8 /* Demo.md */,
 				E625EE5820907FFE0019B750 /* README.md */,
 				E625EE5F209080A40019B750 /* CODE_OF_CONDUCT.md */,
 				E625EE60209080A40019B750 /* ISSUE_TEMPLATE.md */,
+				E658531920D7C84400C261D7 /* Customizing the Card View.md */,
 				E625EE5E209080A40019B750 /* PULL_REQUEST_TEMPLATE.md */,
 				E625EE5A2090801C0019B750 /* CHANGELOG.md */,
 				E625EE5B2090801C0019B750 /* CONTRIBUTING.md */,
@@ -766,17 +780,19 @@
 				E625EE5920907FFE0019B750 /* README.md in Resources */,
 				E625EE5C2090801C0019B750 /* CHANGELOG.md in Resources */,
 				E6AF0A4320AB29D400D29929 /* Localizable.strings in Resources */,
+				E658531720D7C83600C261D7 /* iOS Example.md in Resources */,
 				E625EE63209080A40019B750 /* ISSUE_TEMPLATE.md in Resources */,
 				E6AF0A3D20AAE46600D29929 /* schemes in Resources */,
-				E61C69D020BD906D0057DBA8 /* Demo.md in Resources */,
 				E6AF0A2F20AADFF700D29929 /* arrows in Resources */,
 				E625EE672090926F0019B750 /* LICENSE in Resources */,
+				E658531820D7C83600C261D7 /* iOS Example Frames.md in Resources */,
 				E64B31E020D26A930088B7FD /* ckoCardToken.json in Resources */,
 				E625EE5D2090801C0019B750 /* CONTRIBUTING.md in Resources */,
 				E625EE682090926F0019B750 /* CheckoutSdkIos.podspec in Resources */,
 				E625EE62209080A40019B750 /* CODE_OF_CONDUCT.md in Resources */,
 				E60A5E5820CFCCA000EB7589 /* PhoneNumberMetadata.json in Resources */,
 				E625EE61209080A40019B750 /* PULL_REQUEST_TEMPLATE.md in Resources */,
+				E658531A20D7C84400C261D7 /* Customizing the Card View.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,5 +40,20 @@ We start by initializing a card view controller without the card holder and bill
 ```
 
 Inside the `viewDidLoad` method, we can access the cardView `let cardView = cardViewController.cardView`.
-The public properties can be modified. This allows you to add different colors and style. In the code above,
-we implement a dark theme.
+The public properties can be modified. This allows you to add different colors and style. In the code below, we implement a dark theme.
+
+```swift
+    let views: [StandardInputView] = [cardView.cardNumberInputView,
+        cardView.expirationDateInputView,
+        cardView.cvvInputView]
+    cardView.backgroundColor = softBlack
+    cardView.acceptedCardLabel.textColor = .white
+    views.forEach { view in
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 2
+        view.layer.cornerRadius = 10
+        view.backgroundColor = softBlack
+        view.textField.textColor = .white
+        view.label.textColor = .white
+    }
+```

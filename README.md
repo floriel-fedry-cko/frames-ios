@@ -22,9 +22,9 @@ You can find the CheckoutSdkIos documentation [on this website](https://floriel-
 
 - [Usage](https://floriel-fedry-cko.github.io/just-a-test/usage.html)
 - [Customizing the card view](https://floriel-fedry-cko.github.io/just-a-test/customizing-the-card-view.html)
-- [Demo](https://floriel-fedry-cko.github.io/just-a-test/demo.html)
 - Walkthrough
-  - [iOS Example](https://floriel-fedry-cko.github.io/just-a-test/ios-example-frames.html)
+  - [iOS Example Frames](https://floriel-fedry-cko.github.io/just-a-test/ios-example-frames.html)
+  - [iOS Example](https://floriel-fedry-cko.github.io/just-a-test/ios-example.html)
 
 ## Installation
 
@@ -75,10 +75,6 @@ github "floriel-fedry-cko/just-a-test" ~> 0.2
 
 Run `carthage update` to build the framework and drag the built `CheckoutSdkIos` into your Xcode project.
 
-## Demo walkthrough
-
-You can find intructions on how to run the demo [here](./Documentation/Demo.md).
-
 ## Usage
 
 Import the SDK:
@@ -87,7 +83,43 @@ Import the SDK:
 import CheckoutSdkIos
 ```
 
-Create the API Client `CheckoutAPIClient`:
+### Using `CardViewController`
+
+```swift
+class ViewController: UIViewController, CardViewControllerDelegate {
+
+    let checkoutAPIClient = CheckoutAPIClient(publicKey: "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14",
+                                              environment: .sandbox)
+    let cardViewController = CardViewController(cardHolderNameState: .hidden, billingDetailsState: .hidden)
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // set the card view controller delegate
+        cardViewController.delegate = self
+        // replace the bar button by Pay
+        cardViewController.rightBarButtonItem = UIBarButtonItem(title: "Pay", style: .done, target: nil, action: nil)
+        // specified which schemes are allowed
+        cardViewController.availableSchemes = [.visa, .mastercard]
+
+        navigationController?.pushViewController(cardViewController, animated: false)
+    }
+
+    func onTapDone(card: CkoCardTokenRequest) {
+        checkoutAPIClient.createCardToken(card: card, successHandler: { cardToken in
+            print(cardToken.id)
+        }, errorHandler: { error in
+            print(error)
+        })
+    }
+
+}
+```
+
+### Using Methods available in CheckoutSdkIos
+
+You can find more examples on the [usage guide](https://floriel-fedry-cko.github.io/just-a-test/usage.html).
+
+#### Create the API Client `CheckoutAPIClient`:
 
 ```swift
 // replace "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14" by your own public key
@@ -95,13 +127,13 @@ let checkoutAPIClient = CheckoutAPIClient(publicKey: "pk_test_6ff46046-30af-41d9
                                           environment: .sandbox)
 ```
 
-Create the `CardUtils` instance:
+#### Create the `CardUtils` instance:
 
 ```swift
 let cardUtils = CardUtils()
 ```
 
-Use `CardUtils` to verify card number: 
+#### Use `CardUtils` to verify card number:
 
 ```swift
 /// verify card number
@@ -109,7 +141,7 @@ let cardNumber = "4242424242424242"
 let isCardValid = cardUtils.isValid(cardNumber: cardNumber)
 ```
 
-Create the card token request `CardTokenRequest`:
+#### Create the card token request `CardTokenRequest`:
 
 ```swift
 // create the phone number
@@ -120,16 +152,25 @@ let address = CkoAddress(name:addressLine1:addressLine2:city:state:postcode:coun
 let cardTokenRequest = CkoCardTokenRequest(number:expiryMonth:expiryYear:cvv:name:billingAddress:)
 ```
 
-Create a card token
+#### Create a card token:
 
 ```swift
 let checkoutAPIClient = CheckoutAPIClient(publicKey: "pk_......", environment: .live)
+// create the phone number
+let phoneNumber = CkoPhoneNumber(countryCode:number:)
+// create the address
+let address = CkoAddress(name:addressLine1:addressLine2:city:state:postcode:country:phone:)
+// create the card token request
+let cardTokenRequest = CkoCardTokenRequest(number:expiryMonth:expiryYear:cvv:name:billingAddress:)
 checkoutAPIClient.createCardToken(card: cardTokenRequest, successHandler: { cardTokenResponse in
     // success
 }, errorHandler { error in
     // error
 })
 ```
+
+The success handler takes an array of `CkoCardTokenResponse` as a parameter.
+The error handler takes an `ErrorResponse` as a parameter.
 
 ## License
 

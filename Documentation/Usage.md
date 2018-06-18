@@ -7,7 +7,7 @@ import CheckoutSdkIos
 ```
 
 Two classes are available globally: `CheckoutAPIClient` and `CardUtils`.
-`CheckoutAPIClient` is used to call the api endpoint of Checkout API available with your public key.
+`CheckoutAPIClient` is used to call the Checkout API with your public key.
 `CardUtils` contains methods to use for handling a payment form.
 
 ### Instantiate `CheckoutAPIClient`
@@ -27,8 +27,8 @@ checkoutAPIClient.getCardProviders(successHandler: { cardProviders in
 })
 ```
 
-The success handler takes an array of  `CardProvider` as a parameter.
-The error handler takes a `ErrorResponse` as a parameter
+The success handler takes an array of `CardProvider` as a parameter.
+The error handler takes an `ErrorResponse` as a parameter.
 
 ### Create a card token
 
@@ -47,9 +47,12 @@ checkoutAPIClient.createCardToken(card: cardTokenRequest, successHandler: { card
 })
 ```
 
+The success handler takes an array of `CkoCardTokenResponse` as a parameter.
+The error handler takes an `ErrorResponse` as a parameter.
+
 ### Getting the type of a card number
 
-Utilities methods for payment form are in the `CardUtils` class.
+You can get the `CardType` of a card number.
 
 ```swift
 let cardUtils = CardUtils()

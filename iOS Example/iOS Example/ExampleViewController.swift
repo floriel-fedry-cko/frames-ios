@@ -26,7 +26,6 @@ class ExampleViewController: UIViewController,
 
     let publicKey = "pk_test_03728582-062b-419c-91b5-63ac2a481e07"
     var checkoutAPIClient: CheckoutAPIClient { return CheckoutAPIClient(publicKey: publicKey, environment: .sandbox) }
-    let cardUtils = CardUtils()
     var availableSchemes: [CardScheme] = []
 
     let merchantAPIClient = MerchantAPIClient()
@@ -68,14 +67,15 @@ class ExampleViewController: UIViewController,
         super.viewDidLoad()
         // setup table view
         cardsTableView.register(CardListCell.self, forCellReuseIdentifier: "cardCell")
-        cardViewController.delegate = self
         cardsTableView.delegate = self
         cardsTableView.dataSource = self
         cardsTableView.estimatedRowHeight = 50
+        cardViewController.availableSchemes = [.visa, .mastercard]
         // set delegates
+        cardViewController.delegate = self
         threeDsViewController.delegate = self
         cvvConfirmationViewController.delegate = self
-
+        // update the card list
         updateCustomerCardList()
     }
 
@@ -105,10 +105,8 @@ class ExampleViewController: UIViewController,
                 self.updateCustomerCardList()
             }
         }, errorHandler: { error in
-            let alert = UIAlertController(title: "Payment unsuccessful",
-                                          message: "Error: \(error)", preferredStyle: .alert)
-            self.addOkAlertButton(alert: alert)
-            self.present(alert, animated: true, completion: nil)
+            // error creating the card token
+            print(error)
         })
     }
 

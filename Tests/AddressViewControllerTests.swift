@@ -49,7 +49,9 @@ class AddressViewControllerTests: XCTestCase {
     func testInitialization() {
         let addressViewController = AddressViewController()
         addressViewController.viewDidLoad()
+        addressViewController.viewDidLayoutSubviews()
         XCTAssertEqual(addressViewController.navigationItem.rightBarButtonItem?.isEnabled, false)
+        XCTAssertEqual(addressViewController.view.subviews.count, 1)
     }
 
     func testAddHandlersInViewWillAppear() {

@@ -46,6 +46,8 @@ class CardViewControllerTests: XCTestCase {
         XCTAssertEqual(cardViewController.billingDetailsState, .required)
         cardViewController.viewDidLoad()
         XCTAssertEqual(cardViewController.cardView.stackView.subviews.count, 5)
+        cardViewController.viewDidLayoutSubviews()
+        XCTAssertEqual(cardViewController.view.subviews.count, 1)
     }
 
     func testInitializationHiddenFields() {

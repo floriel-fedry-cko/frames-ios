@@ -78,6 +78,7 @@
 		E658531820D7C83600C261D7 /* iOS Example Frames.md in Resources */ = {isa = PBXBuildFile; fileRef = E658531620D7C83600C261D7 /* iOS Example Frames.md */; };
 		E658531A20D7C84400C261D7 /* Customizing the Card View.md in Resources */ = {isa = PBXBuildFile; fileRef = E658531920D7C84400C261D7 /* Customizing the Card View.md */; };
 		E658531C20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658531B20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift */; };
+		E658531E20D7FFAE00C261D7 /* CardListCellNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658531D20D7FFAE00C261D7 /* CardListCellNameTests.swift */; };
 		E66406D92089FA39000431E5 /* CheckoutSdkIos.h in Headers */ = {isa = PBXBuildFile; fileRef = E66406D72089FA39000431E5 /* CheckoutSdkIos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6640710208DD550000431E5 /* CheckoutAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664070F208DD550000431E5 /* CheckoutAPIClient.swift */; };
 		E664071B208DE11D000431E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664071A208DE11D000431E5 /* Endpoint.swift */; };
@@ -238,6 +239,7 @@
 		E658531620D7C83600C261D7 /* iOS Example Frames.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "iOS Example Frames.md"; path = "Documentation/Walkthrough/iOS Example Frames.md"; sourceTree = "<group>"; };
 		E658531920D7C84400C261D7 /* Customizing the Card View.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Customizing the Card View.md"; path = "Documentation/Customizing the Card View.md"; sourceTree = "<group>"; };
 		E658531B20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
+		E658531D20D7FFAE00C261D7 /* CardListCellNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCellNameTests.swift; sourceTree = "<group>"; };
 		E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406D72089FA39000431E5 /* CheckoutSdkIos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutSdkIos.h; sourceTree = "<group>"; };
 		E66406D82089FA39000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 				E6AF0A0920AACEFA00D29929 /* AddressViewControllerTests.swift */,
 				E64B31D820D1806E0088B7FD /* Views */,
 				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
+				E658531D20D7FFAE00C261D7 /* CardListCellNameTests.swift */,
 				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
 				E658531B20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift */,
 				E6AF0A3E20AAF3E200D29929 /* CardViewControllerTests.swift */,
@@ -1008,6 +1011,7 @@
 				E64B31DE20D2642E0088B7FD /* PhoneNumberInputViewTests.swift in Sources */,
 				E6AF0A0620AACE8A00D29929 /* ExpirationDatePickerTests.swift in Sources */,
 				E632AABC20B578B200D2B9B6 /* CardViewControllerMock.swift in Sources */,
+				E658531E20D7FFAE00C261D7 /* CardListCellNameTests.swift in Sources */,
 				E64B31EC20D2D2FF0088B7FD /* AddressViewTests.swift in Sources */,
 				E6AF0A1020AAD00600D29929 /* ExpirationDateInputViewTests.swift in Sources */,
 				E67AB998208E2BBA00593FBE /* CheckoutAPIClientTests.swift in Sources */,

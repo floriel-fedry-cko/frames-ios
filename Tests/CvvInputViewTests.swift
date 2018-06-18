@@ -1,17 +1,6 @@
 import XCTest
 @testable import CheckoutSdkIos
 
-class CvvInputViewMockDelegate: UIViewController, UITextFieldDelegate {
-
-    var calledTimes = 0
-    var lastCalledWith: UITextField!
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        calledTimes += 1
-        lastCalledWith = textField
-    }
-}
-
 class CvvInputViewTests: XCTestCase {
 
     var cvvInputView = CvvInputView()
@@ -22,11 +11,6 @@ class CvvInputViewTests: XCTestCase {
         cvvInputView = CvvInputView()
         let window = UIWindow()
         window.addSubview(cvvInputView)
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
     }
 
     func testEmptyInitialization() {

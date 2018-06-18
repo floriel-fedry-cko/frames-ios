@@ -1,23 +1,5 @@
-//
-//  CardViewControllerTests.swift
-//  CheckoutSdkIosTests
-//
-//  Created by Floriel Fedry on 15/05/2018.
-//  Copyright © 2018 Checkout. All rights reserved.
-//
-
 import XCTest
 @testable import CheckoutSdkIos
-
-class CardViewControllerMockDelegate: CardViewControllerDelegate {
-    var calledTimes = 0
-    var lastCalledWith: CkoCardTokenRequest?
-
-    func onTapDone(card: CkoCardTokenRequest) {
-        calledTimes += 1
-        lastCalledWith = card
-    }
-}
 
 class CardViewControllerTests: XCTestCase {
 
@@ -32,11 +14,6 @@ class CardViewControllerTests: XCTestCase {
         cardViewControllerDelegate = CardViewControllerMockDelegate()
         let navigation = UINavigationController()
         navigation.viewControllers = [cardViewController]
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
     }
 
     func testInitialization() {

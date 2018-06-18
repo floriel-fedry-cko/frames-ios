@@ -1,44 +1,7 @@
-//
-//  CardNumberInputViewTests.swift
-//  CheckoutSdkIosTests
-//
-//  Created by Floriel Fedry on 15/05/2018.
-//  Copyright © 2018 Checkout. All rights reserved.
-//
-
 import XCTest
 @testable import CheckoutSdkIos
 
-class CardNumberInputViewMockDelegate: CardNumberInputViewDelegate {
-
-    var onChangeTimes = 0
-    var onChangeLastCalledWith: CardType?
-
-    var textFieldDidEndEditingTimes = 0
-    var textFieldDidEndEditingLastCalledWith: UIView?
-
-    func onChange(cardType: CardType?) {
-        onChangeTimes += 1
-        onChangeLastCalledWith = cardType
-    }
-
-    func textFieldDidEndEditing(view: UIView) {
-        textFieldDidEndEditingTimes += 1
-        textFieldDidEndEditingLastCalledWith = view
-    }
-}
-
 class CardNumberInputViewTests: XCTestCase {
-
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
 
     func testEmptyInitialization() {
         let cardNumberInputView = CardNumberInputView()

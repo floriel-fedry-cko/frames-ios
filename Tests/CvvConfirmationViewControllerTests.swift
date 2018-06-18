@@ -1,32 +1,5 @@
-//
-//  CvvConfirmationViewController.swift
-//  CheckoutSdkIosTests
-//
-//  Created by Floriel Fedry on 18/06/2018.
-//  Copyright © 2018 Checkout. All rights reserved.
-//
-
 import XCTest
 @testable import CheckoutSdkIos
-
-class ViewControllerDelegateMock: CvvConfirmationViewControllerDelegate {
-
-    var onConfirmCalledTimes = 0
-    var onConfirmLastCalledWith: (CvvConfirmationViewController, String)?
-
-    var onCancelCalledTimes = 0
-    var onCancelLastCalledWith: CvvConfirmationViewController?
-
-    func onConfirm(controller: CvvConfirmationViewController, cvv: String) {
-        onConfirmCalledTimes += 1
-        onConfirmLastCalledWith = (controller, cvv)
-    }
-
-    func onCancel(controller: CvvConfirmationViewController) {
-        onCancelCalledTimes += 1
-        onCancelLastCalledWith = controller
-    }
-}
 
 class CvvConfirmationViewControllerTests: XCTestCase {
 
@@ -39,11 +12,6 @@ class CvvConfirmationViewControllerTests: XCTestCase {
         cvvConfirmationViewController.viewDidLoad()
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testInitialization() {
         /// Empty constructor
         let cvvConfirmationViewController = CvvConfirmationViewController()
@@ -52,7 +20,7 @@ class CvvConfirmationViewControllerTests: XCTestCase {
     }
 
     func testCallDelegateOnConfirmCvv() {
-        let delegate = ViewControllerDelegateMock()
+        let delegate = CvvViewControllerDelegateMock()
         cvvConfirmationViewController.delegate = delegate
         cvvConfirmationViewController.textField.text = "100"
         cvvConfirmationViewController.onConfirmCvv()
@@ -62,7 +30,7 @@ class CvvConfirmationViewControllerTests: XCTestCase {
     }
 
     func testCallDelegateOnCancel() {
-        let delegate = ViewControllerDelegateMock()
+        let delegate = CvvViewControllerDelegateMock()
         cvvConfirmationViewController.delegate = delegate
         cvvConfirmationViewController.onCancel()
         XCTAssertEqual(delegate.onCancelCalledTimes, 1)

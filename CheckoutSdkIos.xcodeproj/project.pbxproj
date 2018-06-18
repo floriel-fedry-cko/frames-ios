@@ -79,6 +79,12 @@
 		E658531A20D7C84400C261D7 /* Customizing the Card View.md in Resources */ = {isa = PBXBuildFile; fileRef = E658531920D7C84400C261D7 /* Customizing the Card View.md */; };
 		E658531C20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658531B20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift */; };
 		E658531E20D7FFAE00C261D7 /* CardListCellNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658531D20D7FFAE00C261D7 /* CardListCellNameTests.swift */; };
+		E658532020D8072600C261D7 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658531F20D8072600C261D7 /* NavigationControllerMock.swift */; };
+		E658532220D8076E00C261D7 /* AddressViewControllerMockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658532120D8076E00C261D7 /* AddressViewControllerMockDelegate.swift */; };
+		E658532420D8099A00C261D7 /* CardNumberInputViewMockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658532320D8099A00C261D7 /* CardNumberInputViewMockDelegate.swift */; };
+		E658532620D80A9000C261D7 /* CvvViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658532520D80A9000C261D7 /* CvvViewControllerDelegateMock.swift */; };
+		E658532820D80AF600C261D7 /* CardViewControllerMockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658532720D80AF600C261D7 /* CardViewControllerMockDelegate.swift */; };
+		E658532A20D80B3700C261D7 /* CvvInputViewMockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658532920D80B3700C261D7 /* CvvInputViewMockDelegate.swift */; };
 		E66406D92089FA39000431E5 /* CheckoutSdkIos.h in Headers */ = {isa = PBXBuildFile; fileRef = E66406D72089FA39000431E5 /* CheckoutSdkIos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6640710208DD550000431E5 /* CheckoutAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664070F208DD550000431E5 /* CheckoutAPIClient.swift */; };
 		E664071B208DE11D000431E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664071A208DE11D000431E5 /* Endpoint.swift */; };
@@ -240,6 +246,12 @@
 		E658531920D7C84400C261D7 /* Customizing the Card View.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "Customizing the Card View.md"; path = "Documentation/Customizing the Card View.md"; sourceTree = "<group>"; };
 		E658531B20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvConfirmationViewControllerTests.swift; sourceTree = "<group>"; };
 		E658531D20D7FFAE00C261D7 /* CardListCellNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCellNameTests.swift; sourceTree = "<group>"; };
+		E658531F20D8072600C261D7 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationControllerMock.swift; path = Mocks/NavigationControllerMock.swift; sourceTree = "<group>"; };
+		E658532120D8076E00C261D7 /* AddressViewControllerMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddressViewControllerMockDelegate.swift; path = Mocks/AddressViewControllerMockDelegate.swift; sourceTree = "<group>"; };
+		E658532320D8099A00C261D7 /* CardNumberInputViewMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardNumberInputViewMockDelegate.swift; path = Mocks/CardNumberInputViewMockDelegate.swift; sourceTree = "<group>"; };
+		E658532520D80A9000C261D7 /* CvvViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CvvViewControllerDelegateMock.swift; path = Mocks/CvvViewControllerDelegateMock.swift; sourceTree = "<group>"; };
+		E658532720D80AF600C261D7 /* CardViewControllerMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewControllerMockDelegate.swift; path = Mocks/CardViewControllerMockDelegate.swift; sourceTree = "<group>"; };
+		E658532920D80B3700C261D7 /* CvvInputViewMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CvvInputViewMockDelegate.swift; path = Mocks/CvvInputViewMockDelegate.swift; sourceTree = "<group>"; };
 		E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406D72089FA39000431E5 /* CheckoutSdkIos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutSdkIos.h; sourceTree = "<group>"; };
 		E66406D82089FA39000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -411,8 +423,14 @@
 			isa = PBXGroup;
 			children = (
 				E632AAB920B5779B00D2B9B6 /* AddressViewControllerMock.swift */,
+				E658532520D80A9000C261D7 /* CvvViewControllerDelegateMock.swift */,
+				E658532320D8099A00C261D7 /* CardNumberInputViewMockDelegate.swift */,
+				E658532720D80AF600C261D7 /* CardViewControllerMockDelegate.swift */,
+				E658532120D8076E00C261D7 /* AddressViewControllerMockDelegate.swift */,
+				E658532920D80B3700C261D7 /* CvvInputViewMockDelegate.swift */,
 				E632AABB20B578B200D2B9B6 /* CardViewControllerMock.swift */,
 				E632AABD20B578FF00D2B9B6 /* NotificationCenterMock.swift */,
+				E658531F20D8072600C261D7 /* NavigationControllerMock.swift */,
 			);
 			name = Mocks;
 			sourceTree = "<group>";
@@ -1000,14 +1018,19 @@
 				E67AB96E208DF9D800593FBE /* CardUtilsTests.swift in Sources */,
 				E6AF0A0A20AACEFA00D29929 /* AddressViewControllerTests.swift in Sources */,
 				E658531C20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift in Sources */,
+				E658532820D80AF600C261D7 /* CardViewControllerMockDelegate.swift in Sources */,
 				E6AF0A0E20AACF3A00D29929 /* CardNumberInputViewTests.swift in Sources */,
 				E6AF0A4F20AB448700D29929 /* DetailsInputViewTests.swift in Sources */,
 				E632AABA20B5779B00D2B9B6 /* AddressViewControllerMock.swift in Sources */,
 				E632AABE20B578FF00D2B9B6 /* NotificationCenterMock.swift in Sources */,
+				E658532A20D80B3700C261D7 /* CvvInputViewMockDelegate.swift in Sources */,
+				E658532420D8099A00C261D7 /* CardNumberInputViewMockDelegate.swift in Sources */,
+				E658532020D8072600C261D7 /* NavigationControllerMock.swift in Sources */,
 				E6AF0A0C20AACF2100D29929 /* CountrySelectionViewControllerTests.swift in Sources */,
 				E6AF0A3F20AAF3E200D29929 /* CardViewControllerTests.swift in Sources */,
 				E608734620C689BB004E280C /* ThreedsWebViewControllerTests.swift in Sources */,
 				E64B31E320D26EE80088B7FD /* CardViewTests.swift in Sources */,
+				E658532620D80A9000C261D7 /* CvvViewControllerDelegateMock.swift in Sources */,
 				E64B31DE20D2642E0088B7FD /* PhoneNumberInputViewTests.swift in Sources */,
 				E6AF0A0620AACE8A00D29929 /* ExpirationDatePickerTests.swift in Sources */,
 				E632AABC20B578B200D2B9B6 /* CardViewControllerMock.swift in Sources */,
@@ -1016,6 +1039,7 @@
 				E6AF0A1020AAD00600D29929 /* ExpirationDateInputViewTests.swift in Sources */,
 				E67AB998208E2BBA00593FBE /* CheckoutAPIClientTests.swift in Sources */,
 				E64B31DC20D1810F0088B7FD /* SchemeIconsStackViewTests.swift in Sources */,
+				E658532220D8076E00C261D7 /* AddressViewControllerMockDelegate.swift in Sources */,
 				E6AF0A0820AACEC300D29929 /* CardListCellTests.swift in Sources */,
 				E6AF0A1220AADA9A00D29929 /* StandardInputViewTests.swift in Sources */,
 				E670A86720CA9722002348A5 /* CvvInputViewTests.swift in Sources */,

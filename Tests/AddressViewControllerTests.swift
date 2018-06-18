@@ -1,34 +1,5 @@
-//
-//  AddressViewControllerTests.swift
-//  CheckoutSdkIosTests
-//
-//  Created by Floriel Fedry on 15/05/2018.
-//  Copyright © 2018 Checkout. All rights reserved.
-//
-
 import XCTest
 @testable import CheckoutSdkIos
-
-class AddressViewControllerMockDelegate: AddressViewControllerDelegate {
-
-    var onTapDoneButtonCalledTimes = 0
-    var onTapDoneButtonLastCalledWith: CkoAddress?
-
-    func onTapDoneButton(address: CkoAddress) {
-        onTapDoneButtonCalledTimes += 1
-        onTapDoneButtonLastCalledWith = address
-    }
-}
-
-class MockNavigationController: UINavigationController {
-
-    var pushedViewController: UIViewController?
-
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        pushedViewController = viewController
-        super.pushViewController(viewController, animated: true)
-    }
-}
 
 class AddressViewControllerTests: XCTestCase {
 
@@ -40,11 +11,6 @@ class AddressViewControllerTests: XCTestCase {
         addressViewController = AddressViewController()
         let navigation = UINavigationController()
         navigation.viewControllers = [addressViewController]
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
     }
 
     func setupAddress() {

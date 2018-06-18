@@ -1,11 +1,3 @@
-//
-//  StandardInputViewTests.swift
-//  CheckoutSdkIosTests
-//
-//  Created by Floriel Fedry on 15/05/2018.
-//  Copyright © 2018 Checkout. All rights reserved.
-//
-
 import XCTest
 @testable import CheckoutSdkIos
 
@@ -19,11 +11,6 @@ class StandardInputViewTests: XCTestCase {
         standardInputView = StandardInputView()
         let window = UIWindow()
         window.addSubview(standardInputView)
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
     }
 
     func testEmptyInitialization() {

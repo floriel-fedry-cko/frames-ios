@@ -17,8 +17,8 @@ import UIKit
     public weak var pickerDelegate: ExpirationDatePickerDelegate?
 
     // private properties
-    private var months: [String]!
-    private var years: [String]!
+    private var months: [String] = []
+    private var years: [String] = []
 
     // MARK: - Initialization
 
@@ -79,7 +79,7 @@ import UIKit
         let formatter = DateFormatter()
         formatter.dateFormat = "MMyyyy"
         let selectedDateString =
-        "\(months[pickerView.selectedRow(inComponent: 0)])\(years[pickerView.selectedRow(inComponent: 1)])"
+        "\(getMonthFromPicker(pickerView))\(years[pickerView.selectedRow(inComponent: 1)])"
         let selectedDateOpt = formatter.date(from: selectedDateString)
 
         // check if between minimum and maximum dates
@@ -92,7 +92,7 @@ import UIKit
         }
 
         // call the delegate method to trigger the onDateChanged
-        self.pickerDelegate?.onDateChanged(month: months[pickerView.selectedRow(inComponent: 0)],
+        self.pickerDelegate?.onDateChanged(month: getMonthFromPicker(pickerView),
                                                    year: years[pickerView.selectedRow(inComponent: 1)])
     }
 
@@ -126,4 +126,10 @@ import UIKit
             return nil
         }
     }
+
+    private func getMonthFromPicker(_ pickerView: UIPickerView) -> String {
+        let selectedRow = pickerView.selectedRow(inComponent: 0)
+        return selectedRow < 9 ? "0\(selectedRow + 1)" : "\(selectedRow + 1)"
+    }
+
 }

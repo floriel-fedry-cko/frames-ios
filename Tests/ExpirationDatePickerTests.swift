@@ -5,6 +5,14 @@ class ExpirationDatePickerTests: XCTestCase {
 
     var expirationDatePicker = ExpirationDatePicker()
 
+    func getMonthFromPicker() -> String {
+        let selectedMonthIndex = expirationDatePicker.selectedRow(inComponent: 0)
+        let selectedMonth = expirationDatePicker.pickerView(expirationDatePicker,
+                                                            titleForRow: selectedMonthIndex,
+                                                            forComponent: 0)
+        return String(selectedMonth![...selectedMonth!.index(selectedMonth!.startIndex, offsetBy: 1)])
+    }
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -41,12 +49,9 @@ class ExpirationDatePickerTests: XCTestCase {
     func testSelectMinimumDateWhenUserSelectBelow() {
         expirationDatePicker.selectRow(0, inComponent: 0, animated: false)
         expirationDatePicker.pickerView(expirationDatePicker, didSelectRow: 0, inComponent: 0)
-        let selectedMonthIndex = expirationDatePicker.selectedRow(inComponent: 0)
-        let selectedMonth = expirationDatePicker.pickerView(expirationDatePicker,
-                                                            titleForRow: selectedMonthIndex,
-                                                            forComponent: 0)
+        let selectedMonth = getMonthFromPicker()
         let minimumDateMonth = Calendar(identifier: .gregorian).component(.month, from: Date())
-        XCTAssertEqual(Int(selectedMonth!), minimumDateMonth)
+        XCTAssertEqual(Int(selectedMonth), minimumDateMonth)
     }
 
     func testSelectMaximumDateWhenUserSelectAbove() {
@@ -55,12 +60,9 @@ class ExpirationDatePickerTests: XCTestCase {
         expirationDatePicker.selectRow(20, inComponent: 1, animated: false)
         expirationDatePicker.pickerView(expirationDatePicker, didSelectRow: 20, inComponent: 1)
         // get the month
-        let selectedMonthIndex = expirationDatePicker.selectedRow(inComponent: 0)
-        let selectedMonth = expirationDatePicker.pickerView(expirationDatePicker,
-                                                            titleForRow: selectedMonthIndex,
-                                                            forComponent: 0)
+        let selectedMonth = getMonthFromPicker()
         let maximumDateMonth = Calendar(identifier: .gregorian).component(.month, from: Date())
-        XCTAssertEqual(Int(selectedMonth!), maximumDateMonth)
+        XCTAssertEqual(Int(selectedMonth), maximumDateMonth)
     }
 
 }

@@ -145,6 +145,7 @@
 		E6F6B57120ADBD230091A8AF /* applePayTokenInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */; };
 		E6F6B57320ADC0BA0091A8AF /* checkmarks in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57220ADC0BA0091A8AF /* checkmarks */; };
 		E6F6B57420ADC70A0091A8AF /* checkmarks in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57220ADC0BA0091A8AF /* checkmarks */; };
+		E6FC280020D8F68300809458 /* SimpleLoadingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC27FF20D8F68300809458 /* SimpleLoadingViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -321,6 +322,7 @@
 		E6F6B56E20AD832B0091A8AF /* applePayToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applePayToken.json; sourceTree = "<group>"; };
 		E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applePayTokenInvalid.json; sourceTree = "<group>"; };
 		E6F6B57220ADC0BA0091A8AF /* checkmarks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = checkmarks; sourceTree = "<group>"; };
+		E6FC27FF20D8F68300809458 /* SimpleLoadingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoadingViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +386,7 @@
 				E63352E020A45C07002C61C0 /* CardViewController.swift */,
 				E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */,
 				E653FEFF20C59CCC002E4790 /* CvvConfirmationViewController.swift */,
+				E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */,
 				E61D068B20C02714007FC847 /* ThreedsWebViewController.swift */,
 			);
 			name = Controllers;
@@ -398,8 +401,8 @@
 				E632AABF20B57EDF00D2B9B6 /* CvvInputView.swift */,
 				E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */,
 				E6837287209C62A100C11D67 /* ExpirationDateInputView.swift */,
-				E61101A020C95880000BB9F4 /* SchemeIconsStackView.swift */,
 				E664702520CEDD7500D8353A /* PhoneNumberInputView.swift */,
+				E61101A020C95880000BB9F4 /* SchemeIconsStackView.swift */,
 				E6837289209C62B300C11D67 /* StandardInputView.swift */,
 			);
 			name = Views;
@@ -411,7 +414,6 @@
 				E680EBCC20A9E75C000BEED8 /* CardListCell.swift */,
 				E653FEFB20C583A2002E4790 /* CardListCellName.swift */,
 				E631CB7E2098B5C000023472 /* ExpirationDatePicker.swift */,
-				E653FEFD20C58FA9002E4790 /* SimpleLoadingViewController.swift */,
 				E61101A220C95976000BB9F4 /* Controllers */,
 				E6B7378720CA86840038F2E5 /* Delegates */,
 				E61101A320C95984000BB9F4 /* Views */,
@@ -633,6 +635,7 @@
 				E6AF0A0920AACEFA00D29929 /* AddressViewControllerTests.swift */,
 				E64B31D820D1806E0088B7FD /* Views */,
 				E6AF0A0720AACEC300D29929 /* CardListCellTests.swift */,
+				E6FC27FF20D8F68300809458 /* SimpleLoadingViewControllerTests.swift */,
 				E658531D20D7FFAE00C261D7 /* CardListCellNameTests.swift */,
 				E6AF0A0D20AACF3A00D29929 /* CardNumberInputViewTests.swift */,
 				E658531B20D7DF6100C261D7 /* CvvConfirmationViewControllerTests.swift */,
@@ -667,9 +670,9 @@
 				E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */,
 				E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */,
 				E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */,
-				E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */,
-				E631CB802098B5D900023472 /* ExpirationDatePickerDelegate.swift */,
 				E611019C20C9217E000BB9F4 /* CvvConfirmationViewControllerDelegate.swift */,
+				E631CB802098B5D900023472 /* ExpirationDatePickerDelegate.swift */,
+				E61D068D20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -1038,6 +1041,7 @@
 				E64B31EC20D2D2FF0088B7FD /* AddressViewTests.swift in Sources */,
 				E6AF0A1020AAD00600D29929 /* ExpirationDateInputViewTests.swift in Sources */,
 				E67AB998208E2BBA00593FBE /* CheckoutAPIClientTests.swift in Sources */,
+				E6FC280020D8F68300809458 /* SimpleLoadingViewControllerTests.swift in Sources */,
 				E64B31DC20D1810F0088B7FD /* SchemeIconsStackViewTests.swift in Sources */,
 				E658532220D8076E00C261D7 /* AddressViewControllerMockDelegate.swift in Sources */,
 				E6AF0A0820AACEC300D29929 /* CardListCellTests.swift in Sources */,

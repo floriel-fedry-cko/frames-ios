@@ -264,4 +264,29 @@ class CardViewControllerTests: XCTestCase {
         XCTAssertEqual(cardViewController.cardView.cvvInputView.cardType, visaType)
     }
 
+    func testSetImageHighlightedOnChangeCardType() {
+        cardViewController.availableSchemes = [.visa, .mastercard, .discover, .dinersClub]
+        cardViewController.cardView.schemeIconsStackView.setIcons(schemes: cardViewController.availableSchemes)
+        cardViewController.onChange(cardType: CardUtils().getCardType(scheme: .visa))
+        let nFadedCard = cardViewController.cardView.schemeIconsStackView.arrangedSubviews
+            .filter { $0.alpha == 0.5}.count
+        XCTAssertEqual(nFadedCard, 4)
+    }
+
+    func testChangeImageHighlightedOChangeCardType() {
+        testSetImageHighlightedOnChangeCardType()
+        cardViewController.onChange(cardType: CardUtils().getCardType(scheme: .mastercard))
+        let nFadedCard = cardViewController.cardView.schemeIconsStackView.arrangedSubviews
+            .filter { $0.alpha == 0.5}.count
+        XCTAssertEqual(nFadedCard, 4)
+    }
+
+    func testResetViewOnChangeIfCardNumberUnknownType() {
+        testSetImageHighlightedOnChangeCardType()
+        cardViewController.onChange(cardType: nil)
+        let nFadedCard = cardViewController.cardView.schemeIconsStackView.arrangedSubviews
+            .filter { $0.alpha == 0.5}.count
+        XCTAssertEqual(nFadedCard, 0)
+    }
+
 }

@@ -17,8 +17,8 @@ import UIKit
     public weak var pickerDelegate: ExpirationDatePickerDelegate?
 
     // private properties
-    private let months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
-    private var years = ["", ""]
+    private var months: [String]!
+    private var years: [String]!
 
     // MARK: - Initialization
 
@@ -41,11 +41,15 @@ import UIKit
         self.dataSource = self
 
         #if !TARGET_INTERFACE_BUILDER
-        var yearsUsed: [String] = []
         for year in calendar.component(.year, from: minimumDate)...calendar.component(.year, from: maximumDate) {
-            yearsUsed.append(String(year))
+            years.append(String(year))
         }
-        years = Array(yearsUsed)
+
+        for (index, month) in DateFormatter().shortStandaloneMonthSymbols.enumerated() {
+            let monthNumber = index < 9 ? "0\(index + 1)" : "\(index + 1)"
+            months.append("\(monthNumber) - \(month.uppercased())")
+        }
+
         setDate(minimumDate, animated: false)
         #endif
     }

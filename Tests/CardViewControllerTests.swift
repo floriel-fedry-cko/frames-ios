@@ -267,7 +267,7 @@ class CardViewControllerTests: XCTestCase {
     func testSetImageHighlightedOnChangeCardType() {
         cardViewController.availableSchemes = [.visa, .mastercard, .discover, .dinersClub]
         cardViewController.cardView.schemeIconsStackView.setIcons(schemes: cardViewController.availableSchemes)
-        cardViewController.onChange(cardType: CardUtils().getCardType(scheme: .visa))
+        cardViewController.onChangeCardNumber(cardType: CardUtils().getCardType(scheme: .visa))
         let nFadedCard = cardViewController.cardView.schemeIconsStackView.arrangedSubviews
             .filter { $0.alpha == 0.5}.count
         XCTAssertEqual(nFadedCard, 4)
@@ -275,7 +275,7 @@ class CardViewControllerTests: XCTestCase {
 
     func testChangeImageHighlightedOChangeCardType() {
         testSetImageHighlightedOnChangeCardType()
-        cardViewController.onChange(cardType: CardUtils().getCardType(scheme: .mastercard))
+        cardViewController.onChangeCardNumber(cardType: CardUtils().getCardType(scheme: .mastercard))
         let nFadedCard = cardViewController.cardView.schemeIconsStackView.arrangedSubviews
             .filter { $0.alpha == 0.5}.count
         XCTAssertEqual(nFadedCard, 4)
@@ -283,7 +283,7 @@ class CardViewControllerTests: XCTestCase {
 
     func testResetViewOnChangeIfCardNumberUnknownType() {
         testSetImageHighlightedOnChangeCardType()
-        cardViewController.onChange(cardType: nil)
+        cardViewController.onChangeCardNumber(cardType: nil)
         let nFadedCard = cardViewController.cardView.schemeIconsStackView.arrangedSubviews
             .filter { $0.alpha == 0.5}.count
         XCTAssertEqual(nFadedCard, 0)

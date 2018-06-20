@@ -28,9 +28,9 @@ import UIKit
         #if !TARGET_INTERFACE_BUILDER
         cardsUtils = CardUtils()
         #endif
-        self.textField.keyboardType = .default
-        self.textField.textContentType = .creditCardNumber
-        self.textField.delegate = self
+        textField.keyboardType = .default
+        textField.textContentType = .creditCardNumber
+        textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
     }
 
@@ -59,7 +59,7 @@ import UIKit
         let cardNumber = cardsUtils!.standardize(cardNumber: textField.text!)
         let cardType = cardsUtils.getTypeOf(cardNumber: cardNumber)
         guard let cardTypeUnwrap = cardType else { return }
-        delegate?.onChange(cardType: cardType)
+        delegate?.onChangeCardNumber(cardType: cardType)
         let cardNumberFormatted = cardsUtils.format(cardNumber: cardNumber, cardType: cardTypeUnwrap)
         textField.text = cardNumberFormatted
     }

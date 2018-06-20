@@ -146,6 +146,7 @@
 		E6F6B57320ADC0BA0091A8AF /* checkmarks in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57220ADC0BA0091A8AF /* checkmarks */; };
 		E6F6B57420ADC70A0091A8AF /* checkmarks in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57220ADC0BA0091A8AF /* checkmarks */; };
 		E6FC280020D8F68300809458 /* SimpleLoadingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC27FF20D8F68300809458 /* SimpleLoadingViewControllerTests.swift */; };
+		E6FC284B20DA62C500809458 /* CvvInputViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC284A20DA62C500809458 /* CvvInputViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -323,6 +324,7 @@
 		E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applePayTokenInvalid.json; sourceTree = "<group>"; };
 		E6F6B57220ADC0BA0091A8AF /* checkmarks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = checkmarks; sourceTree = "<group>"; };
 		E6FC27FF20D8F68300809458 /* SimpleLoadingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoadingViewControllerTests.swift; sourceTree = "<group>"; };
+		E6FC284A20DA62C500809458 /* CvvInputViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvInputViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -667,6 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				E63352DA20A34992002C61C0 /* AddressViewControllerDelegate.swift */,
+				E6FC284A20DA62C500809458 /* CvvInputViewDelegate.swift */,
 				E61D069020C049BD007FC847 /* CardNumberInputViewDelegate.swift */,
 				E63352E620A4B252002C61C0 /* CardViewControllerDelegate.swift */,
 				E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */,
@@ -999,6 +1002,7 @@
 				E602EE95209D870700CC62A2 /* TaskDelegate.swift in Sources */,
 				E6646FB820CE9FD400D8353A /* CkoAddress.swift in Sources */,
 				E67AB994208E1CC600593FBE /* CardProvider.swift in Sources */,
+				E6FC284B20DA62C500809458 /* CvvInputViewDelegate.swift in Sources */,
 				E61D068E20C0277D007FC847 /* ThreedsWebViewControllerDelegate.swift in Sources */,
 				E61D069120C049BD007FC847 /* CardNumberInputViewDelegate.swift in Sources */,
 				E6AC018120A9938D00310E43 /* Customer.swift in Sources */,

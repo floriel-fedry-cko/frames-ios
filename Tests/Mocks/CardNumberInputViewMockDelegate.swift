@@ -9,7 +9,7 @@ class CardNumberInputViewMockDelegate: CardNumberInputViewDelegate {
     var textFieldDidEndEditingTimes = 0
     var textFieldDidEndEditingLastCalledWith: UIView?
 
-    func onChange(cardType: CardType?) {
+    func onChangeCardNumber(cardType: CardType?) {
         onChangeTimes += 1
         onChangeLastCalledWith = cardType
     }

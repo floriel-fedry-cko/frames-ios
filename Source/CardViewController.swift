@@ -4,6 +4,7 @@ import Foundation
 public class CardViewController: UIViewController,
     AddressViewControllerDelegate,
     CardNumberInputViewDelegate,
+    CvvInputViewDelegate,
     UITextFieldDelegate {
 
     // MARK: - Properties
@@ -167,6 +168,7 @@ public class CardViewController: UIViewController,
         cardView.cardHolderNameInputView.textField.delegate = self
         cardView.expirationDateInputView.textField.delegate = self
         cardView.cvvInputView.delegate = self
+        cardView.cvvInputView.onChangeDelegate = self
     }
 
     private func validateFieldsValues() {
@@ -223,7 +225,7 @@ public class CardViewController: UIViewController,
     // MARK: - CardNumberInputViewDelegate
 
     /// Called when the card number changed.
-    public func onChange(cardType: CardType?) {
+    public func onChangeCardNumber(cardType: CardType?) {
         // reset if the card number is empty
         if cardType == nil && lastSelected != nil {
             cardView.schemeIconsStackView.arrangedSubviews.forEach { $0.alpha = 1 }
@@ -243,6 +245,12 @@ public class CardViewController: UIViewController,
             imageView?.alpha = 1
             lastSelected = imageView
         }
+    }
+
+    // MARK: CvvInputViewDelegate
+
+    public func onChangeCvv() {
+        validateFieldsValues()
     }
 
 }

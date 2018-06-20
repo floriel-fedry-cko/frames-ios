@@ -10,6 +10,7 @@ import UIKit
     var cardType: CardType?
     /// Text field delegate
     public weak var delegate: UITextFieldDelegate?
+    public weak var onChangeDelegate: CvvInputViewDelegate?
 
     // MARK: - Initialization
 
@@ -28,9 +29,10 @@ import UIKit
     // MARK: - Setup
 
     private func setup() {
-        self.textField.keyboardType = .numberPad
-        self.textField.textContentType = nil
-        self.textField.delegate = self
+        textField.keyboardType = .numberPad
+        textField.textContentType = nil
+        textField.delegate = self
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
     }
 
     // MARK: - UITextFieldDelegate
@@ -51,5 +53,10 @@ import UIKit
     /// Tells the delegate that editing stopped for the specified text field.
     public func textFieldDidEndEditing(_ textField: UITextField) {
         delegate?.textFieldDidEndEditing?(textField)
+    }
+
+    /// Called when the text changed.
+    @objc public func textFieldDidChange(textField: UITextField) {
+        onChangeDelegate?.onChangeCvv()
     }
 }

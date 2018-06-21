@@ -1,7 +1,7 @@
 author: Checkout
 author_url: https://www.checkout.com/
 github_url: https://github.com/checkout/checkout-sdk-ios
-github_file_prefix: https://github.com/floriel-fedry-cko/just-a-test/tree/master
+github_file_prefix: https://github.com/floriel-fedry-cko/frames-ios/tree/master
 output: docs
 theme: fullwidth
 clean: true

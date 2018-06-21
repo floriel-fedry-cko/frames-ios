@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           CheckoutSdkIos Docs
         </a>
-         (100% documented)
+         (99% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -174,18 +174,18 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Other Extensions.html">Other Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Extensions/UIResponder.html">UIResponder</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Other Functions.html">Other Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Other Functions.html#/s:14CheckoutSdkIos28addKeyboardToolbarNavigationySaySo11UITextFieldCG10textFields_tF">addKeyboardToolbarNavigation(textFields:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Other Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/CvvInputViewDelegate.html">CvvInputViewDelegate</a>
               </li>
             </ul>
           </li>
@@ -271,16 +271,16 @@
 </ul>
 <h2 id='documentation' class='heading'>Documentation</h2>
 
-<p>You can find the CheckoutSdkIos documentation <a href="https://floriel-fedry-cko.github.io/just-a-test/index.html">on this website</a>.</p>
+<p>You can find the CheckoutSdkIos documentation <a href="https://floriel-fedry-cko.github.io/frames-ios/index.html">on this website</a>.</p>
 
 <ul>
-<li><a href="https://floriel-fedry-cko.github.io/just-a-test/usage.html">Usage</a></li>
-<li><a href="https://floriel-fedry-cko.github.io/just-a-test/customizing-the-card-view.html">Customizing the card view</a></li>
+<li><a href="https://floriel-fedry-cko.github.io/frames-ios/usage.html">Usage</a></li>
+<li><a href="https://floriel-fedry-cko.github.io/frames-ios/customizing-the-card-view.html">Customizing the card view</a></li>
 <li>Walkthrough
 
 <ul>
-<li><a href="https://floriel-fedry-cko.github.io/just-a-test/ios-example-frames.html">iOS Example Frames</a></li>
-<li><a href="https://floriel-fedry-cko.github.io/just-a-test/ios-example.html">iOS Example</a></li>
+<li><a href="https://floriel-fedry-cko.github.io/frames-ios/ios-example-frames.html">iOS Example Frames</a></li>
+<li><a href="https://floriel-fedry-cko.github.io/frames-ios/ios-example.html">iOS Example</a></li>
 </ul></li>
 </ul>
 <h2 id='installation' class='heading'>Installation</h2>
@@ -300,7 +300,7 @@
 <span class="n">use_frameworks!</span>
 
 <span class="n">target</span> <span class="s1">'&lt;Your Target Name&gt;'</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="s1">'CheckoutSdkIos'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/floriel-fedry-cko/just-a-test.git'</span>
+    <span class="n">pod</span> <span class="s1">'CheckoutSdkIos'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/floriel-fedry-cko/frames-ios.git'</span>
 <span class="k">end</span>
 </code></pre>
 
@@ -317,7 +317,7 @@
 </code></pre>
 
 <p>To integrate CheckoutSdkIos into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
-<pre class="highlight plaintext"><code>github "floriel-fedry-cko/just-a-test" ~&gt; 0.2
+<pre class="highlight plaintext"><code>github "floriel-fedry-cko/frames-ios" ~&gt; 0.2
 </code></pre>
 
 <p>Run <code>carthage update</code> to build the framework and drag the built <code>CheckoutSdkIos</code> into your Xcode project.</p>
@@ -357,7 +357,7 @@
 </code></pre>
 <h3 id='using-methods-available-in-checkoutsdkios' class='heading'>Using Methods available in CheckoutSdkIos</h3>
 
-<p>You can find more examples on the <a href="https://floriel-fedry-cko.github.io/just-a-test/usage.html">usage guide</a>.</p>
+<p>You can find more examples on the <a href="https://floriel-fedry-cko.github.io/frames-ios/usage.html">usage guide</a>.</p>
 <h4 id='create-the-api-client-code-checkoutapiclient-code' class='heading'>Create the API Client <code><a href="Classes/CheckoutAPIClient.html">CheckoutAPIClient</a></code>:</h4>
 <pre class="highlight swift"><code><span class="c1">// replace "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14" by your own public key</span>
 <span class="k">let</span> <span class="nv">checkoutAPIClient</span> <span class="o">=</span> <span class="kt">CheckoutAPIClient</span><span class="p">(</span><span class="nv">publicKey</span><span class="p">:</span> <span class="s">"pk_test_6ff46046-30af-41d9-bf58-929022d2cd14"</span><span class="p">,</span>
@@ -407,7 +407,7 @@ The error handler takes an <code><a href="Structs/ErrorResponse.html">ErrorRespo
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-06-18)</p>
+      <p>&copy; 2018 <a class="link" href="https://www.checkout.com/" target="_blank" rel="external">Checkout</a>. All rights reserved. (Last updated: 2018-06-21)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

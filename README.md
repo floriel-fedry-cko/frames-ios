@@ -18,13 +18,13 @@
 
 ## Documentation
 
-You can find the CheckoutSdkIos documentation [on this website](https://floriel-fedry-cko.github.io/just-a-test/index.html).
+You can find the CheckoutSdkIos documentation [on this website](https://floriel-fedry-cko.github.io/frames-ios/index.html).
 
-- [Usage](https://floriel-fedry-cko.github.io/just-a-test/usage.html)
-- [Customizing the card view](https://floriel-fedry-cko.github.io/just-a-test/customizing-the-card-view.html)
+- [Usage](https://floriel-fedry-cko.github.io/frames-ios/usage.html)
+- [Customizing the card view](https://floriel-fedry-cko.github.io/frames-ios/customizing-the-card-view.html)
 - Walkthrough
-  - [iOS Example Frames](https://floriel-fedry-cko.github.io/just-a-test/ios-example-frames.html)
-  - [iOS Example](https://floriel-fedry-cko.github.io/just-a-test/ios-example.html)
+  - [iOS Example Frames](https://floriel-fedry-cko.github.io/frames-ios/ios-example-frames.html)
+  - [iOS Example](https://floriel-fedry-cko.github.io/frames-ios/ios-example.html)
 
 ## Installation
 
@@ -46,7 +46,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'CheckoutSdkIos', :git => 'https://github.com/floriel-fedry-cko/just-a-test.git'
+    pod 'CheckoutSdkIos', :git => 'https://github.com/floriel-fedry-cko/frames-ios.git'
 end
 ```
 
@@ -70,7 +70,7 @@ $ brew install carthage
 To integrate CheckoutSdkIos into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "floriel-fedry-cko/just-a-test" ~> 0.2
+github "floriel-fedry-cko/frames-ios" ~> 0.2
 ```
 
 Run `carthage update` to build the framework and drag the built `CheckoutSdkIos` into your Xcode project.
@@ -117,7 +117,7 @@ class ViewController: UIViewController, CardViewControllerDelegate {
 
 ### Using Methods available in CheckoutSdkIos
 
-You can find more examples on the [usage guide](https://floriel-fedry-cko.github.io/just-a-test/usage.html).
+You can find more examples on the [usage guide](https://floriel-fedry-cko.github.io/frames-ios/usage.html).
 
 #### Create the API Client `CheckoutAPIClient`:
 

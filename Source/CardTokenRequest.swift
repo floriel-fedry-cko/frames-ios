@@ -39,8 +39,8 @@ public struct CardTokenRequest: Codable {
     ///
     /// - returns: The new `CardTokenRequest` instance
     public init(number: String, expiryMonth: Int, expiryYear: Int,
-                name: String?, cvv: String?, billingAddress: Address?,
-                phone: CkoPhoneNumber?) {
+                name: String? = nil, cvv: String? = nil, billingAddress: Address? = nil,
+                phone: CkoPhoneNumber? = nil) {
         self.number = number
         self.expiryMonth = expiryMonth
         self.expiryYear = expiryYear
@@ -59,7 +59,7 @@ public struct CardTokenRequest: Codable {
     ///
     ///
     /// - returns: The new `CardTokenRequest` instance
-    public init(number: String, expiryMonth: Int, expiryYear: Int, cvv: String?) {
+    public init(number: String, expiryMonth: Int, expiryYear: Int, cvv: String? = nil) {
         self.init(number: number, expiryMonth: expiryMonth, expiryYear: expiryYear, name: nil,
                   cvv: cvv, billingAddress: nil, phone: nil)
     }

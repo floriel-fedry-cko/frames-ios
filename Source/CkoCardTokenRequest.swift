@@ -16,10 +16,10 @@ public struct CkoCardTokenRequest: Codable {
     public let cvv: String
 
     /// Name of the card owner
-    public let name: String?
+    public var name: String?
 
     /// Billing address
-    public let billingAddress: CkoAddress?
+    public var billingAddress: CkoAddress?
 
     /// Initialize `CkoCardTokenRequest`
     ///
@@ -33,7 +33,7 @@ public struct CkoCardTokenRequest: Codable {
     ///
     /// - returns: The new `CardRequest` instance
     public init(number: String, expiryMonth: String, expiryYear: String, cvv: String,
-                name: String?, billingAddress: CkoAddress?) {
+                name: String? = nil, billingAddress: CkoAddress? = nil) {
         self.number = number
         self.expiryMonth = expiryMonth
         self.expiryYear = expiryYear

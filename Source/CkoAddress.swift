@@ -4,28 +4,28 @@ import Foundation
 public struct CkoAddress: Codable {
 
     /// Name
-    public let name: String?
+    public var name: String?
 
     /// Line 1
-    public let addressLine1: String?
+    public var addressLine1: String?
 
     /// Line 2
-    public let addressLine2: String?
+    public var addressLine2: String?
 
     /// City
-    public let city: String?
+    public var city: String?
 
     /// State
-    public let state: String?
+    public var state: String?
 
     /// Postcode
-    public let postcode: String?
+    public var postcode: String?
 
     /// Country
-    public let country: String?
+    public var country: String?
 
     /// Phone
-    public let phone: CkoPhoneNumber?
+    public var phone: CkoPhoneNumber?
 
     /// Initialize `CkoAddress`
     ///
@@ -40,8 +40,9 @@ public struct CkoAddress: Codable {
     ///
     ///
     /// - returns: The new `CkoAddress` instance
-    public init(name: String?, addressLine1: String?, addressLine2: String?, city: String?, state: String?,
-                postcode: String?, country: String?, phone: CkoPhoneNumber?) {
+    public init(name: String? = nil, addressLine1: String? = nil, addressLine2: String? = nil,
+                city: String? = nil, state: String? = nil, postcode: String? = nil,
+                country: String? = nil, phone: CkoPhoneNumber? = nil) {
         self.name = name
         self.addressLine1 = addressLine1
         self.addressLine2 = addressLine2

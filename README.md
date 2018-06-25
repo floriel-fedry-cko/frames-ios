@@ -174,4 +174,4 @@ The error handler takes an `ErrorResponse` as a parameter.
 
 ## License
 
-CheckoutSdkIos is released under the MIT license. [See LICENSE](https://github.com/checkout/checkout-sdk-ios/blob/master/LICENSE) for details.
+CheckoutSdkIos is released under the MIT license. [See LICENSE](https://github.com/checkout/frames-ios/blob/master/LICENSE) for details.

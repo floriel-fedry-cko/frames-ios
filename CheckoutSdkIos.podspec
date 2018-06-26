@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   Checkout API Client and Payment Form Utilities in Swift.
   This library contains methods to implement a payment form as well as UI elements.
                    DESC
-  s.homepage     = "https://github.com/floriel-fedry-cko/just-a-test.git"
+  s.homepage     = "https://github.com/floriel-fedry-cko/frames-ios.git"
   s.swift_version = "4.1"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 

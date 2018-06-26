@@ -7,7 +7,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/CheckoutSdkIos.svg?style=flat)]()
 [![codecov](https://codecov.io/gh/floriel-fedry-cko/frames-ios/branch/master/graph/badge.svg)](https://codecov.io/gh/floriel-fedry-cko/frames-ios)
-[![codebeat badge](https://codebeat.co/badges/d9bae177-78c1-40bb-94a7-187a7759d549)](https://codebeat.co/projects/github-com-floriel-fedry-cko-just-a-test-master)
+[![codebeat badge](https://codebeat.co/badges/d9bae177-78c1-40bb-94a7-187a7759d549)](https://codebeat.co/projects/github-com-floriel-fedry-cko-frames-ios-master)
 ![license](https://img.shields.io/github/license/floriel-fedry-cko/frames-ios.svg)
 
 ## Requirements

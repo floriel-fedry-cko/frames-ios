@@ -11,7 +11,7 @@ Once done, you will receive an email with your public and secret key.
 
 ### 2 - Clone the repository
 
-Clone the [repository](https://github.com/floriel-fedry-cko/just-a-test) and open it with xcode. Replace the public key in `iOS Example/ExampleViewController` by the one received in the email.
+Clone the [repository](https://github.com/floriel-fedry-cko/frames-ios) and open it with xcode. Replace the public key in `iOS Example/ExampleViewController` by the one received in the email.
 
 e.g.
 
@@ -27,7 +27,7 @@ You can setup a quick backend to launch the demo.
 
 Deploy the backend to heroku by clicking on the button below:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/floriel-fedry-cko/just-another-test)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/floriel-fedry-cko/mobile-sdk-backend)
 
 Set the `SECRET_KEY` environment variable with the one received in the email and deploy the application.
 

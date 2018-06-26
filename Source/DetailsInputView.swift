@@ -69,10 +69,10 @@ import UIKit
     private func addConstraints() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         button.translatesAutoresizingMaskIntoConstraints = false
-        self.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 8).isActive = true
-        self.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
+        trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: 8).isActive = true
+        heightAnchor.constraint(equalToConstant: 48).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
 
         value.setContentHuggingPriority(.defaultLow, for: .horizontal)
         button.heightAnchor.constraint(equalToConstant: 32).isActive = true

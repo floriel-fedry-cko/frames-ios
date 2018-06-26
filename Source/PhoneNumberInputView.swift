@@ -48,7 +48,7 @@ import UIKit
     // MARK: - Setup
 
     private func setup() {
-        self.textField.delegate = self
+        textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange), for: UIControlEvents.editingChanged)
     }
 

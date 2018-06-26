@@ -34,9 +34,9 @@ public class CardListCell: UITableViewCell {
 
     private func setup() {
         stackView.addArrangedSubview(cardInfoLabel)
-        self.addSubview(stackView)
-        self.addSubview(schemeImageView)
-        self.addSubview(selectedImageView)
+        addSubview(stackView)
+        addSubview(schemeImageView)
+        addSubview(selectedImageView)
         stackView.axis = .vertical
         stackView.spacing = 16
         addConstraints()

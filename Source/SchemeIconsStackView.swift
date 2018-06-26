@@ -4,12 +4,12 @@ class SchemeIconsStackView: UIStackView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
     }
 
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        self.translatesAutoresizingMaskIntoConstraints = false
+        translatesAutoresizingMaskIntoConstraints = false
     }
 
     func addSchemeIcon(scheme: CardScheme) {
@@ -19,7 +19,7 @@ class SchemeIconsStackView: UIStackView {
         imageView.image = image
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        self.addArrangedSubview(imageView)
+        addArrangedSubview(imageView)
         imageView.widthAnchor.constraint(equalToConstant: 36).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 22).isActive = true
     }
@@ -36,6 +36,6 @@ class SchemeIconsStackView: UIStackView {
         fillerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
         fillerView.backgroundColor = .clear
         fillerView.translatesAutoresizingMaskIntoConstraints = false
-        self.addArrangedSubview(fillerView)
+        addArrangedSubview(fillerView)
     }
 }

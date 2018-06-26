@@ -43,7 +43,7 @@ public class AddressView: UIView {
     }
 
     private func setup() {
-        self.backgroundColor = UIColor.groupTableViewBackground
+        backgroundColor = UIColor.groupTableViewBackground
         stackView.axis = .vertical
         stackView.spacing = 16
         addViews()
@@ -88,16 +88,19 @@ public class AddressView: UIView {
         stackView.addArrangedSubview(phoneInputView)
         contentView.addSubview(stackView)
         scrollView.addSubview(contentView)
-        self.addSubview(scrollView)
+        addSubview(scrollView)
     }
 
     private func addInitialConstraints() {
         scrollViewBottomConstraint = self.addScrollViewContraints(scrollView: scrollView, contentView: contentView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.trailingAnchor.constraint(equalTo: self.contentView.safeTrailingAnchor, constant: -16).isActive = true
-        stackView.topAnchor.constraint(equalTo: self.contentView.safeTopAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: self.contentView.safeLeadingAnchor, constant: 16).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: self.contentView.safeBottomAnchor).isActive = true
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
+
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        stackView.topAnchor.constraint(equalTo: contentView.safeTopAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: contentView.safeBottomAnchor).isActive = true
     }
 
 }

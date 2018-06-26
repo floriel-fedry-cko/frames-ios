@@ -23,12 +23,12 @@ import UIKit
     private func setup() {
         let expirationDatePicker = ExpirationDatePicker()
         expirationDatePicker.pickerDelegate = self
-        self.textField.inputView = expirationDatePicker
+        textField.inputView = expirationDatePicker
     }
 
     // MARK: - ExpirationDatePickerDelegate
 
     public func onDateChanged(month: String, year: String) {
-        self.textField.text = "\(month)/\(year)"
+        textField.text = "\(month)/\(year)"
     }
 }

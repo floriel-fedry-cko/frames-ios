@@ -54,10 +54,10 @@ public class AddressViewController: UIViewController,
     public override func viewDidLayoutSubviews() {
         self.view.addSubview(addressView)
         addressView.translatesAutoresizingMaskIntoConstraints = false
-        self.addressView.leftAnchor.constraint(equalTo: view.safeLeftAnchor).isActive = true
-        self.addressView.rightAnchor.constraint(equalTo: view.safeRightAnchor).isActive = true
-        self.addressView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
-        self.addressView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
+        addressView.leftAnchor.constraint(equalTo: view.safeLeftAnchor).isActive = true
+        addressView.rightAnchor.constraint(equalTo: view.safeRightAnchor).isActive = true
+        addressView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        addressView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     // MARK: - Methods

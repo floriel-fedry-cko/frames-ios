@@ -46,7 +46,7 @@ import UIKit
     // MARK: - Setup
 
     private func setup() {
-        self.tapGesture.addTarget(self, action: #selector(StandardInputView.onTapView))
+        tapGesture.addTarget(self, action: #selector(StandardInputView.onTapView))
 
         #if TARGET_INTERFACE_BUILDER
         if self.placeholder.isEmpty {
@@ -55,7 +55,7 @@ import UIKit
         #endif
 
         // add gesture recognizer
-        self.addGestureRecognizer(self.tapGesture)
+        addGestureRecognizer(self.tapGesture)
 
         // add values
         textField.keyboardType = .default
@@ -77,7 +77,7 @@ import UIKit
         errorView.isHidden = true
         errorLabel.textColor = .red
 
-        self.addSubview(stackview)
+        addSubview(stackview)
 
         addConstraints()
     }
@@ -131,14 +131,14 @@ import UIKit
     public func showError(message: String) {
         errorView.isHidden = false
         errorLabel.text = message
-        self.heightConstraint.constant = 48 + 32
-        self.layoutIfNeeded()
+        heightConstraint.constant = 48 + 32
+        layoutIfNeeded()
     }
 
     /// Hide the error message
     public func hideError() {
         errorView.isHidden = true
-        self.heightConstraint.constant = 48
-        self.layoutIfNeeded()
+        heightConstraint.constant = 48
+        layoutIfNeeded()
     }
 }

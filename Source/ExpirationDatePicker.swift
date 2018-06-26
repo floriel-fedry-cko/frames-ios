@@ -37,8 +37,8 @@ import UIKit
     // MARK: - Setup
 
     private func setup() {
-        self.delegate = self
-        self.dataSource = self
+        delegate = self
+        dataSource = self
 
         #if !TARGET_INTERFACE_BUILDER
         for year in calendar.component(.year, from: minimumDate)...calendar.component(.year, from: maximumDate) {
@@ -67,8 +67,8 @@ import UIKit
         let monthIndex = month - 1
         let yearIndex = years.index(of: String(year))
 
-        self.selectRow(monthIndex, inComponent: 0, animated: animated)
-        self.selectRow(yearIndex!, inComponent: 1, animated: animated)
+        selectRow(monthIndex, inComponent: 0, animated: animated)
+        selectRow(yearIndex!, inComponent: 1, animated: animated)
     }
 
     // MARK: - UIPickerViewDelegate
@@ -92,8 +92,8 @@ import UIKit
         }
 
         // call the delegate method to trigger the onDateChanged
-        self.pickerDelegate?.onDateChanged(month: getMonthFromPicker(pickerView),
-                                                   year: years[pickerView.selectedRow(inComponent: 1)])
+        pickerDelegate?.onDateChanged(month: getMonthFromPicker(pickerView),
+                                      year: years[pickerView.selectedRow(inComponent: 1)])
     }
 
     // MARK: - UIPickerViewDataSource

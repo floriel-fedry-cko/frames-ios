@@ -53,6 +53,7 @@ public class CardView: UIView {
         setup()
     }
 
+    /// Initializes and returns a newly  allocated card view with the specified input states.
     init(cardHolderNameState: InputState, billingDetailsState: InputState) {
         self.cardHolderNameState = cardHolderNameState
         self.billingDetailsState = billingDetailsState
@@ -65,7 +66,7 @@ public class CardView: UIView {
     private func setup() {
         addViews()
         addInitialConstraints()
-        self.backgroundColor = UIColor.groupTableViewBackground
+        backgroundColor = UIColor.groupTableViewBackground
         acceptedCardLabel.text = "Accepted Cards"
         cardNumberInputView.set(label: "cardNumber", backgroundColor: .white)
         expirationDateInputView.set(label: "expirationDate", backgroundColor: .white)
@@ -102,7 +103,7 @@ public class CardView: UIView {
     }
 
     private func addViews() {
-        self.addSubview(scrollView)
+        addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(acceptedCardLabel)
         contentView.addSubview(schemeIconsStackView)
@@ -138,9 +139,9 @@ public class CardView: UIView {
         schemeIconsStackView.topAnchor.constraint(equalTo: acceptedCardLabel.bottomAnchor, constant: 16).isActive = true
         schemeIconsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
 
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
-        stackView.topAnchor.constraint(equalTo: schemeIconsStackView.bottomAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.safeTrailingAnchor, constant: -16).isActive = true
+        stackView.topAnchor.constraint(equalTo: schemeIconsStackView.safeBottomAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: contentView.safeLeadingAnchor, constant: 16).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: contentView.safeBottomAnchor).isActive = true
     }
 }

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name         = "CheckoutSdkIos"
   s.version      = "0.2.9"
-  s.summary      = "Checkout API Client and Payment Form Utilities in Swift"
+  s.summary      = "Checkout API Client, Payment Form UI and Utilities in Swift"
   s.description  = <<-DESC
   Checkout API Client and Payment Form Utilities in Swift.
   This library contains methods to implement a payment form as well as UI elements.
@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/floriel-fedry-cko/just-a-test.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/floriel-fedry-cko/frames-ios.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

@@ -21,7 +21,7 @@ import UIKit
     public var isValidNumber: Bool {
         let rawNumber = self.textField.text ?? ""
         do {
-            phoneNumber = try phoneNumberKit.parse(rawNumber, withRegion: partialFormatter.currentRegion)
+            phoneNumber = try phoneNumberKit.parse(rawNumber)
             return true
         } catch {
             return false

@@ -18,7 +18,7 @@ Please read the text so that you understand how to conduct while contributing to
 
 ## Semantic Versioning
 
-Purgecss use [SemVer](http://semver.org/) for versioning.
+FramesIos use [SemVer](http://semver.org/) for versioning.
 
 ## Reporting Issues
 
@@ -45,7 +45,7 @@ This information will help us review and fix your issue faster.
 
 **Before submitting a pull request,** please make sure the following is done:
 
-1.  Fork [the repository](https://github.com/checkout/CheckoutSdkIos) and create your branch from `master`.
+1.  Fork [the repository](https://github.com/floriel-fedry-cko/frames-ios) and create your branch from `master`.
 2.  If you've added code that should be tested, add tests!
 3.  If you've changed APIs, update the documentation.
 4.  Ensure the test suite passes.

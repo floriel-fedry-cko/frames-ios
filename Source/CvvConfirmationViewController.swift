@@ -29,6 +29,7 @@ public class CvvConfirmationViewController: UIViewController {
         contentView.backgroundColor = .white
         label.text = "Enter your cvv."
         textField.placeholder = "CVV"
+        textField.keyboardType = .numberPad
         underlineView.backgroundColor = UIColor.gray
         addViews()
         addConstraints()

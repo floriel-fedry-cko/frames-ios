@@ -85,6 +85,7 @@
 		E658532620D80A9000C261D7 /* CvvViewControllerDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658532520D80A9000C261D7 /* CvvViewControllerDelegateMock.swift */; };
 		E658532820D80AF600C261D7 /* CardViewControllerMockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658532720D80AF600C261D7 /* CardViewControllerMockDelegate.swift */; };
 		E658532A20D80B3700C261D7 /* CvvInputViewMockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E658532920D80B3700C261D7 /* CvvInputViewMockDelegate.swift */; };
+		E65EF60D20E3A34700CC70F0 /* ApplePayErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EF60C20E3A34700CC70F0 /* ApplePayErrorResponse.swift */; };
 		E66406D92089FA39000431E5 /* CheckoutSdkIos.h in Headers */ = {isa = PBXBuildFile; fileRef = E66406D72089FA39000431E5 /* CheckoutSdkIos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6640710208DD550000431E5 /* CheckoutAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664070F208DD550000431E5 /* CheckoutAPIClient.swift */; };
 		E664071B208DE11D000431E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E664071A208DE11D000431E5 /* Endpoint.swift */; };
@@ -254,6 +255,7 @@
 		E658532520D80A9000C261D7 /* CvvViewControllerDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CvvViewControllerDelegateMock.swift; path = Mocks/CvvViewControllerDelegateMock.swift; sourceTree = "<group>"; };
 		E658532720D80AF600C261D7 /* CardViewControllerMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewControllerMockDelegate.swift; path = Mocks/CardViewControllerMockDelegate.swift; sourceTree = "<group>"; };
 		E658532920D80B3700C261D7 /* CvvInputViewMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CvvInputViewMockDelegate.swift; path = Mocks/CvvInputViewMockDelegate.swift; sourceTree = "<group>"; };
+		E65EF60C20E3A34700CC70F0 /* ApplePayErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayErrorResponse.swift; sourceTree = "<group>"; };
 		E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406D72089FA39000431E5 /* CheckoutSdkIos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutSdkIos.h; sourceTree = "<group>"; };
 		E66406D82089FA39000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 			children = (
 				E625EE4E208F8F790019B750 /* Address.swift */,
 				E631CB762098658000023472 /* ApplePayToken.swift */,
+				E65EF60C20E3A34700CC70F0 /* ApplePayErrorResponse.swift */,
 				E6BEBDBD20C171FA00C3130A /* ApplePayTokenRequest.swift */,
 				E625EE4C208F8F370019B750 /* Card.swift */,
 				E67AB993208E1CC600593FBE /* CardProvider.swift */,
@@ -943,6 +946,7 @@
 				E6640721208DE2AA000431E5 /* CardUtils.swift in Sources */,
 				E6837288209C62A200C11D67 /* ExpirationDateInputView.swift in Sources */,
 				E602EE7F209D862700CC62A2 /* MultipartFormData.swift in Sources */,
+				E65EF60D20E3A34700CC70F0 /* ApplePayErrorResponse.swift in Sources */,
 				E6837286209C628B00C11D67 /* CardNumberInputView.swift in Sources */,
 				E683728A209C62B300C11D67 /* StandardInputView.swift in Sources */,
 				E602EE8F209D86D200CC62A2 /* ServerTrustPolicy.swift in Sources */,

@@ -150,27 +150,27 @@ public class CheckoutAPIClient {
     /// - parameter erroHandler: Callback to execute if the request failed
     public func createApplePayToken(paymentData: Data,
                                     successHandler: @escaping (ApplePayToken) -> Void,
-                                    errorHandler: @escaping (ErrorResponse) -> Void) {
-        let url = "\(environment.rawValue)\(Endpoint.createApplePayToken.rawValue)"
+                                    errorHandler: @escaping (ApplePayErrorResponse) -> Void) {
+        let url = "\(environment.urlPaymentApi)\(Endpoint.tokens)"
         // swiftlint:disable:next force_try
         var urlRequest = try! URLRequest(url: URL(string: url)!, method: HTTPMethod.post, headers: headers)
-        let applePayTokenRequest = ApplePayTokenRequest(tokenData: paymentData)
-        urlRequest.httpBody = try? jsonEncoder.encode(applePayTokenRequest)
+        let applePayTokenData = try? JSONDecoder().decode(ApplePayTokenData.self, from: paymentData)
+        let applePayTokenRequest = ApplePayTokenRequest(token_data: applePayTokenData)
+        urlRequest.httpBody = try? JSONEncoder().encode(applePayTokenRequest)
 
         request(urlRequest).validate().responseJSON { response in
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
             switch response.result {
             case .success:
                 do {
-                    let applePayToken = try decoder.decode(ApplePayToken.self, from: response.data!)
+                    let applePayToken = try self.jsonDecoder.decode(ApplePayToken.self, from: response.data!)
                     successHandler(applePayToken)
                 } catch let error {
                     print(error)
                 }
             case .failure:
                 do {
-                    let applePayTokenError = try decoder.decode(ErrorResponse.self, from: response.data!)
+                    let applePayTokenError = try self.jsonDecoder.decode(ApplePayErrorResponse.self,
+                                                                         from: response.data!)
                     errorHandler(applePayTokenError)
                 } catch let error {
                     print(error)

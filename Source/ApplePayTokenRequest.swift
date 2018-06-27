@@ -7,5 +7,19 @@ public struct ApplePayTokenRequest: Codable {
     let type = "applepay"
 
     /// The Apple Pay Payment Token
-    public let tokenData: Data
+    // swiftlint:disable:next identifier_name
+    public let token_data: ApplePayTokenData?
+}
+
+public struct ApplePayTokenData: Codable {
+    let version: String
+    let data: String
+    let signature: String
+    let header: ApplePayTokenDataHeader
+}
+
+public struct ApplePayTokenDataHeader: Codable {
+    let ephemeralPublicKey: String
+    let publicKeyHash: String
+    let transactionId: String
 }

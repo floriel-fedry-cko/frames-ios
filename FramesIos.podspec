@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "CheckoutSdkIos"
+  s.name         = "FramesIos"
   s.version      = "0.3.1"
   s.summary      = "Checkout API Client, Payment Form UI and Utilities in Swift"
   s.description  = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Source/**/*.swift'
   s.exclude_files = "Classes/Exclude"
   s.resource_bundles = {
-    'CheckoutSdkIos' => 'Source/Resources/**/*'
+    'FramesIos' => 'Source/Resources/**/*'
   }
 
 end

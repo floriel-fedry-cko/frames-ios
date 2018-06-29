@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 /// A simple loading view controller
 public class SimpleLoadingViewController: UIViewController {

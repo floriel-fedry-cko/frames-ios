@@ -8,7 +8,7 @@
       location = "group:iOS Example Custom/iOS Example Custom.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CheckoutSdkIos.xcodeproj">
+      location = "group:/Users/floriel.fedry/Documents/GitHub/just-a-test/FramesIos.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:iOS Example/iOS Example.xcodeproj">

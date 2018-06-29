@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 /// Address View displaying a form to enter address information.
 public class AddressView: UIView {

@@ -1,6 +1,6 @@
 import UIKit
 import PassKit
-import CheckoutSdkIos
+import FramesIos
 
 class ExampleViewController: UIViewController,
     UITableViewDelegate,

@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 /// A view controller that allows the user to enter card information.
 public class CardViewController: UIViewController,

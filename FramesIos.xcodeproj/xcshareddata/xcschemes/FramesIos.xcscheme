@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E66406D32089FA39000431E5"
-               BuildableName = "CheckoutSdkIos.framework"
-               BlueprintName = "CheckoutSdkIos"
-               ReferencedContainer = "container:CheckoutSdkIos.xcodeproj">
+               BuildableName = "FramesIos.framework"
+               BlueprintName = "FramesIos"
+               ReferencedContainer = "container:FramesIos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E66406D32089FA39000431E5"
-            BuildableName = "CheckoutSdkIos.framework"
-            BlueprintName = "CheckoutSdkIos"
-            ReferencedContainer = "container:CheckoutSdkIos.xcodeproj">
+            BuildableName = "FramesIos.framework"
+            BlueprintName = "FramesIos"
+            ReferencedContainer = "container:FramesIos.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E6DED6E3208DF82500D5D70B"
-               BuildableName = "CheckoutSdkIosTests.xctest"
-               BlueprintName = "CheckoutSdkIosTests"
-               ReferencedContainer = "container:CheckoutSdkIos.xcodeproj">
+               BuildableName = "FramesIosTests.xctest"
+               BlueprintName = "FramesIosTests"
+               ReferencedContainer = "container:FramesIos.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E66406D32089FA39000431E5"
-            BuildableName = "CheckoutSdkIos.framework"
-            BlueprintName = "CheckoutSdkIos"
-            ReferencedContainer = "container:CheckoutSdkIos.xcodeproj">
+            BuildableName = "FramesIos.framework"
+            BlueprintName = "FramesIos"
+            ReferencedContainer = "container:FramesIos.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E66406D32089FA39000431E5"
-            BuildableName = "CheckoutSdkIos.framework"
-            BlueprintName = "CheckoutSdkIos"
-            ReferencedContainer = "container:CheckoutSdkIos.xcodeproj">
+            BuildableName = "FramesIos.framework"
+            BlueprintName = "FramesIos"
+            ReferencedContainer = "container:FramesIos.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E66406D32089FA39000431E5"
-            BuildableName = "CheckoutSdkIos.framework"
-            BlueprintName = "CheckoutSdkIos"
-            ReferencedContainer = "container:CheckoutSdkIos.xcodeproj">
+            BuildableName = "FramesIos.framework"
+            BlueprintName = "FramesIos"
+            ReferencedContainer = "container:FramesIos.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -1,5 +1,5 @@
 import Foundation
-import CheckoutSdkIos
+import FramesIos
 import Alamofire
 
 class MerchantAPIClient {

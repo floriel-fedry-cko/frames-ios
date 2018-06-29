@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 /// Add a keyboard toolbar with navigation buttons. Use it to navigate between text fields.
 ///

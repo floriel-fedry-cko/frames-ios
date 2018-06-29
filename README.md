@@ -1,11 +1,11 @@
-# CheckoutSdkIos - Beta
+# FramesIos - Beta
 
 > Beta - Do not use before speaking to integration@checkout.com
 
 [![Build Status](https://travis-ci.org/floriel-fedry-cko/frames-ios.svg?branch=master)](https://travis-ci.org/floriel-fedry-cko/frames-ios)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/CheckoutSdkIos.svg)](https://img.shields.io/cocoapods/v/CheckoutSdkIos)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/FramesIos.svg)](https://img.shields.io/cocoapods/v/FramesIos)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Platform](https://img.shields.io/cocoapods/p/CheckoutSdkIos.svg?style=flat)]()
+[![Platform](https://img.shields.io/cocoapods/p/FramesIos.svg?style=flat)]()
 [![codecov](https://codecov.io/gh/floriel-fedry-cko/frames-ios/branch/master/graph/badge.svg)](https://codecov.io/gh/floriel-fedry-cko/frames-ios)
 [![codebeat badge](https://codebeat.co/badges/d9bae177-78c1-40bb-94a7-187a7759d549)](https://codebeat.co/projects/github-com-floriel-fedry-cko-frames-ios-master)
 ![license](https://img.shields.io/github/license/floriel-fedry-cko/frames-ios.svg)
@@ -18,7 +18,7 @@
 
 ## Documentation
 
-You can find the CheckoutSdkIos documentation [on this website](https://floriel-fedry-cko.github.io/frames-ios/index.html).
+You can find the FramesIos documentation [on this website](https://floriel-fedry-cko.github.io/frames-ios/index.html).
 
 - [Usage](https://floriel-fedry-cko.github.io/frames-ios/usage.html)
 - [Customizing the card view](https://floriel-fedry-cko.github.io/frames-ios/customizing-the-card-view.html)
@@ -36,9 +36,9 @@ You can find the CheckoutSdkIos documentation [on this website](https://floriel-
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.1+ is required to build CheckoutSdkIos 1.0+.
+> CocoaPods 1.1+ is required to build FramesIos 1.0+.
 
-To integrate CheckoutSdkIos into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate FramesIos into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
@@ -46,7 +46,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'CheckoutSdkIos', :git => 'https://github.com/floriel-fedry-cko/frames-ios.git'
+    pod 'FramesIos', :git => 'https://github.com/floriel-fedry-cko/frames-ios.git'
 end
 ```
 
@@ -67,20 +67,20 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate CheckoutSdkIos into your Xcode project using Carthage, specify it in your `Cartfile`:
+To integrate FramesIos into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
 github "floriel-fedry-cko/frames-ios" ~> 0.2
 ```
 
-Run `carthage update` to build the framework and drag the built `CheckoutSdkIos` into your Xcode project.
+Run `carthage update` to build the framework and drag the built `FramesIos` into your Xcode project.
 
 ## Usage
 
 Import the SDK:
 
 ```swift
-import CheckoutSdkIos
+import FramesIos
 ```
 
 ### Using `CardViewController`
@@ -115,7 +115,7 @@ class ViewController: UIViewController, CardViewControllerDelegate {
 }
 ```
 
-### Using Methods available in CheckoutSdkIos
+### Using Methods available in FramesIos
 
 You can find more examples on the [usage guide](https://floriel-fedry-cko.github.io/frames-ios/usage.html).
 
@@ -174,4 +174,4 @@ The error handler takes an `ErrorResponse` as a parameter.
 
 ## License
 
-CheckoutSdkIos is released under the MIT license. [See LICENSE](https://github.com/checkout/frames-ios/blob/master/LICENSE) for details.
+FramesIos is released under the MIT license. [See LICENSE](https://github.com/checkout/frames-ios/blob/master/LICENSE) for details.

@@ -1,5 +1,6 @@
 import Foundation
-@testable import CheckoutSdkIos
+import UIKit
+@testable import FramesIos
 
 class CardNumberInputViewMockDelegate: CardNumberInputViewDelegate {
 

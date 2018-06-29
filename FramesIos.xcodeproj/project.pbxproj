@@ -45,7 +45,6 @@
 		E625EE62209080A40019B750 /* CODE_OF_CONDUCT.md in Resources */ = {isa = PBXBuildFile; fileRef = E625EE5F209080A40019B750 /* CODE_OF_CONDUCT.md */; };
 		E625EE63209080A40019B750 /* ISSUE_TEMPLATE.md in Resources */ = {isa = PBXBuildFile; fileRef = E625EE60209080A40019B750 /* ISSUE_TEMPLATE.md */; };
 		E625EE672090926F0019B750 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E625EE652090926F0019B750 /* LICENSE */; };
-		E625EE682090926F0019B750 /* CheckoutSdkIos.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E625EE662090926F0019B750 /* CheckoutSdkIos.podspec */; };
 		E631CB69209755FF00023472 /* cardTokenInvalidNumber.json in Resources */ = {isa = PBXBuildFile; fileRef = E631CB672097552700023472 /* cardTokenInvalidNumber.json */; };
 		E631CB6B209766E300023472 /* CustomerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631CB6A209766E300023472 /* CustomerCard.swift */; };
 		E631CB6D20976A0400023472 /* CustomerCardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E631CB6C20976A0400023472 /* CustomerCardList.swift */; };
@@ -137,11 +136,12 @@
 		E6BEBDBE20C171FA00C3130A /* ApplePayTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BEBDBD20C171FA00C3130A /* ApplePayTokenRequest.swift */; };
 		E6BEBDC020C1721500C3130A /* CardTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BEBDBF20C1721500C3130A /* CardTokenRequest.swift */; };
 		E6BEBDC220C1746800C3130A /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BEBDC120C1746800C3130A /* TokenResponse.swift */; };
+		E6BFBCD120E6AF37009DDD28 /* FramesIos.podspec in Resources */ = {isa = PBXBuildFile; fileRef = E6BFBCD020E6AF37009DDD28 /* FramesIos.podspec */; };
 		E6DC28F820A19F3C009FA38B /* DetailsInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */; };
 		E6DC28FB20A1D9EE009FA38B /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */; };
 		E6DC28FE20A1E0E7009FA38B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FD20A1E0E7009FA38B /* UIViewExtensions.swift */; };
 		E6DC290020A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */; };
-		E6DED6E9208DF82500D5D70B /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */; };
+		E6DED6E9208DF82500D5D70B /* FramesIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66406D42089FA39000431E5 /* FramesIos.framework */; };
 		E6F6B56F20AD832B0091A8AF /* applePayToken.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B56E20AD832B0091A8AF /* applePayToken.json */; };
 		E6F6B57120ADBD230091A8AF /* applePayTokenInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */; };
 		E6F6B57320ADC0BA0091A8AF /* checkmarks in Resources */ = {isa = PBXBuildFile; fileRef = E6F6B57220ADC0BA0091A8AF /* checkmarks */; };
@@ -216,7 +216,6 @@
 		E625EE5F209080A40019B750 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CODE_OF_CONDUCT.md; path = .github/CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		E625EE60209080A40019B750 /* ISSUE_TEMPLATE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = ISSUE_TEMPLATE.md; path = .github/ISSUE_TEMPLATE.md; sourceTree = "<group>"; };
 		E625EE652090926F0019B750 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		E625EE662090926F0019B750 /* CheckoutSdkIos.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CheckoutSdkIos.podspec; sourceTree = "<group>"; };
 		E631CB672097552700023472 /* cardTokenInvalidNumber.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cardTokenInvalidNumber.json; sourceTree = "<group>"; };
 		E631CB6A209766E300023472 /* CustomerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCard.swift; sourceTree = "<group>"; };
 		E631CB6C20976A0400023472 /* CustomerCardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCardList.swift; sourceTree = "<group>"; };
@@ -256,7 +255,7 @@
 		E658532720D80AF600C261D7 /* CardViewControllerMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewControllerMockDelegate.swift; path = Mocks/CardViewControllerMockDelegate.swift; sourceTree = "<group>"; };
 		E658532920D80B3700C261D7 /* CvvInputViewMockDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CvvInputViewMockDelegate.swift; path = Mocks/CvvInputViewMockDelegate.swift; sourceTree = "<group>"; };
 		E65EF60C20E3A34700CC70F0 /* ApplePayErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayErrorResponse.swift; sourceTree = "<group>"; };
-		E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E66406D42089FA39000431E5 /* FramesIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FramesIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66406D72089FA39000431E5 /* CheckoutSdkIos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckoutSdkIos.h; sourceTree = "<group>"; };
 		E66406D82089FA39000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E664070F208DD550000431E5 /* CheckoutAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutAPIClient.swift; sourceTree = "<group>"; };
@@ -315,12 +314,13 @@
 		E6BEBDBD20C171FA00C3130A /* ApplePayTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayTokenRequest.swift; sourceTree = "<group>"; };
 		E6BEBDBF20C1721500C3130A /* CardTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTokenRequest.swift; sourceTree = "<group>"; };
 		E6BEBDC120C1746800C3130A /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		E6BFBCD020E6AF37009DDD28 /* FramesIos.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FramesIos.podspec; sourceTree = "<group>"; };
 		E6D44876208F628500B5FA14 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		E6DC28F720A19F3C009FA38B /* DetailsInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInputView.swift; sourceTree = "<group>"; };
 		E6DC28FA20A1D9EE009FA38B /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
 		E6DC28FD20A1E0E7009FA38B /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		E6DC28FF20A1F6D3009FA38B /* CountrySelectionViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewControllerDelegate.swift; sourceTree = "<group>"; };
-		E6DED6E4208DF82500D5D70B /* CheckoutSdkIosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckoutSdkIosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6DED6E4208DF82500D5D70B /* FramesIosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FramesIosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DED6E8208DF82500D5D70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6F6B56E20AD832B0091A8AF /* applePayToken.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applePayToken.json; sourceTree = "<group>"; };
 		E6F6B57020ADBD230091A8AF /* applePayTokenInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = applePayTokenInvalid.json; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6DED6E9208DF82500D5D70B /* CheckoutSdkIos.framework in Frameworks */,
+				E6DED6E9208DF82500D5D70B /* FramesIos.framework in Frameworks */,
 				B40DDD7A553AF2DF4399463F /* Pods_CheckoutSdkIosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,8 +485,8 @@
 		E66406D52089FA39000431E5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */,
-				E6DED6E4208DF82500D5D70B /* CheckoutSdkIosTests.xctest */,
+				E66406D42089FA39000431E5 /* FramesIos.framework */,
+				E6DED6E4208DF82500D5D70B /* FramesIosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -563,7 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				E6D44876208F628500B5FA14 /* Package.swift */,
-				E625EE662090926F0019B750 /* CheckoutSdkIos.podspec */,
+				E6BFBCD020E6AF37009DDD28 /* FramesIos.podspec */,
 				E625EE652090926F0019B750 /* LICENSE */,
 			);
 			name = Deployment;
@@ -719,9 +719,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E66406D32089FA39000431E5 /* CheckoutSdkIos */ = {
+		E66406D32089FA39000431E5 /* FramesIos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E66406DC2089FA39000431E5 /* Build configuration list for PBXNativeTarget "CheckoutSdkIos" */;
+			buildConfigurationList = E66406DC2089FA39000431E5 /* Build configuration list for PBXNativeTarget "FramesIos" */;
 			buildPhases = (
 				82B777732C289CF63B24A560 /* [CP] Check Pods Manifest.lock */,
 				E66406CF2089FA39000431E5 /* Sources */,
@@ -734,14 +734,14 @@
 			);
 			dependencies = (
 			);
-			name = CheckoutSdkIos;
+			name = FramesIos;
 			productName = CheckoutSdkIos;
-			productReference = E66406D42089FA39000431E5 /* CheckoutSdkIos.framework */;
+			productReference = E66406D42089FA39000431E5 /* FramesIos.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E6DED6E3208DF82500D5D70B /* CheckoutSdkIosTests */ = {
+		E6DED6E3208DF82500D5D70B /* FramesIosTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6DED6EC208DF82500D5D70B /* Build configuration list for PBXNativeTarget "CheckoutSdkIosTests" */;
+			buildConfigurationList = E6DED6EC208DF82500D5D70B /* Build configuration list for PBXNativeTarget "FramesIosTests" */;
 			buildPhases = (
 				03908BED798B911839FD17B1 /* [CP] Check Pods Manifest.lock */,
 				E6DED6E0208DF82500D5D70B /* Sources */,
@@ -756,9 +756,9 @@
 			dependencies = (
 				E6DED6EB208DF82500D5D70B /* PBXTargetDependency */,
 			);
-			name = CheckoutSdkIosTests;
+			name = FramesIosTests;
 			productName = CheckoutSdkIosTests;
-			productReference = E6DED6E4208DF82500D5D70B /* CheckoutSdkIosTests.xctest */;
+			productReference = E6DED6E4208DF82500D5D70B /* FramesIosTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -781,7 +781,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E66406CE2089FA39000431E5 /* Build configuration list for PBXProject "CheckoutSdkIos" */;
+			buildConfigurationList = E66406CE2089FA39000431E5 /* Build configuration list for PBXProject "FramesIos" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -798,8 +798,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E66406D32089FA39000431E5 /* CheckoutSdkIos */,
-				E6DED6E3208DF82500D5D70B /* CheckoutSdkIosTests */,
+				E66406D32089FA39000431E5 /* FramesIos */,
+				E6DED6E3208DF82500D5D70B /* FramesIosTests */,
 			);
 		};
 /* End PBXProject section */
@@ -813,6 +813,7 @@
 				E625EE5920907FFE0019B750 /* README.md in Resources */,
 				E625EE5C2090801C0019B750 /* CHANGELOG.md in Resources */,
 				E6AF0A4320AB29D400D29929 /* Localizable.strings in Resources */,
+				E6BFBCD120E6AF37009DDD28 /* FramesIos.podspec in Resources */,
 				E658531720D7C83600C261D7 /* iOS Example.md in Resources */,
 				E625EE63209080A40019B750 /* ISSUE_TEMPLATE.md in Resources */,
 				E6AF0A3D20AAE46600D29929 /* schemes in Resources */,
@@ -821,7 +822,6 @@
 				E658531820D7C83600C261D7 /* iOS Example Frames.md in Resources */,
 				E64B31E020D26A930088B7FD /* ckoCardToken.json in Resources */,
 				E625EE5D2090801C0019B750 /* CONTRIBUTING.md in Resources */,
-				E625EE682090926F0019B750 /* CheckoutSdkIos.podspec in Resources */,
 				E625EE62209080A40019B750 /* CODE_OF_CONDUCT.md in Resources */,
 				E60A5E5820CFCCA000EB7589 /* PhoneNumberMetadata.json in Resources */,
 				E625EE61209080A40019B750 /* PULL_REQUEST_TEMPLATE.md in Resources */,
@@ -1063,7 +1063,7 @@
 /* Begin PBXTargetDependency section */
 		E6DED6EB208DF82500D5D70B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E66406D32089FA39000431E5 /* CheckoutSdkIos */;
+			target = E66406D32089FA39000431E5 /* FramesIos */;
 			targetProxy = E6DED6EA208DF82500D5D70B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1306,7 +1306,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E66406CE2089FA39000431E5 /* Build configuration list for PBXProject "CheckoutSdkIos" */ = {
+		E66406CE2089FA39000431E5 /* Build configuration list for PBXProject "FramesIos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E66406DA2089FA39000431E5 /* Debug */,
@@ -1315,7 +1315,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E66406DC2089FA39000431E5 /* Build configuration list for PBXNativeTarget "CheckoutSdkIos" */ = {
+		E66406DC2089FA39000431E5 /* Build configuration list for PBXNativeTarget "FramesIos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E66406DD2089FA39000431E5 /* Debug */,
@@ -1324,7 +1324,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6DED6EC208DF82500D5D70B /* Build configuration list for PBXNativeTarget "CheckoutSdkIosTests" */ = {
+		E6DED6EC208DF82500D5D70B /* Build configuration list for PBXNativeTarget "FramesIosTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6DED6ED208DF82500D5D70B /* Debug */,

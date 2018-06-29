@@ -2,12 +2,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 use_frameworks!
 
-workspace 'CheckoutSdkIos.xcworkspace'
+workspace 'FramesIos.xcworkspace'
 
-target 'CheckoutSdkIos' do
+target 'FramesIos' do
 
     # Add test target
-    target 'CheckoutSdkIosTests' do
+    target 'FramesIosTests' do
       inherit! :search_paths
 
       pod 'Mockingjay', '~> 2.0'

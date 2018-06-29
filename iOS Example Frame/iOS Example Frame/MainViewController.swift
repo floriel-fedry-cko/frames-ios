@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CheckoutSdkIos
+import FramesIos
 
 class MainViewController: UIViewController, CardViewControllerDelegate {
 

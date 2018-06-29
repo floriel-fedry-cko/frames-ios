@@ -47,7 +47,7 @@ class iOS_Example_Apple_PayUITests: XCTestCase {
         elementsQuery.textFields["100"].tap()
         elementsQuery.textFields["100"].typeText("100")
         app.toolbars["Toolbar"].buttons["Done"].tap()
-        app.navigationBars["CheckoutSdkIos.CardView"].buttons["Done"].tap()
+        app.navigationBars["FramesIos.CardView"].buttons["Done"].tap()
         
         let exists = NSPredicate(format: "exists == true")
         expectation(for: exists, evaluatedWith: app.tables.staticTexts["Visa ····4242"], handler: nil)

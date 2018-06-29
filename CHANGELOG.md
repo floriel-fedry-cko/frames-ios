@@ -15,4 +15,4 @@ Released on 2018-05-07.
 
 #### Added
 
-* Initial release of CheckoutSdkIos.
+* Initial release of FramesIos.

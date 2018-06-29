@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CheckoutSdkIosTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CheckoutSdkIosTestsVersionString[];
+FOUNDATION_EXPORT double Pods_FramesIosTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_FramesIosTestsVersionString[];
 

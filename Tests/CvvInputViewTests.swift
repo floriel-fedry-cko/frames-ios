@@ -1,5 +1,5 @@
 import XCTest
-@testable import CheckoutSdkIos
+@testable import FramesIos
 
 class CvvInputViewTests: XCTestCase {
 

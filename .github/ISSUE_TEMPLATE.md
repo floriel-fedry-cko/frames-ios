@@ -4,7 +4,7 @@ Before you open an issue, please check if a similar issue already exists or has 
 
 * [ ] A descriptive title
 * [ ] An _isolated_ way to reproduce the behavior (example: GitHub repository with code isolated to the issue that anyone can clone to observe the problem)
-* [ ] What version of `CheckoutSdkIos` you're using, and the platform(s) you're running it on
+* [ ] What version of `FramesIos` you're using, and the platform(s) you're running it on
 * [ ] The behavior you expect to see, and the actual behavior
 
 ### When you open an issue for a feature request, please add as much detail as possible:

@@ -3,7 +3,7 @@
 ### Importing the library
 
 ```swift
-import CheckoutSdkIos
+import FramesIos
 ```
 
 Two classes are available globally: `CheckoutAPIClient` and `CardUtils`.

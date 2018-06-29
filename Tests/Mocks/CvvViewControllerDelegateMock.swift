@@ -1,5 +1,5 @@
 import Foundation
-@testable import CheckoutSdkIos
+@testable import FramesIos
 
 class CvvViewControllerDelegateMock: CvvConfirmationViewControllerDelegate {
 

@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 /// A view that displays card information inputs
 public class CardView: UIView {

@@ -6,12 +6,12 @@ import UIKit
     // MARK: - Properties
 
     // Managing the date and calendar
-    let calendar: Calendar = Calendar(identifier: .gregorian)
-    let timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!
+    let calendar = Calendar(identifier: .gregorian)
+    let timeZone = TimeZone(secondsFromGMT: 0)!
 
     // Configuring temporal attributes
-    var maximumDate: Date = Date(timeIntervalSinceNow: 31556926 * 20)
-    let minimumDate: Date = Date()
+    var maximumDate = Date(timeIntervalSinceNow: 31556926 * 20)
+    let minimumDate = Date()
 
     /// Expiration picker delegate
     public weak var pickerDelegate: ExpirationDatePickerDelegate?

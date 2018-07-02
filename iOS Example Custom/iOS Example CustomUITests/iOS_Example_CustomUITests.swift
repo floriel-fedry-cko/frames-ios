@@ -36,7 +36,7 @@ class iOS_Example_CustomUITests: XCTestCase {
         app.textFields["4242"].typeText("424242424242424242")
         let textField = app.textFields["06/2019"]
         textField.tap()
-        app/*@START_MENU_TOKEN@*/.pickerWheels["06"]/*[[".pickers.pickerWheels[\"06\"]",".pickerWheels[\"06\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeDown()
+        app.pickerWheels.element(boundBy: 0).swipeDown()
         app.textFields["100"].tap()
         app.textFields["100"].typeText("100")
         app.buttons["Button"].tap()

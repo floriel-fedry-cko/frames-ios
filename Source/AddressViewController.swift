@@ -24,8 +24,8 @@ public class AddressViewController: UIViewController,
     /// Called after the controller's view is loaded into memory.
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.groupTableViewBackground
-        self.view.addSubview(addressView)
+        view.backgroundColor = UIColor.groupTableViewBackground
+        view.addSubview(addressView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
                                                             target: self,
                                                             action: #selector(onTapDoneButton))
@@ -40,7 +40,7 @@ public class AddressViewController: UIViewController,
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.registerKeyboardHandlers(notificationCenter: notificationCenter,
+        registerKeyboardHandlers(notificationCenter: notificationCenter,
                                       keyboardWillShow: #selector(keyboardWillShow),
                                       keyboardWillHide: #selector(keyboardWillHide))
     }
@@ -48,12 +48,12 @@ public class AddressViewController: UIViewController,
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
+        deregisterKeyboardHandlers(notificationCenter: notificationCenter)
     }
 
     /// Called to notify the view controller that its view has just laid out its subviews.
     public override func viewDidLayoutSubviews() {
-        self.view.addSubview(addressView)
+        view.addSubview(addressView)
         addressView.translatesAutoresizingMaskIntoConstraints = false
         addressView.leftAnchor.constraint(equalTo: view.safeLeftAnchor).isActive = true
         addressView.rightAnchor.constraint(equalTo: view.safeRightAnchor).isActive = true
@@ -64,13 +64,13 @@ public class AddressViewController: UIViewController,
     // MARK: - Methods
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        self.scrollViewOnKeyboardWillShow(notification: notification,
+        scrollViewOnKeyboardWillShow(notification: notification,
                                           scrollView: addressView.scrollView,
                                           activeField: nil)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.scrollViewOnKeyboardWillHide(notification: notification, scrollView: addressView.scrollView)
+        scrollViewOnKeyboardWillHide(notification: notification, scrollView: addressView.scrollView)
     }
 
     @objc func onTapCountryRegionView() {
@@ -89,7 +89,7 @@ public class AddressViewController: UIViewController,
                                  postcode: addressView.zipInputView.textField.text,
                                  country: regionCodeSelected,
                                  phone: phone)
-        self.delegate?.onTapDoneButton(address: address)
+        delegate?.onTapDoneButton(address: address)
         navigationController?.popViewController(animated: true)
     }
 

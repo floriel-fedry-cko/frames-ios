@@ -94,10 +94,10 @@ import UIKit
         errorView.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
 
-        stackview.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackview.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stackview.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        stackview.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        stackview.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        stackview.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        stackview.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        stackview.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         heightConstraint = stackview.heightAnchor.constraint(equalToConstant: 48)
         heightConstraint.isActive = true
 

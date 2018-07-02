@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E620C49B20EA2AD900045DC6 /* FramesIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620C49A20EA2AD900045DC6 /* FramesIos.framework */; };
+		E620C49C20EA2AE000045DC6 /* FramesIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620C49A20EA2AD900045DC6 /* FramesIos.framework */; };
+		E620C49D20EA2AE000045DC6 /* FramesIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E620C49A20EA2AD900045DC6 /* FramesIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E6BEBDD020C1778600C3130A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BEBDCF20C1778600C3130A /* AppDelegate.swift */; };
 		E6BEBDD220C1778600C3130A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BEBDD120C1778600C3130A /* ViewController.swift */; };
 		E6BEBDD520C1778600C3130A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BEBDD320C1778600C3130A /* Main.storyboard */; };
 		E6BEBDD720C1778800C3130A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BEBDD620C1778800C3130A /* Assets.xcassets */; };
 		E6BEBDDA20C1778800C3130A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6BEBDD820C1778800C3130A /* LaunchScreen.storyboard */; };
 		E6BEBDE520C1778800C3130A /* iOS_Example_CustomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BEBDE420C1778800C3130A /* iOS_Example_CustomUITests.swift */; };
-		E6BEBDF120C18FBD00C3130A /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BEBDF020C18FBD00C3130A /* CheckoutSdkIos.framework */; };
-		E6BEBDF220C1A94E00C3130A /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BEBDF020C18FBD00C3130A /* CheckoutSdkIos.framework */; };
-		E6BEBDF320C1A94E00C3130A /* CheckoutSdkIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E6BEBDF020C18FBD00C3130A /* CheckoutSdkIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E6BEBDF320C1A94E00C3130A /* CheckoutSdkIos.framework in Embed Frameworks */,
+				E620C49D20EA2AE000045DC6 /* FramesIos.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E620C49A20EA2AD900045DC6 /* FramesIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FramesIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BEBDCC20C1778600C3130A /* iOS Example Custom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example Custom.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BEBDCF20C1778600C3130A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6BEBDD120C1778600C3130A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		E6BEBDE020C1778800C3130A /* iOS Example CustomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Example CustomUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BEBDE420C1778800C3130A /* iOS_Example_CustomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Example_CustomUITests.swift; sourceTree = "<group>"; };
 		E6BEBDE620C1778800C3130A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6BEBDF020C18FBD00C3130A /* CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6BEBDF120C18FBD00C3130A /* CheckoutSdkIos.framework in Frameworks */,
-				E6BEBDF220C1A94E00C3130A /* CheckoutSdkIos.framework in Frameworks */,
+				E620C49C20EA2AE000045DC6 /* FramesIos.framework in Frameworks */,
+				E620C49B20EA2AD900045DC6 /* FramesIos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 		E6BEBDEF20C18FBD00C3130A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E6BEBDF020C18FBD00C3130A /* CheckoutSdkIos.framework */,
+				E620C49A20EA2AD900045DC6 /* FramesIos.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

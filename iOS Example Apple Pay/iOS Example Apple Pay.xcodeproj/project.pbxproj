@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14539D8DE70C8B8F7AA0FA31 /* Pods_iOS_Example_Apple_Pay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064460288677724CCC1A0BD7 /* Pods_iOS_Example_Apple_Pay.framework */; };
 		E609F36720BEAF7A00893E61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609F36620BEAF7A00893E61 /* AppDelegate.swift */; };
 		E609F36920BEAF7A00893E61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609F36820BEAF7A00893E61 /* ViewController.swift */; };
 		E609F36C20BEAF7A00893E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E609F36A20BEAF7A00893E61 /* Main.storyboard */; };
 		E609F36E20BEAF7C00893E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E609F36D20BEAF7C00893E61 /* Assets.xcassets */; };
 		E609F37120BEAF7C00893E61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E609F36F20BEAF7C00893E61 /* LaunchScreen.storyboard */; };
 		E609F37C20BEAF7D00893E61 /* iOS_Example_Apple_PayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609F37B20BEAF7D00893E61 /* iOS_Example_Apple_PayUITests.swift */; };
-		E609F3A020BEB46100893E61 /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E609F39220BEB3E100893E61 /* CheckoutSdkIos.framework */; };
-		E609F3A120BEB46100893E61 /* CheckoutSdkIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E609F39220BEB3E100893E61 /* CheckoutSdkIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E609F3A520BEB73400893E61 /* MerchantAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E609F3A420BEB73400893E61 /* MerchantAPIClient.swift */; };
+		E620C4A320EA2B4E00045DC6 /* FramesIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620C4A220EA2B4E00045DC6 /* FramesIos.framework */; };
+		E620C4A420EA2B5700045DC6 /* FramesIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620C4A220EA2B4E00045DC6 /* FramesIos.framework */; };
+		E620C4A520EA2B5700045DC6 /* FramesIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E620C4A220EA2B4E00045DC6 /* FramesIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E620C4A920EA2CC700045DC6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620C4A820EA2CC700045DC6 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,34 +28,6 @@
 			remoteGlobalIDString = E609F36220BEAF7A00893E61;
 			remoteInfo = "iOS Example Apple Pay";
 		};
-		E609F39120BEB3E100893E61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E609F38C20BEB3E100893E61 /* CheckoutSdkIos.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E66406D42089FA39000431E5;
-			remoteInfo = CheckoutSdkIos;
-		};
-		E609F39320BEB3E100893E61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E609F38C20BEB3E100893E61 /* CheckoutSdkIos.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E6DED6E4208DF82500D5D70B;
-			remoteInfo = CheckoutSdkIosTests;
-		};
-		E609F39E20BEB44700893E61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E609F38C20BEB3E100893E61 /* CheckoutSdkIos.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E66406D32089FA39000431E5;
-			remoteInfo = CheckoutSdkIos;
-		};
-		E609F3A220BEB46100893E61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E609F38C20BEB3E100893E61 /* CheckoutSdkIos.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E66406D32089FA39000431E5;
-			remoteInfo = CheckoutSdkIos;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E609F3A120BEB46100893E61 /* CheckoutSdkIos.framework in Embed Frameworks */,
+				E620C4A520EA2B5700045DC6 /* FramesIos.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,7 +45,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		064460288677724CCC1A0BD7 /* Pods_iOS_Example_Apple_Pay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example_Apple_Pay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6E0A30CB98539EE8FC7650 /* Pods-iOS Example Apple Pay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example Apple Pay.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example Apple Pay/Pods-iOS Example Apple Pay.release.xcconfig"; sourceTree = "<group>"; };
 		CCFC940017352332245B8DE5 /* Pods-iOS Example Apple Pay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example Apple Pay.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example Apple Pay/Pods-iOS Example Apple Pay.debug.xcconfig"; sourceTree = "<group>"; };
 		E609F36320BEAF7A00893E61 /* iOS Example Apple Pay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example Apple Pay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,8 +57,9 @@
 		E609F37720BEAF7C00893E61 /* iOS Example Apple PayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Example Apple PayUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E609F37B20BEAF7D00893E61 /* iOS_Example_Apple_PayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Example_Apple_PayUITests.swift; sourceTree = "<group>"; };
 		E609F37D20BEAF7D00893E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E609F38C20BEB3E100893E61 /* CheckoutSdkIos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheckoutSdkIos.xcodeproj; path = ../CheckoutSdkIos.xcodeproj; sourceTree = "<group>"; };
 		E609F3A420BEB73400893E61 /* MerchantAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantAPIClient.swift; sourceTree = "<group>"; };
+		E620C4A220EA2B4E00045DC6 /* FramesIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FramesIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E620C4A820EA2CC700045DC6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E65EF60B20E3905F00CC70F0 /* iOS Example Apple Pay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iOS Example Apple Pay.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,8 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E609F3A020BEB46100893E61 /* CheckoutSdkIos.framework in Frameworks */,
-				14539D8DE70C8B8F7AA0FA31 /* Pods_iOS_Example_Apple_Pay.framework in Frameworks */,
+				E620C4A920EA2CC700045DC6 /* Alamofire.framework in Frameworks */,
+				E620C4A420EA2B5700045DC6 /* FramesIos.framework in Frameworks */,
+				E620C4A320EA2B4E00045DC6 /* FramesIos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,19 +140,10 @@
 		E609F38620BEB28300893E61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E609F38C20BEB3E100893E61 /* CheckoutSdkIos.xcodeproj */,
-				064460288677724CCC1A0BD7 /* Pods_iOS_Example_Apple_Pay.framework */,
+				E620C4A820EA2CC700045DC6 /* Alamofire.framework */,
+				E620C4A220EA2B4E00045DC6 /* FramesIos.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E609F38D20BEB3E100893E61 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E609F39220BEB3E100893E61 /* CheckoutSdkIos.framework */,
-				E609F39420BEB3E100893E61 /* CheckoutSdkIosTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +163,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E609F39F20BEB44700893E61 /* PBXTargetDependency */,
-				E609F3A320BEB46100893E61 /* PBXTargetDependency */,
 			);
 			name = "iOS Example Apple Pay";
 			productName = "iOS Example Apple Pay";
@@ -259,12 +222,6 @@
 			mainGroup = E609F35A20BEAF7A00893E61;
 			productRefGroup = E609F36420BEAF7A00893E61 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = E609F38D20BEB3E100893E61 /* Products */;
-					ProjectRef = E609F38C20BEB3E100893E61 /* CheckoutSdkIos.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				E609F36220BEAF7A00893E61 /* iOS Example Apple Pay */,
@@ -272,23 +229,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		E609F39220BEB3E100893E61 /* CheckoutSdkIos.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CheckoutSdkIos.framework;
-			remoteRef = E609F39120BEB3E100893E61 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E609F39420BEB3E100893E61 /* CheckoutSdkIosTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CheckoutSdkIosTests.xctest;
-			remoteRef = E609F39320BEB3E100893E61 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E609F36120BEAF7A00893E61 /* Resources */ = {
@@ -375,16 +315,6 @@
 			isa = PBXTargetDependency;
 			target = E609F36220BEAF7A00893E61 /* iOS Example Apple Pay */;
 			targetProxy = E609F37820BEAF7D00893E61 /* PBXContainerItemProxy */;
-		};
-		E609F39F20BEB44700893E61 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CheckoutSdkIos;
-			targetProxy = E609F39E20BEB44700893E61 /* PBXContainerItemProxy */;
-		};
-		E609F3A320BEB46100893E61 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CheckoutSdkIos;
-			targetProxy = E609F3A220BEB46100893E61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

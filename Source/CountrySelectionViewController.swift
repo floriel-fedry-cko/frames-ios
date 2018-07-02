@@ -33,10 +33,10 @@ public class CountrySelectionViewController: UIViewController,
     override public func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        self.view.backgroundColor = UIColor.groupTableViewBackground
+        view.backgroundColor = UIColor.groupTableViewBackground
         navigationItem.title = "countryRegion".localized(forClass: CountrySelectionViewController.self)
         // table view
-        self.filteredCountries = self.countries
+        filteredCountries = countries
         tableView.delegate = self
         tableView.dataSource = self
         // search bar
@@ -53,15 +53,15 @@ public class CountrySelectionViewController: UIViewController,
 
     private func addConstraints() {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        searchBar.topAnchor.constraint(equalTo: self.view.safeTopAnchor).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor).isActive = true
+        searchBar.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor).isActive = true
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: self.view.safeBottomAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: self.view.safeTrailingAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: self.view.safeLeadingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor).isActive = true
     }
 
     // MARK: - UITableViewDataSource
@@ -92,7 +92,7 @@ public class CountrySelectionViewController: UIViewController,
 
     func updateSearchResults(text: String?) {
         guard let searchText = text else { return }
-        self.filteredCountries = countries.filter { country in
+        filteredCountries = countries.filter { country in
             return country.0.lowercased().contains(searchText.lowercased())
         }
         tableView.reloadData()
@@ -113,13 +113,13 @@ public class CountrySelectionViewController: UIViewController,
     /// Tells the delegate that the search button was tapped.
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         updateSearchResults(text: searchBar.text)
-        self.searchBar.endEditing(true)
+        searchBar.endEditing(true)
     }
 
     /// Tells the delegate that the cancel button was tapped.
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
-        self.searchBar.endEditing(true)
+        searchBar.endEditing(true)
         filteredCountries = countries
         tableView.reloadData()
     }

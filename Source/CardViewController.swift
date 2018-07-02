@@ -80,32 +80,42 @@ public class CardViewController: UIViewController,
         addTextFieldsDelegate()
 
         // add schemes icons
-        self.view.backgroundColor = .groupTableViewBackground
+        view.backgroundColor = .groupTableViewBackground
         cardView.schemeIconsStackView.setIcons(schemes: availableSchemes)
+        setInitialDate()
     }
 
     /// Notifies the view controller that its view is about to be added to a view hierarchy.
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.registerKeyboardHandlers(notificationCenter: notificationCenter,
-                                      keyboardWillShow: #selector(keyboardWillShow),
-                                      keyboardWillHide: #selector(keyboardWillHide))
+        registerKeyboardHandlers(notificationCenter: notificationCenter,
+                                 keyboardWillShow: #selector(keyboardWillShow),
+                                 keyboardWillHide: #selector(keyboardWillHide))
     }
 
     /// Notifies the view controller that its view is about to be removed from a view hierarchy.
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.deregisterKeyboardHandlers(notificationCenter: notificationCenter)
+        deregisterKeyboardHandlers(notificationCenter: notificationCenter)
     }
 
     /// Called to notify the view controller that its view has just laid out its subviews.
     public override func viewDidLayoutSubviews() {
-        self.view.addSubview(cardView)
+        view.addSubview(cardView)
         cardView.translatesAutoresizingMaskIntoConstraints = false
-        self.cardView.leftAnchor.constraint(equalTo: view.safeLeftAnchor).isActive = true
-        self.cardView.rightAnchor.constraint(equalTo: view.safeRightAnchor).isActive = true
-        self.cardView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
-        self.cardView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
+        cardView.leftAnchor.constraint(equalTo: view.safeLeftAnchor).isActive = true
+        cardView.rightAnchor.constraint(equalTo: view.safeRightAnchor).isActive = true
+        cardView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        cardView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
+    }
+
+    private func setInitialDate() {
+        let calendar = Calendar(identifier: .gregorian)
+        let date = Date()
+        let month = calendar.component(.month, from: date)
+        let year = calendar.component(.year, from: date)
+        let monthString = month < 10 ? "0\(month)" : "\(month)"
+        cardView.expirationDateInputView.textField.text = "\(monthString)/\(year)"
     }
 
     @objc func onTapAddressView() {
@@ -197,11 +207,11 @@ public class CardViewController: UIViewController,
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        self.scrollViewOnKeyboardWillShow(notification: notification, scrollView: cardView.scrollView, activeField: nil)
+        scrollViewOnKeyboardWillShow(notification: notification, scrollView: cardView.scrollView, activeField: nil)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.scrollViewOnKeyboardWillHide(notification: notification, scrollView: cardView.scrollView)
+        scrollViewOnKeyboardWillHide(notification: notification, scrollView: cardView.scrollView)
     }
 
     // MARK: - UITextFieldDelegate

@@ -56,7 +56,7 @@ import UIKit
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(value)
         stackView.addArrangedSubview(button)
-        self.addSubview(stackView)
+        addSubview(stackView)
         // add constraints
         addConstraints()
     }

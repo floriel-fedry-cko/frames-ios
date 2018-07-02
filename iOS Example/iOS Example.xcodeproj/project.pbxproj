@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C084B56AE10CB0F554D54782 /* Pods_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2CEFC7F0253E39130E2F8A /* Pods_iOS_Example.framework */; };
+		E620C49F20EA2AF800045DC6 /* FramesIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620C49E20EA2AF800045DC6 /* FramesIos.framework */; };
+		E620C4A020EA2B0A00045DC6 /* FramesIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620C49E20EA2AF800045DC6 /* FramesIos.framework */; };
+		E620C4A120EA2B0A00045DC6 /* FramesIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E620C49E20EA2AF800045DC6 /* FramesIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E620C4A720EA2C8C00045DC6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E620C4A620EA2C8B00045DC6 /* Alamofire.framework */; };
 		E63352E520A46A64002C61C0 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63352E420A46A64002C61C0 /* ExampleViewController.swift */; };
 		E6637F1A20BFE934005EE375 /* Authorize3dsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6637F1920BFE934005EE375 /* Authorize3dsResponse.swift */; };
 		E66406EC2089FAA9000431E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66406EB2089FAA9000431E5 /* AppDelegate.swift */; };
@@ -16,40 +19,7 @@
 		E66406F62089FAAB000431E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E66406F42089FAAB000431E5 /* LaunchScreen.storyboard */; };
 		E670A86920CACB6B002348A5 /* UITableFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E670A86820CACB6B002348A5 /* UITableFullView.swift */; };
 		E6AC017F20A98FB800310E43 /* MerchantAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */; };
-		E6FD835D2093309F0094AC15 /* CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; };
-		E6FD835E2093309F0094AC15 /* CheckoutSdkIos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		E68802242090DEBE00220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E66406D42089FA39000431E5;
-			remoteInfo = CheckoutSdkIos;
-		};
-		E68802262090DEBE00220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E6DED6E4208DF82500D5D70B;
-			remoteInfo = CheckoutSdkIosTests;
-		};
-		E68802282090DEE100220CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E66406D32089FA39000431E5;
-			remoteInfo = CheckoutSdkIos;
-		};
-		E6FD835F2093309F0094AC15 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E66406D32089FA39000431E5;
-			remoteInfo = CheckoutSdkIos;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		E6FD83612093309F0094AC15 /* Embed Frameworks */ = {
@@ -58,7 +28,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E6FD835E2093309F0094AC15 /* CheckoutSdkIos.framework in Embed Frameworks */,
+				E620C4A120EA2B0A00045DC6 /* FramesIos.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,9 +36,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D2CEFC7F0253E39130E2F8A /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B310CC3B241B8FDBDB00DF3 /* Pods-iOS Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C254D784E9C1A36631F2AD17 /* Pods-iOS Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iOS Example/Pods-iOS Example.release.xcconfig"; sourceTree = "<group>"; };
+		E620C49E20EA2AF800045DC6 /* FramesIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FramesIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E620C4A620EA2C8B00045DC6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E63352E420A46A64002C61C0 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		E6637F1920BFE934005EE375 /* Authorize3dsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorize3dsResponse.swift; sourceTree = "<group>"; };
 		E66406E82089FAA9000431E5 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +49,6 @@
 		E66406F52089FAAB000431E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E66406F72089FAAB000431E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E670A86820CACB6B002348A5 /* UITableFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableFullView.swift; sourceTree = "<group>"; };
-		E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CheckoutSdkIos.xcodeproj; path = ../CheckoutSdkIos.xcodeproj; sourceTree = "<group>"; };
 		E6AC017E20A98FB800310E43 /* MerchantAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MerchantAPIClient.swift; sourceTree = "<group>"; };
 		E6AF0A4720AB37CD00D29929 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		E6AF0A4920AB37CD00D29929 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -90,8 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6FD835D2093309F0094AC15 /* CheckoutSdkIos.framework in Frameworks */,
-				C084B56AE10CB0F554D54782 /* Pods_iOS_Example.framework in Frameworks */,
+				E620C4A720EA2C8C00045DC6 /* Alamofire.framework in Frameworks */,
+				E620C4A020EA2B0A00045DC6 /* FramesIos.framework in Frameworks */,
+				E620C49F20EA2AF800045DC6 /* FramesIos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,19 +124,10 @@
 		E68802062090CAEA00220CE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */,
-				2D2CEFC7F0253E39130E2F8A /* Pods_iOS_Example.framework */,
+				E620C4A620EA2C8B00045DC6 /* Alamofire.framework */,
+				E620C49E20EA2AF800045DC6 /* FramesIos.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E68802202090DEBD00220CE2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */,
-				E68802272090DEBE00220CE2 /* CheckoutSdkIosTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,8 +148,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E68802292090DEE100220CE2 /* PBXTargetDependency */,
-				E6FD83602093309F0094AC15 /* PBXTargetDependency */,
 			);
 			name = "iOS Example";
 			productName = "iOS Example";
@@ -228,35 +188,12 @@
 			mainGroup = E66406DF2089FAA9000431E5;
 			productRefGroup = E66406E92089FAA9000431E5 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = E68802202090DEBD00220CE2 /* Products */;
-					ProjectRef = E688021F2090DEBD00220CE2 /* CheckoutSdkIos.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				E66406E72089FAA9000431E5 /* iOS Example */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		E68802252090DEBE00220CE2 /* CheckoutSdkIos.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CheckoutSdkIos.framework;
-			remoteRef = E68802242090DEBE00220CE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		E68802272090DEBE00220CE2 /* CheckoutSdkIosTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CheckoutSdkIosTests.xctest;
-			remoteRef = E68802262090DEBE00220CE2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E66406E62089FAA9000431E5 /* Resources */ = {
@@ -338,19 +275,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E68802292090DEE100220CE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CheckoutSdkIos;
-			targetProxy = E68802282090DEE100220CE2 /* PBXContainerItemProxy */;
-		};
-		E6FD83602093309F0094AC15 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CheckoutSdkIos;
-			targetProxy = E6FD835F2093309F0094AC15 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E66406EF2089FAA9000431E5 /* Main.storyboard */ = {

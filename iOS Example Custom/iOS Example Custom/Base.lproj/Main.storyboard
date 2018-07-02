@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqt-KB-dc0" customClass="CardNumberInputView" customModule="CheckoutSdkIos">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqt-KB-dc0" customClass="CardNumberInputView" customModule="FramesIos">
                                 <rect key="frame" x="16" y="88" width="343" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -29,7 +29,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="4242"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5di-xs-i3x" customClass="ExpirationDateInputView" customModule="CheckoutSdkIos">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5di-xs-i3x" customClass="ExpirationDateInputView" customModule="FramesIos">
                                 <rect key="frame" x="16" y="144" width="343" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -40,7 +40,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="06/2019"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsh-lO-5Pq" customClass="CvvInputView" customModule="CheckoutSdkIos">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsh-lO-5Pq" customClass="CvvInputView" customModule="FramesIos">
                                 <rect key="frame" x="16" y="200" width="343" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

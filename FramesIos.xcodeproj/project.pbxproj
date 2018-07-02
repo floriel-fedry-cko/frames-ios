@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18B04D6D7B39194132DA56A8 /* Pods_FramesIosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EED79319FB78C1DA30C63495 /* Pods_FramesIosTests.framework */; };
 		9F61A6EBCBE80B2CB2B192CF /* Pods_CheckoutSdkIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A67268700A3003E8EC4785 /* Pods_CheckoutSdkIos.framework */; };
 		B40DDD7A553AF2DF4399463F /* Pods_CheckoutSdkIosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8907C43A46B302AD0C2ACA13 /* Pods_CheckoutSdkIosTests.framework */; };
+		B50A73375A7C7A819D70C087 /* Pods_FramesIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737D11BA5D5AE5AA3DC9D6FF /* Pods_FramesIos.framework */; };
 		E602EE79209D857900CC62A2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE78209D857900CC62A2 /* Alamofire.swift */; };
 		E602EE7B209D85E200CC62A2 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE7A209D85E200CC62A2 /* AFError.swift */; };
 		E602EE7D209D861300CC62A2 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602EE7C209D861300CC62A2 /* DispatchQueue+Alamofire.swift */; };
@@ -173,7 +175,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3370A09BC52FB4744D61DE9C /* Pods-FramesIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FramesIos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FramesIos/Pods-FramesIos.debug.xcconfig"; sourceTree = "<group>"; };
+		6268AF6F3674C5D4B9AB1E4C /* Pods-FramesIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FramesIos.release.xcconfig"; path = "Pods/Target Support Files/Pods-FramesIos/Pods-FramesIos.release.xcconfig"; sourceTree = "<group>"; };
+		737D11BA5D5AE5AA3DC9D6FF /* Pods_FramesIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FramesIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A05DCA3DA23A5B90A28088B /* Pods-FramesIosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FramesIosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FramesIosTests/Pods-FramesIosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8907C43A46B302AD0C2ACA13 /* Pods_CheckoutSdkIosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckoutSdkIosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DBAC9EA5BF3D8D794691344 /* Pods-FramesIosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FramesIosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FramesIosTests/Pods-FramesIosTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD6FA814FB6809EB63ED8696 /* Pods-CheckoutSdkIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckoutSdkIos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckoutSdkIos/Pods-CheckoutSdkIos.debug.xcconfig"; sourceTree = "<group>"; };
 		AEEB55A033E4548ABCA89644 /* Pods-CheckoutSdkIosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckoutSdkIosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckoutSdkIosTests/Pods-CheckoutSdkIosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A67268700A3003E8EC4785 /* Pods_CheckoutSdkIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckoutSdkIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,6 +334,7 @@
 		E6F6B57220ADC0BA0091A8AF /* checkmarks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = checkmarks; sourceTree = "<group>"; };
 		E6FC27FF20D8F68300809458 /* SimpleLoadingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLoadingViewControllerTests.swift; sourceTree = "<group>"; };
 		E6FC284A20DA62C500809458 /* CvvInputViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CvvInputViewDelegate.swift; sourceTree = "<group>"; };
+		EED79319FB78C1DA30C63495 /* Pods_FramesIosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FramesIosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F61A6EBCBE80B2CB2B192CF /* Pods_CheckoutSdkIos.framework in Frameworks */,
+				B50A73375A7C7A819D70C087 /* Pods_FramesIos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +353,7 @@
 			files = (
 				E6DED6E9208DF82500D5D70B /* FramesIos.framework in Frameworks */,
 				B40DDD7A553AF2DF4399463F /* Pods_CheckoutSdkIosTests.framework in Frameworks */,
+				18B04D6D7B39194132DA56A8 /* Pods_FramesIosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +365,8 @@
 			children = (
 				C1A67268700A3003E8EC4785 /* Pods_CheckoutSdkIos.framework */,
 				8907C43A46B302AD0C2ACA13 /* Pods_CheckoutSdkIosTests.framework */,
+				737D11BA5D5AE5AA3DC9D6FF /* Pods_FramesIos.framework */,
+				EED79319FB78C1DA30C63495 /* Pods_FramesIosTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -701,6 +713,10 @@
 				DC7610C6EEBAE50F7D144D90 /* Pods-CheckoutSdkIos.release.xcconfig */,
 				AEEB55A033E4548ABCA89644 /* Pods-CheckoutSdkIosTests.debug.xcconfig */,
 				E399B53D784DF24A0A936EBC /* Pods-CheckoutSdkIosTests.release.xcconfig */,
+				3370A09BC52FB4744D61DE9C /* Pods-FramesIos.debug.xcconfig */,
+				6268AF6F3674C5D4B9AB1E4C /* Pods-FramesIos.release.xcconfig */,
+				7A05DCA3DA23A5B90A28088B /* Pods-FramesIosTests.debug.xcconfig */,
+				8DBAC9EA5BF3D8D794691344 /* Pods-FramesIosTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -857,7 +873,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CheckoutSdkIosTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FramesIosTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -875,7 +891,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CheckoutSdkIos-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FramesIos-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -888,7 +904,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CheckoutSdkIosTests/Pods-CheckoutSdkIosTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FramesIosTests/Pods-FramesIosTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 			);
@@ -899,7 +915,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckoutSdkIosTests/Pods-CheckoutSdkIosTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FramesIosTests/Pods-FramesIosTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E625EE64209082610019B750 /* ShellScript */ = {
@@ -1209,7 +1225,7 @@
 		};
 		E66406DD2089FA39000431E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD6FA814FB6809EB63ED8696 /* Pods-CheckoutSdkIos.debug.xcconfig */;
+			baseConfigurationReference = 3370A09BC52FB4744D61DE9C /* Pods-FramesIos.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -1221,11 +1237,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.checkout.CheckoutSdkIos;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1237,7 +1249,7 @@
 		};
 		E66406DE2089FA39000431E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC7610C6EEBAE50F7D144D90 /* Pods-CheckoutSdkIos.release.xcconfig */;
+			baseConfigurationReference = 6268AF6F3674C5D4B9AB1E4C /* Pods-FramesIos.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -1249,11 +1261,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.checkout.CheckoutSdkIos;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1264,16 +1272,12 @@
 		};
 		E6DED6ED208DF82500D5D70B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEEB55A033E4548ABCA89644 /* Pods-CheckoutSdkIosTests.debug.xcconfig */;
+			baseConfigurationReference = 7A05DCA3DA23A5B90A28088B /* Pods-FramesIosTests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.checkout.CheckoutSdkIosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1285,16 +1289,12 @@
 		};
 		E6DED6EE208DF82500D5D70B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E399B53D784DF24A0A936EBC /* Pods-CheckoutSdkIosTests.release.xcconfig */;
+			baseConfigurationReference = 8DBAC9EA5BF3D8D794691344 /* Pods-FramesIosTests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.checkout.CheckoutSdkIosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

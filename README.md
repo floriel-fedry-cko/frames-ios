@@ -10,6 +10,10 @@
 [![codebeat badge](https://codebeat.co/badges/d9bae177-78c1-40bb-94a7-187a7759d549)](https://codebeat.co/projects/github-com-floriel-fedry-cko-frames-ios-master)
 ![license](https://img.shields.io/github/license/floriel-fedry-cko/frames-ios.svg)
 
+<p align="center">
+	<img src="./screenshots/demo-frames-ios.gif" width="320" alt="Demo frames ios"/>
+</p>
+
 ## Requirements
 
 - iOS 10.0+
@@ -70,7 +74,7 @@ $ brew install carthage
 To integrate FramesIos into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "floriel-fedry-cko/frames-ios" ~> 0.2
+github "floriel-fedry-cko/frames-ios" ~> 0.4
 ```
 
 Run `carthage update` to build the framework and drag the built `FramesIos` into your Xcode project.

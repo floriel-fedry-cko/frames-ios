@@ -98,9 +98,9 @@ public class AddressView: UIView {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         self.translatesAutoresizingMaskIntoConstraints = false
 
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
         stackView.topAnchor.constraint(equalTo: contentView.safeTopAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         stackView.bottomAnchor.constraint(equalTo: contentView.safeBottomAnchor).isActive = true
     }
 

@@ -49,9 +49,9 @@ public class CvvConfirmationViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         underlineView.translatesAutoresizingMaskIntoConstraints = false
 
-        contentView.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor, constant: -16).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor, constant: -8).isActive = true
         contentView.topAnchor.constraint(equalTo: view.safeTopAnchor, constant: 32).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor, constant: 16).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor, constant: 8).isActive = true
 
         label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         contentView.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: 16).isActive = true

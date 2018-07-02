@@ -128,21 +128,21 @@ public class CardView: UIView {
         contentView.translatesAutoresizingMaskIntoConstraints = false
 
         acceptedCardLabel.trailingAnchor
-            .constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            .constraint(equalTo: contentView.trailingAnchor, constant: -8)
             .isActive = true
         acceptedCardLabel.heightAnchor.constraint(equalToConstant: 16).isActive = true
         acceptedCardLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
-        acceptedCardLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+        acceptedCardLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8)
             .isActive = true
 
-        schemeIconsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+        schemeIconsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
             .isActive = true
         schemeIconsStackView.topAnchor.constraint(equalTo: acceptedCardLabel.bottomAnchor, constant: 16).isActive = true
-        schemeIconsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
+        schemeIconsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
 
-        stackView.trailingAnchor.constraint(equalTo: contentView.safeTrailingAnchor, constant: -16).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.safeTrailingAnchor, constant: -8).isActive = true
         stackView.topAnchor.constraint(equalTo: schemeIconsStackView.safeBottomAnchor, constant: 16).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: contentView.safeLeadingAnchor, constant: 16).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: contentView.safeLeadingAnchor, constant: 8).isActive = true
         stackView.bottomAnchor.constraint(equalTo: contentView.safeBottomAnchor).isActive = true
     }
 }

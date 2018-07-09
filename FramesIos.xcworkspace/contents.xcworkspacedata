@@ -8,12 +8,6 @@
       location = "group:iOS Example Custom/iOS Example Custom.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:iOS Example/iOS Example.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:iOS Example Apple Pay/iOS Example Apple Pay.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
    <FileRef

@@ -16,7 +16,6 @@ custom_categories:
   - name: Walkthrough
     children:
       - iOS Example Frames
-      - iOS Example
   - name: Classes
     children:
       - AddressView

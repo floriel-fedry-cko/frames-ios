@@ -1,6 +1,4 @@
-# FramesIos - Beta
-
-> Beta - Do not use before speaking to integration@checkout.com
+# FramesIos
 
 [![Build Status](https://travis-ci.org/floriel-fedry-cko/frames-ios.svg?branch=master)](https://travis-ci.org/floriel-fedry-cko/frames-ios)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/FramesIos.svg)](https://img.shields.io/cocoapods/v/FramesIos)
